@@ -14,7 +14,7 @@
 
     {{--4 PRODUCTS--}}
     @include('frontend.includes.products_x4')
-
+    <p><small>V1.1</small></p>
 </div>
 
 <div class="col-lg-3 col-md-3 col-sm-3 hidden-xs">
