@@ -25,6 +25,7 @@ Route::get('macros', 'FrontendController@macros')->name('frontend.macros');
  */
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('mitel_bundle', 'Mitel_BundleController');
+    Route::resource('selection', 'SelectionController');
 
     Route::group(['namespace' => 'User'], function() {
         Route::get('dashboard', 'DashboardController@index')->name('frontend.user.dashboard');
