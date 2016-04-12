@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-lg-6 col-md-6 col-sm-6">
+    <div class="col-lg-4 col-md-4 col-sm-4">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title">Mitel 3300 Bundle</h3>
@@ -10,7 +10,7 @@
         </div>
     </div>
 
-    <div class="col-lg-6 col-md-6 col-sm-6">
+    <div class="col-lg-4 col-md-4 col-sm-4">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title">Mitel 3300 Non Bundle</h3>
@@ -20,4 +20,7 @@
             </div>
         </div>
     </div>
+
+    @include('frontend.includes.cart_static')
+
 </div>

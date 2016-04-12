@@ -8,6 +8,10 @@
 @endsection
 
 @section('content')
+    <ol class="breadcrumb">
+        <li><a href="/admin/product_management">Product Management</a></li>
+        <li class="active">Edit Product</li>
+    </ol>
     <div class="box box-success">
         <div class="box-header with-border">
             <h3 class="box-title">Edit Product</h3>
