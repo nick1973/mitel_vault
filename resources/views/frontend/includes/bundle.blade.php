@@ -3,7 +3,7 @@
         $("#collapse3").collapse('show');
         $("#toggle-button").html('<span class="glyphicon glyphicon-collapse-down"></span> Hide Quote');
         $("#collapse2").on("hide.bs.collapse", function(){
-            $(".btn").html('<span class="glyphicon glyphicon-collapse-down"></span> Hide Quote');
+            $("#toggle-button").html('<span class="glyphicon glyphicon-collapse-down"></span> Hide Quote');
             $("#collapse3").collapse('show');
         });
         $("#collapse2").on("show.bs.collapse", function(){

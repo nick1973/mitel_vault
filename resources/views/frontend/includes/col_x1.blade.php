@@ -16,7 +16,8 @@
                     </select>
                 </div>
                 <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
-                   data-toggle="tooltip" title="" data-placement="right"></i>
+                   data-toggle="popover" title="Analogue" data-placement="right"
+                   data-content="And here's some amazing content. It's very engaging. Right?"></i>
             </div>
 
             <div class="form-group">
@@ -32,7 +33,8 @@
                     </select>
                 </div>
                 <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
-                   data-toggle="tooltip" title="" data-placement="right"></i>
+                   data-toggle="popover" title="PRI/ISDN30" data-placement="right"
+                   data-content="And here's some amazing content. It's very engaging. Right?"></i>
             </div>
         </div>
 
@@ -50,7 +52,8 @@
                     </select>
                 </div>
                 <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
-                   data-toggle="tooltip" title="" data-placement="right"></i>
+                   data-toggle="popover" title="BRI/ISDN2" data-placement="right"
+                   data-content="And here's some amazing content. It's very engaging. Right?"></i>
             </div>
 
             <div class="form-group">
@@ -66,7 +69,8 @@
                     </select>
                 </div>
                 <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
-                   data-toggle="tooltip" title="" data-placement="right"></i>
+                   data-toggle="popover" title="SIP" data-placement="right"
+                   data-content="And here's some amazing content. It's very engaging. Right?"></i>
             </div>
 
         </div>
@@ -87,7 +91,8 @@
                     </select>
                 </div>
                 <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
-                   data-toggle="tooltip" title="" data-placement="right"></i>
+                   data-toggle="popover" title="Analogue" data-placement="right"
+                   data-content="And here's some amazing content. It's very engaging. Right?"></i>
             </div>
         </div>
         <div class="col-md-12 col-lg-6">
@@ -104,7 +109,8 @@
                     </select>
                 </div>
                 <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
-                   data-toggle="tooltip" title="" data-placement="right"></i>
+                   data-toggle="popover" title="PRI/ISDN30" data-placement="right"
+                   data-content="And here's some amazing content. It's very engaging. Right?"></i>
             </div>
         </div>
 
@@ -124,7 +130,8 @@
                     </select>
                 </div>
                 <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
-                   data-toggle="tooltip" title="" data-placement="right"></i>
+                   data-toggle="popover" title="BT Supplied LAN ports" data-placement="right"
+                   data-content="And here's some amazing content. It's very engaging. Right?"></i>
             </div>
 
             <div class="form-group">
@@ -140,7 +147,8 @@
                     </select>
                 </div>
                 <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
-                   data-toggle="tooltip" title="" data-placement="right"></i>
+                   data-toggle="popover" title="Customer supplied" data-placement="right"
+                   data-content="And here's some amazing content. It's very engaging. Right?"></i>
             </div>
 
             <button type="submit" class="btn btn-info pull-right">Find Bundle!</button>
