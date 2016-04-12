@@ -1,4 +1,4 @@
-<div class="col-lg-4 col-md-4 col-sm-4">
+
     <h4><strong>Lines: </strong>How many lines are required?</h4>
 
     <form class="form-horizontal ">
@@ -158,4 +158,3 @@
 
     </form>
 
-</div>

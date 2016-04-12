@@ -1,10 +1,6 @@
 @extends('frontend.layouts.master')
 
 @section('content')
-
-    <div class="col-lg-12 col-md-12 col-sm-12" style="padding-bottom: 15px">
-        <img class="img-responsive" src="images/bt_logo.jpg">
-        <div>
             <!-- Nav tabs -->
             <ul class="nav nav-tabs" role="tablist">
                 <li role="presentation"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Originator / Customer Details</a></li>
@@ -71,8 +67,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
 @endsection
 
 @section('after-scripts-end')

@@ -37,6 +37,9 @@
 
         <div class="container-fluid">
             @include('includes.partials.messages')
+            <div class="col-lg-12 col-md-12 col-sm-12" style="padding-bottom: 15px">
+                <img class="img-responsive" src="images/bt_logo.jpg">
+                <div>
             @yield('content')
         </div><!-- container -->
 
