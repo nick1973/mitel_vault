@@ -1,6 +1,6 @@
 <script>
     $(document).ready(function(){
-        
+
 
         $("#collapse1").collapse('show');
         $("#collapse3").collapse('show');
@@ -17,7 +17,8 @@
 
         $("#collapse2").on("hide.bs.collapse", function(){
             $("#toggle-button").html('<span class="glyphicon glyphicon-collapse-down"></span> Hide Order Overview');
-
+            $("#expand").removeClass('col-lg-8 col-md-8 col-sm-8');
+            $("#expand").addClass('col-lg-4 col-md-4 col-sm-4');
             $("#collapse1").collapse('show');
             $("#collapse3").collapse('show');
         });
@@ -32,27 +33,24 @@
             </button>
         </div>
     </div>
-<div id="test">
+
     <div class="collapse fade" id="collapse1">
         <div id="expand" class="col-lg-4 col-md-4 col-sm-4">
             @include('frontend.includes.col_x1')
         </div>
     </div>
-</div>
+
     <div class="collapse fade" id="collapse2">
-        {{--<div class="col-lg-8 col-md-8 col-sm-8">--}}
-            {{--@include('frontend.includes.col_x1')--}}
-        {{--</div>--}}
-        <div class="col-lg-4 col-md-4 hidden-xs hidden-sm hidden-md">
+        <div class="col-lg-4 col-md-4 col-sm-8">
             @include('frontend.includes.cart_static')
         </div>
     </div>
 
     <div class="collapse fade" id="collapse3">
-        <div class="col-lg-4 col-md-8 col-sm-8">
+        <div class="col-lg-4 col-md-8 col-sm-8 hidden-xs hidden-sm hidden-md">
             @include('frontend.includes.col_x2')
         </div>
-        <div class="col-lg-4 col-md-4 hidden-xs hidden-sm hidden-md">
+        <div class="col-lg-4 col-md-8 col-sm-8">
             @include('frontend.includes.cart_static')
         </div>
     </div>
