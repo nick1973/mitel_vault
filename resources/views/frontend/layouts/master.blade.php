@@ -40,6 +40,16 @@
             <div class="col-lg-12 col-md-12 col-sm-12" style="padding-bottom: 15px">
                 <img class="img-responsive" src="/images/bt_logo.jpg">
                 <div>
+
+                    {{--$_SERVER['REQUEST_URI_PATH'] = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);--}}
+                    {{--$segments = explode('/', $_SERVER['REQUEST_URI_PATH']);--}}
+
+                        {{--echo "<ol class=\"breadcrumb\">";--}}
+                    {{--foreach($segments as $i =>$key){--}}
+                            {{--echo "<li><a href=\"#\">" . $segments[$i] . "</a></li>";--}}
+                        {{--} ?>--}}
+                        {{--</ol>--}}
+
             @yield('content')
         </div><!-- container -->
 

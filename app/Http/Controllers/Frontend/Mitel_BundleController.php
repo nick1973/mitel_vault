@@ -28,4 +28,9 @@ class Mitel_BundleController extends Controller
         return $this->index($lines, $extensions);
     }
 
+    function find_bundle(Request $request)
+    {
+
+    }
+
 }

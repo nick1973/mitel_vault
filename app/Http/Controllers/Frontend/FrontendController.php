@@ -20,7 +20,7 @@ class FrontendController extends Controller
         $total = Cart::total();
         $cart = Cart::content();
         javascript()->put([
-            'test' => 'it works!',
+            'test' => 'active'
         ]);
 
         return view('frontend.index', compact('cart', 'test', 'total'));

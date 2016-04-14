@@ -9,6 +9,7 @@
             $("#reset").click(function(){
                 $("#selection2").hide('slow');
                 $("#selection3").hide('slow');
+                $("#selection4").hide('slow');
                 $("#mivb").removeClass('active');
                 $("#ip_office").removeClass('active');
                 $("#btq").removeClass('active');

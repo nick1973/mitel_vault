@@ -20,7 +20,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('mitel_bundle', 'Mitel_BundleController');
     Route::resource('selection', 'SelectionController');
 
-    Route::get('mivb/new', 'FrontendController@index')->name('frontend.index');
+    Route::get('mivb/new', 'FrontendController@index');
 
     Route::resource('cart', 'CartController');
     Route::get('cart/{cart}', 'CartController@cart');
