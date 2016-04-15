@@ -1,18 +1,20 @@
 
     <h4><strong>Lines: </strong>How many lines are required?</h4>
 
-    <form class="form-horizontal ">
+    <form id="myform" class="form-horizontal" action="/bundle_post">
         <div class="col-md-12 col-lg-6">
             <div class="form-group">
                 <label for="inputEmail3" class="col-xs-3 col-sm-4 control-label">Analogue:</label>
                 <div class="col-xs-7 col-sm-5 col-md-5 col-lg-6">
                     {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-                    <select class="form-control">
+                    <select class="form-control" name="analogue_lines">
+                        <option>0</option>
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
                         <option>4</option>
                         <option>5</option>
+                        <option>19</option>
                     </select>
                 </div>
                 <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
@@ -24,7 +26,8 @@
                 <label for="inputEmail3" class="col-xs-3 col-sm-4 control-label">PRI/ISDN30:</label>
                 <div class="col-xs-7 col-sm-5 col-md-5 col-lg-6">
                     {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-                    <select class="form-control">
+                    <select class="form-control" name="pri">
+                        <option>0</option>
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -44,6 +47,7 @@
                 <div class="col-xs-7 col-sm-5 col-md-5 col-lg-6">
                     {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
                     <select class="form-control">
+                        <option>0</option>
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -61,6 +65,7 @@
                 <div class="col-xs-7 col-sm-5 col-md-5 col-lg-6">
                     {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
                     <select class="form-control">
+                        <option>0</option>
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -82,7 +87,8 @@
                 <label for="inputEmail3" class="col-xs-3 col-sm-4 control-label">Analogue:</label>
                 <div class="col-xs-7 col-sm-5 col-md-5 col-lg-6">
                     {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-                    <select class="form-control">
+                    <select class="form-control" name="analogue_extensions">
+                        <option>0</option>
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -97,10 +103,11 @@
         </div>
         <div class="col-md-12 col-lg-6">
             <div class="form-group">
-                <label for="inputEmail3" class="col-xs-3 col-sm-4 control-label">PRI/ISDN30:</label>
+                <label for="inputEmail3" class="col-xs-3 col-sm-4 control-label">IP:</label>
                 <div class="col-xs-7 col-sm-5 col-md-5 col-lg-6">
                     {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
                     <select class="form-control">
+                        <option>0</option>
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -122,6 +129,7 @@
                 <div class="col-xs-7 col-sm-5 col-md-5 col-lg-5">
                     {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
                     <select class="form-control">
+                        <option>0</option>
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -139,6 +147,7 @@
                 <div class="col-xs-7 col-sm-5 col-md-5 col-lg-5">
                     {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
                     <select class="form-control">
+                        <option>0</option>
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -150,11 +159,46 @@
                    data-toggle="popover" title="Customer supplied" data-placement="right"
                    data-content="And here's some amazing content. It's very engaging. Right?"></i>
             </div>
-
-            <button type="submit" class="btn btn-info pull-right">Find Bundle!</button>
-
+            {{--<button id="but" type="submit" class="btn btn-info pull-right">Find Bundle!</button>--}}
         </div>
-
-
     </form>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <button id="but" class="btn btn-info pull-right">Find Bundle!</button>
+
+    <script>
+
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function($scope, $http) {
+
+            $("#but").click(function(){
+
+                var $btn = $(this).button('loading')
+                var formData = $("#myform").serializeArray();
+                var URL = $("#myform").attr("action");
+                    $.post(URL,
+                            formData,
+                            function(data, textStatus, jqXHR)
+                            {
+                                $http.get("/bundle_list/" + data.analogue_lines + "/" + data.analogue_extensions)
+                                        .then(function(response) {
+                                            $scope.content = response.data.bundle[0];
+                                        });
+                                console.log(data);
+                                $btn.button('reset');
+                            }).fail(function(jqXHR, textStatus, errorThrown)
+                            {
+                                //console.log(errorThrown);
+                            });
+                });
+
+        });
+
+    </script>
+
+
 
