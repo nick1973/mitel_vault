@@ -1,7 +1,56 @@
 @extends('frontend.layouts.master')
 
 @section('content')
+    <script>
+        $(document).ready(function () {
+            $(".collapse1").collapse('show');
+            $(".expand").removeClass('col-lg-4 col-md-4 col-sm-4');
+            $(".expand").addClass('col-lg-8 col-md-6 col-sm-6');
+            $("#collapse2").collapse('show');
 
+            $("#toggle-button").html('<span class="glyphicon glyphicon-collapse-down"></span> Hide Order Overview');
+
+            $("#collapse2").on("show.bs.collapse", function () {
+                $("#toggle-button").html('<span class="glyphicon glyphicon-collapse-up"></span> Show Order Overview');
+
+                $(".expand").removeClass('col-lg-4 col-md-4 col-sm-4');
+                $(".expand").addClass('col-lg-8 col-md-8 col-sm-8');
+                $(".collapse1").collapse('show');
+                $("#collapse3").collapse('hide');
+            });
+            $("#collapse2").on("hide.bs.collapse", function () {
+                $("#toggle-button").html('<span class="glyphicon glyphicon-collapse-down"></span> Hide Order Overview');
+                $(".expand").removeClass('col-lg-8 col-md-8 col-sm-8');
+                $(".expand").addClass('col-lg-4 col-md-4 col-sm-4');
+                $(".collapse1").collapse('show');
+                $("#collapse3").collapse('show');
+            });
+        });
+
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function ($scope, $http) {
+
+            $("#but").click(function () {
+
+                var $btn = $(this).button('loading')
+                var formData = $("#myform").serializeArray();
+                var URL = $("#myform").attr("action");
+                $.post(URL,
+                        formData,
+                        function (data, textStatus, jqXHR) {
+                            $http.get("/bundle_list/" + data.analogue_lines + "/" + data.analogue_extensions)
+                                    .then(function (response) {
+                                        $scope.content = response.data.bundle[0];
+                                    });
+                            console.log(data);
+                            $btn.button('reset');
+                        }).fail(function (jqXHR, textStatus, errorThrown) {
+                            //console.log(errorThrown);
+                        });
+            });
+
+        });
+    </script>
             <ol class="breadcrumb">
                 <li>PBX: <span>MiVB</span></li>
                 <li>QUOTE TYPE: <span>New</span></li>
@@ -37,11 +86,43 @@
                         <li role="presentation"><a href="#maint" aria-controls="maint" role="tab" data-toggle="tab">Maintenance</a></li>
                     </ul>
                     <div class="tab-content">
+
+                        <br/>
+
+                        <div class="col-lg-12 col-md-12 col-sm-12" style="padding-bottom: 15px">
+                            <div class="pull-right">
+                                <button id="toggle-button" type="button"
+                                        class="btn btn-success hidden-xs hidden-sm hidden-md" data-toggle="collapse"
+                                        data-target="#collapse2">
+                                    <span class="glyphicon glyphicon-collapse-down"></span> Hide Order Overview
+                                </button>
+                                <button id="" type="button" class="btn btn-success" data-toggle="modal"
+                                        data-target=".bs-example-modal-lg">
+                                    <span class="glyphicon glyphicon-eye-open"></span> Order Overview
+                                </button>
+                            </div>
+                        </div>
+
+                        <div role="tabpanel" class="tab-pane fade in active" id="bundle-home">
+                            <div class="collapse fade collapse1" id="">
+                                <div id="expand" class="col-lg-4 col-md-4 col-sm-4 expand">
+                                    @include('frontend.includes.col_x1')
+                                </div>
+                            </div>
+                        </div>
                         <div role="tabpanel" class="tab-pane fade" id="software">
-                            Software
+                            <div class="collapse fade collapse1" id="">
+                                <div id="expand" class="col-lg-4 col-md-4 col-sm-4 expand">
+                                    @include('frontend.includes.software')
+                                </div>
+                            </div>
                         </div>
                         <div role="tabpanel" class="tab-pane fade" id="servers">
-                            Servers
+                            <div class="collapse fade collapse1" id="">
+                                <div id="expand" class="col-lg-4 col-md-4 col-sm-4 expand">
+                                    @include('frontend.includes.server')
+                                </div>
+                            </div>
                         </div>
                         <div role="tabpanel" class="tab-pane fade" id="terminals">
                             Terminals
@@ -67,12 +148,89 @@
                         <div role="tabpanel" class="tab-pane fade" id="maint">
                             Maintenance
                         </div>
-                        <div role="tabpanel" class="tab-pane fade in active" id="bundle-home">
-                            @include('frontend.includes.bundle')
+
+                        <div class="collapse fade collapse2" id="collapse2">
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                @include('frontend.includes.cart_static')
+                            </div>
                         </div>
+
+                        <div class="collapse fade collapse3" id="collapse3">
+                            <div class="col-lg-4 col-md-8 col-sm-8 hidden-xs hidden-sm hidden-md">
+                                @include('frontend.includes.col_x2')
+                            </div>
+                            <div class="col-lg-4 col-md-8 col-sm-8">
+                                @include('frontend.includes.cart_static')
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
+
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title " id="gridSystemModalLabel">Order Overview</h4>
+                </div>
+                <div class="modal-body">
+                    {{--@include('frontend.includes.col_x2')--}}
+                    <div class="panel panel-default">
+                        {{--<div class="panel-heading">--}}
+                        {{--<h3 class="panel-title">Order Overview.</h3>--}}
+                        {{--</div>--}}
+                        <div id="results" class="panel-body bg-info">
+                            <div ng-app="myApp" ng-controller="myCtrl">
+                                <p><strong>Bundle Name:</strong> @{{ content.name }}</p>
+
+                                <p ng-show="content.analogue_lines > 0" class="ng-hide"><strong>Lines:</strong> Analogue
+                                    Lines = @{{ content.analogue_lines }}</p>
+
+                                <p ng-show="content.bri_lines > 0" class="ng-hide"><strong>Lines:</strong> BRI / ISDN 2
+                                    Channels = @{{ content.bri_lines }}</p>
+
+                                <p ng-show="content.pri_lines > 0" class="ng-hide"><strong>Lines:</strong> PRI / ISDN 30
+                                    Channels = @{{ content.pri_lines }}</p>
+
+                                <p ng-show="content.sip_lines > 0" class="ng-hide"><strong>Lines:</strong> SIP Trunks
+                                    = @{{ content.sip_lines }}</p>
+
+                                <p><strong>DN's:</strong></p>
+
+                                <p><strong>Voicemail:</strong></p>
+
+                                <p><strong>Standard User:</strong> @{{ content.standard_users }}</p>
+
+                                <p><strong>Multi User:</strong></p>
+
+                                <p><strong>External Twinning:</strong></p>
+
+                                <p><strong>LAN/IP Ports:</strong> @{{ content.lan_ports }}</p>
+
+                                <p><strong>Analogue Extensions:</strong> @{{ content.analogue_extensions }}</p>
+
+                                <p><strong>Description:</strong> @{{ content.product_description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .modal-body {
+            max-height: calc(100vh - 210px);
+            overflow-y: auto;
+        }
+    </style>
+
 @endsection
 
 @section('after-scripts-end')

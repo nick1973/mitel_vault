@@ -170,35 +170,5 @@
     <br/>
     <button id="but" class="btn btn-info pull-right">Find Bundle!</button>
 
-    <script>
-
-        var app = angular.module('myApp', []);
-        app.controller('myCtrl', function($scope, $http) {
-
-            $("#but").click(function(){
-
-                var $btn = $(this).button('loading')
-                var formData = $("#myform").serializeArray();
-                var URL = $("#myform").attr("action");
-                    $.post(URL,
-                            formData,
-                            function(data, textStatus, jqXHR)
-                            {
-                                $http.get("/bundle_list/" + data.analogue_lines + "/" + data.analogue_extensions)
-                                        .then(function(response) {
-                                            $scope.content = response.data.bundle[0];
-                                        });
-                                console.log(data);
-                                $btn.button('reset');
-                            }).fail(function(jqXHR, textStatus, errorThrown)
-                            {
-                                //console.log(errorThrown);
-                            });
-                });
-
-        });
-
-    </script>
-
 
 

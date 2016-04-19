@@ -11,11 +11,11 @@
 Route::get('bundle_list/{analogue_lines}/{analogue_extensions}', function($analogue_lines,$analogue_extensions){
 
     //return ["bundle" => App\SystemMatrix::find(2)];
-    if($analogue_lines>0){
-        return ["bundle" => App\SystemMatrix::where('analogue_lines', '>=', $analogue_lines)
-                                            ->where('analogue_extensions', '>=', $analogue_extensions)
+    //if($analogue_lines>0){
+    return ["bundle" => App\SystemMatrix::where('analogue_lines', $analogue_lines)
+        //->whereIn('analogue_extensions', '>=', $analogue_extensions)
                                             ->get()];
-    };
+    //};
 
 });
 
