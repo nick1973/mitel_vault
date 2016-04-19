@@ -1,6 +1,7 @@
 @extends('frontend.layouts.master')
 
 @section('content')
+
     <script>
         $(document).ready(function () {
             $(".collapse1").collapse('show');
@@ -32,7 +33,7 @@
 
             $("#but").click(function () {
 
-                var $btn = $(this).button('loading')
+                var $btn = $(this).button('loading');
                 var formData = $("#myform").serializeArray();
                 var URL = $("#myform").attr("action");
                 $.post(URL,
@@ -125,7 +126,11 @@
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane fade" id="terminals">
-                            Terminals
+                            <div class="collapse fade collapse1" id="">
+                                <div id="expand" class="col-lg-4 col-md-4 col-sm-4 expand">
+                                    @include('frontend.includes.terminals')
+                                </div>
+                            </div>
                         </div>
                         <div role="tabpanel" class="tab-pane fade" id="lan-data">
                             LAN & DATA
