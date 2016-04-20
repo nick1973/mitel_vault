@@ -10,6 +10,7 @@
         <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
         <title>@yield('title', app_name())</title>
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <link rel="stylesheet" href="/css/animate.css">
         <!-- Meta -->
         <meta name="description" content="@yield('meta_description', 'Default Description')">
         <meta name="author" content="@yield('meta_author', 'Anthony Rappa')">

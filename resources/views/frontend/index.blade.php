@@ -18,6 +18,7 @@
                 $(".expand").addClass('col-lg-8 col-md-8 col-sm-8');
                 $(".collapse1").collapse('show');
                 $("#collapse3").collapse('hide');
+
             });
             $("#collapse2").on("hide.bs.collapse", function () {
                 $("#toggle-button").html('<span class="glyphicon glyphicon-collapse-down"></span> Hide Order Overview');
@@ -25,6 +26,11 @@
                 $(".expand").addClass('col-lg-4 col-md-4 col-sm-4');
                 $(".collapse1").collapse('show');
                 $("#collapse3").collapse('show');
+            });
+
+            $('#overview-button').click(function () {
+                $('#overview-button').removeClass('btn-info');
+                $('#overview-button').addClass('btn-success');
             });
         });
 
@@ -44,7 +50,13 @@
                                         $scope.content = response.data.bundle[0];
                                     });
                             console.log(data);
+                            //Button Formatting Control.
                             $btn.button('reset');
+                            $('#overview-button').addClass('animated bounce btn-info');
+                            $('#overview-button').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
+                                    function () {
+                                        $('#overview-button').removeClass('animated bounce');
+                                    });
                         }).fail(function (jqXHR, textStatus, errorThrown) {
                             //console.log(errorThrown);
                         });
@@ -97,7 +109,7 @@
                                         data-target="#collapse2">
                                     <span class="glyphicon glyphicon-collapse-down"></span> Hide Order Overview
                                 </button>
-                                <button id="" type="button" class="btn btn-success" data-toggle="modal"
+                                <button id="overview-button" type="button" class="btn btn-success" data-toggle="modal"
                                         data-target=".bs-example-modal-lg">
                                     <span class="glyphicon glyphicon-eye-open"></span> Order Overview
                                 </button>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\SystemMatrix;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 
@@ -18,6 +19,14 @@ class Mitel_BundleController extends Controller
         ]);
 
         return view('frontend.mitel_bundle.index', compact('lines','extensions'));
+    }
+
+    public function bundle($lines, $extensions)
+    {
+        $result = ["bundle" => SystemMatrix::where('analogue_lines', $lines)
+            ->orWhere('bri_lines', $lines)
+            ->get()];
+        return $result;
     }
 
     public function store(Request $request)

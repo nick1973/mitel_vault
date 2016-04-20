@@ -8,16 +8,15 @@
 
 //Route::get('macros', 'FrontendController@macros')->name('frontend.macros');
 
-Route::get('bundle_list/{analogue_lines}/{analogue_extensions}', function($analogue_lines,$analogue_extensions){
-
-    //return ["bundle" => App\SystemMatrix::find(2)];
-    //if($analogue_lines>0){
-    return ["bundle" => App\SystemMatrix::where('analogue_lines', $analogue_lines)
-        //->whereIn('analogue_extensions', '>=', $analogue_extensions)
-                                            ->get()];
-    //};
-
-});
+//Route::get('bundle_list/{lines}/{analogue_extensions}', function($lines,$analogue_extensions){
+//
+//    //return ["bundle" => App\SystemMatrix::find(2)];
+//    //if($analogue_lines>0){
+//    return ["bundle" => App\SystemMatrix::where('analogue_lines', $lines)
+//                                ->orWhere('bri_lines', $lines)
+//                                            ->get()];
+//    //};
+//});
 
 Route::post('bundle_post', function(){
 
@@ -35,6 +34,7 @@ Route::post('bundle_post', function(){
  */
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/', 'SelectionController@index')->name('frontend.index');
+    Route::get('bundle_list/{lines}/{extensions}', 'Mitel_BundleController@bundle');
     Route::resource('mitel_bundle', 'Mitel_BundleController');
     Route::resource('selection', 'SelectionController');
 
