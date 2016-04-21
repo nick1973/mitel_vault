@@ -2,7 +2,7 @@
 <h4><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> Personalise your System Message Packst</h4>
 <br/>
 <div class="form-group">
-    <label for="inputEmail3" class="col-sm-5 col-lg-8 col-md-8 control-label">
+    <label for="inputEmail3" class="col-sm-5 col-lg-6 col-md-6 control-label">
         Greeting + Courtesy Message (Pack 1)
     </label>
 
@@ -21,7 +21,7 @@
 <br/>
 <br/>
 <div class="form-group">
-    <label for="inputEmail3" class="col-sm-5 col-lg-8 col-md-8 control-label">
+    <label for="inputEmail3" class="col-sm-5 col-lg-6 col-md-6 control-label">
         Greeting + Bespoke On Hold Message (Pack 2)
     </label>
 
@@ -41,7 +41,7 @@
 <h4><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> Single On Hold Message Production</h4>
 <br/>
 <div class="form-group">
-    <label for="inputEmail3" class="col-sm-5 col-lg-8 col-md-8 control-label">
+    <label for="inputEmail3" class="col-sm-5 col-lg-6 col-md-6 control-label">
         BTB Single On Hold Message
     </label>
 

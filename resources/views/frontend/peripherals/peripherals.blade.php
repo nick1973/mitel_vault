@@ -121,12 +121,16 @@
             <div class="onoffswitch">
                 <input name="peripheral" type="hidden" value="No">
                 <input type="checkbox" value="Yes" name="peripheral" class="toggleBtn onoffswitch-checkbox" id="btuc"
-                       onclick="">
+                       onclick="visible(this.id,'uc')">
                 <label for="btuc" class="onoffswitch-label">
                     <div class="onoffswitch-inner"></div>
                     <div class="onoffswitch-switch"></div>
                 </label>
             </div>
+        </div>
+
+        <div id="uc" class="col-lg-12 col-lg-offset-1 collapse animated fadeIn" style="padding-top: 20px">
+            @include('frontend.peripherals.includes.btuc')
         </div>
     </div>
 
@@ -157,12 +161,15 @@
             <div class="onoffswitch">
                 <input name="peripheral" type="hidden" value="No">
                 <input type="checkbox" value="Yes" name="peripheral" class="toggleBtn onoffswitch-checkbox"
-                       id="headsets" onclick="">
+                       id="headsets" onclick="visible(this.id,'head')">
                 <label for="headsets" class="onoffswitch-label">
                     <div class="onoffswitch-inner"></div>
                     <div class="onoffswitch-switch"></div>
                 </label>
             </div>
+        </div>
+        <div id="head" class="col-lg-12 col-lg-offset-1 collapse animated fadeIn" style="padding-top: 20px">
+            @include('frontend.peripherals.includes.headset')
         </div>
     </div>
 
@@ -175,12 +182,15 @@
             <div class="onoffswitch">
                 <input name="peripheral" type="hidden" value="No">
                 <input type="checkbox" value="Yes" name="peripheral" class="toggleBtn onoffswitch-checkbox" id="btvr"
-                       onclick="">
+                       onclick="visible(this.id,'vr')">
                 <label for="btvr" class="onoffswitch-label">
                     <div class="onoffswitch-inner"></div>
                     <div class="onoffswitch-switch"></div>
                 </label>
             </div>
+        </div>
+        <div id="vr" class="col-lg-12 collapse animated fadeIn" style="padding-top: 20px">
+            @include('frontend.peripherals.includes.btvr')
         </div>
     </div>
 
@@ -193,12 +203,15 @@
             <div class="onoffswitch">
                 <input name="peripheral" type="hidden" value="No">
                 <input type="checkbox" value="Yes" name="peripheral" class="toggleBtn onoffswitch-checkbox" id="btav"
-                       onclick="">
+                       onclick="visible(this.id,'av')">
                 <label for="btav" class="onoffswitch-label">
                     <div class="onoffswitch-inner"></div>
                     <div class="onoffswitch-switch"></div>
                 </label>
             </div>
+        </div>
+        <div id="av" class="col-lg-12 col-lg-offset-1 collapse animated fadeIn" style="padding-top: 20px">
+            @include('frontend.peripherals.includes.av_endpoints')
         </div>
     </div>
 </div>
