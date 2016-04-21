@@ -23,6 +23,9 @@ class Mitel_BundleController extends Controller
 
     public function bundle($lines, $extensions)
     {
+        if ($lines == 0) {
+            $lines = null;
+        }
         $result = ["bundle" => SystemMatrix::where('analogue_lines', $lines)
             ->orWhere('bri_lines', $lines)
             ->get()];

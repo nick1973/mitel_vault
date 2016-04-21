@@ -48,15 +48,23 @@
                             $http.get("/bundle_list/" + data.analogue_lines + "/" + data.analogue_extensions)
                                     .then(function (response) {
                                         $scope.content = response.data.bundle[0];
+
+                                        if (typeof response.data.bundle[0] !== 'undefined') {
+                                            $('#overview-button').addClass('animated bounce btn-info');
+                                            $('#overview-button').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
+                                                    function () {
+                                                        $('#overview-button').removeClass('animated bounce');
+                                                    });
+                                        }
+                                        ;
+                                        console.log(response.data.bundle[0]);
                                     });
-                            console.log(data);
+
+                            //console.log(jQuery.isEmptyObject({}));
+
                             //Button Formatting Control.
                             $btn.button('reset');
-                            $('#overview-button').addClass('animated bounce btn-info');
-                            $('#overview-button').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
-                                    function () {
-                                        $('#overview-button').removeClass('animated bounce');
-                                    });
+
                         }).fail(function (jqXHR, textStatus, errorThrown) {
                             //console.log(errorThrown);
                         });
@@ -148,7 +156,11 @@
                             LAN & DATA
                         </div>
                         <div role="tabpanel" class="tab-pane fade" id="peripherals">
-                            Peripherals
+                            <div class="collapse fade collapse1" id="">
+                                <div id="expand" class="col-lg-4 col-md-4 col-sm-4 expand">
+                                    @include('frontend.peripherals.peripherals')
+                                </div>
+                            </div>
                         </div>
                         <div role="tabpanel" class="tab-pane fade" id="training">
                             Training
