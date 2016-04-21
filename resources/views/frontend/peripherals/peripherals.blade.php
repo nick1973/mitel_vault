@@ -1,15 +1,29 @@
-<script>
-
-    function visible() {
-        if ($("#periph").prop('checked') == true) {
-            $("#peripherals-show").show().removeClass('animated fadeOut').addClass('animated fadeIn');
-        }
-        else if ($("#periph").prop('checked') == false) {
-            $("#peripherals-show").removeClass('animated fadeIn').addClass('animated fadeOut', function () {
-                $("#peripherals-show").hide();
-            });
-        }
+<style>
+    .collapsing {
+        transition: height 1.0s;
     }
+</style>
+<script>
+    function visible(button, id) {
+        if ($("#" + button).prop('checked') == true) {
+            $("#" + button).attr({
+                "data-toggle": 'collapse',
+                "data-target": '#' + id,
+                "data-target": '#' + id,
+                "aria-expanded": 'false',
+                "aria-controls": id
+            });
+
+            $("#" + id).removeClass('fadeOut').addClass('fadeIn');
+        }
+        else if ($("#" + button).prop('checked') == false) {
+            $("#" + id).removeClass('fadeIn').addClass('fadeOut').delay("slow");
+        }
+        ;
+    }
+    ;
+
+
 </script>
 
 <div class="form-group col-lg-12">
@@ -19,9 +33,9 @@
 
     <div class="col-sm-1">
         <div class="onoffswitch">
-            <input name="peripheral" type="hidden" value="No">
+            <input name="" type="hidden" value="No">
             <input type="checkbox" value="Yes" name="peripheral" class="toggleBtn onoffswitch-checkbox" id="periph"
-                   onclick="visible()">
+                   onclick="visible(this.id,'collapseExample')">
             <label for="periph" class="onoffswitch-label">
                 <div class="onoffswitch-inner"></div>
                 <div class="onoffswitch-switch"></div>
@@ -31,9 +45,9 @@
 </div>
 
 
-<div id="peripherals-show" style="display: none" class="col-lg-12 col-lg-offset-1">
-    <div class="form-group col-lg-8">
-        <label for="inputEmail3" class="col-sm-4 control-label">
+<div id="collapseExample" class="col-lg-12 col-lg-offset-1 collapse animated fadeIn" style="padding-top: 20px">
+    <div class="form-group col-lg-10 col-md-10">
+        <label for="inputEmail3" class="col-sm-4 col-lg-4 col-md-4 control-label">
             BTB Music On Hold?
         </label>
 
@@ -41,17 +55,21 @@
             <div class="onoffswitch">
                 <input name="peripheral" type="hidden" value="No">
                 <input type="checkbox" value="Yes" name="peripheral" class="toggleBtn onoffswitch-checkbox" id="on-hold"
-                       onclick="">
+                       onclick="visible(this.id,'moh')">
                 <label for="on-hold" class="onoffswitch-label">
                     <div class="onoffswitch-inner"></div>
                     <div class="onoffswitch-switch"></div>
                 </label>
             </div>
         </div>
+
+        <div id="moh" class="col-lg-12 col-lg-offset-1 collapse animated fadeIn" style="padding-top: 20px">
+            @include('frontend.peripherals.includes.moh')
+        </div>
     </div>
 
-    <div class="form-group col-lg-8">
-        <label for="inputEmail3" class="col-sm-4 control-label">
+    <div class="form-group col-lg-10 col-md-10">
+        <label for="inputEmail3" class="col-sm-4 col-lg-4 col-md-4 control-label">
             BTB On Hold Messaging?
         </label>
 
@@ -59,17 +77,21 @@
             <div class="onoffswitch">
                 <input name="peripheral" type="hidden" value="No">
                 <input type="checkbox" value="Yes" name="peripheral" class="toggleBtn onoffswitch-checkbox"
-                       id="messaging" onclick="">
+                       id="messaging" onclick="visible(this.id,'message')">
                 <label for="messaging" class="onoffswitch-label">
                     <div class="onoffswitch-inner"></div>
                     <div class="onoffswitch-switch"></div>
                 </label>
             </div>
         </div>
+
+        <div id="message" class="col-lg-12 col-lg-offset-1 collapse animated fadeIn" style="padding-top: 20px">
+            @include('frontend.peripherals.includes.message')
+        </div>
     </div>
 
-    <div class="form-group col-lg-8">
-        <label for="inputEmail3" class="col-sm-4 control-label">
+    <div class="form-group col-lg-10 col-md-10">
+        <label for="inputEmail3" class="col-sm-4 col-lg-4 col-md-4 control-label">
             BTB Door Access?
         </label>
 
@@ -77,17 +99,21 @@
             <div class="onoffswitch">
                 <input name="peripheral" type="hidden" value="No">
                 <input type="checkbox" value="Yes" name="peripheral" class="toggleBtn onoffswitch-checkbox"
-                       id="door-access" onclick="">
+                       id="door-access" onclick="visible(this.id,'de')">
                 <label for="door-access" class="onoffswitch-label">
                     <div class="onoffswitch-inner"></div>
                     <div class="onoffswitch-switch"></div>
                 </label>
             </div>
         </div>
+
+        <div id="de" class="col-lg-12 col-lg-offset-1 collapse animated fadeIn" style="padding-top: 20px">
+            @include('frontend.peripherals.includes.door_access')
+        </div>
     </div>
 
-    <div class="form-group col-lg-8">
-        <label for="inputEmail3" class="col-sm-4 control-label">
+    <div class="form-group col-lg-10 col-md-10">
+        <label for="inputEmail3" class="col-sm-4 col-lg-4 col-md-4 control-label">
             BTB UC?
         </label>
 
@@ -104,8 +130,8 @@
         </div>
     </div>
 
-    <div class="form-group col-lg-8">
-        <label for="inputEmail3" class="col-sm-4 control-label">
+    <div class="form-group col-lg-10 col-md-10">
+        <label for="inputEmail3" class="col-sm-4 col-lg-4 col-md-4 control-label">
             Call Logging?
         </label>
 
@@ -122,8 +148,8 @@
         </div>
     </div>
 
-    <div class="form-group col-lg-8">
-        <label for="inputEmail3" class="col-sm-4 control-label">
+    <div class="form-group col-lg-10 col-md-10">
+        <label for="inputEmail3" class="col-sm-4 col-lg-4 col-md-4 control-label">
             Headsets?
         </label>
 
@@ -140,8 +166,8 @@
         </div>
     </div>
 
-    <div class="form-group col-lg-8">
-        <label for="inputEmail3" class="col-sm-4 control-label">
+    <div class="form-group col-lg-10 col-md-10">
+        <label for="inputEmail3" class="col-sm-4 col-lg-4 col-md-4 control-label">
             BTB Voice Recording?
         </label>
 
@@ -158,8 +184,8 @@
         </div>
     </div>
 
-    <div class="form-group col-lg-8">
-        <label for="inputEmail3" class="col-sm-4 control-label">
+    <div class="form-group col-lg-10 col-md-10">
+        <label for="inputEmail3" class="col-sm-4 col-lg-4 col-md-4 control-label">
             BTB AV Endpoints?
         </label>
 
@@ -176,4 +202,6 @@
         </div>
     </div>
 </div>
+<br/>
+<hr>
 
