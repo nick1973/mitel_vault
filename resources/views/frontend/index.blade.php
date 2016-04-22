@@ -55,6 +55,7 @@
                                                     function () {
                                                         $('#overview-button').removeClass('animated bounce');
                                                     });
+                                            $("#tick-bundle").addClass('animated fadeIn').removeClass('hidden');
                                         }
                                         ;
                                         console.log(response.data.bundle[0]);
@@ -79,7 +80,11 @@
             </ol>
             <!-- Nav tabs -->
             <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Originator / Customer Details</a></li>
+                <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab"
+                                                          data-toggle="tab">Originator / Customer Details
+                        <span id="tick-customer-details" class="hidden">
+                            <img src="/images/tick.png" height="18px">
+                        </span></a></li>
                 <li role="presentation"><a href="#bundle" aria-controls="bundle" role="tab" data-toggle="tab">Bundle</a></li>
             </ul>
 
@@ -94,7 +99,11 @@
 
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation" class="active"><a href="#bundle-home" aria-controls="bundle-home" role="tab" data-toggle="tab">Bundle</a></li>
+                        <li role="presentation" class="active"><a href="#bundle-home" aria-controls="bundle-home"
+                                                                  role="tab" data-toggle="tab">Bundle
+                            <span id="tick-bundle" class="hidden">
+                            <img src="/images/tick.png" height="18px">
+                        </span></a></li>
                         <li role="presentation"><a href="#software" aria-controls="software" role="tab" data-toggle="tab">Software</a></li>
                         <li role="presentation"><a href="#servers" aria-controls="servers" role="tab" data-toggle="tab">Server</a></li>
                         <li role="presentation"><a href="#terminals" aria-controls="terminals" role="tab" data-toggle="tab">Terminals</a></li>

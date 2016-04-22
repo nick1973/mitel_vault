@@ -4,7 +4,7 @@
         SIP Loud Ringer / Paging Speaker
         <i class="fa fa-info-circle fa-2x" style="color: #58678F"
            data-toggle="popover" title="BTB External MOH Unit" data-placement="right" data-html="true"
-           data-content="<img src='/images/moh.jpg'>" data-animation="true"></i>
+           data-content="<img src='/images/loud_ringer.jpg'>" data-animation="true"></i>
     </label>
 
     <div class="col-sm-1 col-lg-2 col-md-2">
@@ -31,7 +31,7 @@
         SIP LED Strobe Visual Alerter Unit
         <i class="fa fa-info-circle fa-2x" style="color: #58678F"
            data-toggle="popover" title="BTB External MOH Unit" data-placement="right" data-html="true"
-           data-content="<img src='/images/moh.jpg'>" data-animation="true"></i>
+           data-content="<img src='/images/visual_alerter.jpg'>" data-animation="true"></i>
     </label>
 
     <div class="col-sm-1 col-lg-2 col-md-2">
@@ -58,7 +58,7 @@
         SIP Multimedia Infocom Unit
         <i class="fa fa-info-circle fa-2x" style="color: #58678F"
            data-toggle="popover" title="BTB External MOH Unit" data-placement="right" data-html="true"
-           data-content="<img src='/images/moh.jpg'>" data-animation="true"></i>
+           data-content="<img src='/images/infocom.jpg'>" data-animation="true"></i>
     </label>
 
     <div class="col-sm-1 col-lg-2 col-md-2">
@@ -85,7 +85,7 @@
         SIP Multimedia Infocom Door Access Upgrade
         <i class="fa fa-info-circle fa-2x" style="color: #58678F"
            data-toggle="popover" title="BTB External MOH Unit" data-placement="right" data-html="true"
-           data-content="<img src='/images/moh.jpg'>" data-animation="true"></i>
+           data-content="<img src='/images/infocom.jpg'>" data-animation="true"></i>
     </label>
 
     <div class="col-sm-1 col-lg-2 col-md-2">
@@ -112,7 +112,7 @@
         Call Point Starter Pack (Controller + 1 Call Point Unit)
         <i class="fa fa-info-circle fa-2x" style="color: #58678F"
            data-toggle="popover" title="BTB External MOH Unit" data-placement="right" data-html="true"
-           data-content="<img src='/images/moh.jpg'>" data-animation="true"></i>
+           data-content="<img src='/images/call_point.jpg'>" data-animation="true"></i>
     </label>
 
     <div class="col-sm-1 col-lg-2 col-md-2">
@@ -139,7 +139,7 @@
         Call Point Expansion Pack ( 1 x Call Point Unit)
         <i class="fa fa-info-circle fa-2x" style="color: #58678F"
            data-toggle="popover" title="BTB External MOH Unit" data-placement="right" data-html="true"
-           data-content="<img src='/images/moh.jpg'>" data-animation="true"></i>
+           data-content="<img src='/images/call_point.jpg'>" data-animation="true"></i>
     </label>
 
     <div class="col-sm-1 col-lg-2 col-md-2">

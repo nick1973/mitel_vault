@@ -105,7 +105,7 @@
             </div>
             <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
                data-toggle="popover" title="2100 Analogue Phone" data-placement="right" data-html="true"
-               data-content="<img src='/images/mitel_phones/mitel-5312.jpg'>" data-animation="true"></i>
+               data-content="<img src='/images/5320.png'>" data-animation="true"></i>
         </div>
 
         <div class="form-group">
@@ -124,7 +124,7 @@
             </div>
             <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
                data-toggle="popover" title="2100 Analogue Phone" data-placement="right" data-html="true"
-               data-content="<img src='/images/mitel_phones/mitel-5312.jpg'>" data-animation="true"></i>
+               data-content="<img src='/images/5340.jpg'>" data-animation="true"></i>
         </div>
 
         <div class="form-group">
@@ -167,7 +167,7 @@
             </div>
             <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
                data-toggle="popover" title="2100 Analogue Phone" data-placement="right" data-html="true"
-               data-content="<img src='/images/mitel_phones/mitel-5312.jpg'>" data-animation="true"></i>
+               data-content="<img src='/images/5330.png'>" data-animation="true"></i>
         </div>
 
         <div class="form-group">
@@ -186,7 +186,7 @@
             </div>
             <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
                data-toggle="popover" title="2100 Analogue Phone" data-placement="right" data-html="true"
-               data-content="<img src='/images/mitel_phones/mitel-5312.jpg'>" data-animation="true"></i>
+               data-content="<img src='/images/5360.png'>" data-animation="true"></i>
         </div>
 
         <div class="form-group">
@@ -205,7 +205,7 @@
             </div>
             <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
                data-toggle="popover" title="2100 Analogue Phone" data-placement="right" data-html="true"
-               data-content="<img src='/images/mitel_phones/mitel-5312.jpg'>" data-animation="true"></i>
+               data-content="<img src='/images/5330.png'>" data-animation="true"></i>
         </div>
 
 

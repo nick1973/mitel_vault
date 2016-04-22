@@ -137,6 +137,7 @@
                 <button class="btn btn-danger" data-href="#" data-toggle="modal" data-target="#confirm-delete">
                     Delete
                 </button>
+                <button id="save-customer-details" class="btn btn-success">Save</button>
             </div>
         </div>
     </div>
@@ -172,6 +173,10 @@
 
     $('#confirm-delete').on('show.bs.modal', function(e) {
         $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
+    });
+
+    $("#save-customer-details").click(function () {
+        $("#tick-customer-details").removeClass('hidden');
     });
 
 </script>
