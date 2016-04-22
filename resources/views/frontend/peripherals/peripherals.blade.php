@@ -27,10 +27,11 @@
 </script>
 
 <div class="form-group col-lg-12">
-    <label for="inputEmail3" class="col-sm-3 control-label">
-        Add BT Peripherals?
-    </label>
-
+    {{--<label for="inputEmail3" class="col-sm-3 control-label">--}}
+    {{--Add BT Peripherals?--}}
+    {{--</label>--}}
+    <h4 class="col-sm-3 col-md-3 col-lg-3"><span class="glyphicon glyphicon-resize-horizontal"
+                                                 aria-hidden="true"></span> BTB Analogue Extension Systems</h4>
     <div class="col-sm-1">
         <div class="onoffswitch">
             <input name="" type="hidden" value="No">

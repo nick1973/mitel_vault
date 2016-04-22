@@ -8,8 +8,8 @@
         <div class="onoffswitch">
             <input name="peripherals_ext_moh" type="hidden" value="No">
             <input type="checkbox" value="Yes" name="peripherals_ext_moh" class="toggleBtn onoffswitch-checkbox"
-                   id="headphones">
-            <label for="headphones" class="onoffswitch-label">
+                   id="av-ringer">
+            <label for="av-ringer" class="onoffswitch-label">
                 <div class="onoffswitch-inner"></div>
                 <div class="onoffswitch-switch"></div>
             </label>
@@ -32,8 +32,8 @@
         <div class="onoffswitch">
             <input name="peripherals_ext_moh" type="hidden" value="No">
             <input type="checkbox" value="Yes" name="peripherals_ext_moh" class="toggleBtn onoffswitch-checkbox"
-                   id="headphones">
-            <label for="headphones" class="onoffswitch-label">
+                   id="av-strobe">
+            <label for="av-strobe" class="onoffswitch-label">
                 <div class="onoffswitch-inner"></div>
                 <div class="onoffswitch-switch"></div>
             </label>
@@ -56,8 +56,8 @@
         <div class="onoffswitch">
             <input name="peripherals_ext_moh" type="hidden" value="No">
             <input type="checkbox" value="Yes" name="peripherals_ext_moh" class="toggleBtn onoffswitch-checkbox"
-                   id="headphones">
-            <label for="headphones" class="onoffswitch-label">
+                   id="av-infocom">
+            <label for="av-infocom" class="onoffswitch-label">
                 <div class="onoffswitch-inner"></div>
                 <div class="onoffswitch-switch"></div>
             </label>
@@ -80,8 +80,8 @@
         <div class="onoffswitch">
             <input name="peripherals_ext_moh" type="hidden" value="No">
             <input type="checkbox" value="Yes" name="peripherals_ext_moh" class="toggleBtn onoffswitch-checkbox"
-                   id="headphones">
-            <label for="headphones" class="onoffswitch-label">
+                   id="av-infocom-upgrade">
+            <label for="av-infocom-upgrade" class="onoffswitch-label">
                 <div class="onoffswitch-inner"></div>
                 <div class="onoffswitch-switch"></div>
             </label>
@@ -104,8 +104,8 @@
         <div class="onoffswitch">
             <input name="peripherals_ext_moh" type="hidden" value="No">
             <input type="checkbox" value="Yes" name="peripherals_ext_moh" class="toggleBtn onoffswitch-checkbox"
-                   id="headphones">
-            <label for="headphones" class="onoffswitch-label">
+                   id="av-call-point">
+            <label for="av-call-point" class="onoffswitch-label">
                 <div class="onoffswitch-inner"></div>
                 <div class="onoffswitch-switch"></div>
             </label>
@@ -128,8 +128,8 @@
         <div class="onoffswitch">
             <input name="peripherals_ext_moh" type="hidden" value="No">
             <input type="checkbox" value="Yes" name="peripherals_ext_moh" class="toggleBtn onoffswitch-checkbox"
-                   id="headphones">
-            <label for="headphones" class="onoffswitch-label">
+                   id="av-call-point-ext">
+            <label for="av-call-point-ext" class="onoffswitch-label">
                 <div class="onoffswitch-inner"></div>
                 <div class="onoffswitch-switch"></div>
             </label>

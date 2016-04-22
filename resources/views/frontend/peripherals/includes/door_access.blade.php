@@ -10,8 +10,8 @@
         <div class="onoffswitch">
             <input name="peripherals_ext_moh" type="hidden" value="No">
             <input type="checkbox" value="Yes" name="peripherals_ext_moh" class="toggleBtn onoffswitch-checkbox"
-                   id="moh-unit">
-            <label for="moh-unit" class="onoffswitch-label">
+                   id="de-single-button">
+            <label for="de-single-button" class="onoffswitch-label">
                 <div class="onoffswitch-inner"></div>
                 <div class="onoffswitch-switch"></div>
             </label>
@@ -37,8 +37,8 @@
         <div class="onoffswitch">
             <input name="peripherals_ext_moh" type="hidden" value="No">
             <input type="checkbox" value="Yes" name="peripherals_ext_moh" class="toggleBtn onoffswitch-checkbox"
-                   id="moh-unit">
-            <label for="moh-unit" class="onoffswitch-label">
+                   id="de-miult-button">
+            <label for="de-miult-button" class="onoffswitch-label">
                 <div class="onoffswitch-inner"></div>
                 <div class="onoffswitch-switch"></div>
             </label>
@@ -64,8 +64,8 @@
         <div class="onoffswitch">
             <input name="peripherals_ncopy_month" type="hidden" value="No">
             <input type="checkbox" value="Yes" name="peripherals_ncopy_month" class="toggleBtn onoffswitch-checkbox"
-                   id="moh-mnth">
-            <label for="moh-mnth" class="onoffswitch-label">
+                   id="de-miult-button-vid">
+            <label for="de-miult-button-vid" class="onoffswitch-label">
                 <div class="onoffswitch-inner"></div>
                 <div class="onoffswitch-switch"></div>
             </label>
@@ -84,8 +84,8 @@
         <div class="onoffswitch">
             <input name="peripherals_ncopy_quart" type="hidden" value="No">
             <input type="checkbox" value="Yes" name="peripherals_ncopy_quart" class="toggleBtn onoffswitch-checkbox"
-                   id="moh-quart">
-            <label for="moh-quart" class="onoffswitch-label">
+                   id="de-sip-single-button">
+            <label for="de-sip-single-button" class="onoffswitch-label">
                 <div class="onoffswitch-inner"></div>
                 <div class="onoffswitch-switch"></div>
             </label>
@@ -103,8 +103,8 @@
         <div class="onoffswitch">
             <input name="peripherals_ncopy_month_music" type="hidden" value="No">
             <input type="checkbox" value="Yes" name="peripherals_ncopy_month_music"
-                   class="toggleBtn onoffswitch-checkbox" id="moh-musiccont">
-            <label for="moh-musiccont" class="onoffswitch-label">
+                   class="toggleBtn onoffswitch-checkbox" id="de-sip-multi-button">
+            <label for="de-sip-multi-button" class="onoffswitch-label">
                 <div class="onoffswitch-inner"></div>
                 <div class="onoffswitch-switch"></div>
             </label>
@@ -122,8 +122,8 @@
         <div class="onoffswitch">
             <input name="peripherals_ncopy_quart_music" type="hidden" value="No">
             <input type="checkbox" value="Yes" name="peripherals_ncopy_quart_music"
-                   class="toggleBtn onoffswitch-checkbox" id="moh-musiccont-quart">
-            <label for="moh-musiccont-quart" class="onoffswitch-label">
+                   class="toggleBtn onoffswitch-checkbox" id="de-sip-multi-button-vid">
+            <label for="de-sip-multi-button-vid" class="onoffswitch-label">
                 <div class="onoffswitch-inner"></div>
                 <div class="onoffswitch-switch"></div>
             </label>

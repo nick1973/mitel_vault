@@ -153,7 +153,11 @@
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane fade" id="lan-data">
-                            LAN & DATA
+                            <div class="collapse fade collapse1" id="">
+                                <div id="expand" class="col-lg-4 col-md-4 col-sm-4 expand">
+                                    @include('frontend.includes.lan_data')
+                                </div>
+                            </div>
                         </div>
                         <div role="tabpanel" class="tab-pane fade" id="peripherals">
                             <div class="collapse fade collapse1" id="">

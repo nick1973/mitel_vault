@@ -11,8 +11,8 @@
         <div class="onoffswitch">
             <input name="peripherals_ext_moh" type="hidden" value="No">
             <input type="checkbox" value="Yes" name="peripherals_ext_moh" class="toggleBtn onoffswitch-checkbox"
-                   id="moh-unit">
-            <label for="moh-unit" class="onoffswitch-label">
+                   id="vr-solo">
+            <label for="vr-solo" class="onoffswitch-label">
                 <div class="onoffswitch-inner"></div>
                 <div class="onoffswitch-switch"></div>
             </label>
@@ -40,8 +40,8 @@
         <div class="onoffswitch">
             <input name="peripherals_ext_moh" type="hidden" value="No">
             <input type="checkbox" value="Yes" name="peripherals_ext_moh" class="toggleBtn onoffswitch-checkbox"
-                   id="moh-unit">
-            <label for="moh-unit" class="onoffswitch-label">
+                   id="vr-lite">
+            <label for="vr-lite" class="onoffswitch-label">
                 <div class="onoffswitch-inner"></div>
                 <div class="onoffswitch-switch"></div>
             </label>
@@ -66,8 +66,8 @@
         <div class="onoffswitch">
             <input name="peripherals_ext_moh" type="hidden" value="No">
             <input type="checkbox" value="Yes" name="peripherals_ext_moh" class="toggleBtn onoffswitch-checkbox"
-                   id="moh-unit">
-            <label for="moh-unit" class="onoffswitch-label">
+                   id="vr-match">
+            <label for="vr-match" class="onoffswitch-label">
                 <div class="onoffswitch-inner"></div>
                 <div class="onoffswitch-switch"></div>
             </label>
@@ -85,8 +85,8 @@
         <div class="onoffswitch">
             <input name="peripherals_ext_moh" type="hidden" value="No">
             <input type="checkbox" value="Yes" name="peripherals_ext_moh" class="toggleBtn onoffswitch-checkbox"
-                   id="moh-unit">
-            <label for="moh-unit" class="onoffswitch-label">
+                   id="vr-evr">
+            <label for="vr-evr" class="onoffswitch-label">
                 <div class="onoffswitch-inner"></div>
                 <div class="onoffswitch-switch"></div>
             </label>
@@ -111,8 +111,8 @@
         <div class="onoffswitch">
             <input name="peripherals_ext_moh" type="hidden" value="No">
             <input type="checkbox" value="Yes" name="peripherals_ext_moh" class="toggleBtn onoffswitch-checkbox"
-                   id="moh-unit">
-            <label for="moh-unit" class="onoffswitch-label">
+                   id="vr-match2">
+            <label for="vr-match2" class="onoffswitch-label">
                 <div class="onoffswitch-inner"></div>
                 <div class="onoffswitch-switch"></div>
             </label>
@@ -133,8 +133,8 @@
         <div class="onoffswitch">
             <input name="peripherals_ext_moh" type="hidden" value="No">
             <input type="checkbox" value="Yes" name="peripherals_ext_moh" class="toggleBtn onoffswitch-checkbox"
-                   id="moh-unit">
-            <label for="moh-unit" class="onoffswitch-label">
+                   id="vr-pci">
+            <label for="vr-pci" class="onoffswitch-label">
                 <div class="onoffswitch-inner"></div>
                 <div class="onoffswitch-switch"></div>
             </label>
@@ -160,8 +160,8 @@
         <div class="onoffswitch">
             <input name="peripherals_ext_moh" type="hidden" value="No">
             <input type="checkbox" value="Yes" name="peripherals_ext_moh" class="toggleBtn onoffswitch-checkbox"
-                   id="moh-unit">
-            <label for="moh-unit" class="onoffswitch-label">
+                   id="vr-agent">
+            <label for="vr-agent" class="onoffswitch-label">
                 <div class="onoffswitch-inner"></div>
                 <div class="onoffswitch-switch"></div>
             </label>
@@ -190,8 +190,8 @@
         <div class="onoffswitch">
             <input name="peripherals_ext_moh" type="hidden" value="No">
             <input type="checkbox" value="Yes" name="peripherals_ext_moh" class="toggleBtn onoffswitch-checkbox"
-                   id="moh-unit">
-            <label for="moh-unit" class="onoffswitch-label">
+                   id="vr-screen">
+            <label for="vr-screen" class="onoffswitch-label">
                 <div class="onoffswitch-inner"></div>
                 <div class="onoffswitch-switch"></div>
             </label>

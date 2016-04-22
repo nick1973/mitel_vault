@@ -10,8 +10,8 @@
         <div class="onoffswitch">
             <input name="peripherals_ext_moh" type="hidden" value="No">
             <input type="checkbox" value="Yes" name="peripherals_ext_moh" class="toggleBtn onoffswitch-checkbox"
-                   id="moh-unit">
-            <label for="moh-unit" class="onoffswitch-label">
+                   id="message-pack1">
+            <label for="message-pack1" class="onoffswitch-label">
                 <div class="onoffswitch-inner"></div>
                 <div class="onoffswitch-switch"></div>
             </label>
@@ -29,8 +29,8 @@
         <div class="onoffswitch">
             <input name="peripherals_ncopy_month" type="hidden" value="No">
             <input type="checkbox" value="Yes" name="peripherals_ncopy_month" class="toggleBtn onoffswitch-checkbox"
-                   id="moh-mnth">
-            <label for="moh-mnth" class="onoffswitch-label">
+                   id="message-pack2">
+            <label for="message-pack2" class="onoffswitch-label">
                 <div class="onoffswitch-inner"></div>
                 <div class="onoffswitch-switch"></div>
             </label>
@@ -49,8 +49,8 @@
         <div class="onoffswitch">
             <input name="peripherals_ncopy_quart" type="hidden" value="No">
             <input type="checkbox" value="Yes" name="peripherals_ncopy_quart" class="toggleBtn onoffswitch-checkbox"
-                   id="moh-quart">
-            <label for="moh-quart" class="onoffswitch-label">
+                   id="message-single">
+            <label for="message-single" class="onoffswitch-label">
                 <div class="onoffswitch-inner"></div>
                 <div class="onoffswitch-switch"></div>
             </label>
