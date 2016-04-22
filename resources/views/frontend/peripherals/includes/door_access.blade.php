@@ -4,6 +4,9 @@
 <div class="form-group">
     <label for="inputEmail3" class="col-sm-5 col-lg-6 col-md-6 control-label">
         Visitor (Single Button) Access System
+        <i class="fa fa-info-circle fa-2x" style="color: #58678F"
+           data-toggle="popover" title="BTB External MOH Unit" data-placement="right" data-html="true"
+           data-content="<img src='/images/black_high_gloss_and _silver.jpg'>" data-animation="true"></i>
     </label>
 
     <div class="col-sm-1 col-lg-2 col-md-2">
@@ -31,6 +34,9 @@
 <div class="form-group">
     <label for="inputEmail3" class="col-sm-5 col-lg-6 col-md-6 control-label">
         Staff + Visitor (Keypad) Access System
+        <i class="fa fa-info-circle fa-2x" style="color: #58678F"
+           data-toggle="popover" title="BTB External MOH Unit" data-placement="right" data-html="true"
+           data-content="<img src='/images/black_high_gloss_and_silver_staff.jpg'>" data-animation="true"></i>
     </label>
 
     <div class="col-sm-1 col-lg-2 col-md-2">
@@ -58,6 +64,9 @@
 <div class="form-group">
     <label for="inputEmail3" class="col-sm-5 col-lg-6 col-md-6 control-label">
         Staff + Visitor System Video Upgrade
+        <i class="fa fa-info-circle fa-2x" style="color: #58678F"
+           data-toggle="popover" title="BTB External MOH Unit" data-placement="right" data-html="true"
+           data-content="<img src='/images/'>" data-animation="true"></i>
     </label>
 
     <div class="col-sm-1 col-lg-4 col-md-4">
@@ -78,6 +87,9 @@
 <div class="form-group">
     <label for="inputEmail3" class="col-sm-5 col-lg-6 col-md-6 control-label">
         Visitor (Single Button) Access System
+        <i class="fa fa-info-circle fa-2x" style="color: #58678F"
+           data-toggle="popover" title="BTB External MOH Unit" data-placement="right" data-html="true"
+           data-content="<img src='/images/silver_aluminium_ip.jpg'>" data-animation="true"></i>
     </label>
 
     <div class="col-sm-1 col-lg-4 col-md-4">
@@ -97,6 +109,9 @@
 <div class="form-group">
     <label for="inputEmail3" class="col-sm-5 col-lg-6 col-md-6 control-label">
         Staff + Visitor (Keypad) Access System
+        <i class="fa fa-info-circle fa-2x" style="color: #58678F"
+           data-toggle="popover" title="BTB External MOH Unit" data-placement="right" data-html="true"
+           data-content="<img src='/images/silver_aluminium_ip_staff.jpg'>" data-animation="true"></i>
     </label>
 
     <div class="col-sm-1 col-lg-4 col-md-4">
@@ -116,6 +131,9 @@
 <div class="form-group">
     <label for="inputEmail3" class="col-sm-5 col-lg-6 col-md-6 control-label">
         Staff + Visitor System Video Upgrade
+        <i class="fa fa-info-circle fa-2x" style="color: #58678F"
+           data-toggle="popover" title="BTB External MOH Unit" data-placement="right" data-html="true"
+           data-content="<img src='/images/moh.jpg'>" data-animation="true"></i>
     </label>
 
     <div class="col-sm-1 col-lg-4 col-md-4">

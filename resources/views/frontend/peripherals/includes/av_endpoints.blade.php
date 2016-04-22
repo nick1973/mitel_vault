@@ -2,6 +2,9 @@
 <div class="form-group">
     <label for="inputEmail3" class="col-sm-5 col-lg-6 col-md-6 control-label">
         SIP Loud Ringer / Paging Speaker
+        <i class="fa fa-info-circle fa-2x" style="color: #58678F"
+           data-toggle="popover" title="BTB External MOH Unit" data-placement="right" data-html="true"
+           data-content="<img src='/images/moh.jpg'>" data-animation="true"></i>
     </label>
 
     <div class="col-sm-1 col-lg-2 col-md-2">
@@ -26,6 +29,9 @@
 <div class="form-group">
     <label for="inputEmail3" class="col-sm-5 col-lg-6 col-md-6 control-label">
         SIP LED Strobe Visual Alerter Unit
+        <i class="fa fa-info-circle fa-2x" style="color: #58678F"
+           data-toggle="popover" title="BTB External MOH Unit" data-placement="right" data-html="true"
+           data-content="<img src='/images/moh.jpg'>" data-animation="true"></i>
     </label>
 
     <div class="col-sm-1 col-lg-2 col-md-2">
@@ -50,6 +56,9 @@
 <div class="form-group">
     <label for="inputEmail3" class="col-sm-5 col-lg-6 col-md-6 control-label">
         SIP Multimedia Infocom Unit
+        <i class="fa fa-info-circle fa-2x" style="color: #58678F"
+           data-toggle="popover" title="BTB External MOH Unit" data-placement="right" data-html="true"
+           data-content="<img src='/images/moh.jpg'>" data-animation="true"></i>
     </label>
 
     <div class="col-sm-1 col-lg-2 col-md-2">
@@ -74,6 +83,9 @@
 <div class="form-group">
     <label for="inputEmail3" class="col-sm-5 col-lg-6 col-md-6 control-label">
         SIP Multimedia Infocom Door Access Upgrade
+        <i class="fa fa-info-circle fa-2x" style="color: #58678F"
+           data-toggle="popover" title="BTB External MOH Unit" data-placement="right" data-html="true"
+           data-content="<img src='/images/moh.jpg'>" data-animation="true"></i>
     </label>
 
     <div class="col-sm-1 col-lg-2 col-md-2">
@@ -98,6 +110,9 @@
 <div class="form-group">
     <label for="inputEmail3" class="col-sm-5 col-lg-6 col-md-6 control-label">
         Call Point Starter Pack (Controller + 1 Call Point Unit)
+        <i class="fa fa-info-circle fa-2x" style="color: #58678F"
+           data-toggle="popover" title="BTB External MOH Unit" data-placement="right" data-html="true"
+           data-content="<img src='/images/moh.jpg'>" data-animation="true"></i>
     </label>
 
     <div class="col-sm-1 col-lg-2 col-md-2">
@@ -122,6 +137,9 @@
 <div class="form-group">
     <label for="inputEmail3" class="col-sm-5 col-lg-6 col-md-6 control-label">
         Call Point Expansion Pack ( 1 x Call Point Unit)
+        <i class="fa fa-info-circle fa-2x" style="color: #58678F"
+           data-toggle="popover" title="BTB External MOH Unit" data-placement="right" data-html="true"
+           data-content="<img src='/images/moh.jpg'>" data-animation="true"></i>
     </label>
 
     <div class="col-sm-1 col-lg-2 col-md-2">

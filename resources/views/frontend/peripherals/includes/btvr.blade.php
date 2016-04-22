@@ -5,6 +5,9 @@
 <div class="form-group">
     <label for="inputEmail3" class="col-sm-5 col-lg-2 col-md-2 control-label">
         BT Solo VR
+        <i class="fa fa-info-circle fa-2x" style="color: #58678F"
+           data-toggle="popover" title="BTB External MOH Unit" data-placement="right" data-html="true"
+           data-content="<img src='/images/solo.jpg'>" data-animation="true"></i>
     </label>
 
     <div class="col-sm-1 col-lg-2 col-md-2">
@@ -34,6 +37,9 @@
 <div class="form-group">
     <label for="inputEmail3" class="col-sm-5 col-lg-2 col-md-2 control-label">
         BTB Lite VR
+        <i class="fa fa-info-circle fa-2x" style="color: #58678F"
+           data-toggle="popover" title="BTB External MOH Unit" data-placement="right" data-html="true"
+           data-content="<img src='/images/lite.jpg'>" data-animation="true"></i>
     </label>
 
     <div class="col-sm-1 col-lg-2 col-md-2">
@@ -79,6 +85,9 @@
 <div class="form-group">
     <label for="inputEmail3" class="col-sm-5 col-lg-2 col-md-2 control-label">
         BTB EVR
+        <i class="fa fa-info-circle fa-2x" style="color: #58678F"
+           data-toggle="popover" title="BTB External MOH Unit" data-placement="right" data-html="true"
+           data-content="<img src='/images/evr.jpg'>" data-animation="true"></i>
     </label>
 
     <div class="col-sm-1 col-lg-2 col-md-2">
@@ -125,8 +134,11 @@
     Options</h4>
 <br/>
 <div class="form-group">
-    <label for="inputEmail3" class="col-sm-5 col-lg-2 col-md-2 control-label">
+    <label for="inputEmail3" class="col-sm-5 col-lg-3 col-md-3 control-label">
         PCI Compliance
+        <i class="fa fa-info-circle fa-2x" style="color: #58678F"
+           data-toggle="popover" title="BTB External MOH Unit" data-placement="right" data-html="true"
+           data-content="<img src='/images/moh.jpg'>" data-animation="true"></i>
     </label>
 
     <div class="col-sm-1 col-lg-2 col-md-2">
@@ -152,8 +164,11 @@
 </h4>
 <br/>
 <div class="form-group">
-    <label for="inputEmail3" class="col-sm-5 col-lg-2 col-md-2 control-label">
+    <label for="inputEmail3" class="col-sm-5 col-lg-3 col-md-3 control-label">
         Agent Evaluation
+        <i class="fa fa-info-circle fa-2x" style="color: #58678F"
+           data-toggle="popover" title="BTB External MOH Unit" data-placement="right" data-html="true"
+           data-content="<img src='/images/moh.jpg'>" data-animation="true"></i>
     </label>
 
     <div class="col-sm-1 col-lg-2 col-md-2">
@@ -182,8 +197,11 @@
 <br/>
 <br/>
 <div class="form-group">
-    <label for="inputEmail3" class="col-sm-5 col-lg-2 col-md-2 control-label">
+    <label for="inputEmail3" class="col-sm-5 col-lg-3 col-md-3 control-label">
         Screen Capture
+        <i class="fa fa-info-circle fa-2x" style="color: #58678F"
+           data-toggle="popover" title="BTB External MOH Unit" data-placement="right" data-html="true"
+           data-content="<img src='/images/moh.jpg'>" data-animation="true"></i>
     </label>
 
     <div class="col-sm-1 col-lg-2 col-md-2">

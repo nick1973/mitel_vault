@@ -4,6 +4,9 @@
 <div class="form-group">
     <label for="inputEmail3" class="col-sm-5 col-lg-8 col-md-8 control-label">
         BTB External MOH unit
+        <i class="fa fa-info-circle fa-2x" style="color: #58678F"
+           data-toggle="popover" title="BTB External MOH Unit" data-placement="right" data-html="true"
+           data-content="<img src='/images/moh.jpg'>" data-animation="true"></i>
     </label>
 
     <div class="col-sm-1 col-lg-4 col-md-4">
@@ -25,6 +28,9 @@
 <div class="form-group">
     <label for="inputEmail3" class="col-sm-5 col-lg-8 col-md-8 control-label">
         BTB Non-copyright Monthly Contract
+        <i class="fa fa-info-circle fa-2x" style="color: #58678F"
+           data-toggle="popover" title="7410 DECT" data-placement="right" data-html="true"
+           data-content="<img src='/images/mitel_phones/mitel-5320.jpg'>" data-animation="true"></i>
     </label>
 
     <div class="col-sm-1 col-lg-4 col-md-4">
@@ -44,6 +50,9 @@
 <div class="form-group">
     <label for="inputEmail3" class="col-sm-5 col-lg-8 col-md-8 control-label">
         BTB Non-copyright Quarterly Contract
+        <i class="fa fa-info-circle fa-2x" style="color: #58678F"
+           data-toggle="popover" title="7410 DECT" data-placement="right" data-html="true"
+           data-content="<img src='/images/mitel_phones/mitel-5320.jpg'>" data-animation="true"></i>
     </label>
 
     <div class="col-sm-1 col-lg-4 col-md-4">
@@ -66,6 +75,9 @@
 <div class="form-group">
     <label for="inputEmail3" class="col-sm-5 col-lg-8 col-md-8 control-label">
         BTB Managed MOH unit + monthly non-copyright music Contract
+        <i class="fa fa-info-circle fa-2x" style="color: #58678F"
+           data-toggle="popover" title="7410 DECT" data-placement="right" data-html="true"
+           data-content="<img src='/images/mitel_phones/mitel-5320.jpg'>" data-animation="true"></i>
     </label>
 
     <div class="col-sm-1 col-lg-4 col-md-4">
@@ -85,6 +97,9 @@
 <div class="form-group">
     <label for="inputEmail3" class="col-sm-5 col-lg-8 col-md-8 control-label">
         BTB Managed MOH unit + quarterly non-copyright music Contract
+        <i class="fa fa-info-circle fa-2x" style="color: #58678F"
+           data-toggle="popover" title="7410 DECT" data-placement="right" data-html="true"
+           data-content="<img src='/images/mitel_phones/mitel-5320.jpg'>" data-animation="true"></i>
     </label>
 
     <div class="col-sm-1 col-lg-4 col-md-4">
@@ -106,6 +121,9 @@
 <div class="form-group">
     <label for="inputEmail3" class="col-sm-8 col-lg-8 col-md-8 control-label">
         BTB Managed MOH unit + monthly copyright music Contract
+        <i class="fa fa-info-circle fa-2x" style="color: #58678F"
+           data-toggle="popover" title="7410 DECT" data-placement="right" data-html="true"
+           data-content="<img src='/images/mitel_phones/mitel-5320.jpg'>" data-animation="true"></i>
     </label>
 
     <div class="col-sm-1 col-lg-4 col-md-4">
@@ -125,6 +143,9 @@
 <div class="form-group">
     <label for="inputEmail3" class="col-sm-8 col-lg-8 col-md-8 control-label">
         Customer has agreed to obtain their own PRS and PPL licenses
+        <i class="fa fa-info-circle fa-2x" style="color: #58678F"
+           data-toggle="popover" title="7410 DECT" data-placement="right" data-html="true"
+           data-content="<img src='/images/mitel_phones/mitel-5320.jpg'>" data-animation="true"></i>
     </label>
 
     <div class="col-sm-1 col-lg-4 col-md-4">
@@ -144,6 +165,9 @@
 <div class="form-group">
     <label for="" class="col-sm-5 col-lg-8 col-md-8 control-label">
         No. of lines on system for PRS and PPL copyright licenses fees
+        <i class="fa fa-info-circle fa-2x" style="color: #58678F"
+           data-toggle="popover" title="7410 DECT" data-placement="right" data-html="true"
+           data-content="<img src='/images/mitel_phones/mitel-5320.jpg'>" data-animation="true"></i>
     </label>
 
     <div class="col-sm-1 col-lg-4 col-md-4">

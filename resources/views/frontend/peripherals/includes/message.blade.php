@@ -4,6 +4,9 @@
 <div class="form-group">
     <label for="inputEmail3" class="col-sm-5 col-lg-6 col-md-6 control-label">
         Greeting + Courtesy Message (Pack 1)
+        <i class="fa fa-info-circle fa-2x" style="color: #58678F"
+           data-toggle="popover" title="BTB External MOH Unit" data-placement="right" data-html="true"
+           data-content="<img src='/images/moh.jpg'>" data-animation="true"></i>
     </label>
 
     <div class="col-sm-1 col-lg-4 col-md-4">
@@ -23,6 +26,9 @@
 <div class="form-group">
     <label for="inputEmail3" class="col-sm-5 col-lg-6 col-md-6 control-label">
         Greeting + Bespoke On Hold Message (Pack 2)
+        <i class="fa fa-info-circle fa-2x" style="color: #58678F"
+           data-toggle="popover" title="BTB External MOH Unit" data-placement="right" data-html="true"
+           data-content="<img src='/images/moh.jpg'>" data-animation="true"></i>
     </label>
 
     <div class="col-sm-1 col-lg-4 col-md-4">
@@ -43,6 +49,9 @@
 <div class="form-group">
     <label for="inputEmail3" class="col-sm-5 col-lg-6 col-md-6 control-label">
         BTB Single On Hold Message
+        <i class="fa fa-info-circle fa-2x" style="color: #58678F"
+           data-toggle="popover" title="BTB External MOH Unit" data-placement="right" data-html="true"
+           data-content="<img src='/images/moh.jpg'>" data-animation="true"></i>
     </label>
 
     <div class="col-sm-1 col-lg-4 col-md-4">
