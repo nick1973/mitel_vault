@@ -1,6 +1,24 @@
-<h4><strong>LAN Switch: </strong>Which LAN Switch is required from BT?</h4>
+<div class="form-group col-lg-12">
+    <h4 class="col-lg-6 col-md-6"><strong>LAN Switch: </strong>Is a LAN Switch required from BT?</h4>
 
-<form id="" class="form-horizontal" action="/bundle_post">
+    <div class="col-sm-1">
+        <div class="onoffswitch">
+            <input name="" type="hidden" value="No">
+            <input type="checkbox" value="Yes" name="peripheral" class="toggleBtn onoffswitch-checkbox" id="switch-lan"
+                   onclick="visible(this.id,'nav-lan')">
+            <label for="switch-lan" class="onoffswitch-label">
+                <div class="onoffswitch-inner"></div>
+                <div class="onoffswitch-switch"></div>
+            </label>
+        </div>
+    </div>
+</div>
+<br/>
+
+{{--<h4><strong>LAN Switch: </strong>Which LAN Switch is required from BT?</h4>--}}
+
+<form id="nav-lan" class="form-horizontal collapse animated fadeIn" action="/bundle_post">
+    <h4 class="col-lg-12 col-md-12"><strong>LAN Switch: </strong>Which LAN Switch is required from BT?</h4>
     <div class="col-md-12 col-lg-12">
         <div class="form-group">
             <label for="inputEmail3" class="col-sm-4 col-lg-4 col-md-4 control-label">
@@ -117,12 +135,4 @@
 
     </div>
 
-
 </form>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<button id="but" class="btn btn-info pull-right">Find Bundle!</button>

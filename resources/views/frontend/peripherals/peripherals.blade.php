@@ -1,35 +1,4 @@
-<style>
-    .collapsing {
-        transition: height 1.0s;
-    }
-</style>
-<script>
-    function visible(button, id) {
-        if ($("#" + button).prop('checked') == true) {
-            $("#" + button).attr({
-                "data-toggle": 'collapse',
-                "data-target": '#' + id,
-                "data-target": '#' + id,
-                "aria-expanded": 'false',
-                "aria-controls": id
-            });
-
-            $("#" + id).removeClass('fadeOut').addClass('fadeIn');
-        }
-        else if ($("#" + button).prop('checked') == false) {
-            $("#" + id).removeClass('fadeIn').addClass('fadeOut').delay("slow");
-        }
-        ;
-    }
-    ;
-
-
-</script>
-
 <div class="form-group col-lg-12">
-    {{--<label for="inputEmail3" class="col-sm-3 control-label">--}}
-    {{--Add BT Peripherals?--}}
-    {{--</label>--}}
     <h4 class="col-lg-6 col-md-6"><strong>Peripherals: </strong>Are peripherals are required from BT?</h4>
     <div class="col-sm-1">
         <div class="onoffswitch">

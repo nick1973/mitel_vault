@@ -1,8 +1,31 @@
 @extends('frontend.layouts.master')
 
 @section('content')
-
+    <style>
+        .collapsing {
+            transition: height 1.0s;
+        }
+    </style>
     <script>
+        function visible(button, id) {
+            if ($("#" + button).prop('checked') == true) {
+                $("#" + button).attr({
+                    "data-toggle": 'collapse',
+                    "data-target": '#' + id,
+                    "data-target": '#' + id,
+                    "aria-expanded": 'false',
+                    "aria-controls": '#' + id
+                });
+
+                $("#" + id).removeClass('fadeOut').addClass('fadeIn');
+            }
+            else if ($("#" + button).prop('checked') == false) {
+                $("#" + id).removeClass('fadeIn').addClass('fadeOut').delay("slow");
+            }
+            ;
+        }
+        ;
+
         $(document).ready(function () {
             $(".collapse1").collapse('show');
             $(".expand").removeClass('col-lg-4 col-md-4 col-sm-4');
@@ -174,7 +197,11 @@
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane fade" id="training">
-                            Training
+                            <div class="collapse fade collapse1" id="">
+                                <div id="expand" class="col-lg-4 col-md-4 col-sm-4 expand">
+                                    @include('frontend.includes.training')
+                                </div>
+                            </div>
                         </div>
                         <div role="tabpanel" class="tab-pane fade" id="remote">
                             Remote Working

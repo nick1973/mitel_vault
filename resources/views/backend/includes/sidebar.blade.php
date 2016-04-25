@@ -41,9 +41,30 @@
                 </li>
             @endauth
 
-            <li class="{{ Active::pattern('admin/product_management*') }}">
-                <a href="{!! route('admin.product_management.index') !!}"><span>Product Management</span></a>
+            {{--<li class="{{ Active::pattern('admin/product_management*') }}">--}}
+            {{--<a href="{!! route('admin.product_management.index') !!}"><span>Product Management</span></a>--}}
+            {{--</li>--}}
+
+
+            <li class="{{ Active::pattern('admin/log-viewer*') }} treeview">
+                <a href="#">
+                    <span>Product Management</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu {{ Active::pattern('admin/product_management*', 'menu-open') }}"
+                    style="display: none; {{ Active::pattern('admin/product_management*', 'display: block;') }}">
+                    <li class="{{ Active::pattern('admin/product_management') }}">
+                        <a href="{!! route('admin.product_management.index') !!}">Terminals</a>
+                    </li>
+                    <li class="{{ Active::pattern('admin/product_management/peripherals') }}">
+                        <a href="{!! route('admin.product_management.peripherals.index') !!}">Peripherals</a>
+                    </li>
+                    <li class="{{ Active::pattern('admin/product_management') }}">
+                        <a href="{!! route('admin.product_management.index') !!}">Training</a>
+                    </li>
+                </ul>
             </li>
+
 
             <li class="{{ Active::pattern('admin/dropdown_management*') }}">
                 <a href="{!! route('admin.dropdown_management.index') !!}"><span>Drop Down Management</span></a>
