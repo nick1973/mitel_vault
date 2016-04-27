@@ -1,5 +1,5 @@
 <div class="form-group col-lg-12">
-    <h4 class="col-lg-6 col-md-6"><strong>Peripherals: </strong>Are peripherals are required from BT?</h4>
+    <h4 class="col-lg-6 col-md-6"><strong>Peripherals: </strong>Are peripherals required from BT?</h4>
     <div class="col-sm-1">
         <div class="onoffswitch">
             <input name="" type="hidden" value="No">

@@ -13,7 +13,7 @@
         <meta name="description" content="@yield('meta_description', 'Default Description')">
         <meta name="author" content="@yield('meta_author', 'Anthony Rappa')">
         @yield('meta')
-
+        {{--<script src="/js/js.js"></script>--}}
         <!-- Styles -->
         @yield('before-styles-end')
         {!! Html::style(elixir('css/backend.css')) !!}
@@ -56,12 +56,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="{{asset('js/vendor/jquery/jquery-2.1.4.min.js')}}"><\/script>')</script>
     {!! Html::script('js/vendor/bootstrap/bootstrap.min.js') !!}
-    @if(Active::pattern('admin/product_management'))
+    @if(Active::pattern('admin/product_management/*'))
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-        <script src="../jquery.dataTables.min.js"></script>
+        <script src="/jquery.dataTables.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
-        <script src="../angular-datatables.min.js"></script>
-        <link href="../datatables.bootstrap.min.css" rel="stylesheet">
+        <script src="/angular-datatables.min.js"></script>
+        <link href="/datatables.bootstrap.min.css" rel="stylesheet">
 
         <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -70,7 +70,7 @@
         <script src="https://cdn.datatables.net/responsive/2.0.2/js/dataTables.responsive.min.js"></script>
         <script src="https://cdn.datatables.net/responsive/2.0.2/js/responsive.bootstrap.min.js"></script>
 
-        <script src="../js/js.js"></script>
+
 
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://cdn.datatables.net/1.10.11/css/dataTables.bootstrap.min.css" rel="stylesheet">
@@ -84,6 +84,12 @@
         <script src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
         <script src="//cdn.datatables.net/buttons/1.1.2/js/buttons.html5.min.js"></script>
         <script src="//cdn.datatables.net/buttons/1.1.2/js/buttons.print.min.js"></script>
+
+        <script src="/js/hardware.js"></script>
+        <script src="/js/software.js"></script>
+        <script src="/js/bivb_peripherals.js"></script>
+        <script src="/js/training.js"></script>
+        <script src="/js/terminals.js"></script>
     @endif
     @yield('before-scripts-end')
     {!! HTML::script(elixir('js/backend.js')) !!}

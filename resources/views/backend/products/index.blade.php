@@ -10,6 +10,7 @@
 @endsection
 
 @section('content')
+
     <div class="box box-success">
         <div class="box-header with-border">
             <h3 class="box-title">{{ trans('strings.backend.dashboard.welcome') }} {!! access()->user()->name !!}!</h3>
@@ -19,7 +20,7 @@
         </div><!-- /.box-header -->
         <div class="box-body">
             <div class="table-responsive">
-                <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                <table id="exampletable" class="table table-striped table-bordered" cellspacing="0" width="100%">
                     <thead>
                     <tr>
                         <th>Product Name</th>

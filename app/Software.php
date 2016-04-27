@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Peripherals extends Model
+class Software extends Model
 {
-    protected $table = 'peripherals';
+    protected $table = 'software';
 
     protected $fillable = [
         'supplier_ref',

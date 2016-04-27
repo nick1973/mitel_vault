@@ -53,14 +53,20 @@
                 </a>
                 <ul class="treeview-menu {{ Active::pattern('admin/product_management*', 'menu-open') }}"
                     style="display: none; {{ Active::pattern('admin/product_management*', 'display: block;') }}">
-                    <li class="{{ Active::pattern('admin/product_management') }}">
-                        <a href="{!! route('admin.product_management.index') !!}">Terminals</a>
+                    <li class="{{ Active::pattern('admin/product_management/hardware*') }}">
+                        <a href="{!! route('admin.product_management.hardware.index') !!}">Hardware</a>
                     </li>
-                    <li class="{{ Active::pattern('admin/product_management/peripherals') }}">
+                    <li class="{{ Active::pattern('admin/product_management/software*') }}">
+                        <a href="{!! route('admin.product_management.software.index') !!}">Software</a>
+                    </li>
+                    <li class="{{ Active::pattern('admin/product_management/terminals*') }}">
+                        <a href="{!! route('admin.product_management.terminals.index') !!}">Terminals</a>
+                    </li>
+                    <li class="{{ Active::pattern('admin/product_management/mivb_peripherals*') }}">
+                        <a href="{!! route('admin.product_management.mivb_peripherals.index') !!}">MiVB Peripherals</a>
+                    </li>
+                    <li class="{{ Active::pattern('admin/product_management/peripherals*') }}">
                         <a href="{!! route('admin.product_management.peripherals.index') !!}">Peripherals</a>
-                    </li>
-                    <li class="{{ Active::pattern('admin/product_management') }}">
-                        <a href="{!! route('admin.product_management.index') !!}">Training</a>
                     </li>
                 </ul>
             </li>
