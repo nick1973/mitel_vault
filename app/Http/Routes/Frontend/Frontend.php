@@ -29,6 +29,9 @@ Route::post('bundle_post', function(){
 
 });
 
+Route::get('hardware_flat', function () {
+    return \App\Hardware::get();
+});
 /**
  * These frontend controllers require the user to be logged in
  */

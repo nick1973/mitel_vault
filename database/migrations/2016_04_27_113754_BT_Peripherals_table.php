@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class TerminalsTable extends Migration
+class BTPeripheralsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class TerminalsTable extends Migration
      */
     public function up()
     {
-        Schema::create('terminals', function (Blueprint $table) {
+        Schema::create('bt_peripherals', function (Blueprint $table) {
             $table->increments('id');
             $table->string('supplier_ref');
             $table->string('bt_ref');
@@ -24,7 +24,6 @@ class TerminalsTable extends Migration
             $table->string('item_code');
             $table->string('xfer');
             $table->string('bteup');
-            $table->string('race');
             $table->string('qty');
 
             $table->string('one_yr_standard_care');
@@ -52,6 +51,6 @@ class TerminalsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('terminals');
+        Schema::drop('bt_peripherals');
     }
 }

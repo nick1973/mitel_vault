@@ -65,16 +65,19 @@
                     <li class="{{ Active::pattern('admin/product_management/mivb_peripherals*') }}">
                         <a href="{!! route('admin.product_management.mivb_peripherals.index') !!}">MiVB Peripherals</a>
                     </li>
-                    <li class="{{ Active::pattern('admin/product_management/peripherals*') }}">
-                        <a href="{!! route('admin.product_management.peripherals.index') !!}">Peripherals</a>
+                    <li class="{{ Active::pattern('admin/product_management/bt_peripherals*') }}">
+                        <a href="{!! route('admin.product_management.bt_peripherals.index') !!}">BT Peripherals</a>
                     </li>
                 </ul>
             </li>
 
-
-            <li class="{{ Active::pattern('admin/dropdown_management*') }}">
-                <a href="{!! route('admin.dropdown_management.index') !!}"><span>Drop Down Management</span></a>
+            <li class="{{ Active::pattern('admin/mivb_bundles*') }}">
+                <a href="{!! route('admin.mivb_bundles.index') !!}"><span>Bundles</span></a>
             </li>
+
+            {{--<li class="{{ Active::pattern('admin/dropdown_management*') }}">--}}
+            {{--<a href="{!! route('admin.dropdown_management.index') !!}"><span>Drop Down Management</span></a>--}}
+            {{--</li>--}}
 
             <li class="{{ Active::pattern('admin/system_matrix*') }}">
                 <a href="{!! route('admin.system_matrix.index') !!}"><span>System Matrix</span></a>

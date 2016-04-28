@@ -10,8 +10,8 @@
         <title>@yield('title', app_name())</title>
 
         <!-- Meta -->
-        <meta name="description" content="@yield('meta_description', 'Default Description')">
-        <meta name="author" content="@yield('meta_author', 'Anthony Rappa')">
+        {{--<meta name="description" content="@yield('meta_description', 'Default Description')">--}}
+        {{--<meta name="author" content="@yield('meta_author', 'Anthony Rappa')">--}}
         @yield('meta')
         {{--<script src="/js/js.js"></script>--}}
         <!-- Styles -->
@@ -25,6 +25,15 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
+
+        <link rel="stylesheet"
+              href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <script
+                src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script
+                src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <script
+                src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular.min.js"></script>
 
     </head>
     <body class="skin-{!! config('backend.theme') !!}">
@@ -90,6 +99,7 @@
         <script src="/js/bivb_peripherals.js"></script>
         <script src="/js/training.js"></script>
         <script src="/js/terminals.js"></script>
+        <script src="/js/bt_peripherals.js"></script>
     @endif
     @yield('before-scripts-end')
     {!! HTML::script(elixir('js/backend.js')) !!}

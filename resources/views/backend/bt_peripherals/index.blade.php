@@ -5,7 +5,7 @@
         {!! app_name() !!}
         <small>{{ trans('strings.backend.dashboard.title') }}</small>
     </h1>
-    <a class="btn btn-danger pull-right" href="/admin/product_management/hardware/create">Add New!</a>
+    <a class="btn btn-danger pull-right" href="/admin/product_management/bt_peripherals/create">Add New!</a>
     <br/>
 @endsection
 
@@ -18,8 +18,7 @@
     @endif
     <div class="box box-success">
         <div class="box-header with-border">
-            <h3 class="box-title">{{ trans('strings.backend.dashboard.welcome') }} {!! access()->user()->name !!} to:
-                Hardware</h3>
+            <h3 class="box-title">{{ trans('strings.backend.dashboard.welcome') }} {!! access()->user()->name !!}!</h3>
 
             <div class="box-tools pull-right">
                 <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
@@ -29,7 +28,7 @@
         <!-- /.box-header -->
         <div class="box-body">
             <div class="table-responsive">
-                <table id="hardware" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                <table id="bt_peripherals" class="table table-striped table-bordered" cellspacing="0" width="100%">
                     <thead>
                     <tr>
                         <th>supplier_ref</th>

@@ -14,13 +14,13 @@ class BundleTable extends Migration
     {
         Schema::create('bundles', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('supplier_ref')->unique();
-            $table->string('bt_ref')->unique();
+            $table->string('supplier_ref');
+            $table->string('bt_ref');
             $table->string('btbuy');
             $table->string('max_discount');
             $table->string('quote_type');
-            $table->string('bundle_name')->unique();
-            $table->string('name')->unique();
+            $table->string('bundle_name');
+            $table->string('name');
             $table->string('description');
             $table->string('item_code');
             $table->string('xfer');
