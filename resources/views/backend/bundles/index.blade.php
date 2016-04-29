@@ -249,10 +249,7 @@
         <!-- /.box-body -->
     </div><!--box box-success-->
 
-    <script>
-        //Being injected from FrontendController
-        console.log(test);
-    </script>
+    @include('backend.hardware.scripts.product_list')
 
     <script>
 
