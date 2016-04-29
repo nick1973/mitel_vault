@@ -8,20 +8,20 @@ Route::get('product_management/test', function()
 });
 
 Route::get('hardware', function () {
-    return ['data' => \App\Hardware::get()];
+    return ['data' => \App\Product::where('category', 'hardware')->get()];
 });
 
 Route::get('software', function () {
-    return ['data' => \App\Software::get()];
+    return ['data' => \App\Product::where('category', 'software')->get()];
 });
 
 
 Route::get('mivb_peripherals', function () {
-    return ['data' => \App\Mivb_Peripherals::get()];
+    return ['data' => \App\Product::where('category', 'mivb_peripherals')->get()];
 });
 
 Route::get('terminals', function () {
-    return ['data' => \App\Terminals::get()];
+    return ['data' => \App\Product::where('category', 'terminals')->get()];
 });
 
 Route::get('bt_peripherals', function () {

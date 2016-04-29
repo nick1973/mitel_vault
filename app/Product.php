@@ -4,22 +4,24 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Products extends Model
+class Product extends Model
 {
     protected $table = 'products';
 
     protected $fillable = [
-        'name',
+        'category',
         'supplier_ref',
         'bt_ref',
-        'btbuy',
-        'bteup',
-        'max_discount',
-        'quote_type',
-        'pbx_type',
+        'item_name',
+        'qty',
         'description',
+        'item_code',
+        'xfer',
+        'bteup',
+        'btbuy',
+        'quote_type',
+        'max_discount',
         'pbx_type',
-        'hardware_category',
         'one_yr_standard_care',
         'one_yr_prompt_care',
         'one_yr_total_care',

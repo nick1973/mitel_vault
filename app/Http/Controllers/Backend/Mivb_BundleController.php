@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
 use App\Lob;
 use App\Maintenance;
 use App\Peripherals;
+use App\Products;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
@@ -23,8 +24,8 @@ class Mivb_BundleController extends Controller
         $bundle_name = null;
         $obj = file_get_contents('http://btbeqt.com/hardware_flat');
         $json = json_decode($obj, true);
-        $hardware = Hardware::get();
-        return view('backend.bundles.index', compact('customer', 'bundle_name', 'json', 'hardware', 'array', 'obj'));
+//        $product = Products::get();
+        return view('backend.bundles.index', compact('customer', 'bundle_name', 'json', 'array', 'obj'));
     }
 
 

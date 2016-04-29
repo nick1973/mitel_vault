@@ -4,7 +4,7 @@
     $("#rReservation").change(function () {
         var id = $(this).children(":selected").attr("id");
         var x = id - 1;
-        var js_array = <?php echo json_encode($hardware );?>;
+        var js_array = <?php echo json_encode($json );?>;
         //console.log(js_array[x]['supplier_ref']);
 
         var input = $('#b_codes');

@@ -83,7 +83,7 @@
                                             <select id="rReservation" ng-model='products' class="form-control">
                                                 <?php
                                                 foreach ($json as $obj) {
-                                                    echo "<option id='" . $obj{'id'} . "' value='" . $obj{'name'} . "'>" . $obj{'name'} . "</option>";
+                                                    echo "<option id='" . $obj{'id'} . "' value='" . $obj{'item_name'} . "'>" . $obj{'item_name'} . "</option>";
                                                 }
                                                 ?>
                                             </select>

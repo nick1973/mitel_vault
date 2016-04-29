@@ -25,7 +25,7 @@ $(document).ready(function () {
         "columns": [
             {"data": "supplier_ref"},
             {"data": "bt_ref"},
-            {"data": "name"},
+            {"data": "item_name"},
             {"data": "qty"},
             {"data": "description"},
             {"data": "item_code"},
