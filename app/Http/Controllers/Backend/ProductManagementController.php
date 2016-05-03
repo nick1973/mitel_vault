@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Products;
+use App\Product;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -11,9 +11,10 @@ use Illuminate\Support\Facades\Session;
 
 class ProductManagementController extends Controller
 {
-    function index()
+    function index($page = 'hardware')
     {
-        return view('backend.products.index');
+        //return view('backend.' . $page . '.index');
+        return redirect('admin/product_management/' . $page);
     }
 
     /**
@@ -22,14 +23,16 @@ class ProductManagementController extends Controller
      */
     function store(Request $request)
     {
-        if(!Products::where('name', $request->input('name'))->exists() ||
-         !Products::where('vendor_ref', $request->input('vendor_ref'))->exists() ||
-            !Products::where('bt_ref', $request->input('bt_ref'))->exists())
+        if (!Product::where('item_name', $request->input('item_name'))->exists() ||
+            !Product::where('supplier_ref', $request->input('supplier_ref'))->exists() ||
+            !Product::where('bt_ref', $request->input('bt_ref'))->exists()
+        )
 
         {
             $data = $request->input();
-            Products::create($data);
-            return redirect()->action('Backend\ProductManagementController@index');
+            Product::create($data);
+            $page = strtolower($request->input('category'));
+            return $this->index($page);
         }
 
         Session::flash('exists', 'Product already exists!');
@@ -44,12 +47,21 @@ class ProductManagementController extends Controller
         return view('backend.products.create');
     }
 
+
+    /**
+     * @param Request $request
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     function update(Request $request, $id)
     {
-        $products = Products::where('id', $id)->first();
+        $products = Product::where('id', $id)->first();
         $input = $request->all();
         $products->fill($input)->save();
-        return redirect()->action('Backend\ProductManagementController@index');
+        $page = strtolower($request->input('category'));
+        return $this->index($page);
+
+
     }
 
 
@@ -59,13 +71,13 @@ class ProductManagementController extends Controller
      */
     function destroy($id)
     {
-        Products::where('id', $id)->delete();
+        Product::where('id', $id)->delete();
         return redirect()->action('Backend\ProductManagementController@index');
     }
 
     function edit($id)
     {
-        $product = Products::find($id);
+        $product = Product::find($id);
         return view('backend.products.edit', compact('product'));
     }
 

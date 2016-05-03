@@ -72,7 +72,7 @@
             </li>
 
             <li class="{{ Active::pattern('admin/mivb_bundles*') }}">
-                <a href="{!! route('admin.mivb_bundles.index') !!}"><span>Bundles</span></a>
+                <a href="{!! route('admin.product_management.mivb_bundles.index') !!}"><span>Bundles</span></a>
             </li>
 
             {{--<li class="{{ Active::pattern('admin/dropdown_management*') }}">--}}

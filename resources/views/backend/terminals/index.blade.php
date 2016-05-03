@@ -5,7 +5,7 @@
         {!! app_name() !!}
         <small>{{ trans('strings.backend.dashboard.title') }}</small>
     </h1>
-    <a class="btn btn-danger pull-right" href="/admin/product_management/terminals/create">Add New!</a>
+    <a class="btn btn-danger pull-right" href="/admin/product_management/create">Add New!</a>
     <br/>
 @endsection
 

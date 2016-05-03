@@ -19,13 +19,18 @@ class Mivb_BundleController extends Controller
 {
     function index()
     {
+        return view('backend.bundles.index');
+    }
+
+    function index2()
+    {
         $customer = 1;
         $array = 1;
         $bundle_name = null;
         $obj = file_get_contents('http://btbeqt.com/hardware_flat');
         $json = json_decode($obj, true);
 //        $product = Products::get();
-        return view('backend.bundles.index', compact('customer', 'bundle_name', 'json', 'array', 'obj'));
+        return view('backend.bundles.index2', compact('customer', 'bundle_name', 'json', 'array', 'obj'));
     }
 
 

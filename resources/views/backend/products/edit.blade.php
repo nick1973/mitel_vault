@@ -32,14 +32,14 @@
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-4 control-label">Product Name:</label>
                     <div class="col-sm-5">
-                        {!! Form::input('name', 'name', null, ['class' => 'form-control']) !!}
+                        {!! Form::input('item_name', 'item_name', null, ['class' => 'form-control']) !!}
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-4 control-label">Vendor Ref:</label>
+                    <label for="inputEmail3" class="col-sm-4 control-label">supplier Ref:</label>
                     <div class="col-sm-5">
-                        {!! Form::input('vendor_ref', 'vendor_ref', null, ['class' => 'form-control']) !!}
+                        {!! Form::input('supplier_ref', 'supplier_ref', null, ['class' => 'form-control']) !!}
                     </div>
                 </div>
 
@@ -60,7 +60,7 @@
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-4 control-label">EUP £:</label>
                     <div class="col-sm-5">
-                        {!! Form::input('eup', 'eup', null, ['class' => 'form-control']) !!}
+                        {!! Form::input('bteup', 'bteup', null, ['class' => 'form-control']) !!}
                     </div>
                 </div>
 
@@ -74,21 +74,26 @@
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-4 control-label">Quote Type:</label>
                     <div class="col-sm-5">
-                        {!! Form::input('quote_type', 'quote_type', null, ['class' => 'form-control']) !!}
+                        {!! Form::select('quote_type', ['New' => 'New', 'Upgrade' => 'Upgrade', 'Maintenance' =>
+                        'Maintenance'], null, ['class' => 'form-control']) !!}
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-4 control-label">PBX Ref:</label>
                     <div class="col-sm-5">
-                        {!! Form::input('pbx_ref', 'pbx_ref', null, ['class' => 'form-control']) !!}
+                        {!! Form::select('pbx_type', ['MiVB' => 'MiVB', 'IP Office' => 'IP Office'], null, ['class' =>
+                        'form-control']) !!}
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-4 control-label">Category Ref:</label>
                     <div class="col-sm-5">
-                        {!! Form::input('category_ref', 'category_ref', null, ['class' => 'form-control']) !!}
+                        {!! Form::select('category', ['Hardware' => 'Hardware', 'Software' => 'Software',
+                        'terminals' => 'Terminals',
+                        'mivb_peripherals' => 'MiVB Peripherals'], null, ['class' => 'form-control']) !!}
+                        {{--{{ Form::select('category', array('Hardware' => 'Hardware', 'Software' => 'Software', 'terminals' => 'Terminals'), $product->category) }}--}}
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary">Update</button>

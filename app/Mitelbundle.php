@@ -4,11 +4,26 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Product extends Model
+class Mitelbundle extends Model
 {
-    protected $table = 'products';
-
     protected $fillable = [
+        'analogue_lines',
+        'bri_lines',
+        'pri_lines',
+        'sip_lines',
+        'ip_extensions',
+        'digital_extensions',
+        'analogue_extensions',
+        'dect_extensions',
+        'conference_extensions',
+        'ucc_basic',
+        'ucc_entry',
+        'ucc_standard',
+        'ucc_premium',
+        'lan_ports',
+        'standalone_sw',
+        'enterprise_sw',
+
         'category',
         'supplier_ref',
         'bt_ref',
@@ -21,6 +36,7 @@ class Product extends Model
         'btbuy',
         'quote_type',
         'max_discount',
+        'discount_status',
         'pbx_type',
         'one_yr_standard_care',
         'one_yr_prompt_care',
@@ -33,9 +49,9 @@ class Product extends Model
         'five_yr_total_care'
     ];
 
-    public function mitelbundles()
-    {
-        return $this->belongsToMany(Mitelbundle::class)->withTimestamps();
-    }
 
+    public function products()
+    {
+        return $this->belongsToMany(Product::class)->withTimestamps();
+    }
 }

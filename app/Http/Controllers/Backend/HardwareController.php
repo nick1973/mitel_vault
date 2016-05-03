@@ -22,7 +22,7 @@ class HardwareController extends Controller
 
     function create()
     {
-        return view('backend.hardware.create');
+        return view('backend.products.create');
     }
 
     function store(Request $request)

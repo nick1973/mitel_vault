@@ -44,6 +44,18 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-4 control-label">Category:</label>
+
+                    <div class="col-sm-5">
+                        <select class="form-control" name="category">
+                            <option>Hardware</option>
+                            <option>Software</option>
+                            <option value="mivb_peripherals">MiVB Peripherals</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
                     <label for="inputEmail3" class="col-sm-4 control-label">Supplier Ref:</label>
 
                     <div class="col-sm-5">
@@ -104,14 +116,6 @@
 
                     <div class="col-sm-5">
                         {!! Form::input('xfer', 'xfer', null, ['class' => 'form-control']) !!}
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-4 control-label">Hardware Category:</label>
-
-                    <div class="col-sm-5">
-                        {!! Form::input('hardware_category', 'hardware_category', null, ['class' => 'form-control']) !!}
                     </div>
                 </div>
 

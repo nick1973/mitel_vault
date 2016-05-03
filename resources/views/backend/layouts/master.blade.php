@@ -93,6 +93,7 @@
         <script src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
         <script src="//cdn.datatables.net/buttons/1.1.2/js/buttons.html5.min.js"></script>
         <script src="//cdn.datatables.net/buttons/1.1.2/js/buttons.print.min.js"></script>
+        <script src="https://cdn.datatables.net/fixedcolumns/3.2.1/js/dataTables.fixedColumns.min.js"></script>
 
         <script src="/js/hardware.js"></script>
         <script src="/js/software.js"></script>
@@ -100,7 +101,9 @@
         <script src="/js/training.js"></script>
         <script src="/js/terminals.js"></script>
         <script src="/js/bt_peripherals.js"></script>
+        <script src="/js/bundles.js"></script>
     @endif
+
     @yield('before-scripts-end')
     {!! HTML::script(elixir('js/backend.js')) !!}
     @yield('after-scripts-end')

@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    var fre = $('#hardware').DataTable({
+    var fre = $('#bundles').DataTable({
 
         initComplete: function () {
             this.api().columns().every(function () {
@@ -20,7 +20,7 @@ $(document).ready(function () {
             });
         },
         "order": [[0, "asc"]],
-        "ajax": "/admin/hardware",
+        "ajax": "/admin/bundles",
         "pagingType": "full_numbers",
         "lengthMenu": [[5, 25, 50, -1], [5, 25, 50, "All"]],
         "columns": [

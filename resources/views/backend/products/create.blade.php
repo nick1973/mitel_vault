@@ -9,7 +9,7 @@
 
 @section('content')
     <ol class="breadcrumb">
-        <li><a href="/admin/product_management">Product Management</a></li>
+        <li><a href={{ URL::previous() }}>Product Management</a></li>
         <li class="active">Add New</li>
     </ol>
     @if(Session::has('exists'))
@@ -35,14 +35,26 @@
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-4 control-label">Product Name:</label>
                     <div class="col-sm-5">
-                        {!! Form::input('name', 'name', null, ['class' => 'form-control']) !!}
+                        {!! Form::input('item_name', 'item_name', null, ['class' => 'form-control']) !!}
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-4 control-label">Category:</label>
+
+                    <div class="col-sm-5">
+                        <select class="form-control" name="category">
+                            <option>Hardware</option>
+                            <option>Software</option>
+                            <option value="mivb_peripherals">MiVB Peripherals</option>
+                        </select>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-4 control-label">Vendor Ref:</label>
                     <div class="col-sm-5">
-                        {!! Form::input('vendor_ref', 'vendor_ref', null, ['class' => 'form-control']) !!}
+                        {!! Form::input('supplier_ref', 'supplier_ref', null, ['class' => 'form-control']) !!}
                     </div>
                 </div>
 

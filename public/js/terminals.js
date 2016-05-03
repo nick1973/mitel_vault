@@ -22,6 +22,7 @@ $(document).ready(function () {
         "order": [[0, "asc"]],
         "ajax": "/admin/terminals",
         "pagingType": "full_numbers",
+        "lengthMenu": [[5, 25, 50, -1], [5, 25, 50, "All"]],
         "columns": [
             {"data": "supplier_ref"},
             {"data": "bt_ref"},
@@ -45,7 +46,7 @@ $(document).ready(function () {
             {"data": "five_yr_total_care"},
             {
                 "data": function (data) {
-                    return '<a href="/admin/product_management/terminals/' + data.id + '/edit" class="btn btn-success">Edit</a>';
+                    return '<a href="/admin/product_management/' + data.id + '/edit" class="btn btn-success">Edit</a>';
                 }
             }
         ],

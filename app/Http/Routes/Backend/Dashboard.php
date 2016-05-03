@@ -34,13 +34,17 @@ Route::get('bundle_set', function () {
     return $json;
 });
 
+Route::get('bundles', function () {
+    return ['data' => \App\Mitelbundle::get()];
+});
+
 Route::resource('product_management/terminals', 'TerminalsController');
 Route::resource('product_management/hardware', 'HardwareController');
 Route::resource('product_management/software', 'SoftwareController');
 Route::resource('product_management/mivb_peripherals', 'Mivb_PeripheralsController');
 Route::resource('product_management/bt_peripherals', 'BT_PeripheralsController');
 Route::resource('product_management/training', 'TrainingController');
-Route::resource('mivb_bundles', 'Mivb_bundleController');
+Route::resource('product_management/mivb_bundles', 'Mivb_bundleController');
 Route::resource('product_management', 'ProductManagementController');
 Route::resource('dropdown_management', 'DropdownManagementController');
 Route::resource('system_matrix', 'SystemMatrixController');
