@@ -90,7 +90,7 @@
                             $btn.button('reset');
 
                         }).fail(function (jqXHR, textStatus, errorThrown) {
-                            //console.log(errorThrown);
+                            console.log(errorThrown);
                         });
             });
 
@@ -157,7 +157,7 @@
                         <div role="tabpanel" class="tab-pane fade in active" id="bundle-home">
                             <div class="collapse fade collapse1" id="">
                                 <div id="expand" class="col-lg-4 col-md-4 col-sm-4 expand">
-                                    @include('frontend.includes.col_x1')
+                                    @include('frontend.includes.bundle')
                                 </div>
                             </div>
                         </div>
@@ -204,16 +204,24 @@
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane fade" id="remote">
-                            Remote Working
+                            <div id="expand" class="col-lg-4 col-md-4 col-sm-4 expand">
+                                @include('frontend.includes.remote')
+                            </div>
                         </div>
                         <div role="tabpanel" class="tab-pane fade" id="install">
-                            Install
+                            <div id="expand" class="col-lg-4 col-md-4 col-sm-4 expand">
+                                @include('frontend.includes.install')
+                            </div>
                         </div>
                         <div role="tabpanel" class="tab-pane fade" id="support">
-                            Support
+                            <div id="expand" class="col-lg-4 col-md-4 col-sm-4 expand">
+                                @include('frontend.includes.support')
+                            </div>
                         </div>
                         <div role="tabpanel" class="tab-pane fade" id="maint">
-                            Maintenance
+                            <div id="expand" class="col-lg-4 col-md-4 col-sm-4 expand">
+                                @include('frontend.includes.maint')
+                            </div>
                         </div>
 
                         <div class="collapse fade collapse2" id="collapse2">

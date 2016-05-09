@@ -28,15 +28,24 @@ Route::get('bt_peripherals', function () {
     return ['data' => \App\BT_Peripherals::get()];
 });
 
-Route::get('bundle_set', function () {
-    $test = file_get_contents('test2.json');
-    $json = json_decode($test, true);
-    return $json;
+Route::get('bundle_set/{bundle_set}', function ($id) {
+
+    $bundle = \App\Mitelbundle::find($id);
+    return $bundle->products;
 });
+
+//Route::get('bundle_software/{bundle_software}', function ($id) {
+//
+//    $bundle = \App\Mitelbundle::find($id);
+//    return $bundle->products->where('category', 'Software');
+//});
+
 
 Route::get('bundles', function () {
     return ['data' => \App\Mitelbundle::get()];
 });
+
+Route::get('product_management/mivb_bundles/{mivb_bundles}/build', ['as' => 'product_management.mivb_bundles.{mivb_bundles}.build', 'uses' => 'Mivb_bundleController@build']);
 
 Route::resource('product_management/terminals', 'TerminalsController');
 Route::resource('product_management/hardware', 'HardwareController');

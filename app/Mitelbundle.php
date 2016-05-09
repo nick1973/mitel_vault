@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Mitelbundle extends Model
 {
     protected $fillable = [
+        'name',
         'analogue_lines',
         'bri_lines',
         'pri_lines',

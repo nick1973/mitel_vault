@@ -7,7 +7,10 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Validator;
 
 class ProductManagementController extends Controller
 {
@@ -23,18 +26,35 @@ class ProductManagementController extends Controller
      */
     function store(Request $request)
     {
+
         if (!Product::where('item_name', $request->input('item_name'))->exists() ||
             !Product::where('supplier_ref', $request->input('supplier_ref'))->exists() ||
             !Product::where('bt_ref', $request->input('bt_ref'))->exists()
-        )
-
-        {
+        ) {
             $data = $request->input();
             Product::create($data);
+
+            // checking file is valid.
+            if (Input::file('image')) {
+                $destinationPath = 'uploads'; // upload path
+                $fileName = Input::file('image')->getClientOriginalName(); // getting image extension
+                //$fileName = rand(11111,99999).'.'.$extension; // renameing image
+                Input::file('image')->move($destinationPath, $fileName); // uploading file to given path
+                // sending back with message
+                Session::flash('success', 'Upload successfully');
+                //return redirect()->back();
+                return Redirect::to('index');
+            } else {
+                // sending back with error message.
+                Session::flash('error', 'uploaded file is not valid');
+                //return Redirect::to('upload');
+                //return redirect()->back();
+            }
+
             $page = strtolower($request->input('category'));
             return $this->index($page);
-        }
 
+        }
         Session::flash('exists', 'Product already exists!');
         return redirect()->back();
     }

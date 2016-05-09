@@ -8,15 +8,15 @@
 
 //Route::get('macros', 'FrontendController@macros')->name('frontend.macros');
 
-//Route::get('bundle_list/{lines}/{analogue_extensions}', function($lines,$analogue_extensions){
-//
-//    //return ["bundle" => App\SystemMatrix::find(2)];
-//    //if($analogue_lines>0){
-//    return ["bundle" => App\SystemMatrix::where('analogue_lines', $lines)
-//                                ->orWhere('bri_lines', $lines)
-//                                            ->get()];
-//    //};
-//});
+Route::get('bundle_list/{lines}/{analogue_extensions}', function ($lines, $analogue_extensions) {
+
+    //return ["bundle" => App\SystemMatrix::find(2)];
+    //if($analogue_lines>0){
+    return ["bundle" => App\SystemMatrix::where('analogue_lines', $lines)
+        ->orWhere('bri_lines', $lines)
+        ->get()];
+    //};
+});
 
 Route::post('bundle_post', function(){
 
@@ -31,6 +31,10 @@ Route::post('bundle_post', function(){
 
 Route::get('hardware_flat', function () {
     return \App\Product::where('category', 'hardware')->get();
+});
+
+Route::get('software_flat', function () {
+    return \App\Product::where('category', 'software')->get();
 });
 /**
  * These frontend controllers require the user to be logged in

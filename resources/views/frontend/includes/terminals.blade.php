@@ -64,9 +64,9 @@
 
     <div class="col-md-12 col-lg-6">
         <div class="form-group">
-            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-4 col-lg-5 control-label">2200:</label>
+            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-4 col-lg-7 control-label">2200:</label>
 
-            <div class="col-xs-7 col-sm-5 col-md-5 col-lg-5">
+            <div class="col-xs-7 col-sm-5 col-md-5 col-lg-4">
                 {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
                 <select class="form-control">
                     <option>0</option>
@@ -83,9 +83,9 @@
         </div>
 
         <div class="form-group">
-            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-4 col-lg-5 control-label">Multi User:</label>
+            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-4 col-lg-7 control-label">Multi User:</label>
 
-            <div class="col-xs-7 col-sm-5 col-md-5 col-lg-5">
+            <div class="col-xs-7 col-sm-5 col-md-5 col-lg-4">
                 {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
                 <select class="form-control">
                     <option>0</option>
@@ -170,9 +170,9 @@
 
     <div class="col-md-12 col-lg-6">
         <div class="form-group">
-            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-4 col-lg-5 control-label">5330:</label>
+            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-4 col-lg-7 control-label">5330:</label>
 
-            <div class="col-xs-7 col-sm-5 col-md-5 col-lg-5">
+            <div class="col-xs-7 col-sm-5 col-md-5 col-lg-4">
                 {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
                 <select class="form-control">
                     <option>0</option>
@@ -189,9 +189,9 @@
         </div>
 
         <div class="form-group">
-            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-4 col-lg-5 control-label">5360:</label>
+            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-4 col-lg-7 control-label">5360:</label>
 
-            <div class="col-xs-7 col-sm-5 col-md-5 col-lg-5">
+            <div class="col-xs-7 col-sm-5 col-md-5 col-lg-4">
                 {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
                 <select class="form-control">
                     <option>0</option>
@@ -208,9 +208,9 @@
         </div>
 
         <div class="form-group">
-            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-4 col-lg-5 control-label">5330e:</label>
+            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-4 col-lg-7 control-label">5330e:</label>
 
-            <div class="col-xs-7 col-sm-5 col-md-5 col-lg-5">
+            <div class="col-xs-7 col-sm-5 col-md-5 col-lg-4">
                 {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
                 <select class="form-control">
                     <option>0</option>
@@ -233,7 +233,8 @@
 
     <div class="col-md-12 col-lg-6">
         <div class="form-group">
-            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-4 col-lg-5 control-label">MCA:</label>
+            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-4 col-lg-5 control-label">BTB Single Cell DECT
+                Station:</label>
 
             <div class="col-xs-7 col-sm-5 col-md-5 col-lg-5">
                 {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
@@ -253,7 +254,8 @@
         </div>
 
         <div class="form-group">
-            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-4 col-lg-5 control-label">Web Proxy:</label>
+            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-4 col-lg-5 control-label">BTB Multi Cell DECT
+                Station:</label>
 
             <div class="col-xs-7 col-sm-5 col-md-5 col-lg-5">
                 {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
@@ -272,7 +274,29 @@
         </div>
 
         <div class="form-group">
-            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-4 col-lg-5 control-label">SIP Proxy:</label>
+            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-4 col-lg-5 control-label">BTB DECT
+                Repeater:</label>
+
+            <div class="col-xs-7 col-sm-5 col-md-5 col-lg-5">
+                {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
+                <select class="form-control" name="analogue_lines">
+                    <option>0</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>19</option>
+                </select>
+            </div>
+            <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
+               data-toggle="popover" title="2100 Analogue Phone" data-placement="right" data-html="true"
+               data-content="<img src='/images/mitel_phones/mitel-5312.jpg'>" data-animation="true"></i>
+        </div>
+
+        <div class="form-group">
+            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-4 col-lg-5 control-label">BTB DECT MiVoice Standard
+                Handset:</label>
 
             <div class="col-xs-7 col-sm-5 col-md-5 col-lg-5">
                 {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
@@ -296,9 +320,10 @@
 
     <div class="col-md-12 col-lg-6">
         <div class="form-group">
-            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-4 col-lg-5 control-label">MCA Users Qty:</label>
+            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-4 col-lg-7 control-label">BTB DECT MiVoice
+                Enterprise Handset:</label>
 
-            <div class="col-xs-7 col-sm-5 col-md-5 col-lg-5">
+            <div class="col-xs-7 col-sm-5 col-md-5 col-lg-4">
                 {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
                 <select class="form-control">
                     <option>0</option>
@@ -315,9 +340,10 @@
         </div>
 
         <div class="form-group">
-            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-4 col-lg-5 control-label">Web Proxy Qty:</label>
+            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-4 col-lg-7 control-label">BTB DECT MiVoice Standard
+                Ruggedized Handset:</label>
 
-            <div class="col-xs-7 col-sm-5 col-md-5 col-lg-5">
+            <div class="col-xs-7 col-sm-5 col-md-5 col-lg-4">
                 {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
                 <select class="form-control">
                     <option>0</option>
@@ -334,10 +360,10 @@
         </div>
 
         <div class="form-group">
-            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-4 col-lg-5 control-label">DMZ SIP Porxy
-                Qty:</label>
+            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-4 col-lg-7 control-label">BTB DECT MiVoice
+                Enterprise Ruggedized Handset:</label>
 
-            <div class="col-xs-7 col-sm-5 col-md-5 col-lg-5">
+            <div class="col-xs-7 col-sm-5 col-md-5 col-lg-4">
                 {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
                 <select class="form-control">
                     <option>0</option>
@@ -353,27 +379,25 @@
                data-content="<img src='/images/mitel_phones/mitel-5312.jpg'>" data-animation="true"></i>
         </div>
 
-    </div>
+        <div class="form-group">
+            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-4 col-lg-7 control-label">BTB DECT Headset:</label>
 
-    <div class="form-group col-lg-5"></div>
-    <div class="form-group col-lg-7">
-        <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-4 col-lg-7 control-label">Server Gateway Mode SIP Proxy
-            Qty:</label>
-
-        <div class="col-xs-7 col-sm-5 col-md-5 col-lg-4">
-            {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-            <select class="form-control">
-                <option>0</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-            </select>
+            <div class="col-xs-7 col-sm-5 col-md-5 col-lg-4">
+                {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
+                <select class="form-control">
+                    <option>0</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
+               data-toggle="popover" title="2100 Analogue Phone" data-placement="right" data-html="true"
+               data-content="<img src='/images/mitel_phones/mitel-5312.jpg'>" data-animation="true"></i>
         </div>
-        <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
-           data-toggle="popover" title="2100 Analogue Phone" data-placement="right" data-html="true"
-           data-content="<img src='/images/mitel_phones/mitel-5312.jpg'>" data-animation="true"></i>
+
     </div>
 
 

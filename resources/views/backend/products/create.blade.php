@@ -28,7 +28,7 @@
         </div><!-- /.box-header -->
         <div class="box-body">
 
-            {!! Form::open(array('url' => '/admin/product_management','class' => 'form-horizontal')) !!}
+            {!! Form::open(array('url' => '/admin/product_management', 'files'=>true, 'class' => 'form-horizontal')) !!}
             <div class="col-md-6">
                 <h2>Products Details:</h2>
 
@@ -106,6 +106,33 @@
                         {!! Form::input('category_ref', 'category_ref', null, ['class' => 'form-control']) !!}
                     </div>
                 </div>
+
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-4 control-label">Image:</label>
+
+                    <div class="col-sm-5">
+                        {!! Form::file('image', ['class' => 'form-control']); !!}
+                        <p class="errors">{!!$errors->first('image')!!}</p>
+                        @if(Session::has('error'))
+                            <p class="errors">{!! Session::get('error') !!}</p>
+                        @endif
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-4 control-label">OA View?:</label>
+
+                    <div class="col-sm-5">
+                        <label class="radio-inline">
+                            <input type="radio" name="oa_view" id="inlineRadio1" value="1" checked> Yes
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="oa_view" id="inlineRadio2" value="0"> No
+                        </label>
+                    </div>
+                </div>
+
+
             </div>
 
             <div class="col-md-6">
@@ -170,6 +197,14 @@
                     <label for="inputEmail3" class="col-sm-4 control-label">Five Year Total Care:</label>
                     <div class="col-sm-5">
                         {!! Form::input('five_yr_total_care', 'five_yr_total_care', null, ['class' => 'form-control']) !!}
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-4 control-label">Description:</label>
+
+                    <div class="col-sm-5">
+                        {!! Form::textarea('description',null, ['class' => 'form-control']) !!}
                     </div>
                 </div>
 

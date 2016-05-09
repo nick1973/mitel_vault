@@ -5,7 +5,7 @@
         {!! app_name() !!}
         <small>{{ trans('strings.backend.dashboard.title') }}</small>
     </h1>
-    <a class="btn btn-danger pull-right" href="/admin/product_management/create">Add New!</a>
+    <a class="btn btn-danger pull-right" href="/admin/product_management/mivb_bundles/create">Add New!</a>
     <br/>
 @endsection
 
@@ -32,17 +32,29 @@
                 <table id="bundles" class="table table-striped table-bordered" cellspacing="0" width="100%">
                     <thead>
                     <tr>
-                        <th>supplier_ref</th>
-                        <th>B-Code</th>
-                        <th>Item</th>
-                        <th>qty</th>
-                        <th>description</th>
-                        <th>item_code</th>
-                        <th>xfer</th>
-                        <th>bteup</th>
-                        <th>btbuy</th>
-                        <th>quote_type</th>
-                        <th>max_discount</th>
+                        <th>Bundle Name</th>
+                        <th>Analogue Lines</th>
+                        <th>BRI Lines</th>
+                        <th>PRI Lines</th>
+                        <th>SIP Trunks</th>
+                        <th>IP Ext</th>
+                        <th>Digital Ext</th>
+                        <th>Analogue Ext</th>
+                        <th>DECT Ext</th>
+                        <th>Conference Ext</th>
+                        {{--<th>UCC Basic</th>--}}
+                        {{--<th>UCC Entry</th>--}}
+                        {{--<th>UCC Standard</th>--}}
+                        {{--<th>UCC premium</th>--}}
+                        <th>LAN Ports</th>
+                        <th>Standalone SW</th>
+                        <th>Enterprise SW</th>
+                        <th>BTB £</th>
+                        <th>BT EUP £</th>
+                        <th>Discount Status</th>
+                        <th>Discount %</th>
+
+
                         <th>1 Yr Standard Care</th>
                         <th>1 Yr Prompt Care</th>
                         <th>1 Yr Total Care</th>
@@ -52,6 +64,7 @@
                         <th>5 Yr Standard Care</th>
                         <th>5 Yr Prompt Care</th>
                         <th>5 Yr Total Care</th>
+                        <th></th>
                         <th></th>
                     </tr>
                     </thead>

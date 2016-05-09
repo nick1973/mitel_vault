@@ -51,8 +51,16 @@
                     <span>Product Management</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
-                <ul class="treeview-menu {{ Active::pattern('admin/product_management*', 'menu-open') }}"
-                    style="display: none; {{ Active::pattern('admin/product_management*', 'display: block;') }}">
+                <ul class="treeview-menu {{ Active::pattern(['admin/product_management/hardware',
+                                                            'admin/product_management/software',
+                                                            'admin/product_management/terminals',
+                                                            'admin/product_management/mivb_peripherals',
+                                                            'admin/product_management/bt_peripherals'], 'menu-open') }}"
+                    style="display: none; {{ Active::pattern(['admin/product_management/hardware',
+                                                            'admin/product_management/software',
+                                                            'admin/product_management/terminals',
+                                                            'admin/product_management/mivb_peripherals',
+                                                            'admin/product_management/bt_peripherals'], 'display: block;') }}">
                     <li class="{{ Active::pattern('admin/product_management/hardware*') }}">
                         <a href="{!! route('admin.product_management.hardware.index') !!}">Hardware</a>
                     </li>
@@ -71,9 +79,23 @@
                 </ul>
             </li>
 
-            <li class="{{ Active::pattern('admin/mivb_bundles*') }}">
-                <a href="{!! route('admin.product_management.mivb_bundles.index') !!}"><span>Bundles</span></a>
+            <li class="{{ Active::pattern('admin/product_management/mivb_bundles*') }} treeview">
+                <a href="#">
+                    <span>Bundles</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu {{ Active::pattern('admin/product_management/mivb_bundles*', 'menu-open') }}"
+                    style="display: none; {{ Active::pattern('admin/product_management/mivb_bundles*', 'display: block;') }}">
+                    <li class="{{ Active::pattern('admin/product_management/mivb_bundles*') }}">
+                        <a href="{!! route('admin.product_management.mivb_bundles.index') !!}"><span>System Bundle</span></a>
+                    </li>
+                    <li class="{{ Active::pattern('admin/dashboard') }}">
+                        <a href="{!! route('admin.dashboard') !!}"><span>Software Bundle</span></a>
+                    </li>
+                </ul>
             </li>
+
+
 
             {{--<li class="{{ Active::pattern('admin/dropdown_management*') }}">--}}
             {{--<a href="{!! route('admin.dropdown_management.index') !!}"><span>Drop Down Management</span></a>--}}
@@ -83,9 +105,6 @@
                 <a href="{!! route('admin.system_matrix.index') !!}"><span>System Matrix</span></a>
             </li>
 
-            <li class="{{ Active::pattern('admin/dashboard') }}">
-                <a href="{!! route('admin.dashboard') !!}"><span>Server Matrix</span></a>
-            </li>
 
             <li class="{{ Active::pattern('admin/dashboard') }}">
                 <a href="{!! route('admin.dashboard') !!}"><span>Discount Matrix</span></a>

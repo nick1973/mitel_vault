@@ -8,7 +8,7 @@
         {{--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></script>--}}
         {{--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>--}}
         <title>@yield('title', app_name())</title>
-
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
         <!-- Meta -->
         {{--<meta name="description" content="@yield('meta_description', 'Default Description')">--}}
         {{--<meta name="author" content="@yield('meta_author', 'Anthony Rappa')">--}}
@@ -26,14 +26,10 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
 
-        <link rel="stylesheet"
-              href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-        <script
-                src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script
-                src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-        <script
-                src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular.min.js"></script>
+        <link rel="stylesheet" ref="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
 
     </head>
     <body class="skin-{!! config('backend.theme') !!}">

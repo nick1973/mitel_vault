@@ -8,16 +8,16 @@
         //console.log(js_array[x]['supplier_ref']);
 
         var input = $('#b_codes');
-        input.val(js_array[x]['supplier_ref']);
+        input.val('test');
         input.trigger('input');
         /////////////////////////
-        var input = $('#eup');
-        input.val(js_array[x]['bt_ref']);
-        input.trigger('input');
+        var input2 = $('#eup');
+        input2.val(js_array[x]['bt_ref']);
+        input2.trigger('input');
         /////////////////////////
-        var input = $('#bonusBond');
-        input.val(js_array[x]['xfer']);
-        input.trigger('input');
+        var input3 = $('#bonusBond');
+        input3.val(js_array[x]['xfer']);
+        input3.trigger('input');
     });
 
 </script>

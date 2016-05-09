@@ -23,7 +23,7 @@
             </tbody>
         </table>
         <h4>Total £{{ $total }}</h4>
-        <a href='empty_cart' class='btn btn-danger'>Clear Quote</a>
+            <a href='/empty_cart' class='btn btn-danger'>Clear Quote</a>
             <a href='ax_cart' class='btn btn-primary pull-right'>Generate Quote</a>
     </div>
 </div>

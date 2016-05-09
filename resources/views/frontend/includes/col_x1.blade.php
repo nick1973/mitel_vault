@@ -101,25 +101,25 @@
                    data-content="And here's some amazing content. It's very engaging. Right?"></i>
             </div>
         </div>
-        <div class="col-md-12 col-lg-6">
-            <div class="form-group">
-                <label for="inputEmail3" class="col-xs-3 col-sm-4 control-label">IP:</label>
-                <div class="col-xs-7 col-sm-5 col-md-5 col-lg-6">
+        {{--<div class="col-md-12 col-lg-6">--}}
+        {{--<div class="form-group">--}}
+        {{--<label for="inputEmail3" class="col-xs-3 col-sm-4 control-label">IP:</label>--}}
+        {{--<div class="col-xs-7 col-sm-5 col-md-5 col-lg-6">--}}
                     {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-                    <select class="form-control">
-                        <option>0</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
-                </div>
-                <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
-                   data-toggle="popover" title="PRI/ISDN30" data-placement="right"
-                   data-content="And here's some amazing content. It's very engaging. Right?"></i>
-            </div>
-        </div>
+        {{--<select class="form-control">--}}
+        {{--<option>0</option>--}}
+        {{--<option>1</option>--}}
+        {{--<option>2</option>--}}
+        {{--<option>3</option>--}}
+        {{--<option>4</option>--}}
+        {{--<option>5</option>--}}
+        {{--</select>--}}
+        {{--</div>--}}
+        {{--<i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"--}}
+        {{--data-toggle="popover" title="PRI/ISDN30" data-placement="right"--}}
+        {{--data-content="And here's some amazing content. It's very engaging. Right?"></i>--}}
+        {{--</div>--}}
+        {{--</div>--}}
 
         <h4><strong>LAN Ports: </strong>How many LAN ports are required from BT?</h4>
 

@@ -24,16 +24,26 @@ $(document).ready(function () {
         "pagingType": "full_numbers",
         "lengthMenu": [[5, 25, 50, -1], [5, 25, 50, "All"]],
         "columns": [
-            {"data": "supplier_ref"},
-            {"data": "bt_ref"},
-            {"data": "item_name"},
-            {"data": "qty"},
-            {"data": "description"},
-            {"data": "item_code"},
-            {"data": "xfer"},
-            {"data": "bteup"},
+            {"data": "name"},
+            {"data": "analogue_lines"},
+            {"data": "bri_lines"},
+            {"data": "pri_lines"},
+            {"data": "sip_lines"},
+            {"data": "ip_extensions"},
+            {"data": "digital_extensions"},
+            {"data": "analogue_extensions"},
+            {"data": "dect_extensions"},
+            {"data": "conference_extensions"},
+            //{"data": "ucc_basic"},
+            //{"data": "ucc_entry"},
+            //{"data": "ucc_standard"},
+            //{"data": "ucc_premium"},
+            {"data": "lan_ports"},
+            {"data": "standalone_sw"},
+            {"data": "enterprise_sw"},
             {"data": "btbuy"},
-            {"data": "quote_type"},
+            {"data": "bteup"},
+            {"data": "discount_status"},
             {"data": "max_discount"},
             {"data": "one_yr_standard_care"},
             {"data": "one_yr_prompt_care"},
@@ -46,7 +56,12 @@ $(document).ready(function () {
             {"data": "five_yr_total_care"},
             {
                 "data": function (data) {
-                    return '<a href="/admin/product_management/' + data.id + '/edit" class="btn btn-success">Edit</a>';
+                    return '<a href="/admin/product_management/mivb_bundles/' + data.id + '/build" class="btn btn-success">Build</a>';
+                }
+            },
+            {
+                "data": function (data) {
+                    return '<a href="/admin/product_management/mivb_bundles/' + data.id + '/edit" class="btn btn-primary">Edit</a>';
                 }
             }
         ],
