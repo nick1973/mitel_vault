@@ -10,19 +10,32 @@
 
 Route::get('bundle_list/{lines}/{analogue_extensions}', function ($lines, $analogue_extensions) {
 
-    //return ["bundle" => App\SystemMatrix::find(2)];
+    $bundle = App\Mitelbundle::find($lines);
     //if($analogue_lines>0){
-    return ["bundle" => App\SystemMatrix::where('analogue_lines', $lines)
+    $product = [
+        'id' => $bundle->id,
+        'name' => $bundle->name,
+        'qty' => 1,
+        'price' => $bundle->btbuy
+    ];
+    Gloudemans\Shoppingcart\Facades\Cart::add($product);
+    return ["bundle" => App\Mitelbundle::where('analogue_lines', $lines)
         ->orWhere('bri_lines', $lines)
-        ->get()];
+        ->get()];// . $sections['frontend.includes.cart_static']; //. View("frontend.includes.cart_static")->render();
+
     //};
+    //return [$lines, $analogue_extensions];
+});
+
+Route::get('cart_reload', function () {
+    return view('frontend.includes.cart_static');
 });
 
 Route::post('bundle_post', function(){
 
     $result =  [
         'analogue_lines'  =>  $_POST['analogue_lines'],
-        'analogue_extensions'  =>  $_POST['analogue_extensions']
+        'analogue_extensions' => $_POST['users']
     ];
 
     return $result;

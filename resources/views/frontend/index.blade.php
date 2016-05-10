@@ -57,6 +57,11 @@
             });
         });
 
+        function emptyCart() {
+            $('#list_cart').load('/empty_cart');
+        }
+        ;
+
         var app = angular.module('myApp', []);
         app.controller('myCtrl', function ($scope, $http) {
 
@@ -79,6 +84,7 @@
                                                         $('#overview-button').removeClass('animated bounce');
                                                     });
                                             $("#tick-bundle").addClass('animated fadeIn').removeClass('hidden');
+                                            $('#list_cart').load('/cart_reload');
                                         }
                                         ;
                                         console.log(response.data.bundle[0]);
@@ -96,6 +102,7 @@
 
         });
     </script>
+    {{--<p>{{$cart}}</p>--}}
             <ol class="breadcrumb">
                 <li>PBX: <span>MiVB</span></li>
                 <li>QUOTE TYPE: <span>New</span></li>
@@ -133,7 +140,8 @@
                         <li role="presentation"><a href="#lan-data" aria-controls="lan-data" role="tab" data-toggle="tab">LAN & DATA</a></li>
                         <li role="presentation"><a href="#peripherals" aria-controls="peripherals" role="tab" data-toggle="tab">Peripherals</a></li>
                         <li role="presentation"><a href="#training" aria-controls="training" role="tab" data-toggle="tab">Training</a></li>
-                        <li role="presentation"><a href="#remote" aria-controls="remote" role="tab" data-toggle="tab">Remote Worker</a></li>
+                        <li role="presentation"><a href="#remote" aria-controls="remote" role="tab" data-toggle="tab">Teleworker</a>
+                        </li>
                         <li role="presentation"><a href="#install" aria-controls="install" role="tab" data-toggle="tab">Install</a></li>
                         <li role="presentation"><a href="#support" aria-controls="support" role="tab" data-toggle="tab">Support</a></li>
                         <li role="presentation"><a href="#maint" aria-controls="maint" role="tab" data-toggle="tab">Maintenance</a></li>
@@ -224,20 +232,21 @@
                             </div>
                         </div>
 
+
                         <div class="collapse fade collapse2" id="collapse2">
                             <div class="col-lg-4 col-md-6 col-sm-6">
                                 @include('frontend.includes.cart_static')
                             </div>
                         </div>
 
-                        <div class="collapse fade collapse3" id="collapse3">
-                            <div class="col-lg-4 col-md-8 col-sm-8 hidden-xs hidden-sm hidden-md">
-                                @include('frontend.includes.col_x2')
-                            </div>
-                            <div class="col-lg-4 col-md-8 col-sm-8">
-                                @include('frontend.includes.cart_static')
-                            </div>
-                        </div>
+                        {{--<div class="collapse fade collapse3" id="collapse3">--}}
+                        {{--<div class="col-lg-4 col-md-8 col-sm-8 hidden-xs hidden-sm hidden-md">--}}
+                        {{--@include('frontend.includes.col_x2')--}}
+                        {{--</div>--}}
+                        {{--<div class="col-lg-4 col-md-8 col-sm-8">--}}
+                        {{--@include('frontend.includes.cart_static')--}}
+                        {{--</div>--}}
+                        {{--</div>--}}
 
                     </div>
                 </div>

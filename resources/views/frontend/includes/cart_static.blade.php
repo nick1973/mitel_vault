@@ -1,7 +1,7 @@
-<div class="table-responsive">
+<div id="list_cart" class="table-responsive">
 <div class="panel panel-default">
     <div class="panel-heading text-center"><h3>Your Quote</h3></div>
-        <div class="panel-body">
+    <div class="panel-body">
         <table class='table table-striped table-condensed'>
             <thead>
             <tr>
@@ -23,11 +23,13 @@
             </tbody>
         </table>
         <h4>Total £{{ $total }}</h4>
-            <a href='/empty_cart' class='btn btn-danger'>Clear Quote</a>
+        <button onclick="emptyCart()" class='btn btn-danger'>Clear Quote</button>
+        {{--<a href='/empty_cart' class='btn btn-danger'>Clear Quote</a>--}}
             <a href='ax_cart' class='btn btn-primary pull-right'>Generate Quote</a>
     </div>
 </div>
 </div>
+
 
 {{--<script>--}}
     {{--$(document).ready(function () {--}}

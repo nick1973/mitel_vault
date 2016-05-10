@@ -34,13 +34,14 @@ class CartController extends Controller
         ];
 
         Cart::add($product);
-        //return redirect()->back();
+        return redirect()->back();
     }
 
     public function empty_cart()
     {
         Cart::destroy();
-        return redirect()->back();
+        //return redirect()->back();
+        return view('frontend.includes.cart_static');
     }
 
     public function ax_cart()

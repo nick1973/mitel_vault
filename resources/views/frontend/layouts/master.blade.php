@@ -10,6 +10,7 @@
         <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
         <title>@yield('title', app_name())</title>
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
         <link rel="stylesheet" href="/css/animate.css">
         <!-- Meta -->
         {{--<meta name="description" content="@yield('meta_description', 'Default Description')">--}}
@@ -25,6 +26,7 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
         {{--POPOVER CSS--}}
         <style>
+            /*.csh_12 {background: red;};*/
             .popover{
                 max-width: none;
                 width:350px;
