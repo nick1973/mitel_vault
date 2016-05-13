@@ -40,7 +40,12 @@ class CartController extends Controller
     public function empty_cart()
     {
         Cart::destroy();
-        //return redirect()->back();
+        return view('frontend.includes.cart_static');
+    }
+
+    public function remove_bundle_cart($id)
+    {
+        Cart::remove($id);
         return view('frontend.includes.cart_static');
     }
 

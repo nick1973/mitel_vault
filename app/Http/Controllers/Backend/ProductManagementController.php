@@ -31,26 +31,19 @@ class ProductManagementController extends Controller
             !Product::where('supplier_ref', $request->input('supplier_ref'))->exists() ||
             !Product::where('bt_ref', $request->input('bt_ref'))->exists()
         ) {
-            $data = $request->input();
-            Product::create($data);
 
-            // checking file is valid.
-            if (Input::file('image')) {
+            // uploading file to given path
+
+            $data = $request->input();
+            if (!Input::file('image')) {
+                Product::create($data);
+            } else {
                 $destinationPath = 'uploads'; // upload path
                 $fileName = Input::file('image')->getClientOriginalName(); // getting image extension
-                //$fileName = rand(11111,99999).'.'.$extension; // renameing image
-                Input::file('image')->move($destinationPath, $fileName); // uploading file to given path
-                // sending back with message
-                Session::flash('success', 'Upload successfully');
-                //return redirect()->back();
-                return Redirect::to('index');
-            } else {
-                // sending back with error message.
-                Session::flash('error', 'uploaded file is not valid');
-                //return Redirect::to('upload');
-                //return redirect()->back();
+                Input::file('image')->move($destinationPath, $fileName);
+                $new_data = array_add($data, 'image', $destinationPath . '/' . $fileName);
+                Product::create($new_data);
             }
-
             $page = strtolower($request->input('category'));
             return $this->index($page);
 
@@ -76,12 +69,24 @@ class ProductManagementController extends Controller
     function update(Request $request, $id)
     {
         $products = Product::where('id', $id)->first();
-        $input = $request->all();
-        $products->fill($input)->save();
+
+
+        if ($request->hasFile('image')) {
+            $input = $request->all();
+
+            $fileName = $request->file('image')->getClientOriginalName();
+            $request->file('image')->move('uploads', $fileName);
+
+            array_pull($input, 'image');
+            $add_image = array_add($input, 'image', 'uploads/' . $fileName);
+            $products->fill($add_image)->save();
+
+        } else {
+            $input = $request->except('image');
+            $products->fill($input)->save();
+        }
         $page = strtolower($request->input('category'));
         return $this->index($page);
-
-
     }
 
 

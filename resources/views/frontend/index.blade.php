@@ -58,9 +58,20 @@
         });
 
         function emptyCart() {
-            $('#list_cart').load('/empty_cart');
+            $('#reload_cart').load('/empty_cart');
+            $('#overview-button').removeClass('animated bounce btn-info');
+            $("#tick-bundle").removeClass('animated fadeIn').addClass('hidden');
         }
         ;
+
+        function remove_item(id) {
+            $('#reload_cart').load('/remove_bundle_cart/' + id);
+            //$( "#but" ).trigger( "click" );
+            $('#overview-button').removeClass('animated bounce btn-info');
+            $("#tick-bundle").removeClass('animated fadeIn').addClass('hidden');
+        }
+        ;
+
 
         var app = angular.module('myApp', []);
         app.controller('myCtrl', function ($scope, $http) {
@@ -84,16 +95,18 @@
                                                         $('#overview-button').removeClass('animated bounce');
                                                     });
                                             $("#tick-bundle").addClass('animated fadeIn').removeClass('hidden');
-                                            $('#list_cart').load('/cart_reload');
+                                            $('#reload_cart').load('/cart_reload');
                                         }
                                         ;
+
                                         console.log(response.data.bundle[0]);
+                                        $btn.button('reset');
                                     });
 
                             //console.log(jQuery.isEmptyObject({}));
 
                             //Button Formatting Control.
-                            $btn.button('reset');
+                            //$btn.button('reset');
 
                         }).fail(function (jqXHR, textStatus, errorThrown) {
                             console.log(errorThrown);

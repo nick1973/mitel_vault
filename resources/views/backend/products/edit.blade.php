@@ -24,6 +24,7 @@
 
             {!! Form::model($product,[
             'method' => 'PATCH',
+            'files'=>true,
             'route' => ['admin.product_management.update',$product->id],
             'class' => 'form-horizontal']) !!}
             <div class="col-md-6">
@@ -96,6 +97,39 @@
                         {{--{{ Form::select('category', array('Hardware' => 'Hardware', 'Software' => 'Software', 'terminals' => 'Terminals'), $product->category) }}--}}
                     </div>
                 </div>
+
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-4 control-label">Image:</label>
+
+                    <div class="col-sm-5">
+                        <img width="100px" alt="No Image" src="http://btbeqt.com/{{ $product->image }}">
+                        {!! Form::file('image', ['class' => 'form-control',]); !!}
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-4 control-label">OA View?:</label>
+
+                    <div class="col-sm-5">
+                        <label class="radio-inline">
+                            {!! Form::radio('oa_view', '1', null); !!} Yes
+                            {{--<input type="radio" name="oa_view" id="inlineRadio1" value="1" checked> Yes--}}
+                        </label>
+                        <label class="radio-inline">
+                            {!! Form::radio('oa_view', '0', null); !!} No
+                            {{--<input type="radio" name="oa_view" id="inlineRadio2" value="0"> No--}}
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-4 control-label">Description:</label>
+
+                    <div class="col-sm-5 col-lg-8">
+                        {!! Form::textarea('description',null, ['class' => 'form-control']) !!}
+                    </div>
+                </div>
+
                 <button type="submit" class="btn btn-primary">Update</button>
             </div>
 

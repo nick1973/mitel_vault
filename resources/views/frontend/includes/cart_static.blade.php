@@ -1,4 +1,4 @@
-<div id="list_cart" class="table-responsive">
+<div id="reload_cart" class="table-responsive">
 <div class="panel panel-default">
     <div class="panel-heading text-center"><h3>Your Quote</h3></div>
     <div class="panel-body">
@@ -9,6 +9,7 @@
                 <th>Qty</th>
                 <th>Cost</th>
                 <th>Subtotal</th>
+                <th>Remove</th>
             </tr>
             </thead>
             <tbody>
@@ -18,6 +19,8 @@
                     <td>{{ $row->qty }}</td>
                     <td>£ {{ $row->price }}</td>
                     <td>£ {{ $row->subtotal }}</td>
+                    <td><span onclick="remove_item('{{ $row->rowid }}')" class="glyphicon glyphicon-remove-circle"
+                              style="color: #ff0000" aria-hidden="true"></span></td>
                 </tr>
             @endforeach
             </tbody>
