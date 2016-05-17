@@ -5,7 +5,7 @@
         <div class="onoffswitch">
             <input name="" type="hidden" value="No">
             <input type="checkbox" value="Yes" name="peripheral" class="toggleBtn onoffswitch-checkbox" id="switch-lan"
-                   onclick="visible(this.id,'nav-lan')">
+                   onclick="visible(this.id,'nav-lan')" checked>
             <label for="switch-lan" class="onoffswitch-label">
                 <div class="onoffswitch-inner"></div>
                 <div class="onoffswitch-switch"></div>
@@ -17,7 +17,7 @@
 
 {{--<h4><strong>LAN Switch: </strong>Which LAN Switch is required from BT?</h4>--}}
 
-<form id="nav-lan" class="form-horizontal collapse animated fadeIn" action="/bundle_post">
+<form id="nav-lan" class="form-horizontal animated fadeIn" action="/bundle_post">
     <h4 class="col-lg-12 col-md-12"><strong>LAN Switch: </strong>Which LAN Switch is required from BT?</h4>
     <div class="col-md-12 col-lg-12">
         <div class="form-group">
@@ -134,5 +134,19 @@
         </div>
 
     </div>
-
 </form>
+<button onclick="terminalsPrev()" class="btn btn-default pull-left"><span class="glyphicon glyphicon-hand-left"
+                                                                          aria-hidden="true"></span> Previous
+</button>
+<button onclick="peripheralsNext()" class="btn btn-success pull-right">Next <span class="glyphicon glyphicon-hand-right"
+                                                                                  aria-hidden="true"></span></button>
+<script>
+    function terminalsPrev() {
+        $('.nav-tabs a[href="#terminals"]').tab('show');
+    }
+
+    function peripheralsNext() {
+        $("#tick-lan-data").addClass('animated fadeIn').removeClass('hidden');
+        $('.nav-tabs a[href="#peripherals"]').tab('show');
+    }
+</script>

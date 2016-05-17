@@ -6,7 +6,7 @@
             <input name="" type="hidden" value="No">
             <input type="checkbox" value="Yes" name="peripheral" class="toggleBtn onoffswitch-checkbox"
                    id="switch-maint"
-                   onclick="visible(this.id,'nav-maint')">
+                   onclick="visible(this.id,'nav-maint')" checked>
             <label for="switch-maint" class="onoffswitch-label">
                 <div class="onoffswitch-inner"></div>
                 <div class="onoffswitch-switch"></div>
@@ -16,7 +16,7 @@
 </div>
 <br/>
 
-<form id="nav-maint" class="form-horizontal collapse animated fadeIn" action="/bundle_post">
+<form id="nav-maint" class="form-horizontal animated fadeIn" action="/bundle_post">
     <h4 class="col-lg-12 col-md-12"><strong>BT Maintenance: </strong>What BT Maintenance cover is required from BT?</h4>
 
     <div class="col-md-12 col-lg-6">
@@ -177,7 +177,7 @@
 
     <h4 class="col-lg-12 col-md-12"><strong>BT Phone Maintenance: </strong>Select BT Phone Maintenance</h4>
 
-    <div class="col-md-12 col-lg-6">
+    <div class="col-md-12 col-lg-12">
         <div class="form-group">
             <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-4 col-lg-5 control-label">Same as System:</label>
 
@@ -228,5 +228,20 @@
         </div>
 
     </div>
-
 </form>
+<button onclick="supportPrev()" class="btn btn-default pull-left"><span class="glyphicon glyphicon-hand-left"
+                                                                        aria-hidden="true"></span> Previous
+</button>
+<button onclick="save()" class="btn btn-primary pull-right">Save <span class="glyphicon glyphicon-floppy-disk"
+                                                                       aria-hidden="true"></span></button>
+<script>
+    function supportPrev() {
+        $('.nav-tabs a[href="#support"]').tab('show');
+    }
+
+    function save() {
+        $("#tick-maint").addClass('animated fadeIn').removeClass('hidden');
+        $("#tick-bundle").addClass('animated fadeIn').removeClass('hidden');
+        alert("At this point the quote would be saved!");
+    }
+</script>

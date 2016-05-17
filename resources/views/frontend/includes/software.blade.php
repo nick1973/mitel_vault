@@ -6,7 +6,7 @@
             <input name="" type="hidden" value="No">
             <input type="checkbox" value="Yes" name="peripheral" class="toggleBtn onoffswitch-checkbox"
                    id="switch-software"
-                   onclick="visible(this.id,'nav-software')">
+                   onclick="visible(this.id,'nav-software')" checked>
             <label for="switch-software" class="onoffswitch-label">
                 <div class="onoffswitch-inner"></div>
                 <div class="onoffswitch-switch"></div>
@@ -16,7 +16,7 @@
 </div>
 <br/>
 
-<form id="nav-software" class="form-horizontal collapse animated fadeIn" action="/bundle_post">
+<form id="nav-software" class="form-horizontal animated fadeIn" action="/bundle_post">
     <h4 class="col-lg-12 col-md-12"><strong>Software: </strong>What user features are required from BT?</h4>
     <div class="col-md-12 col-lg-6">
         <div class="form-group">
@@ -175,10 +175,24 @@
         {{--data-content="And here's some amazing content. It's very engaging. Right?"></i>--}}
         {{--</div>--}}
 
+
     </div>
 
 </form>
+<button onclick="homePrev()" class="btn btn-default pull-left"><span class="glyphicon glyphicon-hand-left"
+                                                                     aria-hidden="true"></span> Previous
+</button>
+<button onclick="serverNext()" class="btn btn-success pull-right">Next <span class="glyphicon glyphicon-hand-right"
+                                                                             aria-hidden="true"></span></button>
+<script>
+    function homePrev() {
+        $('.nav-tabs a[href="#bundle-home"]').tab('show');
+    }
 
-
+    function serverNext() {
+        $("#tick-software").addClass('animated fadeIn').removeClass('hidden');
+        $('.nav-tabs a[href="#servers"]').tab('show');
+    }
+</script>
 
 

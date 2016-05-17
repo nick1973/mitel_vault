@@ -6,7 +6,7 @@
             <input name="" type="hidden" value="No">
             <input type="checkbox" value="Yes" name="peripheral" class="toggleBtn onoffswitch-checkbox"
                    id="switch-training"
-                   onclick="visible(this.id,'nav-training')">
+                   onclick="visible(this.id,'nav-training')" checked>
             <label for="switch-training" class="onoffswitch-label">
                 <div class="onoffswitch-inner"></div>
                 <div class="onoffswitch-switch"></div>
@@ -16,7 +16,7 @@
 </div>
 <br/>
 
-<form id="nav-training" class="form-horizontal collapse animated fadeIn" action="/bundle_post">
+<form id="nav-training" class="form-horizontal animated fadeIn" action="/bundle_post">
     <div class="col-md-12 col-lg-12">
         <h4 class="col-lg-offset-6"><strong>MiVB Training: </strong></h4>
 
@@ -283,3 +283,18 @@
         </div>
     </div>
 </form>
+<button onclick="peripheralsPrev()" class="btn btn-default pull-left"><span class="glyphicon glyphicon-hand-left"
+                                                                            aria-hidden="true"></span> Previous
+</button>
+<button onclick="teleworkerNext()" class="btn btn-success pull-right">Next <span class="glyphicon glyphicon-hand-right"
+                                                                                 aria-hidden="true"></span></button>
+<script>
+    function peripheralsPrev() {
+        $('.nav-tabs a[href="#peripherals"]').tab('show');
+    }
+
+    function teleworkerNext() {
+        $("#tick-training").addClass('animated fadeIn').removeClass('hidden');
+        $('.nav-tabs a[href="#remote"]').tab('show');
+    }
+</script>

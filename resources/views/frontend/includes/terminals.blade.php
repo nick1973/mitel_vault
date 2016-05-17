@@ -6,7 +6,7 @@
             <input name="" type="hidden" value="No">
             <input type="checkbox" value="Yes" name="peripheral" class="toggleBtn onoffswitch-checkbox"
                    id="switch-terminals"
-                   onclick="visible(this.id,'nav-terminals')">
+                   onclick="visible(this.id,'nav-terminals')" checked>
             <label for="switch-terminals" class="onoffswitch-label">
                 <div class="onoffswitch-inner"></div>
                 <div class="onoffswitch-switch"></div>
@@ -16,7 +16,7 @@
 </div>
 <br/>
 
-<form id="nav-terminals" class="form-horizontal collapse animated fadeIn" action="/bundle_post">
+<form id="nav-terminals" class="form-horizontal animated fadeIn" action="/bundle_post">
     <h4 class="col-lg-12 col-md-12"><strong>Analogue Terminals: </strong>What Analogue Terminals are required from BT?
     </h4>
     <div class="col-md-12 col-lg-6">
@@ -399,10 +399,22 @@
         </div>
 
     </div>
-
-
 </form>
+<button onclick="serversPrev()" class="btn btn-default pull-left"><span class="glyphicon glyphicon-hand-left"
+                                                                        aria-hidden="true"></span> Previous
+</button>
+<button onclick="landataNext()" class="btn btn-success pull-right">Next <span class="glyphicon glyphicon-hand-right"
+                                                                              aria-hidden="true"></span></button>
+<script>
+    function serversPrev() {
+        $('.nav-tabs a[href="#servers"]').tab('show');
+    }
 
+    function landataNext() {
+        $("#tick-terminals").addClass('animated fadeIn').removeClass('hidden');
+        $('.nav-tabs a[href="#lan-data"]').tab('show');
+    }
+</script>
 
 
 

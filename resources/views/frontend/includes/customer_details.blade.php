@@ -127,7 +127,7 @@
 
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" class="btn btn-primary">Save</button>
+                {{--<button type="submit" class="btn btn-primary">Save</button>--}}
             </div>
         </div>
         </form>
@@ -177,6 +177,7 @@
 
     $("#save-customer-details").click(function () {
         $("#tick-customer-details").removeClass('hidden');
+        $('.nav-tabs a[href="#bundle"]').tab('show');
     });
 
 </script>

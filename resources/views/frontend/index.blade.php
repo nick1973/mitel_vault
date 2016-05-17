@@ -17,7 +17,7 @@
                     "aria-controls": '#' + id
                 });
 
-                $("#" + id).removeClass('fadeOut').addClass('fadeIn');
+                $("#" + id).removeClass('fadeOut').addClass('fadeIn').delay("slow");
             }
             else if ($("#" + button).prop('checked') == false) {
                 $("#" + id).removeClass('fadeIn').addClass('fadeOut').delay("slow");
@@ -94,7 +94,8 @@
                                                     function () {
                                                         $('#overview-button').removeClass('animated bounce');
                                                     });
-                                            $("#tick-bundle").addClass('animated fadeIn').removeClass('hidden');
+                                            $("#tick-bundle-home").addClass('animated fadeIn').removeClass('hidden');
+                                            $('.nav-tabs a[href="#software"]').tab('show');
                                             $('#reload_cart').load('/cart_reload');
                                         }
                                         ;
@@ -128,11 +129,15 @@
                         <span id="tick-customer-details" class="hidden">
                             <img src="/images/tick.png" height="18px">
                         </span></a></li>
-                <li role="presentation"><a href="#bundle" aria-controls="bundle" role="tab" data-toggle="tab">Bundle</a></li>
+                <li role="presentation"><a href="#bundle" aria-controls="bundle" role="tab" data-toggle="tab">Bundle
+                    <span id="tick-bundle" class="hidden">
+                            <img src="/images/tick.png" height="18px">
+                        </span>
+                    </a></li>
             </ul>
 
             <!-- Tab panes -->
-                    <div class="tab-content">
+    <div class="tab-content" id="product-tabs">
 
                         <div role="tabpanel" class="tab-pane fade in active" id="home">
                             @include('frontend.includes.customer_details')
@@ -142,22 +147,79 @@
 
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation" class="active"><a href="#bundle-home" aria-controls="bundle-home"
-                                                                  role="tab" data-toggle="tab">Bundle
-                            <span id="tick-bundle" class="hidden">
-                            <img src="/images/tick.png" height="18px">
-                        </span></a></li>
-                        <li role="presentation"><a href="#software" aria-controls="software" role="tab" data-toggle="tab">Software</a></li>
-                        <li role="presentation"><a href="#servers" aria-controls="servers" role="tab" data-toggle="tab">Server</a></li>
-                        <li role="presentation"><a href="#terminals" aria-controls="terminals" role="tab" data-toggle="tab">Terminals</a></li>
-                        <li role="presentation"><a href="#lan-data" aria-controls="lan-data" role="tab" data-toggle="tab">LAN & DATA</a></li>
-                        <li role="presentation"><a href="#peripherals" aria-controls="peripherals" role="tab" data-toggle="tab">Peripherals</a></li>
-                        <li role="presentation"><a href="#training" aria-controls="training" role="tab" data-toggle="tab">Training</a></li>
-                        <li role="presentation"><a href="#remote" aria-controls="remote" role="tab" data-toggle="tab">Teleworker</a>
+                        <li role="presentation" class="active">
+                            <a href="#bundle-home" aria-controls="bundle-home" role="tab" data-toggle="tab">Bundle
+                                <span id="tick-bundle-home" class="hidden">
+                                    <img src="/images/tick.png" height="18px">
+                                </span>
+                            </a>
                         </li>
-                        <li role="presentation"><a href="#install" aria-controls="install" role="tab" data-toggle="tab">Install</a></li>
-                        <li role="presentation"><a href="#support" aria-controls="support" role="tab" data-toggle="tab">Support</a></li>
-                        <li role="presentation"><a href="#maint" aria-controls="maint" role="tab" data-toggle="tab">Maintenance</a></li>
+                        <li role="presentation">
+                            <a href="#software" aria-controls="software" role="tab" data-toggle="tab">Software
+                            <span id="tick-software" class="hidden">
+                                    <img src="/images/tick.png" height="18px">
+                                </span>
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#servers" aria-controls="servers" role="tab" data-toggle="tab">Server
+                            <span id="tick-servers" class="hidden">
+                                    <img src="/images/tick.png" height="18px">
+                                </span>
+                            </a>
+                        </li>
+                        <li role="presentation"><a href="#terminals" aria-controls="terminals" role="tab"
+                                                   data-toggle="tab">Terminals
+                            <span id="tick-terminals" class="hidden">
+                                    <img src="/images/tick.png" height="18px">
+                                </span>
+                            </a>
+                        </li>
+                        <li role="presentation"><a href="#lan-data" aria-controls="lan-data" role="tab"
+                                                   data-toggle="tab">LAN & DATA
+                            <span id="tick-lan-data" class="hidden">
+                                    <img src="/images/tick.png" height="18px">
+                                </span>
+                            </a>
+                        </li>
+                        <li role="presentation"><a href="#peripherals" aria-controls="peripherals" role="tab"
+                                                   data-toggle="tab">Peripherals
+                            <span id="tick-peripherals" class="hidden">
+                                    <img src="/images/tick.png" height="18px">
+                                </span>
+                            </a>
+                        </li>
+                        <li role="presentation"><a href="#training" aria-controls="training" role="tab"
+                                                   data-toggle="tab">Training
+                            <span id="tick-training" class="hidden">
+                                    <img src="/images/tick.png" height="18px">
+                                </span>
+                            </a>
+                        </li>
+                        <li role="presentation"><a href="#remote" aria-controls="remote" role="tab" data-toggle="tab">Teleworker
+                            <span id="tick-remote" class="hidden">
+                                    <img src="/images/tick.png" height="18px">
+                                </span>
+                            </a>
+                        </li>
+                        <li role="presentation"><a href="#install" aria-controls="install" role="tab" data-toggle="tab">Install
+                            <span id="tick-install" class="hidden">
+                                    <img src="/images/tick.png" height="18px">
+                                </span>
+                            </a>
+                        </li>
+                        <li role="presentation"><a href="#support" aria-controls="support" role="tab" data-toggle="tab">Support
+                            <span id="tick-support" class="hidden">
+                                    <img src="/images/tick.png" height="18px">
+                                </span>
+                            </a>
+                        </li>
+                        <li role="presentation"><a href="#maint" aria-controls="maint" role="tab" data-toggle="tab">Maintenance
+                            <span id="tick-maint" class="hidden">
+                                    <img src="/images/tick.png" height="18px">
+                                </span>
+                            </a>
+                        </li>
                     </ul>
                     <div class="tab-content">
 

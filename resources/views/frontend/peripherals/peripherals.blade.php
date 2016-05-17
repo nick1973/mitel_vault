@@ -4,7 +4,7 @@
         <div class="onoffswitch">
             <input name="" type="hidden" value="No">
             <input type="checkbox" value="Yes" name="peripheral" class="toggleBtn onoffswitch-checkbox" id="periph"
-                   onclick="visible(this.id,'collapseExample')">
+                   onclick="visible(this.id,'collapseExample')" checked>
             <label for="periph" class="onoffswitch-label">
                 <div class="onoffswitch-inner"></div>
                 <div class="onoffswitch-switch"></div>
@@ -14,7 +14,7 @@
 </div>
 
 
-<div id="collapseExample" class="col-lg-12 col-lg-offset-1 collapse animated fadeIn" style="padding-top: 20px">
+<div id="collapseExample" class="col-lg-12 col-lg-offset-1 animated fadeIn" style="padding-top: 20px">
     <div class="form-group col-lg-10 col-md-10">
         <label for="inputEmail3" class="col-sm-4 col-lg-4 col-md-4 control-label">
             BTB Music On Hold?
@@ -185,5 +185,19 @@
     </div>
 </div>
 <br/>
-<hr>
+<button onclick="landataPrev()" class="btn btn-default pull-left"><span class="glyphicon glyphicon-hand-left"
+                                                                        aria-hidden="true"></span> Previous
+</button>
+<button onclick="trainingNext()" class="btn btn-success pull-right">Next <span class="glyphicon glyphicon-hand-right"
+                                                                               aria-hidden="true"></span></button>
+<script>
+    function landataPrev() {
+        $('.nav-tabs a[href="#lan-data"]').tab('show');
+    }
+
+    function trainingNext() {
+        $("#tick-peripherals").addClass('animated fadeIn').removeClass('hidden');
+        $('.nav-tabs a[href="#training"]').tab('show');
+    }
+</script>
 

@@ -6,7 +6,7 @@
             <input name="" type="hidden" value="No">
             <input type="checkbox" value="Yes" name="peripheral" class="toggleBtn onoffswitch-checkbox"
                    id="switch-server"
-                   onclick="visible(this.id,'nav-server')">
+                   onclick="visible(this.id,'nav-server')" checked>
             <label for="switch-server" class="onoffswitch-label">
                 <div class="onoffswitch-inner"></div>
                 <div class="onoffswitch-switch"></div>
@@ -16,7 +16,7 @@
 </div>
 <br/>
 
-<form id="nav-server" class="form-horizontal collapse animated fadeIn" action="/bundle_post">
+<form id="nav-server" class="form-horizontal animated fadeIn" action="/bundle_post">
     <h4 class="col-lg-12 col-md-12"><strong>Server: </strong>What server is required from BT?</h4>
     <div class="col-md-12 col-lg-6">
         <div class="form-group">
@@ -570,7 +570,7 @@
     <h4><strong>Sip Proxy Server: </strong>Do you require a SIP Proxy Sever from BT?
     </h4>
 
-    <div class="form-group col-lg-6">
+    <div class="form-group col-lg-12">
 
     <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-4 col-lg-7 control-label">Server Gateway Mode SIP Proxy
             Qty:</label>
@@ -592,7 +592,21 @@
     </div>
 
 </form>
+<button onclick="softwarePrev()" class="btn btn-default pull-left"><span class="glyphicon glyphicon-hand-left"
+                                                                         aria-hidden="true"></span> Previous
+</button>
+<button onclick="terminalsNext()" class="btn btn-success pull-right">Next <span class="glyphicon glyphicon-hand-right"
+                                                                                aria-hidden="true"></span></button>
+<script>
+    function softwarePrev() {
+        $('.nav-tabs a[href="#software"]').tab('show');
+    }
 
+    function terminalsNext() {
+        $("#tick-servers").addClass('animated fadeIn').removeClass('hidden');
+        $('.nav-tabs a[href="#terminals"]').tab('show');
+    }
+</script>
 
 
 

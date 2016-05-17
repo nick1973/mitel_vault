@@ -6,7 +6,7 @@
             <input name="" type="hidden" value="No">
             <input type="checkbox" value="Yes" name="peripheral" class="toggleBtn onoffswitch-checkbox"
                    id="switch-install"
-                   onclick="visible(this.id,'nav-install')">
+                   onclick="visible(this.id,'nav-install')" checked>
             <label for="switch-install" class="onoffswitch-label">
                 <div class="onoffswitch-inner"></div>
                 <div class="onoffswitch-switch"></div>
@@ -16,7 +16,7 @@
 </div>
 <br/>
 
-<form id="nav-install" class="form-horizontal collapse animated fadeIn" action="/bundle_post">
+<form id="nav-install" class="form-horizontal animated fadeIn" action="/bundle_post">
     <h4 class="col-lg-12 col-md-12"><strong>BT Install: </strong>What BT Installation service is required from BT?
 
     </h4>
@@ -55,5 +55,19 @@
                data-content="<img src='/images/mitel_phones/mitel-5320.jpg'>" data-animation="true"></i>
         </div>
     </div>
-
 </form>
+<button onclick="teleworkerPrev()" class="btn btn-default pull-left"><span class="glyphicon glyphicon-hand-left"
+                                                                           aria-hidden="true"></span> Previous
+</button>
+<button onclick="supportNext()" class="btn btn-success pull-right">Next <span class="glyphicon glyphicon-hand-right"
+                                                                              aria-hidden="true"></span></button>
+<script>
+    function teleworkerPrev() {
+        $('.nav-tabs a[href="#remote"]').tab('show');
+    }
+
+    function supportNext() {
+        $("#tick-install").addClass('animated fadeIn').removeClass('hidden');
+        $('.nav-tabs a[href="#support"]').tab('show');
+    }
+</script>
