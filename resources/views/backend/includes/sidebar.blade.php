@@ -51,11 +51,7 @@
                     <span>Product Management</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
-                <ul class="treeview-menu {{ Active::pattern(['admin/product_management/hardware',
-                                                            'admin/product_management/software',
-                                                            'admin/product_management/terminals',
-                                                            'admin/product_management/mivb_peripherals',
-                                                            'admin/product_management/bt_peripherals'], 'menu-open') }}"
+                <ul class="treeview-menu {{ Active::pattern('admin/product_management/*', 'menu-open') }}"
                     style="display: none; {{ Active::pattern(['admin/product_management/hardware',
                                                             'admin/product_management/software',
                                                             'admin/product_management/terminals',
@@ -69,6 +65,10 @@
                     </li>
                     <li class="{{ Active::pattern('admin/product_management/terminals*') }}">
                         <a href="{!! route('admin.product_management.terminals.index') !!}">Terminals</a>
+                    </li>
+                    <li class="{{ Active::pattern('admin/product_management/terminal_upgrades*') }}">
+                        <a href="{!! route('admin.product_management.terminal_upgrades.index') !!}">Terminal
+                            Upgrades</a>
                     </li>
                     <li class="{{ Active::pattern('admin/product_management/mivb_peripherals*') }}">
                         <a href="{!! route('admin.product_management.mivb_peripherals.index') !!}">MiVB Peripherals</a>

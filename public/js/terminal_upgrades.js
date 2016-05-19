@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    var table = $('#terminals').DataTable({
+    var table = $('#terminal_upgrades').DataTable({
 
         initComplete: function () {
             this.api().columns().every(function () {
@@ -20,7 +20,7 @@ $(document).ready(function () {
             });
         },
         "order": [[0, "asc"]],
-        "ajax": "/admin/terminals",
+        "ajax": "/admin/terminal_upgrades",
         "pagingType": "full_numbers",
         "lengthMenu": [[5, 25, 50, -1], [5, 25, 50, "All"]],
         "columns": [
@@ -47,7 +47,7 @@ $(document).ready(function () {
             {"data": "five_yr_total_care"},
             {
                 "data": function (data) {
-                    return '<a href="/admin/product_management/' + data.id + '/edit" class="btn btn-success">Edit</a>';
+                    return '<a href="/admin/product_management/terminal_upgrades/' + data.id + '/edit" class="btn btn-success">Edit</a>';
                 }
             }
         ],

@@ -14,7 +14,7 @@
     <div class="box box-success">
         <div class="box-header with-border">
             <h3 class="box-title">{{ trans('strings.backend.dashboard.welcome') }} {!! access()->user()->name !!} to:
-                Terminals</h3>
+                Terminal Upgrades</h3>
 
             <div class="box-tools pull-right">
                 <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
@@ -24,7 +24,7 @@
         <!-- /.box-header -->
         <div class="box-body">
             <div class="table-responsive">
-                <table id="terminals" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                <table id="terminal_upgrades" class="table table-striped table-bordered" cellspacing="0" width="100%">
                     <thead>
                     <tr>
                         <th>supplier_ref</th>

@@ -88,7 +88,7 @@
                                     .then(function (response) {
                                         $scope.content = response.data.bundle[0];
 
-                                        if (typeof response.data.bundle[0] !== 'undefined') {
+                                        if (typeof response.data.bundle !== 'undefined') {
                                             $('#overview-button').addClass('animated bounce btn-info');
                                             $('#overview-button').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
                                                     function () {
@@ -100,7 +100,7 @@
                                         }
                                         ;
 
-                                        console.log(response.data.bundle[0]);
+                                        console.log(response.data.bundle);
                                         $btn.button('reset');
                                     });
 
@@ -148,21 +148,22 @@
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" role="tablist">
                         <li role="presentation" class="active">
-                            <a href="#bundle-home" aria-controls="bundle-home" role="tab" data-toggle="tab">Bundle
+                            <a href="#bundle-home" aria-controls="bundle-home" role="tab" data-toggle="tab">System
+                                Bundle
                                 <span id="tick-bundle-home" class="hidden">
                                     <img src="/images/tick.png" height="18px">
                                 </span>
                             </a>
                         </li>
                         <li role="presentation">
-                            <a href="#software" aria-controls="software" role="tab" data-toggle="tab">Software
+                            <a href="#software" aria-controls="software" role="tab" data-toggle="tab">System Licenses
                             <span id="tick-software" class="hidden">
                                     <img src="/images/tick.png" height="18px">
                                 </span>
                             </a>
                         </li>
                         <li role="presentation">
-                            <a href="#servers" aria-controls="servers" role="tab" data-toggle="tab">Server
+                            <a href="#servers" aria-controls="servers" role="tab" data-toggle="tab">Server/Licenses
                             <span id="tick-servers" class="hidden">
                                     <img src="/images/tick.png" height="18px">
                                 </span>

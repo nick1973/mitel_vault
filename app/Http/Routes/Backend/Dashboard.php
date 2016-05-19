@@ -21,7 +21,16 @@ Route::get('mivb_peripherals', function () {
 });
 
 Route::get('terminals', function () {
-    return ['data' => \App\Product::where('category', 'terminals')->get()];
+    return ['data' => \App\Product::where('category', 'terminals')
+        ->orWhere('category', 'analogue_terminals')
+        ->orWhere('category', 'dect_terminals')
+        ->orWhere('category', 'digital_terminals')
+        ->orWhere('category', 'ip_terminals')
+        ->get()];
+});
+
+Route::get('terminal_upgrades', function () {
+    return ['data' => \App\TerminalUpgrade::where('category', 'terminal_upgrades')->get()];
 });
 
 Route::get('bt_peripherals', function () {
@@ -48,6 +57,7 @@ Route::get('bundles', function () {
 Route::get('product_management/mivb_bundles/{mivb_bundles}/build', ['as' => 'product_management.mivb_bundles.{mivb_bundles}.build', 'uses' => 'Mivb_bundleController@build']);
 
 Route::resource('product_management/terminals', 'TerminalsController');
+Route::resource('product_management/terminal_upgrades', 'TerminalUpgradeController');
 Route::resource('product_management/hardware', 'HardwareController');
 Route::resource('product_management/software', 'SoftwareController');
 Route::resource('product_management/mivb_peripherals', 'Mivb_PeripheralsController');

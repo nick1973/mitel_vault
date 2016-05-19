@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMitelbundleProductsTable extends Migration
+class CreateProductTerminalupgradeTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,10 @@ class CreateMitelbundleProductsTable extends Migration
      */
     public function up()
     {
-        Schema::create('terminalupgrade_product', function (Blueprint $table) {
+        Schema::create('product_terminalupgrade', function (Blueprint $table) {
             $table->integer('product_id');
-            $table->integer('mitelbundle_id');
-            $table->primary(['product_id', 'mitelbundle_id']);
+            $table->integer('terminalupgrade_id');
+            $table->primary(['product_id', 'terminalupgrade_id']);
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class CreateMitelbundleProductsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('mitelbundle_products');
+        Schema::drop('product_terminalupgrade');
     }
 }

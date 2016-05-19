@@ -81,7 +81,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-4 control-label">PBX Ref:</label>
+                    <label for="inputEmail3" class="col-sm-4 control-label">PBX Type:</label>
                     <div class="col-sm-5">
                         {!! Form::select('pbx_type', ['MiVB' => 'MiVB', 'IP Office' => 'IP Office'], null, ['class' =>
                         'form-control']) !!}
@@ -92,7 +92,9 @@
                     <label for="inputEmail3" class="col-sm-4 control-label">Category Ref:</label>
                     <div class="col-sm-5">
                         {!! Form::select('category', ['Hardware' => 'Hardware', 'Software' => 'Software',
-                        'terminals' => 'Terminals',
+                        'terminals' => 'Terminals', 'ip_terminals' => 'IP Terminals', 'analogue_terminals' => 'Analogue
+                        Terminals', 'dect_terminals' => 'DECT Terminals',
+                        'digital_terminals' => 'Digital Terminals',
                         'mivb_peripherals' => 'MiVB Peripherals'], null, ['class' => 'form-control']) !!}
                         {{--{{ Form::select('category', array('Hardware' => 'Hardware', 'Software' => 'Software', 'terminals' => 'Terminals'), $product->category) }}--}}
                     </div>
@@ -197,6 +199,15 @@
                         {!! Form::input('five_yr_total_care', 'five_yr_total_care', null, ['class' => 'form-control']) !!}
                     </div>
                 </div>
+
+                <h4>Upgrades</h4>
+
+                @foreach($terminal_upgrades as $upgrades)
+                    <label>
+                        {!! Form::checkbox('upgrades_id[]', $upgrades->id); !!} {{ $upgrades->item_name }}
+                    </label>
+                @endforeach
+
             </div>
             {!! Form::close() !!}
             <div class="form-group">

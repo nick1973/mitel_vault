@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Product extends Model
+class TerminalUpgrade extends Model
 {
-    protected $table = 'products';
+    protected $table = 'product_upgrades';
 
     protected $fillable = [
         'category',
@@ -35,14 +35,9 @@ class Product extends Model
         'oa_view'
     ];
 
-    public function mitelbundles()
+    public function products()
     {
-        return $this->belongsToMany(Mitelbundle::class)->withTimestamps();
-    }
-
-    public function upgrades()
-    {
-        return $this->belongsToMany(TerminalUpgrade::class)->withTimestamps();
+        return $this->belongsToMany(Product::class)->withTimestamps();
     }
 
 }

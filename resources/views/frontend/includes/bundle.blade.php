@@ -3,11 +3,11 @@
 <form id="myform" class="form-horizontal" action="/bundle_post">
     <div class="col-md-12 col-lg-6">
         <div class="form-group">
-            <label for="inputEmail3" class="col-xs-3 col-sm-4 control-label">Analogue:</label>
+            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-lg-4 control-label">Analogue:</label>
 
-            <div class="col-xs-7 col-sm-5 col-md-5 col-lg-6">
+            <div class="col-xs-7 col-sm-5 col-md-5 col-lg-5">
                 {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-                <select class="form-control" name="analogue_lines">
+                <select class="form-control" name="analogue_lines" required="">
                     <option>0</option>
                     <option>1</option>
                     <option>2</option>
@@ -23,9 +23,9 @@
         </div>
 
         <div class="form-group">
-            <label for="inputEmail3" class="col-xs-3 col-sm-4 control-label">PRI/ISDN30:</label>
+            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-lg-4 control-label">PRI/ISDN30:</label>
 
-            <div class="col-xs-7 col-sm-5 col-md-5 col-lg-6">
+            <div class="col-xs-7 col-sm-5 col-md-5 col-lg-5">
                 {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
                 <select class="form-control" name="pri">
                     <option>0</option>
@@ -44,9 +44,9 @@
 
     <div class="col-md-12 col-lg-6">
         <div class="form-group">
-            <label for="inputEmail3" class="col-xs-3 col-sm-4 control-label">BRI/ISDN2:</label>
+            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-lg-4 control-label">BRI/ISDN2:</label>
 
-            <div class="col-xs-7 col-sm-5 col-md-5 col-lg-6">
+            <div class="col-xs-7 col-sm-5 col-md-5 col-lg-5">
                 {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
                 <select class="form-control">
                     <option>0</option>
@@ -63,9 +63,9 @@
         </div>
 
         <div class="form-group">
-            <label for="inputEmail3" class="col-xs-3 col-sm-4 control-label">SIP:</label>
+            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-lg-4 control-label">SIP:</label>
 
-            <div class="col-xs-7 col-sm-5 col-md-5 col-lg-6">
+            <div class="col-xs-7 col-sm-5 col-md-5 col-lg-5">
                 {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
                 <select class="form-control">
                     <option>0</option>
@@ -83,29 +83,29 @@
 
     </div>
 
-    {{--<div class="col-md-12 col-lg-6">--}}
-    {{--<div class="form-group">--}}
-    {{--<label for="inputEmail3" class="col-xs-3 col-sm-4 control-label">IP:</label>--}}
-    {{--<div class="col-xs-7 col-sm-5 col-md-5 col-lg-6">--}}
-    {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-    {{--<select class="form-control">--}}
-    {{--<option>0</option>--}}
-    {{--<option>1</option>--}}
-    {{--<option>2</option>--}}
-    {{--<option>3</option>--}}
-    {{--<option>4</option>--}}
-    {{--<option>5</option>--}}
-    {{--</select>--}}
-    {{--</div>--}}
-    {{--<i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"--}}
-    {{--data-toggle="popover" title="PRI/ISDN30" data-placement="right"--}}
-    {{--data-content="And here's some amazing content. It's very engaging. Right?"></i>--}}
-    {{--</div>--}}
-    {{--</div>--}}
-
-
-
     <div class="col-md-12 col-lg-6">
+
+        <h4><strong>Users: </strong>How many users are required?</h4>
+
+        <div class="form-group">
+            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-lg-4 control-label">Users:</label>
+
+            <div class="col-xs-7 col-sm-5 col-md-5 col-lg-5">
+                {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
+                <select class="form-control" name="users">
+                    <option>0</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
+               data-toggle="popover" title="Users" data-placement="right"
+               data-content="How many and what type of extensions are required?"></i>
+        </div>
+
         <h4><strong>LAN Ports: </strong>How many LAN ports are required from BT?</h4>
 
         <div class="form-group">
@@ -147,38 +147,11 @@
         </div>
         {{--<button id="but" type="submit" class="btn btn-info pull-right">Find Bundle!</button>--}}
     </div>
-
-
-    <div class="col-md-12 col-lg-6">
-        <h4><strong>Users: </strong>How many and what type of extensions are required?</h4>
-
-        <div class="form-group">
-            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-lg-4 control-label">Users:</label>
-
-            <div class="col-xs-7 col-sm-5 col-md-5 col-lg-6">
-                {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-                <select class="form-control" name="users">
-                    <option>0</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
-            </div>
-            <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
-               data-toggle="popover" title="Users" data-placement="right"
-               data-content="How many and what type of extensions are required?"></i>
-        </div>
-    </div>
 </form>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<button id="but" class="btn btn-info pull-right">Find Bundle!</button>
+<div class="col-lg-12">
+    <button id="but" class="btn btn-info pull-right">Find Bundle!</button>
+</div>
+
 
 
 

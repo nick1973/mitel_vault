@@ -96,6 +96,7 @@
         <script src="/js/bivb_peripherals.js"></script>
         <script src="/js/training.js"></script>
         <script src="/js/terminals.js"></script>
+        <script src="/js/terminal_upgrades.js"></script>
         <script src="/js/bt_peripherals.js"></script>
         <script src="/js/bundles.js"></script>
     @endif

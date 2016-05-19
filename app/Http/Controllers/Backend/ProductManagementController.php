@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Product;
+use App\TerminalUpgrade;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -16,6 +17,9 @@ class ProductManagementController extends Controller
 {
     function index($page = 'hardware')
     {
+        if ($page == 'ip_terminals' || $page == 'analogue_terminals' || $page == 'dect_terminals' || $page == 'digital_terminals') {
+            $page = 'terminals';
+        }
         //return view('backend.' . $page . '.index');
         return redirect('admin/product_management/' . $page);
     }
@@ -79,6 +83,18 @@ class ProductManagementController extends Controller
 
             array_pull($input, 'image');
             $add_image = array_add($input, 'image', 'uploads/' . $fileName);
+
+
+            if ($request->input('upgrades_id') == null) {
+                $upgrades_id = [];
+            } else {
+                $upgrades_id = $request->input('upgrades_id');
+            }
+            $products->upgrades()->sync($upgrades_id);
+
+
+
+
             $products->fill($add_image)->save();
 
         } else {
@@ -103,7 +119,8 @@ class ProductManagementController extends Controller
     function edit($id)
     {
         $product = Product::find($id);
-        return view('backend.products.edit', compact('product'));
+        $terminal_upgrades = TerminalUpgrade::get();
+        return view('backend.products.edit', compact('product', 'terminal_upgrades'));
     }
 
     /**

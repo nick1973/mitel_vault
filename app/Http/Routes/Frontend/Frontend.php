@@ -13,13 +13,16 @@ Route::get('bundle_list/{lines}/{analogue_extensions}', function ($lines, $analo
     $product = [
         'id' => $bundle->id,
         'name' => $bundle->name,
-        'qty' => 1,
+        'qty' => $bundle->qty,
         'price' => $bundle->btbuy
     ];
     Gloudemans\Shoppingcart\Facades\Cart::add($product);
-    return ["bundle" => App\Mitelbundle::where('analogue_lines', $lines)
-        ->orWhere('bri_lines', $lines)
-        ->get()];
+    return ["bundle" => $bundle,
+        "bundle_products" => $bundle->products];
+
+//       return ["bundle" => App\Mitelbundle::where('analogue_lines', $lines)
+//        ->orWhere('bri_lines', $lines)
+//        ->get()];
 });
 
 Route::get('cart_reload', function () {
@@ -40,6 +43,13 @@ Route::get('hardware_flat', function () {
 
 Route::get('software_flat', function () {
     return \App\Product::where('category', 'software')->get();
+});
+
+Route::post('post_terminals', function () {
+    $result = [
+        'terminals' => $_POST['terminals']
+    ];
+    return $result;
 });
 /**
  * These frontend controllers require the user to be logged in
