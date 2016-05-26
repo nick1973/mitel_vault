@@ -20,7 +20,7 @@ $(document).ready(function () {
             });
         },
         "order": [[0, "asc"]],
-        "ajax": "/admin/terminal_upgrades",
+        "ajax": "/admin/upgrades",
         "pagingType": "full_numbers",
         "lengthMenu": [[5, 25, 50, -1], [5, 25, 50, "All"]],
         "columns": [

@@ -3,15 +3,13 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Product;
-use App\TerminalUpgrade;
+use App\Upgrade;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
-use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Validator;
 
 class ProductManagementController extends Controller
 {
@@ -35,9 +33,6 @@ class ProductManagementController extends Controller
             !Product::where('supplier_ref', $request->input('supplier_ref'))->exists() ||
             !Product::where('bt_ref', $request->input('bt_ref'))->exists()
         ) {
-
-            // uploading file to given path
-
             $data = $request->input();
             if (!Input::file('image')) {
                 Product::create($data);
@@ -50,7 +45,6 @@ class ProductManagementController extends Controller
             }
             $page = strtolower($request->input('category'));
             return $this->index($page);
-
         }
         Session::flash('exists', 'Product already exists!');
         return redirect()->back();
@@ -74,7 +68,6 @@ class ProductManagementController extends Controller
     {
         $products = Product::where('id', $id)->first();
 
-
         if ($request->hasFile('image')) {
             $input = $request->all();
 
@@ -84,23 +77,20 @@ class ProductManagementController extends Controller
             array_pull($input, 'image');
             $add_image = array_add($input, 'image', 'uploads/' . $fileName);
 
-
-            if ($request->input('upgrades_id') == null) {
-                $upgrades_id = [];
-            } else {
-                $upgrades_id = $request->input('upgrades_id');
-            }
-            $products->upgrades()->sync($upgrades_id);
-
-
-
-
             $products->fill($add_image)->save();
 
         } else {
             $input = $request->except('image');
             $products->fill($input)->save();
         }
+
+        if ($request->input('upgrades_id') == null) {
+            $upgrades_id = [];
+        } else {
+            $upgrades_id = $request->input('upgrades_id');
+        }
+        $products->upgrades()->sync($upgrades_id);
+
         $page = strtolower($request->input('category'));
         return $this->index($page);
     }
@@ -119,8 +109,12 @@ class ProductManagementController extends Controller
     function edit($id)
     {
         $product = Product::find($id);
-        $terminal_upgrades = TerminalUpgrade::get();
-        return view('backend.products.edit', compact('product', 'terminal_upgrades'));
+        $upgrades = $product->upgrades;
+        $terminal_upgrades = Upgrade::get();
+        javascript()->put(['terms' => $terminal_upgrades]);
+
+
+        return view('backend.products.edit', compact('product', 'terminal_upgrades', 'upgrades', 'terms'));
     }
 
     /**

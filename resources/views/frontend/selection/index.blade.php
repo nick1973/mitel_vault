@@ -103,8 +103,8 @@
             <p>
                 <span class="col-lg-3">Select PBX for Quote: </span>
                 <a id="mivb" class="btn btn-default" href="#" role="button">MiVB</a>
-                <a id="ip_office" class="btn btn-default" data-toggle="collapse" data-target="#collapse2" href="#" role="button">IP Office</a>
-                <a id="btq" class="btn btn-default" data-toggle="collapse" data-target="#collapse2" href="#" role="button">BT Quantum</a>
+                {{--<a id="ip_office" class="btn btn-default" data-toggle="collapse" data-target="#collapse2" href="#" role="button">IP Office</a>--}}
+                {{--<a id="btq" class="btn btn-default" data-toggle="collapse" data-target="#collapse2" href="#" role="button">BT Quantum</a>--}}
                 <a id="reset" class="btn btn-primary pull-right" data-toggle="collapse" data-target="#collapse2" href="#" role="button">Reset</a>
             </p>
 

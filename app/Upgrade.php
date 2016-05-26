@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class TerminalUpgrade extends Model
+class Upgrade extends Model
 {
-    protected $table = 'product_upgrades';
+    protected $table = 'upgrades';
 
     protected $fillable = [
         'category',

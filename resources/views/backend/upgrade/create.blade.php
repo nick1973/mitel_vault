@@ -10,6 +10,7 @@
 @section('content')
     <ol class="breadcrumb">
         <li><a href={{ URL::previous() }}>Product Management</a></li>
+        <li class="active">Upgrades</li>
         <li class="active">Add New</li>
     </ol>
     @if(Session::has('exists'))
@@ -31,7 +32,8 @@
         <!-- /.box-header -->
         <div class="box-body">
 
-            {!! Form::open(array('url' => '/admin/product_management', 'files'=>true, 'class' => 'form-horizontal')) !!}
+            {!! Form::open(array('url' => '/admin/product_management/upgrades', 'files'=>true, 'class' =>
+            'form-horizontal')) !!}
             <div class="col-md-6">
                 <h2>Products Details:</h2>
 
@@ -50,7 +52,7 @@
                         {!! Form::select('category', ['Hardware' => 'Hardware', 'Software' => 'Software',
                         'terminals' => 'Terminals', 'ip_terminals' => 'IP Terminals', 'analogue_terminals' => 'Analogue
                         Terminals', 'dect_terminals' => 'DECT Terminals',
-                        'digital_terminals' => 'Digital Terminals',
+                        'digital_terminals' => 'Digital Terminals', 'terminal_upgrades' => 'Terminal Upgrades',
                         'mivb_peripherals' => 'MiVB Peripherals'], null, ['class' => 'form-control']) !!}
                         {{--<select class="form-control" name="category">--}}
                         {{--<option>Hardware</option>--}}

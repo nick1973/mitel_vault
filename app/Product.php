@@ -42,7 +42,7 @@ class Product extends Model
 
     public function upgrades()
     {
-        return $this->belongsToMany(TerminalUpgrade::class)->withTimestamps();
+        return $this->belongsToMany(Upgrade::class)->withTimestamps();
     }
 
 }

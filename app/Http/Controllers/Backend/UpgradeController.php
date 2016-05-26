@@ -11,14 +11,16 @@ use App\Maintenance;
 use App\Peripherals;
 use App\Terminals;
 use App\TerminalUpgrade;
+use App\Upgrade;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Input;
 
-class TerminalUpgradeController extends Controller
+class UpgradeController extends Controller
 {
     function index()
     {
-        return view('backend.terminal_upgrade.index');
+        return view('backend.upgrade.index');
     }
 
     function update(Request $request, $id)
@@ -46,35 +48,42 @@ class TerminalUpgradeController extends Controller
 
     function create()
     {
-        return view('backend.terminal_upgrade.create');
+        return view('backend.upgrade.create');
     }
 
     function store(Request $request)
     {
-        if (!Terminals::where('name', $request->input('name'))->exists() ||
-            !Terminals::where('supplier_ref', $request->input('supplier_ref'))->exists() ||
-            !Terminals::where('bt_ref', $request->input('bt_ref'))->exists()
+        if (!Upgrade::where('item_name', $request->input('item_name'))->exists() ||
+            !Upgrade::where('supplier_ref', $request->input('supplier_ref'))->exists() ||
+            !Upgrade::where('bt_ref', $request->input('bt_ref'))->exists()
         ) {
             $data = $request->input();
-            Terminals::create($data);
-            return redirect()->action('Backend\TerminalUpgradeController@index');
-        }
+            if (!Input::file('image')) {
+                Upgrade::create($data);
+            } else {
+                $destinationPath = 'uploads'; // upload path
+                $fileName = Input::file('image')->getClientOriginalName(); // getting image extension
+                Input::file('image')->move($destinationPath, $fileName);
+                $new_data = array_add($data, 'image', $destinationPath . '/' . $fileName);
+                Upgrade::create($new_data);
+            }
 
+            return $this->index();
+        }
         Session::flash('exists', 'Product already exists!');
         return redirect()->back();
-
     }
 
     function edit($id)
     {
         $product = TerminalUpgrade::find($id);
-        return view('backend.terminal_upgrade.edit', compact('product'));
+        return view('backend.upgrade.edit', compact('product'));
     }
 
 
     function destroy($id)
     {
         Terminals::where('id', $id)->delete();
-        return redirect()->action('Backend\TerminalUpgradeController@index');
+        return redirect()->action('Backend\UpgradeController@index');
     }
 }

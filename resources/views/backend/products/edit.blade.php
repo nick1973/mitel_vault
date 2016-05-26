@@ -202,12 +202,15 @@
 
                 <h4>Upgrades</h4>
 
-                @foreach($terminal_upgrades as $upgrades)
-                    <label>
-                        {!! Form::checkbox('upgrades_id[]', $upgrades->id); !!} {{ $upgrades->item_name }}
-                    </label>
+                @foreach($terminal_upgrades as $results)
+                    <div class="form-group">
+                        <label>
+                            <input id="upgrade{{$results->id}}" type="checkbox" name="upgrades_id[]"
+                                   value="{{ $results->id }}"> {{ $results->item_name }}
+                            {{--{!! Form::checkbox('upgrades_id[]', $results->id, ['id'=>'dave']) !!}--}}
+                        </label>
+                    </div>
                 @endforeach
-
             </div>
             {!! Form::close() !!}
             <div class="form-group">
@@ -223,12 +226,13 @@
                     {!! Form::close() !!}
                 </div>
             </div>
-
-
-
-
-
-
         </div><!-- /.box-body -->
     </div><!--box box-success-->
+    <script>
+        var obj = jQuery.parseJSON('{!! $upgrades !!}');
+        $.each(obj, function (key, value) {
+            $("#upgrade" + value.id).prop("checked", true);
+            console.log(value.id);
+        });
+    </script>
 @endsection
