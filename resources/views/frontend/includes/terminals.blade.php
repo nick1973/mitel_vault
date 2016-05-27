@@ -14,8 +14,8 @@
         </div>
     </div>
 </div>
-<br/>
 
+<br/>
 <form id="nav-terminals" class="form-horizontal animated fadeIn" action="/post_terminals">
     <h3><i class="fa fa-ellipsis-h fa-2x" style="color: #58678F; vertical-align: middle"></i> Indicates Upgrade Options
         <small>(click to view)</small>
@@ -32,7 +32,7 @@
         $x = $half_terminals;
         ?>
 
-        @foreach($analogue_terminals as $terminal)
+            @foreach($analogue_terminals as $k=>$terminal)
             <div class="form-group">
                 <label for="inputEmail3"
                        class="col-xs-3 col-sm-4 col-md-4 col-lg-7 control-label">{{ $terminal->item_name }}:</label>
@@ -49,12 +49,15 @@
                         <option>19</option>
                     </select>
                 </div>
+                {{ $k }}
                 <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
                    data-toggle="popover" title="2100 Analogue Phone" data-placement="right" data-html="true"
-                   data-content="<img src='/images/5320.png'>" data-animation="true"></i>
+                   data-content="<img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'>"
+                   data-animation="true"></i>
                 <i class="fa fa-ellipsis-h fa-2x" style="padding-left: 7px; padding-top: 4px; color: #58678F"
-                   onclick="extraShow('5320')"></i>
+                   onclick="extraShow({{ $terminal->bt_ref }})"></i>
             </div>
+
             <?php if ($i++ == $half_terminals) break; ?>
         @endforeach
     </div>
@@ -78,11 +81,13 @@
                         <option>19</option>
                     </select>
                 </div>
+                {{ $k }}
                 <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
                    data-toggle="popover" title="2100 Analogue Phone" data-placement="right" data-html="true"
-                   data-content="<img src='/images/5320.png'>" data-animation="true"></i>
+                   data-content="<img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'>"
+                   data-animation="true"></i>
                 <i class="fa fa-ellipsis-h fa-2x" style="padding-left: 7px; padding-top: 4px; color: #58678F"
-                   onclick="extraShow('5320')"></i>
+                   onclick="extraShow({{ $k }})"></i>
             </div>
         @endforeach
 
@@ -120,7 +125,8 @@
             </div>
             <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
                data-toggle="popover" title="2100 Analogue Phone" data-placement="right" data-html="true"
-               data-content="<img src='/images/5320.png'>" data-animation="true"></i>
+               data-content="<img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'>"
+               data-animation="true"></i>
                 <i class="fa fa-ellipsis-h fa-2x" style="padding-left: 7px; padding-top: 4px; color: #58678F"
                    onclick="extraShow('5320')"></i>
             </div>
@@ -149,7 +155,8 @@
                 </div>
                 <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
                    data-toggle="popover" title="2100 Analogue Phone" data-placement="right" data-html="true"
-                   data-content="<img src='/images/5320.png'>" data-animation="true"></i>
+                   data-content="<img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'>"
+                   data-animation="true"></i>
                 <i class="fa fa-ellipsis-h fa-2x" style="padding-left: 7px; padding-top: 4px; color: #58678F"
                    onclick="extraShow('5320')"></i>
             </div>
@@ -188,7 +195,8 @@
                 </div>
                 <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
                    data-toggle="popover" title="2100 Analogue Phone" data-placement="right" data-html="true"
-                   data-content="<img src='/images/5320.png'>" data-animation="true"></i>
+                   data-content="<img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'>"
+                   data-animation="true"></i>
                 <i class="fa fa-ellipsis-h fa-2x" style="padding-left: 7px; padding-top: 4px; color: #58678F"
                    onclick="extraShow('5320')"></i>
             </div>
@@ -215,9 +223,11 @@
                         <option>19</option>
                     </select>
                 </div>
+                {{ $k }}
                 <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
                    data-toggle="popover" title="2100 Analogue Phone" data-placement="right" data-html="true"
-                   data-content="<img src='/images/5320.png'>" data-animation="true"></i>
+                   data-content="<img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'>"
+                   data-animation="true"></i>
                 <i class="fa fa-ellipsis-h fa-2x" style="padding-left: 7px; padding-top: 4px; color: #58678F"
                    onclick="extraShow('5320')"></i>
             </div>
@@ -230,7 +240,6 @@
 <button onclick="landataNext()" class="btn btn-success pull-right">Next <span class="glyphicon glyphicon-hand-right"
                                                                               aria-hidden="true"></span></button>
 
-
 <div class="modal fade" id="add5320" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -240,19 +249,24 @@
             <div class="modal-body">
                 <form id="5320">
                     <div class="form-group">
-                        <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-4 col-lg-8 control-label">MiVB
-                            Universal Terminal Power Adaptor</label>
+                        @foreach($analogue_terminals as $k=>$terminal)
+                            {{ $k }}
+                            @foreach($terminal->upgrades as $upgrades)
+                                <label for="inputEmail3"
+                                       class="col-xs-3 col-sm-4 col-md-4 col-lg-8 control-label">{{ $upgrades->item_name }}</label>
 
-                        <div class="col-xs-7 col-sm-5 col-md-5 col-lg-3">
-                            <select name="universal_terminals_qty" class="form-control">
-                                <option>0</option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                            </select>
-                        </div>
+                                <div class="col-xs-7 col-sm-5 col-md-5 col-lg-3">
+                                    <select name="universal_terminals_qty" class="form-control">
+                                        <option>0</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                            @endforeach
+                        @endforeach
                     </div>
                 </form>
             </div>
