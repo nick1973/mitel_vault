@@ -177,7 +177,7 @@
 
     <h4 class="col-lg-12 col-md-12"><strong>BT Phone Maintenance: </strong>Select BT Phone Maintenance</h4>
 
-    <div class="col-md-12 col-lg-12">
+    <div class="col-md-12 col-lg-6">
         <div class="form-group">
             <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-4 col-lg-5 control-label">Same as System:</label>
 
@@ -229,11 +229,13 @@
 
     </div>
 </form>
+<div class="col-lg-12 col-md-12">
 <button onclick="supportPrev()" class="btn btn-default pull-left"><span class="glyphicon glyphicon-hand-left"
                                                                         aria-hidden="true"></span> Previous
 </button>
 <button onclick="save()" class="btn btn-primary pull-right">Save <span class="glyphicon glyphicon-floppy-disk"
                                                                        aria-hidden="true"></span></button>
+</div>
 <script>
     function supportPrev() {
         $('.nav-tabs a[href="#support"]').tab('show');

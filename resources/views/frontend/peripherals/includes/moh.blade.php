@@ -1,5 +1,5 @@
 <br/>
-<h4><span class="glyphicon glyphicon-music" aria-hidden="true"></span> Music On Hold Playback Unit</h4>
+<h4>Music On Hold Playback Unit</h4>
 <br/>
 <div class="form-group">
     <label for="inputEmail3" class="col-sm-5 col-lg-8 col-md-8 control-label">
@@ -23,7 +23,7 @@
 </div>
 
 <br/>
-<h4><span class="glyphicon glyphicon-music" aria-hidden="true"></span> Music On Hold Playback Unit Upgrades</h4>
+<h4>Music On Hold Playback Unit Upgrades</h4>
 <br/>
 <div class="form-group">
     <label for="inputEmail3" class="col-sm-5 col-lg-8 col-md-8 control-label">
@@ -69,7 +69,7 @@
 </div>
 
 <br/>
-<h4><span class="glyphicon glyphicon-music" aria-hidden="true"></span> Music On Hold - Non-copyright Managed Services
+<h4>Music On Hold - Non-copyright Managed Services
 </h4>
 <br/>
 <div class="form-group">
@@ -116,7 +116,7 @@
 </div>
 
 <br/>
-<h4><span class="glyphicon glyphicon-music" aria-hidden="true"></span> Music On Hold - Copyright Managed Services</h4>
+<h4>Music On Hold - Copyright Managed Services</h4>
 <br/>
 <div class="form-group">
     <label for="inputEmail3" class="col-sm-8 col-lg-8 col-md-8 control-label">

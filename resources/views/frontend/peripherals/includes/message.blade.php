@@ -1,5 +1,5 @@
 <br/>
-<h4><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> Personalise your System Message Packst</h4>
+<h4>Personalise your System Message Packst</h4>
 <br/>
 <div class="form-group">
     <label for="inputEmail3" class="col-sm-5 col-lg-6 col-md-6 control-label">
@@ -44,7 +44,7 @@
     </div>
 </div>
 <br/>
-<h4><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> Single On Hold Message Production</h4>
+<h4>Single On Hold Message Production</h4>
 <br/>
 <div class="form-group">
     <label for="inputEmail3" class="col-sm-5 col-lg-6 col-md-6 control-label">

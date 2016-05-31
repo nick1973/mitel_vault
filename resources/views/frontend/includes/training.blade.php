@@ -1,5 +1,5 @@
 <div class="form-group col-lg-12">
-    <h4 class="col-lg-6 col-md-6"><strong>Training: </strong>Is training required from BT?</h4>
+    <h4 class="col-lg-8 col-md-8"><strong>Training: </strong>Is training required from BT?</h4>
 
     <div class="col-sm-1">
         <div class="onoffswitch">

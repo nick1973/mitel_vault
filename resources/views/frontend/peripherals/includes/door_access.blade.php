@@ -1,5 +1,5 @@
 <br/>
-<h4><span class="glyphicon glyphicon-resize-horizontal" aria-hidden="true"></span> BTB Analogue Extension Systems</h4>
+<h4>BTB Analogue Extension Systems</h4>
 <br/>
 <div class="form-group">
     <label for="inputEmail3" class="col-sm-5 col-lg-6 col-md-6 control-label">
@@ -82,7 +82,7 @@
     </div>
 </div>
 <br/>
-<h4><span class="glyphicon glyphicon-resize-horizontal" aria-hidden="true"></span> BTB SIP Extension Systems</h4>
+<h4>BTB SIP Extension Systems</h4>
 <br/>
 <div class="form-group">
     <label for="inputEmail3" class="col-sm-5 col-lg-6 col-md-6 control-label">

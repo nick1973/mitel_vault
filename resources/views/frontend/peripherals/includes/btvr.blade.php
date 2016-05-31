@@ -1,5 +1,5 @@
 <br/>
-<h4><span class="glyphicon glyphicon-record" aria-hidden="true"></span> BT Enterprise + Lite Voice Recording - Core
+<h4>BT Enterprise + Lite Voice Recording - Core
     Product</h4>
 <br/>
 <div class="form-group">
@@ -130,7 +130,7 @@
 </div>
 <br/>
 <br/>
-<h4><span class="glyphicon glyphicon-record" aria-hidden="true"></span> BT Enterprise + Lite Voice Recording - Upgrade
+<h4>BT Enterprise + Lite Voice Recording - Upgrade
     Options</h4>
 <br/>
 <div class="form-group">
@@ -160,7 +160,7 @@
 </div>
 <br/>
 <br/>
-<h4><span class="glyphicon glyphicon-record" aria-hidden="true"></span> BT Enterprise Voice Recording - Upgrade Options
+<h4>BT Enterprise Voice Recording - Upgrade Options
 </h4>
 <br/>
 <div class="form-group">

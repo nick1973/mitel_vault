@@ -49,7 +49,6 @@
                         <option>19</option>
                     </select>
                 </div>
-                {{ $k }}
                 <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
                    data-toggle="popover" title="2100 Analogue Phone" data-placement="right" data-html="true"
                    data-content="<img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'>"
@@ -81,7 +80,6 @@
                         <option>19</option>
                     </select>
                 </div>
-                {{ $k }}
                 <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
                    data-toggle="popover" title="2100 Analogue Phone" data-placement="right" data-html="true"
                    data-content="<img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'>"
@@ -223,7 +221,6 @@
                         <option>19</option>
                     </select>
                 </div>
-                {{ $k }}
                 <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
                    data-toggle="popover" title="2100 Analogue Phone" data-placement="right" data-html="true"
                    data-content="<img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'>"
@@ -250,7 +247,6 @@
                 <form id="5320">
                     <div class="form-group">
                         @foreach($analogue_terminals as $k=>$terminal)
-                            {{ $k }}
                             @foreach($terminal->upgrades as $upgrades)
                                 <label for="inputEmail3"
                                        class="col-xs-3 col-sm-4 col-md-4 col-lg-8 control-label">{{ $upgrades->item_name }}</label>
