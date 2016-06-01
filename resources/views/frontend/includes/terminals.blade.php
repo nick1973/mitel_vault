@@ -17,7 +17,7 @@
 
 <br/>
 <form id="nav-terminals" class="form-horizontal animated fadeIn" action="/post_terminals">
-    <h3><i class="fa fa-ellipsis-h fa-2x" style="color: #58678F; vertical-align: middle"></i> Indicates Upgrade Options
+    <h3><i class="fa fa-plus-circle fa-2x" style="color: #58678F; vertical-align: middle"></i> Indicates Upgrade Options
         <small>(click to view)</small>
     </h3>
     <h4 class="col-lg-12 col-md-12"><strong>Analogue Terminals: </strong>What Analogue Terminals are required from BT?
@@ -53,8 +53,11 @@
                    data-toggle="popover" title="2100 Analogue Phone" data-placement="right" data-html="true"
                    data-content="<img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'>"
                    data-animation="true"></i>
-                <i class="fa fa-ellipsis-h fa-2x" style="padding-left: 7px; padding-top: 4px; color: #58678F"
-                   onclick="extraShow({{ $terminal->bt_ref }})"></i>
+
+                @if(count($terminal->upgrades)>0)
+                    <i class="fa fa-plus-circle fa-2x" style="padding-left: 7px; padding-top: 4px; color: #58678F"
+                       onclick="showUpgrades('{{ $terminal->item_name }}', {{ $terminal->upgrades }})"></i>
+                @endif
             </div>
 
             <?php if ($i++ == $half_terminals) break; ?>
@@ -84,8 +87,10 @@
                    data-toggle="popover" title="2100 Analogue Phone" data-placement="right" data-html="true"
                    data-content="<img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'>"
                    data-animation="true"></i>
-                <i class="fa fa-ellipsis-h fa-2x" style="padding-left: 7px; padding-top: 4px; color: #58678F"
-                   onclick="extraShow({{ $k }})"></i>
+                @if(count($terminal->upgrades)>0)
+                    <i class="fa fa-plus-circle fa-2x" style="padding-left: 7px; padding-top: 4px; color: #58678F"
+                       onclick="showUpgrades('{{ $terminal->item_name }}', {{ $terminal->upgrades }})"></i>
+                @endif
             </div>
         @endforeach
 
@@ -125,8 +130,10 @@
                data-toggle="popover" title="2100 Analogue Phone" data-placement="right" data-html="true"
                data-content="<img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'>"
                data-animation="true"></i>
-                <i class="fa fa-ellipsis-h fa-2x" style="padding-left: 7px; padding-top: 4px; color: #58678F"
-                   onclick="extraShow('5320')"></i>
+                @if(count($terminal->upgrades)>0)
+                    <i class="fa fa-plus-circle fa-2x" style="padding-left: 7px; padding-top: 4px; color: #58678F"
+                       onclick="showUpgrades('{{ $terminal->item_name }}', {{ $terminal->upgrades }})"></i>
+                @endif
             </div>
             <?php if ($i++ == $half_terminals) break; ?>
         @endforeach
@@ -155,8 +162,10 @@
                    data-toggle="popover" title="2100 Analogue Phone" data-placement="right" data-html="true"
                    data-content="<img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'>"
                    data-animation="true"></i>
-                <i class="fa fa-ellipsis-h fa-2x" style="padding-left: 7px; padding-top: 4px; color: #58678F"
-                   onclick="extraShow('5320')"></i>
+                @if(count($terminal->upgrades)>0)
+                    <i class="fa fa-plus-circle fa-2x" style="padding-left: 7px; padding-top: 4px; color: #58678F"
+                       onclick="showUpgrades('{{ $terminal->item_name }}', {{ $terminal->upgrades }})"></i>
+                @endif
             </div>
         @endforeach
     </div>
@@ -195,8 +204,10 @@
                    data-toggle="popover" title="2100 Analogue Phone" data-placement="right" data-html="true"
                    data-content="<img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'>"
                    data-animation="true"></i>
-                <i class="fa fa-ellipsis-h fa-2x" style="padding-left: 7px; padding-top: 4px; color: #58678F"
-                   onclick="extraShow('5320')"></i>
+                @if(count($terminal->upgrades)>0)
+                    <i class="fa fa-plus-circle fa-2x" style="padding-left: 7px; padding-top: 4px; color: #58678F"
+                       onclick="showUpgrades('{{ $terminal->item_name }}', {{ $terminal->upgrades }})"></i>
+                @endif
             </div>
             <?php if ($i++ == $half_terminals) break; ?>
         @endforeach
@@ -225,8 +236,10 @@
                    data-toggle="popover" title="2100 Analogue Phone" data-placement="right" data-html="true"
                    data-content="<img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'>"
                    data-animation="true"></i>
-                <i class="fa fa-ellipsis-h fa-2x" style="padding-left: 7px; padding-top: 4px; color: #58678F"
-                   onclick="extraShow('5320')"></i>
+                @if(count($terminal->upgrades)>0)
+                    <i class="fa fa-plus-circle fa-2x" style="padding-left: 7px; padding-top: 4px; color: #58678F"
+                       onclick="showUpgrades('{{ $terminal->item_name }}', {{ $terminal->upgrades }})"></i>
+                @endif
             </div>
         @endforeach
     </div>
@@ -237,36 +250,17 @@
 <button onclick="landataNext()" class="btn btn-success pull-right">Next <span class="glyphicon glyphicon-hand-right"
                                                                               aria-hidden="true"></span></button>
 
-<div class="modal fade" id="add5320" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="upgrades" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h2>5320 Upgrade Options</h2>
+                <h2></h2>
             </div>
             <div class="modal-body">
-                <form id="5320">
-                    <div class="form-group">
-                        @foreach($analogue_terminals as $k=>$terminal)
-                            @foreach($terminal->upgrades as $upgrades)
-                                <label for="inputEmail3"
-                                       class="col-xs-3 col-sm-4 col-md-4 col-lg-8 control-label">{{ $upgrades->item_name }}</label>
 
-                                <div class="col-xs-7 col-sm-5 col-md-5 col-lg-3">
-                                    <select name="universal_terminals_qty" class="form-control">
-                                        <option>0</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
-                                </div>
-                            @endforeach
-                        @endforeach
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
+                <div id="model_loop" class="form-group"></div>
+
+
                 <div class="col-lg-2">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                 </div>
@@ -277,14 +271,13 @@
                     {{--'class' => 'form-horizontal']--}}
                     {{--]) !!}--}}
                     <button type="button" onclick="addInputs('5320')" class="btn btn-success">Add</button>
-
                 </div>
-            </div>
+
         </div>
     </div>
 </div>
 
-
+</div>
 
 
 
@@ -311,6 +304,38 @@
 
     function extraShow(id) {
         $('#add' + id).modal('show')
+    }
+
+    function showUpgrades(name, obj) {
+        $('#upgrades').modal('show');
+        $("#model_loop").empty(obj);
+        $("h2").empty().append(name);
+        if (obj.length == 0) {
+            $("#model_loop").empty();
+        }
+
+        $.each(obj, function (index, data) {
+            //$("#model_loop").append(data['item_name']);
+            $("#model_loop").append(
+                    "<label id='label' for='inputEmail3' class='col-xs-3 col-sm-4 col-md-4 col-lg-8 control-label'>" + data['item_name'] +
+                    "</label>" +
+                    "<div class='col-xs-7 col-sm-5 col-md-5 col-lg-3'>" +
+                    "<select name='universal_terminals_qty' class='form-control'>" +
+                    "<option>0</option>" +
+                    "<option>1</option>" +
+                    "<option>2</option>" +
+                    "<option>3</option>" +
+                    "<option>4</option>" +
+                    "<option>5</option>" +
+                    "</select>" +
+                    "</div>");
+
+
+            console.log(data);
+
+        });
+
+
     }
 
     function addInputs(id) {
