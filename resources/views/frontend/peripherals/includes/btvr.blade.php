@@ -1,223 +1,160 @@
 <br/>
-<h4>BT Enterprise + Lite Voice Recording - Core
-    Product</h4>
+<h4>BT Enterprise + Lite Voice Recording - Core Product</h4>
 <br/>
 <div class="form-group">
-    <label for="inputEmail3" class="col-sm-5 col-lg-2 col-md-2 control-label">
-        BT Solo VR
-        <i class="fa fa-info-circle fa-2x" style="color: #58678F"
-           data-toggle="popover" title="BTB External MOH Unit" data-placement="right" data-html="true"
-           data-content="<img src='/images/solo.jpg'>" data-animation="true"></i>
-    </label>
+    <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-4 col-lg-1 control-label">SoloVR:</label>
 
-    <div class="col-sm-1 col-lg-2 col-md-2">
-        <div class="onoffswitch">
-            <input name="peripherals_ext_moh" type="hidden" value="No">
-            <input type="checkbox" value="Yes" name="peripherals_ext_moh" class="toggleBtn onoffswitch-checkbox"
-                   id="vr-solo">
-            <label for="vr-solo" class="onoffswitch-label">
-                <div class="onoffswitch-inner"></div>
-                <div class="onoffswitch-switch"></div>
-            </label>
-        </div>
-    </div>
-    <label style="padding-top: 5px" for="inputEmail3" class="col-sm-1 col-lg-1 col-md-1 control-label">Type</label>
-
-    <div class="col-sm-2 col-lg-2 col-md-2">
-        <input class="form-control" type="text">
-    </div>
-    <label style="padding-top: 5px" for="inputEmail3" class="col-sm-1 col-lg-1 col-md-1 control-label">Channels</label>
-
-    <div class="col-sm-2 col-lg-2 col-md-2">
-        <input class="form-control" type="text">
-    </div>
-</div>
-<br/>
-<br/>
-<div class="form-group">
-    <label for="inputEmail3" class="col-sm-5 col-lg-2 col-md-2 control-label">
-        BTB Lite VR
-        <i class="fa fa-info-circle fa-2x" style="color: #58678F"
-           data-toggle="popover" title="BTB External MOH Unit" data-placement="right" data-html="true"
-           data-content="<img src='/images/lite.jpg'>" data-animation="true"></i>
-    </label>
-
-    <div class="col-sm-1 col-lg-2 col-md-2">
-        <div class="onoffswitch">
-            <input name="peripherals_ext_moh" type="hidden" value="No">
-            <input type="checkbox" value="Yes" name="peripherals_ext_moh" class="toggleBtn onoffswitch-checkbox"
-                   id="vr-lite">
-            <label for="vr-lite" class="onoffswitch-label">
-                <div class="onoffswitch-inner"></div>
-                <div class="onoffswitch-switch"></div>
-            </label>
-        </div>
-    </div>
-    <label style="padding-top: 5px" for="inputEmail3" class="col-sm-1 col-lg-1 col-md-1 control-label">Type</label>
-
-    <div class="col-sm-2 col-lg-2 col-md-2">
-        <select class="form-control">
-            <option></option>
+    <div class="col-xs-7 col-sm-5 col-md-5 col-lg-2">
+        {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
+        <select class="form-control" name="analogue_lines">
+            <option>No</option>
+            <option>Yes</option>
         </select>
     </div>
-    <label style="padding-top: 5px" for="inputEmail3" class="col-sm-1 col-lg-1 col-md-1 control-label">Channels</label>
+    <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
+       data-toggle="popover" title="MGB" data-placement="right"
+       data-content="And here's some amazing content. It's very engaging. Right?"></i>
 
-    <div class="col-sm-2 col-lg-2 col-md-2">
+    <label style="padding-top: 5px" for="inputEmail3" class="col-sm-1 col-lg-1 col-md-1 control-label">Users</label>
+
+    <div class="col-sm-2 col-lg-2 col-md-3">
         <input class="form-control" type="text">
     </div>
-    <label style="padding-top: 5px" for="inputEmail3" class="col-sm-1 col-lg-1 col-md-1 control-label">Call
-        Match</label>
-
-    <div class="col-sm-1 col-lg-1 col-md-1">
-        <div class="onoffswitch">
-            <input name="peripherals_ext_moh" type="hidden" value="No">
-            <input type="checkbox" value="Yes" name="peripherals_ext_moh" class="toggleBtn onoffswitch-checkbox"
-                   id="vr-match">
-            <label for="vr-match" class="onoffswitch-label">
-                <div class="onoffswitch-inner"></div>
-                <div class="onoffswitch-switch"></div>
-            </label>
-        </div>
-    </div>
 </div>
-<br/>
-<br/>
+
 <div class="form-group">
-    <label for="inputEmail3" class="col-sm-5 col-lg-2 col-md-2 control-label">
-        BTB EVR
-        <i class="fa fa-info-circle fa-2x" style="color: #58678F"
-           data-toggle="popover" title="BTB External MOH Unit" data-placement="right" data-html="true"
-           data-content="<img src='/images/evr.jpg'>" data-animation="true"></i>
-    </label>
+    <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-4 col-lg-1 control-label">LiteVR:</label>
 
-    <div class="col-sm-1 col-lg-2 col-md-2">
-        <div class="onoffswitch">
-            <input name="peripherals_ext_moh" type="hidden" value="No">
-            <input type="checkbox" value="Yes" name="peripherals_ext_moh" class="toggleBtn onoffswitch-checkbox"
-                   id="vr-evr">
-            <label for="vr-evr" class="onoffswitch-label">
-                <div class="onoffswitch-inner"></div>
-                <div class="onoffswitch-switch"></div>
-            </label>
-        </div>
-    </div>
-    <label style="padding-top: 5px" for="inputEmail3" class="col-sm-1 col-lg-1 col-md-1 control-label">Type</label>
-
-    <div class="col-sm-2 col-lg-2 col-md-2">
-        <select class="form-control">
-            <option></option>
+    <div class="col-xs-7 col-sm-5 col-md-5 col-lg-2">
+        {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
+        <select class="form-control" name="analogue_lines">
+            <option>No</option>
+            <option>Yes</option>
         </select>
     </div>
+
+    <label style="padding-top: 5px" for="inputEmail3" class="col-sm-1 col-lg-1 col-md-1 control-label">Type</label>
+
+    <div class="col-sm-2 col-lg-2 col-md-3">
+        <input class="form-control" type="text">
+    </div>
+
     <label style="padding-top: 5px" for="inputEmail3" class="col-sm-1 col-lg-1 col-md-1 control-label">Channels</label>
 
-    <div class="col-sm-2 col-lg-2 col-md-2">
-        <input class="form-control" type="text">
+    <div class="col-sm-2 col-lg-2 col-md-3">
+        <input class="form-control">
     </div>
-    <label style="padding-top: 5px" for="inputEmail3" class="col-sm-1 col-lg-1 col-md-1 control-label">Call
-        Match</label>
+    <label style="padding-top: 5px" for="inputEmail3" class="col-sm-1 col-lg-1 col-md-1 control-label">Match</label>
 
-    <div class="col-sm-1 col-lg-1 col-md-1">
-        <div class="onoffswitch">
-            <input name="peripherals_ext_moh" type="hidden" value="No">
-            <input type="checkbox" value="Yes" name="peripherals_ext_moh" class="toggleBtn onoffswitch-checkbox"
-                   id="vr-match2">
-            <label for="vr-match2" class="onoffswitch-label">
-                <div class="onoffswitch-inner"></div>
-                <div class="onoffswitch-switch"></div>
-            </label>
-        </div>
+    <div class="col-sm-2 col-lg-2 col-md-3">
+        <select class="form-control">
+            <option>No</option>
+            <option>Yes</option>
+        </select>
     </div>
 </div>
-<br/>
-<br/>
-<h4>BT Enterprise + Lite Voice Recording - Upgrade
-    Options</h4>
-<br/>
+<br/><br/>
 <div class="form-group">
-    <label for="inputEmail3" class="col-sm-5 col-lg-3 col-md-3 control-label">
-        PCI Compliance
-        <i class="fa fa-info-circle fa-2x" style="color: #58678F"
-           data-toggle="popover" title="BTB External MOH Unit" data-placement="right" data-html="true"
-           data-content="<img src='/images/moh.jpg'>" data-animation="true"></i>
-    </label>
+    <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-4 col-lg-1 control-label">EVR:</label>
 
-    <div class="col-sm-1 col-lg-2 col-md-2">
-        <div class="onoffswitch">
-            <input name="peripherals_ext_moh" type="hidden" value="No">
-            <input type="checkbox" value="Yes" name="peripherals_ext_moh" class="toggleBtn onoffswitch-checkbox"
-                   id="vr-pci">
-            <label for="vr-pci" class="onoffswitch-label">
-                <div class="onoffswitch-inner"></div>
-                <div class="onoffswitch-switch"></div>
-            </label>
-        </div>
+    <div class="col-xs-7 col-sm-5 col-md-5 col-lg-2">
+        {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
+        <select class="form-control" name="analogue_lines">
+            <option>No</option>
+            <option>Yes</option>
+        </select>
     </div>
-    <label style="padding-top: 5px" for="inputEmail3" class="col-sm-1 col-lg-2 col-md-2 control-label">PCI Users</label>
 
-    <div class="col-sm-2 col-lg-2 col-md-2">
+    <label style="padding-top: 5px" for="inputEmail3" class="col-sm-1 col-lg-1 col-md-1 control-label">Type</label>
+
+    <div class="col-sm-2 col-lg-2 col-md-3">
         <input class="form-control" type="text">
+    </div>
+
+    <label style="padding-top: 5px" for="inputEmail3" class="col-sm-1 col-lg-1 col-md-1 control-label">Channels</label>
+
+    <div class="col-sm-2 col-lg-2 col-md-3">
+        <input class="form-control">
+    </div>
+    <label style="padding-top: 5px" for="inputEmail3" class="col-sm-1 col-lg-1 col-md-1 control-label">Match</label>
+
+    <div class="col-sm-2 col-lg-2 col-md-3">
+        <select class="form-control">
+            <option>No</option>
+            <option>Yes</option>
+        </select>
     </div>
 </div>
-<br/>
-<br/>
-<h4>BT Enterprise Voice Recording - Upgrade Options
-</h4>
+<br/><br/>
+<h4>BT Enterprise + Lite Voice Recording - Upgrade Options</h4>
 <br/>
 <div class="form-group">
-    <label for="inputEmail3" class="col-sm-5 col-lg-3 col-md-3 control-label">
-        Agent Evaluation
-        <i class="fa fa-info-circle fa-2x" style="color: #58678F"
-           data-toggle="popover" title="BTB External MOH Unit" data-placement="right" data-html="true"
-           data-content="<img src='/images/moh.jpg'>" data-animation="true"></i>
-    </label>
+    <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-4 col-lg-3 control-label">PCI Compliance:</label>
 
-    <div class="col-sm-1 col-lg-2 col-md-2">
-        <div class="onoffswitch">
-            <input name="peripherals_ext_moh" type="hidden" value="No">
-            <input type="checkbox" value="Yes" name="peripherals_ext_moh" class="toggleBtn onoffswitch-checkbox"
-                   id="vr-agent">
-            <label for="vr-agent" class="onoffswitch-label">
-                <div class="onoffswitch-inner"></div>
-                <div class="onoffswitch-switch"></div>
-            </label>
-        </div>
+    <div class="col-xs-7 col-sm-5 col-md-5 col-lg-2">
+        {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
+        <select class="form-control" name="analogue_lines">
+            <option>No</option>
+            <option>Yes</option>
+        </select>
     </div>
-    <label style="padding-top: 5px" for="inputEmail3" class="col-sm-1 col-lg-2 col-md-2 control-label">AE Users</label>
+    <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
+       data-toggle="popover" title="MGB" data-placement="right"
+       data-content="And here's some amazing content. It's very engaging. Right?"></i>
 
-    <div class="col-sm-2 col-lg-2 col-md-2">
-        <input class="form-control" type="text">
-    </div>
-    <label style="padding-top: 5px" for="inputEmail3" class="col-sm-1 col-lg-2 col-md-2 control-label">AE
-        Reporting</label>
+    <label style="padding-top: 5px" for="inputEmail3" class="col-sm-1 col-lg-2 col-md-1 control-label">Users</label>
 
-    <div class="col-sm-2 col-lg-2 col-md-2">
+    <div class="col-sm-2 col-lg-2 col-md-3">
         <input class="form-control" type="text">
     </div>
 </div>
-<br/>
+
+<h4>BT Enterprise Voice Recording - Upgrade Options</h4>
 <br/>
 <div class="form-group">
-    <label for="inputEmail3" class="col-sm-5 col-lg-3 col-md-3 control-label">
-        Screen Capture
-        <i class="fa fa-info-circle fa-2x" style="color: #58678F"
-           data-toggle="popover" title="BTB External MOH Unit" data-placement="right" data-html="true"
-           data-content="<img src='/images/moh.jpg'>" data-animation="true"></i>
-    </label>
+    <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-4 col-lg-3 control-label">Agent Evaluation:</label>
 
-    <div class="col-sm-1 col-lg-2 col-md-2">
-        <div class="onoffswitch">
-            <input name="peripherals_ext_moh" type="hidden" value="No">
-            <input type="checkbox" value="Yes" name="peripherals_ext_moh" class="toggleBtn onoffswitch-checkbox"
-                   id="vr-screen">
-            <label for="vr-screen" class="onoffswitch-label">
-                <div class="onoffswitch-inner"></div>
-                <div class="onoffswitch-switch"></div>
-            </label>
-        </div>
+    <div class="col-xs-7 col-sm-5 col-md-5 col-lg-2">
+        {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
+        <select class="form-control" name="analogue_lines">
+            <option>No</option>
+            <option>Yes</option>
+        </select>
     </div>
-    <label style="padding-top: 5px" for="inputEmail3" class="col-sm-1 col-lg-2 col-md-2 control-label">SC Users</label>
+    <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
+       data-toggle="popover" title="MGB" data-placement="right"
+       data-content="And here's some amazing content. It's very engaging. Right?"></i>
 
-    <div class="col-sm-2 col-lg-2 col-md-2">
+    <label style="padding-top: 5px" for="inputEmail3" class="col-sm-1 col-lg-1 col-md-1 control-label">Users</label>
+
+    <div class="col-sm-2 col-lg-2 col-md-3">
+        <input class="form-control" type="text">
+    </div>
+
+    <label style="padding-top: 5px" for="inputEmail3" class="col-sm-1 col-lg-1 col-md-1 control-label">Reporting</label>
+
+    <div class="col-sm-2 col-lg-2 col-md-3">
+        <input class="form-control" type="text">
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-4 col-lg-3 control-label">ScreenCapture:</label>
+
+    <div class="col-xs-7 col-sm-5 col-md-5 col-lg-2">
+        {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
+        <select class="form-control" name="analogue_lines">
+            <option>No</option>
+            <option>Yes</option>
+        </select>
+    </div>
+    <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
+       data-toggle="popover" title="MGB" data-placement="right"
+       data-content="And here's some amazing content. It's very engaging. Right?"></i>
+
+    <label style="padding-top: 5px" for="inputEmail3" class="col-sm-1 col-lg-1 col-md-1 control-label">Users</label>
+
+    <div class="col-sm-2 col-lg-2 col-md-3">
         <input class="form-control" type="text">
     </div>
 </div>

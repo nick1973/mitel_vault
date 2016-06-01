@@ -1,6 +1,23 @@
+<div class="form-group col-lg-12">
+    <h4 class="col-lg-8 col-md-8"><strong>Support: </strong>Is support required from BT?</h4>
+
+    <div class="col-sm-1">
+        <div class="onoffswitch">
+            <input name="" type="hidden" value="No">
+            <input type="checkbox" value="Yes" name="peripheral" class="toggleBtn onoffswitch-checkbox"
+                   id="switch-support"
+                   onclick="visible(this.id,'nav-support')" checked>
+            <label for="switch-support" class="onoffswitch-label">
+                <div class="onoffswitch-inner"></div>
+                <div class="onoffswitch-switch"></div>
+            </label>
+        </div>
+    </div>
+</div>
+<br/>
 <h4 class="col-lg-7 col-md-7"><strong>Is Proactive Monitoring is included in your standard system Bundle?</strong></h4>
 <br/>
-<div class="col-md-12 col-lg-12">
+<div id="nav-support" class="col-md-12 col-lg-12 animated fadeIn">
     <div class="form-group">
         <h4 class="col-lg-6 col-md-6 col-lg-offset-2"><strong>Included monitoring:</strong> Foundation Package</h4>
 

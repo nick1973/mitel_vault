@@ -14,12 +14,12 @@
                 </div>
             </div>
 
-            <div class="form-group">
-                <label for="inputEmail3" class="col-sm-4 control-label">BT CRF Number:</label>
-                <div class="col-sm-5">
-                    {!! Form::input('crf_id', 'crf_id', null, ['class' => 'form-control','disabled']) !!}
-                </div>
-            </div>
+            {{--<div class="form-group">--}}
+            {{--<label for="inputEmail3" class="col-sm-4 control-label">BT CRF Number:</label>--}}
+            {{--<div class="col-sm-5">--}}
+            {{--{!! Form::input('crf_id', 'crf_id', null, ['class' => 'form-control','disabled']) !!}--}}
+            {{--</div>--}}
+            {{--</div>--}}
         </div>
         <div class="col-md-6">
             <div class="form-group">

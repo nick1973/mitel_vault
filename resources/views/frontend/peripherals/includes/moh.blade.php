@@ -2,70 +2,53 @@
 <h4>Music On Hold Playback Unit</h4>
 <br/>
 <div class="form-group">
-    <label for="inputEmail3" class="col-sm-5 col-lg-8 col-md-8 control-label">
-        BTB External MOH unit
-        <i class="fa fa-info-circle fa-2x" style="color: #58678F"
-           data-toggle="popover" title="BTB External MOH Unit" data-placement="right" data-html="true"
-           data-content="<img src='/images/moh.jpg'>" data-animation="true"></i>
-    </label>
+    <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-4 col-lg-7 control-label">BTB External MOH unit:</label>
 
-    <div class="col-sm-1 col-lg-4 col-md-4">
-        <div class="onoffswitch">
-            <input name="peripherals_ext_moh" type="hidden" value="No">
-            <input type="checkbox" value="Yes" name="peripherals_ext_moh" class="toggleBtn onoffswitch-checkbox"
-                   id="moh-unit">
-            <label for="moh-unit" class="onoffswitch-label">
-                <div class="onoffswitch-inner"></div>
-                <div class="onoffswitch-switch"></div>
-            </label>
-        </div>
+    <div class="col-xs-7 col-sm-5 col-md-5 col-lg-2">
+        {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
+        <select class="form-control" name="analogue_lines">
+            <option>No</option>
+            <option>Yes</option>
+        </select>
     </div>
+    <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
+       data-toggle="popover" title="MGB" data-placement="right"
+       data-content="And here's some amazing content. It's very engaging. Right?"></i>
 </div>
 
 <br/>
 <h4>Music On Hold Playback Unit Upgrades</h4>
 <br/>
 <div class="form-group">
-    <label for="inputEmail3" class="col-sm-5 col-lg-8 col-md-8 control-label">
-        BTB Non-copyright Monthly Contract
-        <i class="fa fa-info-circle fa-2x" style="color: #58678F"
-           data-toggle="popover" title="7410 DECT" data-placement="right" data-html="true"
-           data-content="<img src='/images/mitel_phones/mitel-5320.jpg'>" data-animation="true"></i>
-    </label>
+    <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-4 col-lg-7 control-label">BTB Non-copyright Monthly
+        Contract:</label>
 
-    <div class="col-sm-1 col-lg-4 col-md-4">
-        <div class="onoffswitch">
-            <input name="peripherals_ncopy_month" type="hidden" value="No">
-            <input type="checkbox" value="Yes" name="peripherals_ncopy_month" class="toggleBtn onoffswitch-checkbox"
-                   id="moh-mnth">
-            <label for="moh-mnth" class="onoffswitch-label">
-                <div class="onoffswitch-inner"></div>
-                <div class="onoffswitch-switch"></div>
-            </label>
-        </div>
+    <div class="col-xs-7 col-sm-5 col-md-5 col-lg-2">
+        {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
+        <select class="form-control" name="analogue_lines">
+            <option>No</option>
+            <option>Yes</option>
+        </select>
     </div>
+    <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
+       data-toggle="popover" title="MGB" data-placement="right"
+       data-content="And here's some amazing content. It's very engaging. Right?"></i>
 </div>
-<br/>
-<br/>
-<div class="form-group">
-    <label for="inputEmail3" class="col-sm-5 col-lg-8 col-md-8 control-label">
-        BTB Non-copyright Quarterly Contract
-        <i class="fa fa-info-circle fa-2x" style="color: #58678F"
-           data-toggle="popover" title="7410 DECT" data-placement="right" data-html="true"
-           data-content="<img src='/images/mitel_phones/mitel-5320.jpg'>" data-animation="true"></i>
-    </label>
 
-    <div class="col-sm-1 col-lg-4 col-md-4">
-        <div class="onoffswitch">
-            <input name="peripherals_ncopy_quart" type="hidden" value="No">
-            <input type="checkbox" value="Yes" name="peripherals_ncopy_quart" class="toggleBtn onoffswitch-checkbox"
-                   id="moh-quart">
-            <label for="moh-quart" class="onoffswitch-label">
-                <div class="onoffswitch-inner"></div>
-                <div class="onoffswitch-switch"></div>
-            </label>
-        </div>
+<div class="form-group">
+    <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-4 col-lg-7 control-label">BTB Non-copyright Quarterly
+        Contract:</label>
+
+    <div class="col-xs-7 col-sm-5 col-md-5 col-lg-2">
+        {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
+        <select class="form-control" name="analogue_lines">
+            <option>No</option>
+            <option>Yes</option>
+        </select>
     </div>
+    <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
+       data-toggle="popover" title="MGB" data-placement="right"
+       data-content="And here's some amazing content. It's very engaging. Right?"></i>
 </div>
 
 <br/>
@@ -73,107 +56,82 @@
 </h4>
 <br/>
 <div class="form-group">
-    <label for="inputEmail3" class="col-sm-5 col-lg-8 col-md-8 control-label">
-        BTB Managed MOH unit + monthly non-copyright music Contract
-        <i class="fa fa-info-circle fa-2x" style="color: #58678F"
-           data-toggle="popover" title="7410 DECT" data-placement="right" data-html="true"
-           data-content="<img src='/images/mitel_phones/mitel-5320.jpg'>" data-animation="true"></i>
-    </label>
+    <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-4 col-lg-7 control-label">BTB Managed MOH unit + monthly
+        non-copyright music Contract:</label>
 
-    <div class="col-sm-1 col-lg-4 col-md-4">
-        <div class="onoffswitch">
-            <input name="peripherals_ncopy_month_music" type="hidden" value="No">
-            <input type="checkbox" value="Yes" name="peripherals_ncopy_month_music"
-                   class="toggleBtn onoffswitch-checkbox" id="moh-musiccont">
-            <label for="moh-musiccont" class="onoffswitch-label">
-                <div class="onoffswitch-inner"></div>
-                <div class="onoffswitch-switch"></div>
-            </label>
-        </div>
+    <div class="col-xs-7 col-sm-5 col-md-5 col-lg-2">
+        {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
+        <select class="form-control" name="analogue_lines">
+            <option>No</option>
+            <option>Yes</option>
+        </select>
     </div>
+    <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
+       data-toggle="popover" title="MGB" data-placement="right"
+       data-content="And here's some amazing content. It's very engaging. Right?"></i>
 </div>
-<br/>
-<br/>
-<div class="form-group">
-    <label for="inputEmail3" class="col-sm-5 col-lg-8 col-md-8 control-label">
-        BTB Managed MOH unit + quarterly non-copyright music Contract
-        <i class="fa fa-info-circle fa-2x" style="color: #58678F"
-           data-toggle="popover" title="7410 DECT" data-placement="right" data-html="true"
-           data-content="<img src='/images/mitel_phones/mitel-5320.jpg'>" data-animation="true"></i>
-    </label>
 
-    <div class="col-sm-1 col-lg-4 col-md-4">
-        <div class="onoffswitch">
-            <input name="peripherals_ncopy_quart_music" type="hidden" value="No">
-            <input type="checkbox" value="Yes" name="peripherals_ncopy_quart_music"
-                   class="toggleBtn onoffswitch-checkbox" id="moh-musiccont-quart">
-            <label for="moh-musiccont-quart" class="onoffswitch-label">
-                <div class="onoffswitch-inner"></div>
-                <div class="onoffswitch-switch"></div>
-            </label>
-        </div>
+<div class="form-group">
+    <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-4 col-lg-7 control-label">BTB Managed MOH unit + quarterly
+        non-copyright music Contract:</label>
+
+    <div class="col-xs-7 col-sm-5 col-md-5 col-lg-2">
+        {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
+        <select class="form-control" name="analogue_lines">
+            <option>No</option>
+            <option>Yes</option>
+        </select>
     </div>
+    <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
+       data-toggle="popover" title="MGB" data-placement="right"
+       data-content="And here's some amazing content. It's very engaging. Right?"></i>
 </div>
 
 <br/>
 <h4>Music On Hold - Copyright Managed Services</h4>
 <br/>
 <div class="form-group">
-    <label for="inputEmail3" class="col-sm-8 col-lg-8 col-md-8 control-label">
-        BTB Managed MOH unit + monthly copyright music Contract
-        <i class="fa fa-info-circle fa-2x" style="color: #58678F"
-           data-toggle="popover" title="7410 DECT" data-placement="right" data-html="true"
-           data-content="<img src='/images/mitel_phones/mitel-5320.jpg'>" data-animation="true"></i>
-    </label>
+    <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-4 col-lg-7 control-label">BTB Managed MOH unit + monthly
+        copyright music Contract:</label>
 
-    <div class="col-sm-1 col-lg-4 col-md-4">
-        <div class="onoffswitch">
-            <input name="peripherals_copy_month_music" type="hidden" value="No">
-            <input type="checkbox" value="Yes" name="peripherals_copy_month_music"
-                   class="toggleBtn onoffswitch-checkbox" id="moh-musiccont-mnth">
-            <label for="moh-musiccont-mnth" class="onoffswitch-label">
-                <div class="onoffswitch-inner"></div>
-                <div class="onoffswitch-switch"></div>
-            </label>
-        </div>
+    <div class="col-xs-7 col-sm-5 col-md-5 col-lg-2">
+        {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
+        <select class="form-control" name="analogue_lines">
+            <option>No</option>
+            <option>Yes</option>
+        </select>
     </div>
+    <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
+       data-toggle="popover" title="MGB" data-placement="right"
+       data-content="And here's some amazing content. It's very engaging. Right?"></i>
 </div>
-<br/>
-<br/>
-<div class="form-group">
-    <label for="inputEmail3" class="col-sm-8 col-lg-8 col-md-8 control-label">
-        Customer has agreed to obtain their own PRS and PPL licenses
-        <i class="fa fa-info-circle fa-2x" style="color: #58678F"
-           data-toggle="popover" title="7410 DECT" data-placement="right" data-html="true"
-           data-content="<img src='/images/mitel_phones/mitel-5320.jpg'>" data-animation="true"></i>
-    </label>
 
-    <div class="col-sm-1 col-lg-4 col-md-4">
-        <div class="onoffswitch">
-            <input name="peripherals_obtain_own_prs" type="hidden" value="No">
-            <input type="checkbox" value="Yes" name="peripherals_obtain_own_prs" class="toggleBtn onoffswitch-checkbox"
-                   id="moh-ppl">
-            <label for="moh-ppl" class="onoffswitch-label">
-                <div class="onoffswitch-inner"></div>
-                <div class="onoffswitch-switch"></div>
-            </label>
-        </div>
+<div class="form-group">
+    <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-4 col-lg-7 control-label">Customer has agreed to obtain
+        their own PRS and PPL licenses:</label>
+
+    <div class="col-xs-7 col-sm-5 col-md-5 col-lg-2">
+        {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
+        <select class="form-control" name="analogue_lines">
+            <option>No</option>
+            <option>Yes</option>
+        </select>
     </div>
+    <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
+       data-toggle="popover" title="MGB" data-placement="right"
+       data-content="And here's some amazing content. It's very engaging. Right?"></i>
 </div>
-<br/>
-<br/>
-<div class="form-group">
-    <label for="" class="col-sm-5 col-lg-8 col-md-8 control-label">
-        No. of lines on system for PRS and PPL copyright licenses fees
-        <i class="fa fa-info-circle fa-2x" style="color: #58678F"
-           data-toggle="popover" title="7410 DECT" data-placement="right" data-html="true"
-           data-content="<img src='/images/mitel_phones/mitel-5320.jpg'>" data-animation="true"></i>
-    </label>
 
-    <div class="col-sm-1 col-lg-4 col-md-4">
-        <input type="text" class="form-control">
-        {{--{!! Form::input('peripherals_num_prs', 'peripherals_num_prs', null, ['class' => 'form-control']) !!}--}}
+<div class="form-group">
+    <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-4 col-lg-7 control-label">No. of lines on system for PRS
+        and PPL copyright licenses fees:</label>
+
+    <div class="col-xs-7 col-sm-5 col-md-5 col-lg-2">
+        {!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}
     </div>
+    <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
+       data-toggle="popover" title="MGB" data-placement="right"
+       data-content="And here's some amazing content. It's very engaging. Right?"></i>
 </div>
 <br/>
 <hr>

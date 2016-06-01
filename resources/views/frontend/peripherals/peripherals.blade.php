@@ -32,7 +32,7 @@
             </div>
         </div>
 
-        <div id="moh" class="col-lg-12 col-lg-offset-1 collapse animated fadeIn" style="padding-top: 20px">
+        <div id="moh" class="col-lg-12 col-lg-offset-1 collapse animated fadeIn">
             @include('frontend.peripherals.includes.moh')
         </div>
     </div>
@@ -54,7 +54,7 @@
             </div>
         </div>
 
-        <div id="message" class="col-lg-12 col-lg-offset-1 collapse animated fadeIn" style="padding-top: 20px">
+        <div id="message" class="col-lg-12 col-lg-offset-1 collapse animated fadeIn">
             @include('frontend.peripherals.includes.message')
         </div>
     </div>
@@ -76,7 +76,7 @@
             </div>
         </div>
 
-        <div id="de" class="col-lg-12 col-lg-offset-1 collapse animated fadeIn" style="padding-top: 20px">
+        <div id="de" class="col-lg-12 col-lg-offset-1 collapse animated fadeIn">
             @include('frontend.peripherals.includes.door_access')
         </div>
     </div>
@@ -98,28 +98,28 @@
             </div>
         </div>
 
-        <div id="uc" class="col-lg-12 col-lg-offset-1 collapse animated fadeIn" style="padding-top: 20px">
+        <div id="uc" class="col-lg-12 col-lg-offset-1 collapse animated fadeIn">
             @include('frontend.peripherals.includes.btuc')
         </div>
     </div>
 
-    <div class="form-group col-lg-10 col-md-10">
-        <label for="inputEmail3" class="col-sm-4 col-lg-4 col-md-4 control-label">
-            Call Logging?
-        </label>
+    {{--<div class="form-group col-lg-10 col-md-10">--}}
+    {{--<label for="inputEmail3" class="col-sm-4 col-lg-4 col-md-4 control-label">--}}
+    {{--Call Logging?--}}
+    {{--</label>--}}
 
-        <div class="col-sm-1">
-            <div class="onoffswitch">
-                <input name="peripheral" type="hidden" value="No">
-                <input type="checkbox" value="Yes" name="peripheral" class="toggleBtn onoffswitch-checkbox"
-                       id="call-logging" onclick="">
-                <label for="call-logging" class="onoffswitch-label">
-                    <div class="onoffswitch-inner"></div>
-                    <div class="onoffswitch-switch"></div>
-                </label>
-            </div>
-        </div>
-    </div>
+    {{--<div class="col-sm-1">--}}
+    {{--<div class="onoffswitch">--}}
+    {{--<input name="peripheral" type="hidden" value="No">--}}
+    {{--<input type="checkbox" value="Yes" name="peripheral" class="toggleBtn onoffswitch-checkbox"--}}
+    {{--id="call-logging" onclick="">--}}
+    {{--<label for="call-logging" class="onoffswitch-label">--}}
+    {{--<div class="onoffswitch-inner"></div>--}}
+    {{--<div class="onoffswitch-switch"></div>--}}
+    {{--</label>--}}
+    {{--</div>--}}
+    {{--</div>--}}
+    {{--</div>--}}
 
     <div class="form-group col-lg-10 col-md-10">
         <label for="inputEmail3" class="col-sm-4 col-lg-4 col-md-4 control-label">
@@ -137,7 +137,7 @@
                 </label>
             </div>
         </div>
-        <div id="head" class="col-lg-12 col-lg-offset-1 collapse animated fadeIn" style="padding-top: 20px">
+        <div id="head" class="col-lg-12 col-lg-offset-1 collapse animated fadeIn">
             @include('frontend.peripherals.includes.headset')
         </div>
     </div>
@@ -158,7 +158,7 @@
                 </label>
             </div>
         </div>
-        <div id="vr" class="col-lg-12 collapse animated fadeIn" style="padding-top: 20px">
+        <div id="vr" class="col-lg-12 collapse animated fadeIn">
             @include('frontend.peripherals.includes.btvr')
         </div>
     </div>
@@ -179,7 +179,7 @@
                 </label>
             </div>
         </div>
-        <div id="av" class="col-lg-12 col-lg-offset-1 collapse animated fadeIn" style="padding-top: 20px">
+        <div id="av" class="col-lg-12 col-lg-offset-1 collapse animated fadeIn">
             @include('frontend.peripherals.includes.av_endpoints')
         </div>
     </div>
