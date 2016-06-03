@@ -78,14 +78,6 @@
 
             <br/>
             <br/>
-            {{--<div class="form-group">--}}
-            {{--<label for="inputEmail3" class="col-sm-5 control-label">To assist the installing engineer,--}}
-            {{--please provide a brief overview of the customers install requirements</label>--}}
-            {{--<div class="col-sm-5">--}}
-            {{--{!! Form::textarea('system_location_requirements', null, ['class' => 'form-control']) !!}--}}
-            {{--</div>--}}
-            {{--</div>--}}
-
 
             <div class="form-group">
                 <label for="inputEmail3" class="col-sm-5 control-label">Nature of customer's business</label>
@@ -119,16 +111,12 @@
                 <label for="inputEmail3" class="col-sm-5 control-label">If multiple, are there connecting ducts to each
                     building?</label>
 
-                <div class="col-sm-1">
-                    <div class="onoffswitch">
-                        <input name="system_location_connecting" type="hidden" value="No">
-                        <input type="checkbox" value="Yes" name="system_location_connecting"
-                               class="toggleBtn onoffswitch-checkbox" id="geo-multiple">
-                        <label for="geo-multiple" class="onoffswitch-label">
-                            <div class="onoffswitch-inner"></div>
-                            <div class="onoffswitch-switch"></div>
-                        </label>
-                    </div>
+                <div class="col-xs-7 col-sm-5 col-md-5 col-lg-2">
+                    {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
+                    <select class="form-control" name="pri">
+                        <option>No</option>
+                        <option>Yes</option>
+                    </select>
                 </div>
             </div>
 
@@ -154,16 +142,12 @@
                 <label for="inputEmail3" class="col-sm-5 control-label">Confirm adequate space is available for system
                     install</label>
 
-                <div class="col-sm-1">
-                    <div class="onoffswitch">
-                        <input name="system_location_geo_space" type="hidden" value="No">
-                        <input type="checkbox" value="Yes" name="system_location_geo_space"
-                               class="toggleBtn onoffswitch-checkbox" id="geo-space">
-                        <label for="geo-space" class="onoffswitch-label">
-                            <div class="onoffswitch-inner"></div>
-                            <div class="onoffswitch-switch"></div>
-                        </label>
-                    </div>
+                <div class="col-xs-7 col-sm-5 col-md-5 col-lg-2">
+                    {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
+                    <select class="form-control" name="pri">
+                        <option>No</option>
+                        <option>Yes</option>
+                    </select>
                 </div>
             </div>
         </div>

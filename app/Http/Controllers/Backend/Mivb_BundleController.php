@@ -35,6 +35,12 @@ class Mivb_BundleController extends Controller
         return view('backend.bundles.build', compact('bundle', 'customer', 'json', 'json_software'));
     }
 
+    function edit($id)
+    {
+        $bundle = Mitelbundle::find($id);
+        return view('backend.bundles.edit', compact('bundle'));
+    }
+
     function create()
     {
         return view('backend.bundles.create');
@@ -46,11 +52,20 @@ class Mivb_BundleController extends Controller
             $product_id = [];
         } else {
             $product_id = $request->input('product_id');
+            $bundle = Mitelbundle::find($id);
+            $bundle->products()->sync($product_id);
+            return redirect()->back();
         }
         $bundle = Mitelbundle::find($id);
-        $bundle->products()->sync($product_id);
-        return redirect()->back();
+        $input = $request->all();
+        $bundle->fill($input)->save();
+        return redirect()->action('Backend\Mivb_bundleController@index');
+    }
 
+    function destroy($id)
+    {
+        Mitelbundle::where('id', $id)->delete();
+        return redirect()->action('Backend\Mivb_bundleController@index');
     }
 
     function store(Request $request)

@@ -4,25 +4,29 @@
  * Frontend Controllers
  */
 
-
-
-//Route::get('macros', 'FrontendController@macros')->name('frontend.macros');
-
-Route::get('bundle_list/{lines}/{analogue_extensions}', function ($lines, $analogue_extensions) {
-    $bundle = App\Mitelbundle::find($lines);
-    $product = [
-        'id' => $bundle->id,
-        'name' => $bundle->name,
-        'qty' => $bundle->qty,
-        'price' => $bundle->btbuy
-    ];
-    Gloudemans\Shoppingcart\Facades\Cart::add($product);
-    return ["bundle" => $bundle,
-        "bundle_products" => $bundle->products];
-
-//       return ["bundle" => App\Mitelbundle::where('analogue_lines', $lines)
-//        ->orWhere('bri_lines', $lines)
-//        ->get()];
+Route::get('bundle_list/{lines}/{line_qty}/{users}/{lan}',
+    function ($lines, $line_qty, $users, $lan) {
+        $product = [];
+        if (!isset($lan)) {
+            $lan = 0;
+        }
+        if ($line_qty > 0) {
+            $bundles = App\Mitelbundle::where($lines, '>=', $line_qty)
+                ->where('lan_ports', $lan)
+                ->get();
+            foreach ($bundles as $bundle) {
+                $product = [
+                    'id' => $bundle->id,
+                    'name' => $bundle->name,
+                    'qty' => $bundle->qty,
+                    'price' => $bundle->btbuy
+                ];
+            }
+            Gloudemans\Shoppingcart\Facades\Cart::add($product);
+            return ["bundle" => $bundle,
+                "bundle_products" => $bundle->products];
+        }
+        return $product;
 });
 
 Route::get('cart_reload', function () {
@@ -31,8 +35,10 @@ Route::get('cart_reload', function () {
 
 Route::post('bundle_post', function(){
     $result =  [
-        'analogue_lines'  =>  $_POST['analogue_lines'],
-        'analogue_extensions' => $_POST['users']
+        'lines' => $_POST['lines'],
+        'line_qty' => $_POST['line_qty'],
+        'users' => $_POST['users'],
+        'lan' => $_POST['lan']
     ];
     return $result;
 });

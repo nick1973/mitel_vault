@@ -81,10 +81,12 @@
                 var $btn = $(this).button('loading');
                 var formData = $("#myform").serializeArray();
                 var URL = $("#myform").attr("action");
+                var users = formData[2]['value'];
+
                 $.post(URL,
                         formData,
                         function (data, textStatus, jqXHR) {
-                            $http.get("/bundle_list/" + data.analogue_lines + "/" + data.analogue_extensions)
+                            $http.get("/bundle_list/" + data.lines + "/" + data.line_qty + "/" + data.users + "/" + data.lan)
                                     .then(function (response) {
                                         $scope.content = response.data.bundle[0];
 
@@ -97,9 +99,19 @@
                                             $("#tick-bundle-home").addClass('animated fadeIn').removeClass('hidden');
                                             $('.nav-tabs a[href="#software"]').tab('show');
                                             $('#reload_cart').load('/cart_reload');
+
+                                            var standard_license = response.data.bundle['standard_license'];
+                                            $("#standard_license").val(standard_license);
+                                            var vm_license = response.data.bundle['vm_license'];
+                                            $("#vm_license").val(vm_license);
+                                            var multi_user_license = response.data.bundle['multi_user_license'];
+                                            $("#multi_user_license").val(multi_user_license);
+
+                                            var bundle_users = response.data.bundle['users'];
                                         }
                                         ;
-
+                                        var remaining_users = bundle_users - users;
+                                        $("#software_users").val(remaining_users);
                                         console.log(response.data.bundle);
                                         $btn.button('reset');
                                     });
@@ -107,7 +119,7 @@
                             //console.log(jQuery.isEmptyObject({}));
 
                             //Button Formatting Control.
-                            //$btn.button('reset');
+                            $btn.button('reset');
 
                         }).fail(function (jqXHR, textStatus, errorThrown) {
                             console.log(errorThrown);

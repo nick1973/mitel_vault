@@ -22,16 +22,12 @@
             Confirm 4 x 240V 13A power sockets are within 2m of the desired system location
         </label>
 
-        <div class="col-sm-1">
-            <div class="onoffswitch">
-                <input name="system_location_power" type="hidden" value="No">
-                <input type="checkbox" value="Yes" name="system_location_power" class="toggleBtn onoffswitch-checkbox"
-                       id="power-4">
-                <label for="power-4" class="onoffswitch-label">
-                    <div class="onoffswitch-inner"></div>
-                    <div class="onoffswitch-switch"></div>
-                </label>
-            </div>
+        <div class="col-xs-7 col-sm-5 col-md-5 col-lg-2">
+            {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
+            <select class="form-control" name="pri">
+                <option>No</option>
+                <option>Yes</option>
+            </select>
         </div>
     </div>
 
@@ -40,16 +36,12 @@
             Are BT to provide a UPS?
         </label>
 
-        <div class="col-sm-1">
-            <div class="onoffswitch">
-                <input name="system_location_power_ups" type="hidden" value="No">
-                <input type="checkbox" value="Yes" name="system_location_power_ups"
-                       class="toggleBtn onoffswitch-checkbox" id="power-ups">
-                <label for="power-ups" class="onoffswitch-label">
-                    <div class="onoffswitch-inner"></div>
-                    <div class="onoffswitch-switch"></div>
-                </label>
-            </div>
+        <div class="col-xs-7 col-sm-5 col-md-5 col-lg-2">
+            {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
+            <select class="form-control" name="pri">
+                <option>No</option>
+                <option>Yes</option>
+            </select>
         </div>
     </div>
 
@@ -58,16 +50,12 @@
             Has an order been raised for BT to supply a UPS?
         </label>
 
-        <div class="col-sm-1">
-            <div class="onoffswitch">
-                <input name="system_location_power_ups_po" type="hidden" value="No">
-                <input type="checkbox" value="Yes" name="system_location_power_ups_po"
-                       class="toggleBtn onoffswitch-checkbox" id="power-supply">
-                <label for="power-supply" class="onoffswitch-label">
-                    <div class="onoffswitch-inner"></div>
-                    <div class="onoffswitch-switch"></div>
-                </label>
-            </div>
+        <div class="col-xs-7 col-sm-5 col-md-5 col-lg-2">
+            {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
+            <select class="form-control" name="pri">
+                <option>No</option>
+                <option>Yes</option>
+            </select>
         </div>
     </div>
 </div>

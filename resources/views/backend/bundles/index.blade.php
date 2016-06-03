@@ -37,18 +37,19 @@
                         <th>BRI Lines</th>
                         <th>PRI Lines</th>
                         <th>SIP Trunks</th>
-                        <th>IP Ext</th>
-                        <th>Digital Ext</th>
-                        <th>Analogue Ext</th>
-                        <th>DECT Ext</th>
-                        <th>Conference Ext</th>
+                        <th>Users</th>
+                        <th>Standard License</th>
+                        <th>Multi User License</th>
+                        <th>VM License</th>
+
                         {{--<th>UCC Basic</th>--}}
                         {{--<th>UCC Entry</th>--}}
                         {{--<th>UCC Standard</th>--}}
                         {{--<th>UCC premium</th>--}}
                         <th>LAN Ports</th>
-                        <th>Standalone SW</th>
-                        <th>Enterprise SW</th>
+                        <th>Supplier Ref</th>
+                        <th>BT Code</th>
+                        <th>BT Item Code</th>
                         <th>BTB £</th>
                         <th>BT EUP £</th>
                         <th>Discount Status</th>

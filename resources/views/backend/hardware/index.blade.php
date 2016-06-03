@@ -32,9 +32,9 @@
                 <table id="hardware" class="table table-striped table-bordered" cellspacing="0" width="100%">
                     <thead>
                     <tr>
-                        <th>supplier_ref</th>
-                        <th>B-Code</th>
-                        <th>Item</th>
+                        <th>Supplier Ref</th>
+                        <th>BCode</th>
+                        <th>Item Name</th>
                         <th>qty</th>
                         <th>description</th>
                         <th>item_code</th>

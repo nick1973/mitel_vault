@@ -24,16 +24,12 @@
             Is there Ceased Equipment On site?
         </label>
 
-        <div class="col-sm-1">
-            <div class="onoffswitch">
-                <input name="ceased_on_site" type="hidden" value="No">
-                <input type="checkbox" value="Yes" name="ceased_on_site" class="toggleBtn onoffswitch-checkbox"
-                       id="equip2">
-                <label for="equip2" class="onoffswitch-label">
-                    <div class="onoffswitch-inner"></div>
-                    <div class="onoffswitch-switch"></div>
-                </label>
-            </div>
+        <div class="col-xs-7 col-sm-5 col-md-5 col-lg-2">
+            {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
+            <select class="form-control" name="pri">
+                <option>No</option>
+                <option>Yes</option>
+            </select>
         </div>
     </div>
 
@@ -42,16 +38,12 @@
             Are BT required to removed the ceased Equipment as part of the order?
         </label>
 
-        <div class="col-sm-1">
-            <div class="onoffswitch">
-                <input name="ceased_remove" type="hidden" value="No">
-                <input type="checkbox" value="Yes" name="ceased_remove" class="toggleBtn onoffswitch-checkbox"
-                       id="equip3">
-                <label for="equip3" class="onoffswitch-label">
-                    <div class="onoffswitch-inner"></div>
-                    <div class="onoffswitch-switch"></div>
-                </label>
-            </div>
+        <div class="col-xs-7 col-sm-5 col-md-5 col-lg-2">
+            {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
+            <select class="form-control" name="pri">
+                <option>No</option>
+                <option>Yes</option>
+            </select>
         </div>
     </div>
 
@@ -60,16 +52,12 @@
             If Yes, has an order been raised to cover the removal of the ceased equipment?
         </label>
 
-        <div class="col-sm-1">
-            <div class="onoffswitch">
-                <input name="ceased_ordered" type="hidden" value="No">
-                <input type="checkbox" value="Yes" name="ceased_ordered" class="toggleBtn onoffswitch-checkbox"
-                       id="equip4">
-                <label for="equip4" class="onoffswitch-label">
-                    <div class="onoffswitch-inner"></div>
-                    <div class="onoffswitch-switch"></div>
-                </label>
-            </div>
+        <div class="col-xs-7 col-sm-5 col-md-5 col-lg-2">
+            {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
+            <select class="form-control" name="pri">
+                <option>No</option>
+                <option>Yes</option>
+            </select>
         </div>
     </div>
 
@@ -78,16 +66,12 @@
             Does the customer have the title of the BT legacy switch?
         </label>
 
-        <div class="col-sm-1">
-            <div class="onoffswitch">
-                <input name="ceased_legacy_title" type="hidden" value="No">
-                <input type="checkbox" value="Yes" name="ceased_legacy_title" class="toggleBtn onoffswitch-checkbox"
-                       id="equip5">
-                <label for="equip5" class="onoffswitch-label">
-                    <div class="onoffswitch-inner"></div>
-                    <div class="onoffswitch-switch"></div>
-                </label>
-            </div>
+        <div class="col-xs-7 col-sm-5 col-md-5 col-lg-2">
+            {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
+            <select class="form-control" name="pri">
+                <option>No</option>
+                <option>Yes</option>
+            </select>
         </div>
     </div>
 
@@ -96,16 +80,12 @@
             Does the customer agree for BT to collect and take away the BT legacy switch?
         </label>
 
-        <div class="col-sm-1">
-            <div class="onoffswitch">
-                <input name="ceased_legacy_take" type="hidden" value="No">
-                <input type="checkbox" value="Yes" name="ceased_legacy_take" class="toggleBtn onoffswitch-checkbox"
-                       id="equip6">
-                <label for="equip6" class="onoffswitch-label">
-                    <div class="onoffswitch-inner"></div>
-                    <div class="onoffswitch-switch"></div>
-                </label>
-            </div>
+        <div class="col-xs-7 col-sm-5 col-md-5 col-lg-2">
+            {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
+            <select class="form-control" name="pri">
+                <option>No</option>
+                <option>Yes</option>
+            </select>
         </div>
     </div>
 </div>

@@ -3,18 +3,15 @@
 <form id="myform" class="form-horizontal" action="/bundle_post">
     <div class="col-md-12 col-lg-6">
         <div class="form-group">
-            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-lg-4 control-label">Analogue:</label>
+            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-lg-4 control-label">Type of Lines:</label>
 
             <div class="col-xs-7 col-sm-5 col-md-5 col-lg-5">
                 {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-                <select class="form-control" name="analogue_lines" required="">
-                    <option>0</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    <option>19</option>
+                <select id="lines" class="form-control" name="lines" required="">
+                    <option>Select</option>
+                    <option value="bri_lines">BRI</option>
+                    <option value="pri_lines">PRI</option>
+                    <option value="sip_lines">SIP</option>
                 </select>
             </div>
             <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
@@ -22,64 +19,66 @@
                data-content="And here's some amazing content. It's very engaging. Right?"></i>
         </div>
 
-        <div class="form-group">
-            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-lg-4 control-label">PRI/ISDN30:</label>
+        {{--<div class="form-group">--}}
+        {{--<label for="inputEmail3" class="col-xs-3 col-sm-4 col-lg-4 control-label">SIP:</label>--}}
 
-            <div class="col-xs-7 col-sm-5 col-md-5 col-lg-5">
+        {{--<div class="col-xs-7 col-sm-5 col-md-5 col-lg-5">--}}
                 {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-                <select class="form-control" name="pri">
-                    <option>0</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
-            </div>
-            <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
-               data-toggle="popover" title="PRI/ISDN30" data-placement="right"
-               data-content="And here's some amazing content. It's very engaging. Right?"></i>
-        </div>
+        {{--<input class="form-control" type="number" name="sip_lines" min="0">--}}
+        {{--</div>--}}
+        {{--<i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"--}}
+        {{--data-toggle="popover" title="SIP" data-placement="right"--}}
+        {{--data-content="And here's some amazing content. It's very engaging. Right?"></i>--}}
+        {{--</div>--}}
+
     </div>
+
+    <script>
+        $("#lines").change(function () {
+            var foo = $("#lines").val();
+            if (foo == "bri_lines") {
+                $("#line_qty").attr('min', '0').attr('max', '8').attr('step', '2').val('0');
+            }
+            else if (foo == "pri_lines") {
+                $("#line_qty").attr('min', '8').attr('max', '30').attr('step', '1').val('8');
+            }
+            else {
+                $("#line_qty").attr('min', '0').attr('max', '15').attr('step', '1').val('0');
+            }
+        });
+    </script>
+
 
     <div class="col-md-12 col-lg-6">
         <div class="form-group">
-            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-lg-4 control-label">BRI/ISDN2:</label>
+            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-lg-4 control-label">Qty:</label>
 
             <div class="col-xs-7 col-sm-5 col-md-5 col-lg-5">
-                {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-                <select class="form-control">
-                    <option>0</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
+                <input id="line_qty" class="form-control" type="number" name="line_qty">
             </div>
             <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
                data-toggle="popover" title="BRI/ISDN2" data-placement="right"
                data-content="And here's some amazing content. It's very engaging. Right?"></i>
         </div>
 
-        <div class="form-group">
-            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-lg-4 control-label">SIP:</label>
+        {{--<div class="form-group">--}}
+        {{--<label for="inputEmail3" class="col-xs-3 col-sm-4 col-lg-4 control-label">SIP:</label>--}}
 
-            <div class="col-xs-7 col-sm-5 col-md-5 col-lg-5">
+        {{--<div class="col-xs-7 col-sm-5 col-md-5 col-lg-5">--}}
                 {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-                <select class="form-control">
-                    <option>0</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
-            </div>
-            <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
-               data-toggle="popover" title="SIP" data-placement="right"
-               data-content="And here's some amazing content. It's very engaging. Right?"></i>
-        </div>
+        {{--<select class="form-control" name="sip_lines">--}}
+        {{--<option>0</option>--}}
+        {{--<option>1</option>--}}
+        {{--<option>2</option>--}}
+        {{--<option>3</option>--}}
+        {{--<option>4</option>--}}
+        {{--<option>5</option>--}}
+        {{--</select>--}}
+        {{--</div>--}}
+        {{--<i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"--}}
+        {{--data-toggle="popover" title="SIP" data-placement="right"--}}
+        {{--data-content="And here's some amazing content. It's very engaging. Right?"></i>--}}
+        {{--</div>--}}
 
     </div>
 
@@ -91,15 +90,7 @@
             <label for="inputEmail3" class="col-xs-3 col-sm-4 col-lg-4 control-label">Users:</label>
 
             <div class="col-xs-7 col-sm-5 col-md-5 col-lg-5">
-                {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-                <select class="form-control" name="users">
-                    <option>0</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
+                <input class="form-control" type="number" name="users" min="0" value="0">
             </div>
             <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
                data-toggle="popover" title="Users" data-placement="right"
@@ -113,13 +104,11 @@
 
             <div class="col-xs-7 col-sm-5 col-md-5 col-lg-5">
                 {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-                <select class="form-control">
+                <select class="form-control" name="lan">
                     <option>0</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
+                    <option>16</option>
+                    <option>24</option>
+                    <option>48</option>
                 </select>
             </div>
             <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
@@ -133,12 +122,8 @@
             <div class="col-xs-7 col-sm-5 col-md-5 col-lg-5">
                 {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
                 <select class="form-control">
-                    <option>0</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
+                    <option>No</option>
+                    <option>Yes</option>
                 </select>
             </div>
             <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"

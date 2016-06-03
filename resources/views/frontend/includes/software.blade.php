@@ -16,7 +16,8 @@
 </div>
 <br/>
 
-<form id="nav-software" class="form-horizontal animated fadeIn" action="/bundle_post">
+<form ng-app="myApp" ng-controller="myCtrl" id="nav-software" class="form-horizontal animated fadeIn"
+      action="/bundle_post">
     <h4 class="col-lg-12 col-md-12"><strong>Bundle Licenses: </strong>The following licenses are included in your BT
         Bundle</h4>
     <div class="col-md-12 col-lg-6">
@@ -24,16 +25,7 @@
             <label for="inputEmail3" class="col-xs-3 col-sm-4 col-lg-5 control-label">Standard User:</label>
 
             <div class="col-xs-7 col-sm-5 col-md-5 col-lg-5">
-                {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-                <select class="form-control" name="analogue_lines">
-                    <option>0</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    <option>19</option>
-                </select>
+                <input id="standard_license" name="standard_license" class="form-control">
             </div>
             <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
                data-toggle="popover" title="Standard User" data-placement="right"
@@ -44,15 +36,7 @@
             <label for="inputEmail3" class="col-xs-3 col-sm-4 col-lg-5 control-label">Voicemail:</label>
 
             <div class="col-xs-7 col-sm-5 col-md-5 col-lg-5">
-                {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-                <select class="form-control" name="pri">
-                    <option>0</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
+                <input id="vm_license" name="vm_license" class="form-control">
             </div>
             <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
                data-toggle="popover" title="Voicemail" data-placement="right"
@@ -65,15 +49,7 @@
             <label for="inputEmail3" class="col-xs-3 col-sm-4 col-lg-5 control-label">Multi User:</label>
 
             <div class="col-xs-7 col-sm-5 col-md-5 col-lg-5">
-                {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-                <select class="form-control">
-                    <option>0</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
+                <input id="multi_user_license" name="multi_user_license" class="form-control">
             </div>
             <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
                data-toggle="popover" title="Multi User" data-placement="right"
@@ -89,7 +65,7 @@
                 The following licenses are able to be added to your BT Bundle</label>
 
             <div class="col-xs-7 col-sm-5 col-md-2 col-lg-1">
-                {!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}
+                <input id="software_users" name="users" class="form-control">
             </div>
         </div>
     </div>

@@ -32,16 +32,12 @@
             Confirm 5U space (225mm) is available in the cabinet for ordered equipment
         </label>
 
-        <div class="col-sm-1">
-            <div class="onoffswitch">
-                <input name="system_location_5u_space" type="hidden" value="No">
-                <input type="checkbox" value="Yes" name="system_location_5u_space"
-                       class="toggleBtn onoffswitch-checkbox" id="cabinet-space">
-                <label for="cabinet-space" class="onoffswitch-label">
-                    <div class="onoffswitch-inner"></div>
-                    <div class="onoffswitch-switch"></div>
-                </label>
-            </div>
+        <div class="col-xs-7 col-sm-5 col-md-5 col-lg-2">
+            {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
+            <select class="form-control" name="pri">
+                <option>No</option>
+                <option>Yes</option>
+            </select>
         </div>
     </div>
 
@@ -50,16 +46,12 @@
             Confirm the cabinet depth is 600mm deep for the ordered equipment
         </label>
 
-        <div class="col-sm-1">
-            <div class="onoffswitch">
-                <input name="system_location_cab_depth" type="hidden" value="No">
-                <input type="checkbox" value="Yes" name="system_location_cab_depth"
-                       class="toggleBtn onoffswitch-checkbox" id="cabinet-depth">
-                <label for="cabinet-depth" class="onoffswitch-label">
-                    <div class="onoffswitch-inner"></div>
-                    <div class="onoffswitch-switch"></div>
-                </label>
-            </div>
+        <div class="col-xs-7 col-sm-5 col-md-5 col-lg-2">
+            {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
+            <select class="form-control" name="pri">
+                <option>No</option>
+                <option>Yes</option>
+            </select>
         </div>
     </div>
 
@@ -68,16 +60,12 @@
             Confirm there is free access around the cabinet and there are no restrictions / obstructions
         </label>
 
-        <div class="col-sm-1">
-            <div class="onoffswitch">
-                <input name="system_location_restricted" type="hidden" value="No">
-                <input type="checkbox" value="Yes" name="system_location_restricted"
-                       class="toggleBtn onoffswitch-checkbox" id="cabinet-access">
-                <label for="cabinet-access" class="onoffswitch-label">
-                    <div class="onoffswitch-inner"></div>
-                    <div class="onoffswitch-switch"></div>
-                </label>
-            </div>
+        <div class="col-xs-7 col-sm-5 col-md-5 col-lg-2">
+            {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
+            <select class="form-control" name="pri">
+                <option>No</option>
+                <option>Yes</option>
+            </select>
         </div>
     </div>
 
@@ -86,16 +74,12 @@
             Confirm if the New Switch CCU to be fitted in the same location as the existing CCU?
         </label>
 
-        <div class="col-sm-1">
-            <div class="onoffswitch">
-                <input name="system_ccu_same_loc" type="hidden" value="No">
-                <input type="checkbox" value="Yes" name="system_ccu_same_loc" class="toggleBtn onoffswitch-checkbox"
-                       id="cabinet-ccu">
-                <label for="cabinet-ccu" class="onoffswitch-label">
-                    <div class="onoffswitch-inner"></div>
-                    <div class="onoffswitch-switch"></div>
-                </label>
-            </div>
+        <div class="col-xs-7 col-sm-5 col-md-5 col-lg-2">
+            {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
+            <select class="form-control" name="pri">
+                <option>No</option>
+                <option>Yes</option>
+            </select>
         </div>
     </div>
 
@@ -105,16 +89,12 @@
             Are BT required to provide patch leads? If yes, how many?
         </label>
 
-        <div class="col-sm-1">
-            <div class="onoffswitch">
-                <input name="system_provide_patch" type="hidden" value="No">
-                <input type="checkbox" value="Yes" name="system_provide_patch" class="toggleBtn onoffswitch-checkbox"
-                       id="cabinet-leads">
-                <label for="cabinet-leads" class="onoffswitch-label">
-                    <div class="onoffswitch-inner"></div>
-                    <div class="onoffswitch-switch"></div>
-                </label>
-            </div>
+        <div class="col-xs-7 col-sm-5 col-md-5 col-lg-2">
+            {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
+            <select class="form-control" name="pri">
+                <option>No</option>
+                <option>Yes</option>
+            </select>
         </div>
         <div class="col-sm-1">
             {!! Form::input('system_provide_patch_qty', 'system_provide_patch_qty', null, ['class' => 'form-control'])
