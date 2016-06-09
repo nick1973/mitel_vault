@@ -454,7 +454,97 @@
                                     </div>
                                 </div>
                             </div>
+                            {{--////////////////////////////////////////////////////////////////--}}
+                            <div role="tabpanel" class="tab-pane" id="upgrades">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <h2>Add Upgrades to: {{ $bundle->name }}</h2>
 
+                                        <form class="form-horizontal" role="form" ng-submit="addRow()">
+                                            <div class="col-md-8">
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label">Product Item</label>
+
+                                                    <div class="col-md-6">
+                                                        <select id="upgrade-res" ng-model='item_name'
+                                                                class="form-control">
+                                                            <?php
+                                                            $i = 0;
+                                                            foreach ($json_upgrades as $obj) {
+                                                                $i++;
+                                                                echo "<option id='" . $i . "' value='" . $obj{'item_name'} . "'>" . $obj{'item_name'} . "</option>";
+                                                            }
+                                                            ?>
+                                                        </select>
+                                                    </div>
+                                                    <input id="product-id" ng-model="id" hidden>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label">Category</label>
+
+                                                    <div class="col-md-3">
+                                                        <input id="category" class="form-control"
+                                                               ng-model="quote_type"/>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label">BT B-Code</label>
+
+                                                    <div class="col-md-3">
+                                                        <input ng-model='bt_ref' class='form-control' id='b_codes'>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <div style="padding-left:110px">
+                                                        <input type="submit" value="Add Product"
+                                                               class="btn btn-primary"/>
+                                                        {{--<input type="button" value="Clear Totals"--}}
+                                                        {{--class="btn btn-warning clearproduct"/>--}}
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+
+                                            <!--                COLUMN 2-->
+                                            <div class="col-md-4">
+
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label">PBX Type</label>
+
+                                                    <div class="col-md-4">
+                                                        <input type="text" class="form-control" id="pbx"
+                                                               ng-model="pbx"/>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label">BTB £</label>
+
+                                                    <div class="col-md-4">
+                                                        <input type="text" class="form-control" id="btb"
+                                                               ng-model="btbuy"/>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label">BT EUP £</label>
+
+                                                    <div class="col-md-4">
+                                                        <input type="text" class="form-control" id="eup"
+                                                               ng-model="bteup"/>
+                                                    </div>
+                                                </div>
+                                                <br/>
+                                                {{--<a href="/peripherals/{{ $customer->crf_id }}" class="btn btn-success">Auto Add Bonds Override!</a>--}}
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
                             {!! Form::model($customer,[
                             'method' => 'PATCH',
                             'route' => ['admin.product_management.mivb_bundles.update',$bundle->id],
@@ -537,7 +627,7 @@
 
 
 <script>
-    var js_array = <?php echo json_encode($json );?>;
+    var js_array = <?php echo json_encode($json);?>;
     $("#hardware-res").change(function () {
         var id = $(this).children(":selected").attr("id");//the count
         var x = id - 1;
@@ -605,6 +695,41 @@
         input3.val(js_software[x]['id']);
         input3.trigger('input');
         console.log(js_software[x]['id']);
+    });
+    var json_upgrades = <?php echo json_encode($json_upgrades);?>;
+    $("#upgrade-res").change(function () {
+        var id = $(this).children(":selected").attr("id");//the count
+        var x = id - 1;
+        console.log(x);
+
+        var input = $('#software-b_codes');
+        input.val(json_upgrades[x]['bt_ref']);
+        input.trigger('input');
+        /////////////////////////
+        var input2 = $('#software-eup');
+        input2.val(json_upgrades[x]['bteup']);
+        input2.trigger('input');
+        /////////////////////////
+        var input3 = $('#software-bonusBond');
+        input3.val(json_upgrades[x]['xfer']);
+        input3.trigger('input');
+        //////////////////////////////////
+        var input3 = $('#software-quote-type');
+        input3.val(json_upgrades[x]['category']);
+        input3.trigger('input');
+        //////////////////////////////////
+        var input3 = $('#software-btb');
+        input3.val(json_upgrades[x]['btbuy']);
+        input3.trigger('input');
+        //////////////////////////////////
+        var input3 = $('#software-pbx');
+        input3.val(json_upgrades[x]['pbx_type']);
+        input3.trigger('input');
+        //////////////////////////////////
+        var input3 = $('#software-id');
+        input3.val(json_upgrades[x]['id']);
+        input3.trigger('input');
+        console.log(json_upgrades[x]['id']);
     });
 
     var helloApp = angular.module("helloApp", []);

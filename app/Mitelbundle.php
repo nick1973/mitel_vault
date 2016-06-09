@@ -13,6 +13,7 @@ class Mitelbundle extends Model
         'pri_lines',
         'sip_lines',
         'users',
+        'line_type',
         'standard_license',
         'multi_user_license',
         'vm_license',
@@ -53,5 +54,10 @@ class Mitelbundle extends Model
     public function products()
     {
         return $this->belongsToMany(Product::class)->withTimestamps();
+    }
+
+    public function upgrades()
+    {
+        return $this->belongsToMany(Upgrade::class)->withTimestamps();
     }
 }

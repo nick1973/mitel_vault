@@ -73,33 +73,38 @@
         ;
 
 
+        function confirm_bundle() {
+            $('#overview-button').addClass('animated bounce btn-info');
+            $('#overview-button').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
+                    function () {
+                        $('#overview-button').removeClass('animated bounce');
+                    });
+            $("#tick-bundle-home").addClass('animated fadeIn').removeClass('hidden');
+            $('.nav-tabs a[href="#hardware"]').tab('show');
+            $('#reload_cart').load('/cart_reload');
+        }
+        ;
+
         var app = angular.module('myApp', []);
         app.controller('myCtrl', function ($scope, $http) {
 
             $("#but").click(function () {
 
                 var $btn = $(this).button('loading');
-                var formData = $("#myform").serializeArray();
-                var URL = $("#myform").attr("action");
-                var users = formData[2]['value'];
-
+                var formData = $("#bundle_post").serializeArray();
+                var URL = $("#bundle_post").attr("action");
+                var users = formData[1]['value'];
+                console.log(users);
                 $.post(URL,
                         formData,
                         function (data, textStatus, jqXHR) {
-                            $http.get("/bundle_list/" + data.lines + "/" + data.line_qty + "/" + data.users + "/" + data.lan)
+                            $http.get("/bundle_list/" + data.line_type + "/" + data.users + "/" + data.lan)
                                     .then(function (response) {
-                                        $scope.content = response.data.bundle[0];
-
+                                        $scope.content = response.data.bundle;
+                                        //console.log(response.data.bundle_products);
                                         if (typeof response.data.bundle !== 'undefined') {
-                                            $('#overview-button').addClass('animated bounce btn-info');
-                                            $('#overview-button').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
-                                                    function () {
-                                                        $('#overview-button').removeClass('animated bounce');
-                                                    });
-                                            $("#tick-bundle-home").addClass('animated fadeIn').removeClass('hidden');
-                                            $('.nav-tabs a[href="#software"]').tab('show');
-                                            $('#reload_cart').load('/cart_reload');
 
+                                            $('#chosen_bundle').removeClass('hidden').addClass('animated pulse');
                                             var standard_license = response.data.bundle['standard_license'];
                                             $("#standard_license").val(standard_license);
                                             var vm_license = response.data.bundle['vm_license'];
@@ -108,11 +113,45 @@
                                             $("#multi_user_license").val(multi_user_license);
 
                                             var bundle_users = response.data.bundle['users'];
+                                            //$("#chosen_bundle").addClass('animated pulse');
+                                            $('#chosen_bundle').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
+                                                    function () {
+                                                        $('#chosen_bundle').removeClass('animated pulse');
+                                                    });
+
+                                            $(".bundle_name").val(response.data.bundle['name'])
+                                            $(".bundle_bri_lines").val(response.data.bundle['bri_lines'])
+                                            $(".bundle_pri_lines").val(response.data.bundle['pri_lines'])
+                                            $(".bundle_sip_lines").val(response.data.bundle['sip_lines'])
+                                            $(".bundle_analogue_lines").val(response.data.bundle['analogue_lines'])
+                                            $(".bundle_standard_license").val(response.data.bundle['standard_license'])
+                                            $(".bundle_multi_license").val(response.data.bundle['multi_user_license'])
+                                            $(".bundle_vm_license").val(response.data.bundle['vm_license'])
+                                            $(".bundle_ports").val(response.data.bundle['lan_ports'])
+
+                                            if (typeof response.data.bundle_upgrades !== 'undefined') {
+                                                //bundle_upgrades
+                                                $("#upgrade_button").hide();
+                                                if (response.data.bundle_upgrades.length > 0) {
+                                                    $("#upgrade_button").show();
+                                                }
+
+                                                var upgrades = response.data.bundle_upgrades;
+                                                $("#bundle_upgrades").empty();
+                                                jQuery.each(upgrades, function (index, value) {
+                                                    var li = "<li>";
+                                                    $("#bundle_upgrades").append(li.concat(value['item_name']));
+                                                });
+                                            }
                                         }
-                                        ;
+                                        else {
+
+                                            $('#no_results').modal('show');
+                                            //alert("BOO");
+                                        }
                                         var remaining_users = bundle_users - users;
                                         $("#software_users").val(remaining_users);
-                                        console.log(response.data.bundle);
+                                        //console.log(response.data.bundle['name']);
                                         $btn.button('reset');
                                     });
 
@@ -168,6 +207,20 @@
                             </a>
                         </li>
                         <li role="presentation">
+                            <a href="#hardware" aria-controls="hardware" role="tab" data-toggle="tab">System Hardware
+                                <span id="tick-hardware" class="hidden">
+                                    <img src="/images/tick.png" height="18px">
+                                </span>
+                            </a>
+                        </li>
+                        <li role="presentation"><a href="#lan-data" aria-controls="lan-data" role="tab"
+                                                   data-toggle="tab">System LAN
+                            <span id="tick-lan-data" class="hidden">
+                                    <img src="/images/tick.png" height="18px">
+                                </span>
+                            </a>
+                        </li>
+                        <li role="presentation">
                             <a href="#software" aria-controls="software" role="tab" data-toggle="tab">System Licenses
                             <span id="tick-software" class="hidden">
                                     <img src="/images/tick.png" height="18px">
@@ -188,13 +241,7 @@
                                 </span>
                             </a>
                         </li>
-                        <li role="presentation"><a href="#lan-data" aria-controls="lan-data" role="tab"
-                                                   data-toggle="tab">LAN & DATA
-                            <span id="tick-lan-data" class="hidden">
-                                    <img src="/images/tick.png" height="18px">
-                                </span>
-                            </a>
-                        </li>
+
                         <li role="presentation"><a href="#peripherals" aria-controls="peripherals" role="tab"
                                                    data-toggle="tab">Peripherals
                             <span id="tick-peripherals" class="hidden">
@@ -254,6 +301,13 @@
                             <div class="collapse fade collapse1" id="">
                                 <div id="expand" class="col-lg-4 col-md-4 col-sm-4 expand">
                                     @include('frontend.includes.bundle')
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="hardware">
+                            <div class="collapse fade collapse1" id="">
+                                <div id="expand" class="col-lg-4 col-md-4 col-sm-4 expand">
+                                    @include('frontend.includes.hardware')
                                 </div>
                             </div>
                         </div>
@@ -395,6 +449,25 @@
             </div>
         </div>
     </div>
+
+    <div id="no_results" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title " id="gridSystemModalLabel">No Bundles Match Your Selection.</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Please Search Again.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <style>
         .modal-body {

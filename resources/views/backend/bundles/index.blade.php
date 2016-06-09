@@ -33,6 +33,7 @@
                     <thead>
                     <tr>
                         <th>Bundle Name</th>
+                        <th>Line Type</th>
                         <th>Analogue Lines</th>
                         <th>BRI Lines</th>
                         <th>PRI Lines</th>

@@ -18,6 +18,9 @@ class ProductManagementController extends Controller
         if ($page == 'ip_terminals' || $page == 'analogue_terminals' || $page == 'dect_terminals' || $page == 'digital_terminals') {
             $page = 'terminals';
         }
+        if ($page == 'lines') {
+            $page = 'hardware';
+        }
         //return view('backend.' . $page . '.index');
         return redirect('admin/product_management/' . $page);
     }

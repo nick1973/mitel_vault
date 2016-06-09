@@ -27,6 +27,7 @@
                 <table id="software" class="table table-striped table-bordered" cellspacing="0" width="100%">
                     <thead>
                     <tr>
+                        <th>Category</th>
                         <th>supplier_ref</th>
                         <th>B-Code</th>
                         <th>Item</th>

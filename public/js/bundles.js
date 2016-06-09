@@ -25,6 +25,7 @@ $(document).ready(function () {
         "lengthMenu": [[5, 25, 50, -1], [5, 25, 50, "All"]],
         "columns": [
             {"data": "name"},
+            {"data": "line_type"},
             {"data": "analogue_lines"},
             {"data": "bri_lines"},
             {"data": "pri_lines"},

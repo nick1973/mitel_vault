@@ -24,6 +24,7 @@ $(document).ready(function () {
         "pagingType": "full_numbers",
         "lengthMenu": [[5, 25, 50, -1], [5, 25, 50, "All"]],
         "columns": [
+            {"data": "category"},
             {"data": "supplier_ref"},
             {"data": "bt_ref"},
             {"data": "item_name"},

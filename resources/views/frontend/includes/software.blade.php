@@ -16,7 +16,7 @@
 </div>
 <br/>
 
-<form ng-app="myApp" ng-controller="myCtrl" id="nav-software" class="form-horizontal animated fadeIn"
+<form id="nav-software" class="form-horizontal animated fadeIn"
       action="/bundle_post">
     <h4 class="col-lg-12 col-md-12"><strong>Bundle Licenses: </strong>The following licenses are included in your BT
         Bundle</h4>
@@ -225,8 +225,9 @@
 <button onclick="serverNext()" class="btn btn-success pull-right">Next <span class="glyphicon glyphicon-hand-right"
                                                                              aria-hidden="true"></span></button>
 <script>
+
     function homePrev() {
-        $('.nav-tabs a[href="#bundle-home"]').tab('show');
+        $('.nav-tabs a[href="#hardware"]').tab('show');
     }
 
     function serverNext() {

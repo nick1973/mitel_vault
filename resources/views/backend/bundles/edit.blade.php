@@ -174,6 +174,15 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-4 col-lg-6 control-label">Line Type:</label>
+
+                    <div class="col-sm-5 col-lg-4">
+                        {!! Form::select('line_type', ['analogue' => 'Analogue', 'bri' => 'Bri',
+                        'pri' => 'Pri', 'sip' => 'Sip'], null, ['class' => 'form-control']) !!}
+                    </div>
+                </div>
+
+                <div class="form-group">
                     <label for="inputEmail3" class="col-sm-4 col-lg-6 control-label">Discount Amount %:</label>
 
                     <div class="col-sm-5 col-lg-4">
@@ -264,7 +273,17 @@
                         !!}
                     </div>
                 </div>
+                <h4>Upgrades</h4>
 
+                @foreach($bundle_upgrades as $results)
+                    <div class="form-group">
+                        <label>
+                            <input id="bundle_upgrades{{$results->id}}" type="checkbox" name="upgrades_id[]"
+                                   value="{{ $results->id }}"> {{ $results->item_name }}
+                            {{--{!! Form::checkbox('upgrades_id[]', $results->id, ['id'=>'dave']) !!}--}}
+                        </label>
+                    </div>
+                @endforeach
             </div>
 
             {!! Form::close() !!}
@@ -284,4 +303,11 @@
         </div>
         <!-- /.box-body -->
     </div><!--box box-success-->
+    <script>
+        var obj = jQuery.parseJSON('{!! $upgrades !!}');
+        $.each(obj, function (key, value) {
+            $("#bundle_upgrades" + value.id).prop("checked", true);
+            console.log(value.id);
+        });
+    </script>
 @endsection

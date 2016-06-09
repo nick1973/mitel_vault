@@ -13,6 +13,7 @@ use App\Mitelbundle;
 use App\Peripherals;
 use App\Product;
 use App\Products;
+use App\Upgrade;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
@@ -32,13 +33,17 @@ class Mivb_BundleController extends Controller
         $json = json_decode($obj, true);
         $obj = file_get_contents('http://btbeqt.com/software_flat');
         $json_software = json_decode($obj, true);
-        return view('backend.bundles.build', compact('bundle', 'customer', 'json', 'json_software'));
+        $obj = file_get_contents('http://btbeqt.com/upgrades_flat');
+        $json_upgrades = json_decode($obj, true);
+        return view('backend.bundles.build', compact('bundle', 'customer', 'json', 'json_software', 'json_upgrades'));
     }
 
     function edit($id)
     {
         $bundle = Mitelbundle::find($id);
-        return view('backend.bundles.edit', compact('bundle'));
+        $bundle_upgrades = Upgrade::get();
+        $upgrades = $bundle->upgrades;
+        return view('backend.bundles.edit', compact('bundle', 'bundle_upgrades', 'upgrades'));
     }
 
     function create()
@@ -54,6 +59,14 @@ class Mivb_BundleController extends Controller
             $product_id = $request->input('product_id');
             $bundle = Mitelbundle::find($id);
             $bundle->products()->sync($product_id);
+            return redirect()->back();
+        }
+        if ($request->input('upgrades_id') == null) {
+            $upgrade_id = [];
+        } else {
+            $upgrade_id = $request->input('upgrades_id');
+            $bundle = Mitelbundle::find($id);
+            $bundle->upgrades()->sync($upgrade_id);
             return redirect()->back();
         }
         $bundle = Mitelbundle::find($id);

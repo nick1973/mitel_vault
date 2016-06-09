@@ -8,11 +8,16 @@ Route::get('product_management/test', function()
 });
 
 Route::get('hardware', function () {
-    return ['data' => \App\Product::where('category', 'hardware')->get()];
+    return ['data' => \App\Product::where('category', 'hardware')
+        ->orWhere('category', 'lines')
+        ->orWhere('category', 'sip_lines')
+        ->get()];
 });
 
 Route::get('software', function () {
-    return ['data' => \App\Product::where('category', 'software')->get()];
+    return ['data' => \App\Product::where('category', 'software')
+        ->orWhere('category', 'license')
+        ->get()];
 });
 
 

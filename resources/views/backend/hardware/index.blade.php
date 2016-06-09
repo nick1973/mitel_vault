@@ -32,6 +32,7 @@
                 <table id="hardware" class="table table-striped table-bordered" cellspacing="0" width="100%">
                     <thead>
                     <tr>
+                        <th>Category</th>
                         <th>Supplier Ref</th>
                         <th>BCode</th>
                         <th>Item Name</th>

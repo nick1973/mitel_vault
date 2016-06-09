@@ -1,17 +1,18 @@
-<h4><strong>Lines: </strong>How many lines are required?</h4>
+<h4><strong>Selecting Your base Bundle:</strong></h4>
+<h4><strong>Please select form the following options:</strong></h4>
 
-<form id="myform" class="form-horizontal" action="/bundle_post">
-    <div class="col-md-12 col-lg-6">
+<form id="bundle_post" class="form-horizontal" action="/bundle_post">
+    <div class="col-md-12 col-lg-12">
         <div class="form-group">
-            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-lg-4 control-label">Type of Lines:</label>
+            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-lg-5 control-label">Please select the type of lines
+                you require:</label>
 
-            <div class="col-xs-7 col-sm-5 col-md-5 col-lg-5">
-                {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-                <select id="lines" class="form-control" name="lines" required="">
+            <div class="col-xs-7 col-sm-5 col-md-5 col-lg-2">
+                <select class="form-control" name="line_type">
                     <option>Select</option>
-                    <option value="bri_lines">BRI</option>
-                    <option value="pri_lines">PRI</option>
-                    <option value="sip_lines">SIP</option>
+                    <option value="bri">BRI</option>
+                    <option value="pri">PRI</option>
+                    <option value="sip">SIP</option>
                 </select>
             </div>
             <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
@@ -19,122 +20,137 @@
                data-content="And here's some amazing content. It's very engaging. Right?"></i>
         </div>
 
-        {{--<div class="form-group">--}}
-        {{--<label for="inputEmail3" class="col-xs-3 col-sm-4 col-lg-4 control-label">SIP:</label>--}}
-
-        {{--<div class="col-xs-7 col-sm-5 col-md-5 col-lg-5">--}}
-                {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-        {{--<input class="form-control" type="number" name="sip_lines" min="0">--}}
-        {{--</div>--}}
-        {{--<i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"--}}
-        {{--data-toggle="popover" title="SIP" data-placement="right"--}}
-        {{--data-content="And here's some amazing content. It's very engaging. Right?"></i>--}}
-        {{--</div>--}}
-
-    </div>
-
-    <script>
-        $("#lines").change(function () {
-            var foo = $("#lines").val();
-            if (foo == "bri_lines") {
-                $("#line_qty").attr('min', '0').attr('max', '8').attr('step', '2').val('0');
-            }
-            else if (foo == "pri_lines") {
-                $("#line_qty").attr('min', '8').attr('max', '30').attr('step', '1').val('8');
-            }
-            else {
-                $("#line_qty").attr('min', '0').attr('max', '15').attr('step', '1').val('0');
-            }
-        });
-    </script>
-
-
-    <div class="col-md-12 col-lg-6">
         <div class="form-group">
-            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-lg-4 control-label">Qty:</label>
+            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-lg-5 control-label">Please select the number of users
+                you require:</label>
 
-            <div class="col-xs-7 col-sm-5 col-md-5 col-lg-5">
-                <input id="line_qty" class="form-control" type="number" name="line_qty">
+            <div class="col-xs-7 col-sm-5 col-md-5 col-lg-2">
+                <input id="line_qty" class="form-control" type="number" name="users" value="0" min="0" required>
+            </div>
+            <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
+               data-toggle="popover" title="SIP" data-placement="right"
+               data-content="And here's some amazing content. It's very engaging. Right?"></i>
+        </div>
+
+        <div class="form-group">
+            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-lg-5 control-label">Please confirm if you wish BT to
+                supply the LAN switch:</label>
+
+            <div class="col-xs-7 col-sm-5 col-md-5 col-lg-2">
+                <select id="lan" class="form-control" name="lan" required>
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
             </div>
             <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
                data-toggle="popover" title="BRI/ISDN2" data-placement="right"
                data-content="And here's some amazing content. It's very engaging. Right?"></i>
         </div>
-
-        {{--<div class="form-group">--}}
-        {{--<label for="inputEmail3" class="col-xs-3 col-sm-4 col-lg-4 control-label">SIP:</label>--}}
-
-        {{--<div class="col-xs-7 col-sm-5 col-md-5 col-lg-5">--}}
-                {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-        {{--<select class="form-control" name="sip_lines">--}}
-        {{--<option>0</option>--}}
-        {{--<option>1</option>--}}
-        {{--<option>2</option>--}}
-        {{--<option>3</option>--}}
-        {{--<option>4</option>--}}
-        {{--<option>5</option>--}}
-        {{--</select>--}}
-        {{--</div>--}}
-        {{--<i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"--}}
-        {{--data-toggle="popover" title="SIP" data-placement="right"--}}
-        {{--data-content="And here's some amazing content. It's very engaging. Right?"></i>--}}
-        {{--</div>--}}
-
-    </div>
-
-    <div class="col-md-12 col-lg-6">
-
-        <h4><strong>Users: </strong>How many users are required?</h4>
-
-        <div class="form-group">
-            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-lg-4 control-label">Users:</label>
-
-            <div class="col-xs-7 col-sm-5 col-md-5 col-lg-5">
-                <input class="form-control" type="number" name="users" min="0" value="0">
-            </div>
-            <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
-               data-toggle="popover" title="Users" data-placement="right"
-               data-content="How many and what type of extensions are required?"></i>
-        </div>
-
-        <h4><strong>LAN Ports: </strong>How many LAN ports are required from BT?</h4>
-
-        <div class="form-group">
-            <label for="inputEmail3" class="col-xs-3 col-sm-4 control-label">BT Supplied LAN ports:</label>
-
-            <div class="col-xs-7 col-sm-5 col-md-5 col-lg-5">
-                {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-                <select class="form-control" name="lan">
-                    <option>0</option>
-                    <option>16</option>
-                    <option>24</option>
-                    <option>48</option>
-                </select>
-            </div>
-            <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
-               data-toggle="popover" title="BT Supplied LAN ports" data-placement="right"
-               data-content="And here's some amazing content. It's very engaging. Right?"></i>
-        </div>
-
-        <div class="form-group">
-            <label for="inputEmail3" class="col-xs-3 col-sm-4 control-label">Customer supplied:</label>
-
-            <div class="col-xs-7 col-sm-5 col-md-5 col-lg-5">
-                {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-                <select class="form-control">
-                    <option>No</option>
-                    <option>Yes</option>
-                </select>
-            </div>
-            <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
-               data-toggle="popover" title="Customer supplied" data-placement="right"
-               data-content="And here's some amazing content. It's very engaging. Right?"></i>
-        </div>
-        {{--<button id="but" type="submit" class="btn btn-info pull-right">Find Bundle!</button>--}}
     </div>
 </form>
-<div class="col-lg-12">
-    <button id="but" class="btn btn-info pull-right">Find Bundle!</button>
+<br/>
+<div class="col-lg-offset-6">
+    <button id="but" class="btn btn-warning">Find my BT Bundle</button>
+</div>
+<br/>
+
+<div id="chosen_bundle" class="col-md-12 col-lg-12 hidden">
+
+    <h4><strong>My BT Bundle Comprises of the following:-</strong></h4>
+
+        <div class="form-group">
+            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-lg-4 control-label">BT Bundle Name:</label>
+
+            <div class="col-xs-7 col-sm-5 col-md-5 col-lg-7">
+                <input class="form-control bundle_name" disabled>
+            </div>
+            <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
+               data-toggle="popover" title="Analogue" data-placement="right"
+               data-content="And here's some amazing content. It's very engaging. Right?"></i>
+        </div>
+    <br/>
+    <br/>
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-4 col-lg-2 col-md-4 control-label">BRI lines:</label>
+
+            <div class="col-xs-7 col-sm-5 col-md-5 col-lg-1">
+                <input id="" class="form-control bundle_bri_lines" disabled>
+            </div>
+            <label for="inputEmail3" class="col-sm-4 col-lg-2 col-md-1 control-label">PRI lines:</label>
+
+            <div class="col-lg-1 col-md-2">
+                <input id="" class="form-control bundle_pri_lines" disabled>
+            </div>
+            <label for="inputEmail3" class="col-sm-4 col-lg-2 col-md-1 control-label">SIP lines:</label>
+
+            <div class="col-lg-1 col-md-2">
+                <input id="" class="form-control bundle_sip_lines" disabled>
+            </div>
+            <label for="inputEmail3" class="col-sm-4 col-lg-2 col-md-1 control-label">Analogue lines:</label>
+
+            <div class="col-lg-1 col-md-2">
+                <input id="" class="form-control bundle_analogue_lines" disabled>
+            </div>
+        </div>
+    <br/>
+    <br/>
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-4 col-lg-3 col-md-4 control-label">Standard User License:</label>
+
+            <div class="col-xs-7 col-sm-5 col-md-5 col-lg-1">
+                <input id="" class="form-control bundle_standard_license" disabled>
+            </div>
+            <label for="inputEmail3" class="col-sm-4 col-lg-3 col-md-1 control-label">Multi Device User License:</label>
+
+            <div class="col-lg-1 col-md-2">
+                <input id="" class="form-control bundle_multi_license" disabled>
+            </div>
+            <label for="inputEmail3" class="col-sm-4 col-lg-3 col-md-1 control-label">Voicemail User License:</label>
+
+            <div class="col-lg-1 col-md-2">
+                <input id="" class="form-control bundle_vm_license" disabled>
+            </div>
+        </div>
+    <br/>
+    <br/>
+
+    <div class="form-group">
+        <label for="inputEmail3" class="col-xs-3 col-sm-4 control-label col-lg-3">BT Supplied LAN Ports:</label>
+
+        <div class="col-lg-1 col-md-2">
+            <input id="" class="form-control bundle_ports" disabled>
+        </div>
+        <div id="upgrade_button">
+            <label for="inputEmail3" class="col-xs-3 col-sm-4 control-label col-lg-3">Base Bundle Additions:</label>
+
+            <div class="col-lg-1 col-md-2">
+                <input id="bundle_additions" class="form-control" value="Yes" disabled>
+            </div>
+            <i class="fa fa-plus-circle fa-2x" style="padding-left: 7px; padding-top: 4px; color: #58678F"
+               data-toggle="modal" data-target="#bundle_upgrades_model"></i>
+        </div>
+    </div>
+    <div class="col-lg-1 col-md-2">
+        <button onclick="confirm_bundle()" class="btn btn-info">Add to quote</button>
+    </div>
+
+</div>
+
+<div class="modal fade" id="bundle_upgrades_model" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Bundle Upgrades</h3>
+            </div>
+            <div class="modal-body">
+                <ul id="bundle_upgrades"></ul>
+                <div class="col-lg-2">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 
