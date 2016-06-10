@@ -84,7 +84,6 @@
                         <option>0</option>
                         <option>1</option>
                     </select>
-                    {{--<input type="radio" class="form-control" name="qty[]" value="1">--}}
                 </div>
             </div>
         @endforeach
@@ -175,13 +174,13 @@
 
     }
 
-    //    $(document).ready(function () {
-    //        $('input[type=radio]').change(function() {
-    //            // When any radio button on the page is selected,
-    //            // then deselect all other radio buttons.
-    //            $('input[type=radio]:checked').not(this).prop('checked', false);
-    //        });
-    //    })
+    $(document).ready(function () {
+        $('input[type=radio]').change(function () {
+            // When any radio button on the page is selected,
+            // then deselect all other radio buttons.
+            $('input[type=radio]:checked').not(this).prop('checked', false);
+        });
+    })
 </script>
 
 

@@ -94,7 +94,7 @@
                 var formData = $("#bundle_post").serializeArray();
                 var URL = $("#bundle_post").attr("action");
                 var users = formData[1]['value'];
-                console.log(users);
+                //console.log(users);
                 $.post(URL,
                         formData,
                         function (data, textStatus, jqXHR) {
@@ -112,13 +112,14 @@
                                             var multi_user_license = response.data.bundle['multi_user_license'];
                                             $("#multi_user_license").val(multi_user_license);
 
-                                            var bundle_users = response.data.bundle['users'];
+                                            var port_users = response.data.bundle['lan_ports'];
                                             //$("#chosen_bundle").addClass('animated pulse');
                                             $('#chosen_bundle').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
                                                     function () {
                                                         $('#chosen_bundle').removeClass('animated pulse');
                                                     });
-
+                                            $(".port_users").val(users);
+                                            $(".bundle_users").val(response.data.bundle['users'])
                                             $(".bundle_name").val(response.data.bundle['name'])
                                             $(".bundle_bri_lines").val(response.data.bundle['bri_lines'])
                                             $(".bundle_pri_lines").val(response.data.bundle['pri_lines'])
@@ -145,13 +146,12 @@
                                             }
                                         }
                                         else {
-
                                             $('#no_results').modal('show');
                                             //alert("BOO");
                                         }
-                                        var remaining_users = bundle_users - users;
-                                        $("#software_users").val(remaining_users);
-                                        //console.log(response.data.bundle['name']);
+                                        var remaining_users = port_users - users;
+                                        $(".remaining-users").val(remaining_users);
+                                        //console.log("Remaining" + remaining_users);
                                         $btn.button('reset');
                                     });
 

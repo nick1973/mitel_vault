@@ -11,6 +11,8 @@ Route::get('hardware', function () {
     return ['data' => \App\Product::where('category', 'hardware')
         ->orWhere('category', 'lines')
         ->orWhere('category', 'sip_lines')
+        ->orWhere('category', 'lan_data')
+        ->orWhere('category', 'lan_switch')
         ->get()];
 });
 

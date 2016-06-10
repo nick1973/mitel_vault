@@ -92,7 +92,7 @@
                     <label for="inputEmail3" class="col-sm-4 control-label">Category Ref:</label>
                     <div class="col-sm-5">
                         {!! Form::select('category', ['Hardware' => 'Hardware', 'lines' => 'Lines', 'sip_lines' => 'SIP
-                        Lines',
+                        Lines', 'lan_data' => 'LAN Data', 'lan_switch' => 'LAN Switch',
                         'Software' => 'Software', 'licenses' => 'Licenses',
                         'terminals' => 'Terminals', 'ip_terminals' => 'IP Terminals', 'analogue_terminals' => 'Analogue
                         Terminals', 'dect_terminals' => 'DECT Terminals',

@@ -225,9 +225,12 @@
 <button onclick="serverNext()" class="btn btn-success pull-right">Next <span class="glyphicon glyphicon-hand-right"
                                                                              aria-hidden="true"></span></button>
 <script>
+    $(document).ready(function () {
+        $('#reload_cart').load('/cart_reload');
+    });
 
     function homePrev() {
-        $('.nav-tabs a[href="#hardware"]').tab('show');
+        $('.nav-tabs a[href="#bundle-home"]').tab('show');
     }
 
     function serverNext() {

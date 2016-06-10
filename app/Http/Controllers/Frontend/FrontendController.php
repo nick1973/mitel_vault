@@ -29,9 +29,10 @@ class FrontendController extends Controller
         $dect_terminals = Product::where('category', 'dect_terminals')->where('pbx_type', 'MiVB')->get();
         $lines = Product::where('category', 'lines')->get();
         $sip_lines = Product::where('category', 'sip_lines')->get();
+        $lan_switches = Product::where('category', 'lan_switch')->get();
 
         return view('frontend.index', compact('cart', 'test', 'total', 'ip_terminals', 'analogue_terminals', 'dect_terminals', 'dect_upgrades', 'lines',
-            'sip_lines'));
+            'sip_lines', 'lan_switches'));
     }
 
 

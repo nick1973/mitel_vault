@@ -38,6 +38,7 @@
 
             <div class="col-xs-7 col-sm-5 col-md-5 col-lg-2">
                 <select id="lan" class="form-control" name="lan" required>
+                    <option></option>
                     <option value="no">No</option>
                     <option value="yes">Yes</option>
                 </select>
@@ -152,6 +153,19 @@
         </div>
     </div>
 </div>
+
+<script>
+    $("#lan").click(function () {
+        if ($("#lan").val() == 'no') {
+            $("#confirm_lan_no").hide();
+            $("#confirm_lan_yes").show();
+        }
+        else {
+            $("#confirm_lan_no").show();
+            $("#confirm_lan_yes").hide();
+        }
+    });
+</script>
 
 
 
