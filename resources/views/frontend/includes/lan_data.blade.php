@@ -139,35 +139,35 @@
     <h4><strong>Additional BT Supplied LAN ports:</strong></h4>
     <h4>Please confirm the following LAN upgrade options:</h4>
 
-    <div class="col-md-12 col-lg-12 form-horizontal">
+    <div class="col-md-12 col-lg-12">
+        <form id="lan-post" class="form-horizontal animated fadeIn" action="/hardware_post">
+            @foreach($lan_switches as $line)
+                <div class="form-group">
+                    <label class="col-xs-3 col-sm-4 col-lg-3 control-label">{{ $line->item_name }}:</label>
+                    {{--<input type="text" class="form-control" name="qty[]" value="0">--}}
+                    <input class="hidden" name="id[]" value="{{ $line->id }}">
+                    <input class="hidden" name="price[]" value="{{ $line->btbuy }}">
+                    <input class="hidden" name="name[]" value="{{ $line->item_name }}">
 
-        @foreach($lan_switches as $line)
-            <div class="form-group">
-                <label class="col-xs-3 col-sm-4 col-lg-3 control-label">{{ $line->item_name }}:</label>
-                {{--<input type="text" class="form-control" name="qty[]" value="0">--}}
-                <input class="hidden" name="id[]" value="{{ $line->id }}">
-                <input class="hidden" name="price[]" value="{{ $line->btbuy }}">
-                <input class="hidden" name="name[]" value="{{ $line->item_name }}">
-
-                <div class="col-xs-7 col-sm-5 col-md-5 col-lg-1">
-                    <select class="form-control" name="qty[]">
-                        <option>0</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>6</option>
-                        <option>7</option>
-                        <option>8</option>
-                        <option>9</option>
-                        <option>10</option>
-                    </select>
-                    {{--<input type="radio" class="form-control" name="qty[]" value="1">--}}
+                    <div class="col-xs-7 col-sm-5 col-md-5 col-lg-1">
+                        <select class="form-control" name="qty[]">
+                            <option>0</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                        </select>
+                        {{--<input type="radio" class="form-control" name="qty[]" value="1">--}}
+                    </div>
                 </div>
-            </div>
-        @endforeach
-
+            @endforeach
+        </form>
     </div>
 
 
@@ -180,7 +180,6 @@
                                                                                   aria-hidden="true"></span></button>
 <script>
 
-
     function terminalsPrev() {
         $('.nav-tabs a[href="#terminals"]').tab('show');
     }
@@ -188,5 +187,19 @@
     function peripheralsNext() {
         $("#tick-lan-data").addClass('animated fadeIn').removeClass('hidden');
         $('.nav-tabs a[href="#peripherals"]').tab('show');
+
+        var formDataLan = $("#lan-post").serializeArray();
+        var URL = $("#lan-post").attr("action");
+        console.log(formDataLan);
+        $.post(URL,
+                formDataLan,
+                function (data, textStatus, jqXHR) {
+                    $('#reload_cart').load('/cart_reload');
+                    $http.get("#")
+                            .then(function (response) {
+                            }).fail(function (jqXHR, textStatus, errorThrown) {
+                                console.log(errorThrown);
+                            });
+                });
     }
 </script>

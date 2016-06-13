@@ -74,12 +74,12 @@
         <div class="form-group">
             <label for="inputEmail3" class="col-sm-4 col-lg-2 col-md-4 control-label">BRI lines:</label>
 
-            <div class="col-xs-7 col-sm-5 col-md-5 col-lg-1">
+            <div class="col-xs-7 col-sm-5 col-md-2 col-lg-1">
                 <input id="" class="form-control bundle_bri_lines" disabled>
             </div>
             <label for="inputEmail3" class="col-sm-4 col-lg-2 col-md-1 control-label">PRI lines:</label>
 
-            <div class="col-lg-1 col-md-2">
+            <div class="col-lg-1 col-md-3">
                 <input id="" class="form-control bundle_pri_lines" disabled>
             </div>
             <label for="inputEmail3" class="col-sm-4 col-lg-2 col-md-1 control-label">SIP lines:</label>

@@ -104,7 +104,8 @@
                                         //console.log(response.data.bundle_products);
                                         if (typeof response.data.bundle !== 'undefined') {
 
-                                            $('#chosen_bundle').removeClass('hidden').addClass('animated pulse');
+                                            $('#chosen_bundle').removeClass('hidden');
+                                            //.addClass('animated pulse');
                                             var standard_license = response.data.bundle['standard_license'];
                                             $("#standard_license").val(standard_license);
                                             var vm_license = response.data.bundle['vm_license'];
@@ -116,7 +117,7 @@
                                             //$("#chosen_bundle").addClass('animated pulse');
                                             $('#chosen_bundle').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
                                                     function () {
-                                                        $('#chosen_bundle').removeClass('animated pulse');
+                                                        //$('#chosen_bundle').removeClass('animated pulse');
                                                     });
                                             $(".port_users").val(users);
                                             $(".bundle_users").val(response.data.bundle['users'])
@@ -149,8 +150,13 @@
                                             $('#no_results').modal('show');
                                             //alert("BOO");
                                         }
-                                        var remaining_users = port_users - users;
-                                        $(".remaining-users").val(remaining_users);
+                                        var remaining_users = users - port_users;
+                                        if (remaining_users <= 0) {
+                                            $(".remaining-users").val('0');
+                                        } else {
+                                            $(".remaining-users").val(remaining_users);
+                                        }
+
                                         //console.log("Remaining" + remaining_users);
                                         $btn.button('reset');
                                     });
