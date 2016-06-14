@@ -40,22 +40,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-4 control-label">Category:</label>
-
-                    <div class="col-sm-5">
-                        {!! Form::select('category', ['Hardware' => 'Hardware', 'lines' => 'Lines', 'sip_lines' => 'SIP
-                        Lines', 'lan_data' => 'LAN Data', 'lan_switch' => 'LAN Switch',
-                        'Software' => 'Software', 'licenses' => 'Licenses', 'user_license' => 'User License',
-                        'feature_license' => 'Feature License',
-                        'terminals' => 'Terminals', 'ip_terminals' => 'IP Terminals', 'analogue_terminals' => 'Analogue
-                        Terminals', 'dect_terminals' => 'DECT Terminals',
-                        'digital_terminals' => 'Digital Terminals',
-                        'mivb_peripherals' => 'MiVB Peripherals'], null, ['class' => 'form-control']) !!}
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-4 control-label">Vendor Ref:</label>
+                    <label for="inputEmail3" class="col-sm-4 control-label">supplier Ref:</label>
                     <div class="col-sm-5">
                         {!! Form::input('supplier_ref', 'supplier_ref', null, ['class' => 'form-control']) !!}
                     </div>
@@ -78,7 +63,7 @@
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-4 control-label">EUP £:</label>
                     <div class="col-sm-5">
-                        {!! Form::input('eup', 'eup', null, ['class' => 'form-control']) !!}
+                        {!! Form::input('bteup', 'bteup', null, ['class' => 'form-control']) !!}
                     </div>
                 </div>
 
@@ -92,7 +77,8 @@
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-4 control-label">Quote Type:</label>
                     <div class="col-sm-5">
-                        {!! Form::input('quote_type', 'quote_type', null, ['class' => 'form-control']) !!}
+                        {!! Form::select('quote_type', ['New' => 'New', 'Upgrade' => 'Upgrade', 'Maintenance' =>
+                        'Maintenance'], null, ['class' => 'form-control']) !!}
                     </div>
                 </div>
 
@@ -107,7 +93,15 @@
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-4 control-label">Category Ref:</label>
                     <div class="col-sm-5">
-                        {!! Form::input('category_ref', 'category_ref', null, ['class' => 'form-control']) !!}
+                        {!! Form::select('category', ['Hardware' => 'Hardware', 'lines' => 'Lines', 'sip_lines' => 'SIP
+                        Lines', 'lan_data' => 'LAN Data', 'lan_switch' => 'LAN Switch',
+                        'Software' => 'Software', 'licenses' => 'Licenses', 'user_license' => 'User License',
+                        'feature_license' => 'Feature License',
+                        'terminals' => 'Terminals', 'ip_terminals' => 'IP Terminals', 'analogue_terminals' => 'Analogue
+                        Terminals', 'dect_terminals' => 'DECT Terminals',
+                        'digital_terminals' => 'Digital Terminals',
+                        'mivb_peripherals' => 'MiVB Peripherals'], null, ['class' => 'form-control']) !!}
+                        {{--{{ Form::select('category', array('Hardware' => 'Hardware', 'Software' => 'Software', 'terminals' => 'Terminals'), $product->category) }}--}}
                     </div>
                 </div>
 
@@ -115,11 +109,8 @@
                     <label for="inputEmail3" class="col-sm-4 control-label">Image:</label>
 
                     <div class="col-sm-5">
-                        {!! Form::file('image', ['class' => 'form-control']); !!}
-                        <p class="errors">{!!$errors->first('image')!!}</p>
-                        @if(Session::has('error'))
-                            <p class="errors">{!! Session::get('error') !!}</p>
-                        @endif
+                        <img width="100px" alt="No Image">
+                        {!! Form::file('image', ['class' => 'form-control',]); !!}
                     </div>
                 </div>
 
@@ -128,15 +119,29 @@
 
                     <div class="col-sm-5">
                         <label class="radio-inline">
-                            <input type="radio" name="oa_view" id="inlineRadio1" value="1" checked> Yes
+                            {!! Form::radio('oa_view', '1', null); !!} Yes
+                            {{--<input type="radio" name="oa_view" id="inlineRadio1" value="1" checked> Yes--}}
                         </label>
                         <label class="radio-inline">
-                            <input type="radio" name="oa_view" id="inlineRadio2" value="0"> No
+                            {!! Form::radio('oa_view', '0', null); !!} No
+                            {{--<input type="radio" name="oa_view" id="inlineRadio2" value="0"> No--}}
                         </label>
                     </div>
                 </div>
 
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-4 control-label">Description:</label>
 
+                    <div class="col-sm-5 col-lg-8">
+                        {!! Form::textarea('description',null, ['class' => 'form-control']) !!}
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
             </div>
 
             <div class="col-md-6">
@@ -204,21 +209,7 @@
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-4 control-label">Description:</label>
 
-                    <div class="col-sm-5">
-                        {!! Form::textarea('description',null, ['class' => 'form-control']) !!}
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-primary">Save</button>
-                </div>
-            </div>
 
             {!! Form::close() !!}
 
