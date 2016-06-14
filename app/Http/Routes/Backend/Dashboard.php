@@ -19,6 +19,8 @@ Route::get('hardware', function () {
 Route::get('software', function () {
     return ['data' => \App\Product::where('category', 'software')
         ->orWhere('category', 'license')
+        ->orWhere('category', 'user_license')
+        ->orWhere('category', 'feature_license')
         ->get()];
 });
 

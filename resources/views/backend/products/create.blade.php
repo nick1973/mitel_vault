@@ -43,16 +43,14 @@
                     <label for="inputEmail3" class="col-sm-4 control-label">Category:</label>
 
                     <div class="col-sm-5">
-                        {!! Form::select('category', ['Hardware' => 'Hardware', 'Software' => 'Software',
+                        {!! Form::select('category', ['Hardware' => 'Hardware', 'lines' => 'Lines', 'sip_lines' => 'SIP
+                        Lines', 'lan_data' => 'LAN Data', 'lan_switch' => 'LAN Switch',
+                        'Software' => 'Software', 'licenses' => 'Licenses', 'user_license' => 'User License',
+                        'feature_license' => 'Feature License',
                         'terminals' => 'Terminals', 'ip_terminals' => 'IP Terminals', 'analogue_terminals' => 'Analogue
                         Terminals', 'dect_terminals' => 'DECT Terminals',
                         'digital_terminals' => 'Digital Terminals',
                         'mivb_peripherals' => 'MiVB Peripherals'], null, ['class' => 'form-control']) !!}
-                        {{--<select class="form-control" name="category">--}}
-                        {{--<option>Hardware</option>--}}
-                        {{--<option>Software</option>--}}
-                        {{--<option value="mivb_peripherals">MiVB Peripherals</option>--}}
-                        {{--</select>--}}
                     </div>
                 </div>
 

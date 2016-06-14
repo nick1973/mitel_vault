@@ -181,12 +181,12 @@
 <script>
 
     function terminalsPrev() {
-        $('.nav-tabs a[href="#terminals"]').tab('show');
+        $('.nav-tabs a[href="#hardware"]').tab('show');
     }
 
     function peripheralsNext() {
         $("#tick-lan-data").addClass('animated fadeIn').removeClass('hidden');
-        $('.nav-tabs a[href="#peripherals"]').tab('show');
+        $('.nav-tabs a[href="#software"]').tab('show');
 
         var formDataLan = $("#lan-post").serializeArray();
         var URL = $("#lan-post").attr("action");
@@ -201,5 +201,12 @@
                                 console.log(errorThrown);
                             });
                 });
+
+        if ($(".licence_users").val() <= 0) {
+            $("#licences :input").prop('disabled', 'disabled');
+
+        } else {
+            $("#licences :input").prop('disabled', false);
+        }
     }
 </script>

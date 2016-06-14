@@ -7,6 +7,10 @@
         }
     </style>
     <script>
+        window.onbeforeunload = function () {
+            return "Data will be lost if you leave the page, are you sure?";
+        };
+
         function visible(button, id) {
             if ($("#" + button).prop('checked') == true) {
                 $("#" + button).attr({
@@ -156,6 +160,17 @@
                                         } else {
                                             $(".remaining-users").val(remaining_users);
                                         }
+                                        var user_licences = parseInt(multi_user_license) + parseInt(standard_license);
+                                        var licence_users = users - user_licences;
+                                        console.log(users - user_licences);
+                                        if (licence_users <= 0) {
+                                            $(".licence_users").val('0');
+                                            $(".licence_users_hidden").val('0');
+                                        } else {
+                                            $(".licence_users").val(licence_users);
+                                            $(".licence_users_hidden").val(licence_users);
+                                        }
+
 
                                         //console.log("Remaining" + remaining_users);
                                         $btn.button('reset');

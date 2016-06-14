@@ -30,9 +30,11 @@ class FrontendController extends Controller
         $lines = Product::where('category', 'lines')->get();
         $sip_lines = Product::where('category', 'sip_lines')->get();
         $lan_switches = Product::where('category', 'lan_switch')->get();
+        $user_license = Product::where('category', 'user_license')->get();
+        $feature_license = Product::where('category', 'feature_license')->get();
 
         return view('frontend.index', compact('cart', 'test', 'total', 'ip_terminals', 'analogue_terminals', 'dect_terminals', 'dect_upgrades', 'lines',
-            'sip_lines', 'lan_switches'));
+            'sip_lines', 'lan_switches', 'user_license', 'feature_license'));
     }
 
 
