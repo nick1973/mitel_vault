@@ -59,6 +59,25 @@ Route::post('bundle_post', function(){
     return $result;
 });
 
+Route::post('server_post', function () {
+    $result = [
+        'channel_qty' => $_POST['channel_qty'],
+        'server_form' => $_POST['server_form'],
+        'raid' => $_POST['raid']
+    ];
+    return $result;
+});
+
+Route::get('server_list/{channel_qty}/{server_form}/{raid}',
+    function ($channel_qty, $server_form, $raid) {
+        $server = \App\Product::where('category', 'server')->get();
+        return ["server" => $server];
+    });
+
+Route::get('cart_content', function () {
+    $cart = Gloudemans\Shoppingcart\Facades\Cart::content();
+    return $cart;
+});
 
 Route::post('hardware_post', 'FrontendController@cart_post');
 //Route::post('hardware_post', function(){

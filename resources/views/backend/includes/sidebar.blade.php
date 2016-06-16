@@ -53,12 +53,17 @@
                 </a>
                 <ul class="treeview-menu {{ Active::pattern('admin/product_management*', 'menu-open') }}"
                     style="display: none; {{ Active::pattern(['admin/product_management/hardware',
+                                                            'admin/product_management/servers',
                                                             'admin/product_management/software',
                                                             'admin/product_management/terminals',
+                                                            'admin/product_management/upgrades',
                                                             'admin/product_management/mivb_peripherals',
                                                             'admin/product_management/bt_peripherals'], 'display: block;') }}">
                     <li class="{{ Active::pattern('admin/product_management/hardware*') }}">
                         <a href="{!! route('admin.product_management.hardware.index') !!}">Hardware</a>
+                    </li>
+                    <li class="{{ Active::pattern('admin/product_management/servers*') }}">
+                        <a href="{!! route('admin.product_management.servers.index') !!}">Servers</a>
                     </li>
                     <li class="{{ Active::pattern('admin/product_management/software*') }}">
                         <a href="{!! route('admin.product_management.software.index') !!}">Software</a>

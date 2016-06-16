@@ -14,7 +14,8 @@
     <div class="box box-success">
         <div class="box-header with-border">
             <h3 class="box-title">{{ trans('strings.backend.dashboard.welcome') }} {!! access()->user()->name !!} to:
-                Software</h3>
+                Servers</h3>
+
             <div class="box-tools pull-right">
                 <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
             </div>
@@ -23,17 +24,12 @@
         <!-- /.box-header -->
         <div class="box-body">
             <div class="table-responsive">
-                <table id="software" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                <table id="servers" class="table table-striped table-bordered" cellspacing="0" width="100%">
                     <thead>
                     <tr>
                         <th>Category</th>
-                        <th>supplier_ref</th>
+                        <th>Item-Name</th>
                         <th>B-Code</th>
-                        <th>Item</th>
-                        <th>qty</th>
-                        <th>description</th>
-                        <th>item_code</th>
-                        <th>xfer</th>
                         <th>bteup</th>
                         <th>btbuy</th>
                         <th>quote_type</th>
@@ -64,7 +60,15 @@
         <!-- /.box-body -->
     </div><!--box box-success-->
 
+
+
+
 @endsection
+
+
+
+
+
 
 <script>
     $('#exampleModal').on('show.bs.modal', function (event) {

@@ -99,6 +99,7 @@
         <script src="/js/upgrades.js"></script>
         <script src="/js/bt_peripherals.js"></script>
         <script src="/js/bundles.js"></script>
+        <script src="/js/servers.js"></script>
     @endif
 
     @yield('before-scripts-end')

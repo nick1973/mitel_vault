@@ -24,6 +24,9 @@ Route::get('software', function () {
         ->get()];
 });
 
+Route::get('servers', function () {
+    return ['data' => \App\Product::where('category', 'server')->get()];
+});
 
 Route::get('mivb_peripherals', function () {
     return ['data' => \App\Product::where('category', 'mivb_peripherals')->get()];
@@ -68,6 +71,7 @@ Route::resource('product_management/terminals', 'TerminalsController');
 Route::resource('product_management/upgrades', 'UpgradeController');
 Route::resource('product_management/hardware', 'HardwareController');
 Route::resource('product_management/software', 'SoftwareController');
+Route::resource('product_management/servers', 'ServerController');
 Route::resource('product_management/mivb_peripherals', 'Mivb_PeripheralsController');
 Route::resource('product_management/bt_peripherals', 'BT_PeripheralsController');
 Route::resource('product_management/training', 'TrainingController');

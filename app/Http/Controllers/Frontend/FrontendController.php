@@ -32,9 +32,10 @@ class FrontendController extends Controller
         $lan_switches = Product::where('category', 'lan_switch')->get();
         $user_license = Product::where('category', 'user_license')->get();
         $feature_license = Product::where('category', 'feature_license')->get();
+        $base_app = Product::where('category', 'base_app')->get();
 
         return view('frontend.index', compact('cart', 'test', 'total', 'ip_terminals', 'analogue_terminals', 'dect_terminals', 'dect_upgrades', 'lines',
-            'sip_lines', 'lan_switches', 'user_license', 'feature_license'));
+            'sip_lines', 'lan_switches', 'user_license', 'feature_license', 'base_app'));
     }
 
 

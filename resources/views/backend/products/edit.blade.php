@@ -97,7 +97,8 @@
                         'feature_license' => 'Feature License',
                         'terminals' => 'Terminals', 'ip_terminals' => 'IP Terminals', 'analogue_terminals' => 'Analogue
                         Terminals', 'dect_terminals' => 'DECT Terminals',
-                        'digital_terminals' => 'Digital Terminals',
+                        'digital_terminals' => 'Digital Terminals', 'server' => 'Servers', 'base_app' => 'Base
+                        Application',
                         'mivb_peripherals' => 'MiVB Peripherals'], null, ['class' => 'form-control']) !!}
                         {{--{{ Form::select('category', array('Hardware' => 'Hardware', 'Software' => 'Software', 'terminals' => 'Terminals'), $product->category) }}--}}
                     </div>
@@ -132,6 +133,52 @@
 
                     <div class="col-sm-5 col-lg-8">
                         {!! Form::textarea('description',null, ['class' => 'form-control']) !!}
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-4 control-label">Info View?:</label>
+
+                    <div class="col-sm-5">
+                        <label class="radio-inline">
+                            {!! Form::radio('info_view', '1', null); !!} Yes
+                            {{--<input type="radio" name="oa_view" id="inlineRadio1" value="1" checked> Yes--}}
+                        </label>
+                        <label class="radio-inline">
+                            {!! Form::radio('info_view', '0', null); !!} No
+                            {{--<input type="radio" name="oa_view" id="inlineRadio2" value="0"> No--}}
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-4 control-label">Info Description:</label>
+
+                    <div class="col-sm-5 col-lg-8">
+                        {!! Form::textarea('info_description',null, ['class' => 'form-control']) !!}
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-4 control-label">Warning View?:</label>
+
+                    <div class="col-sm-5">
+                        <label class="radio-inline">
+                            {!! Form::radio('warning_view', '1', null); !!} Yes
+                            {{--<input type="radio" name="oa_view" id="inlineRadio1" value="1" checked> Yes--}}
+                        </label>
+                        <label class="radio-inline">
+                            {!! Form::radio('warning_view', '0', null); !!} No
+                            {{--<input type="radio" name="oa_view" id="inlineRadio2" value="0"> No--}}
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-4 control-label">Warning Description:</label>
+
+                    <div class="col-sm-5 col-lg-8">
+                        {!! Form::textarea('warning_description',null, ['class' => 'form-control']) !!}
                     </div>
                 </div>
 

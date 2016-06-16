@@ -7,9 +7,10 @@
         }
     </style>
     <script>
-        window.onbeforeunload = function () {
-            return "Data will be lost if you leave the page, are you sure?";
-        };
+        //use the below to stop refresh
+        //        window.onbeforeunload = function () {
+        //            return "Data will be lost if you leave the page, are you sure?";
+        //        };
 
         function visible(button, id) {
             if ($("#" + button).prop('checked') == true) {
@@ -20,7 +21,6 @@
                     "aria-expanded": 'false',
                     "aria-controls": '#' + id
                 });
-
                 $("#" + id).removeClass('fadeOut').addClass('fadeIn').delay("slow");
             }
             else if ($("#" + button).prop('checked') == false) {
@@ -92,8 +92,27 @@
         var app = angular.module('myApp', []);
         app.controller('myCtrl', function ($scope, $http) {
 
-            $("#but").click(function () {
+            $("#find_server").click(function () {
+                var formData = $("#server_post").serializeArray();
+                var URL = $("#server_post").attr("action");
+                console.log(formData);
+                $.post(URL,
+                        formData,
+                        function (data, textStatus, jqXHR) {
+                            $http.get("/server_list/" + data.channel_qty + "/" + data.server_form + "/" + data.raid)
+                                    .then(function (response) {
+                                        $scope.server = response.data.server;
+                                        console.log(response.data.server);
 
+                                    });
+
+
+                        }).fail(function (jqXHR, textStatus, errorThrown) {
+                            console.log(errorThrown);
+                        });
+            });
+
+            $("#but").click(function () {
                 var $btn = $(this).button('loading');
                 var formData = $("#bundle_post").serializeArray();
                 var URL = $("#bundle_post").attr("action");
@@ -105,7 +124,8 @@
                             $http.get("/bundle_list/" + data.line_type + "/" + data.users + "/" + data.lan)
                                     .then(function (response) {
                                         $scope.content = response.data.bundle;
-                                        //console.log(response.data.bundle_products);
+                                        $scope.upgrades = response.data.bundle_upgrades;
+                                        console.log("upgrades " + response.data.bundle_upgrades);
                                         if (typeof response.data.bundle !== 'undefined') {
 
                                             $('#chosen_bundle').removeClass('hidden');
@@ -249,7 +269,8 @@
                             </a>
                         </li>
                         <li role="presentation">
-                            <a href="#servers" aria-controls="servers" role="tab" data-toggle="tab">Server/Licenses
+                            <a href="#servers" aria-controls="servers" role="tab" data-toggle="tab">Server +
+                                Applications
                             <span id="tick-servers" class="hidden">
                                     <img src="/images/tick.png" height="18px">
                                 </span>
@@ -447,13 +468,13 @@
 
                                 <p><strong>DN's:</strong></p>
 
-                                <p><strong>Voicemail:</strong></p>
+                                <p><strong>Voicemail:</strong> @{{ content.vm_license }}</p>
 
-                                <p><strong>Standard User:</strong> @{{ content.standard_users }}</p>
+                                <p><strong>Standard User:</strong> @{{ content.standard_license }}</p>
 
-                                <p><strong>Multi User:</strong></p>
+                                <p><strong>Multi User:</strong> @{{ content.multi_user_license }}</p>
 
-                                <p><strong>External Twinning:</strong></p>
+                                <p><strong>External Twinning:</strong> @{{ upgrades.item_name }}</p>
 
                                 <p><strong>LAN/IP Ports:</strong> @{{ content.lan_ports }}</p>
 
