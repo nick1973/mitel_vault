@@ -23,6 +23,11 @@ $(document).ready(function () {
         "ajax": "/admin/bt_peripherals",
         "pagingType": "full_numbers",
         "columns": [
+            {
+                "data": function (data) {
+                    return '<a href="/admin/product_management/' + data.id + '/edit" class="btn btn-success">Edit</a>';
+                }
+            },
             {"data": "supplier_ref"},
             {"data": "bt_ref"},
             {"data": "item_name"},
@@ -42,12 +47,7 @@ $(document).ready(function () {
             {"data": "three_yr_total_care"},
             {"data": "five_yr_standard_care"},
             {"data": "five_yr_prompt_care"},
-            {"data": "five_yr_total_care"},
-            {
-                "data": function (data) {
-                    return '<a href="/admin/product_management/bt_peripherals/' + data.id + '/edit" class="btn btn-success">Edit</a>';
-                }
-            }
+            {"data": "five_yr_total_care"}
         ],
         dom: '<"top"Blf>rT<"bottom"p><"clear">',
         //dom: 'B<lf<t>ip>',

@@ -54,6 +54,7 @@
                 <ul class="treeview-menu {{ Active::pattern('admin/product_management*', 'menu-open') }}"
                     style="display: none; {{ Active::pattern(['admin/product_management/hardware',
                                                             'admin/product_management/servers',
+                                                            'admin/product_management*',
                                                             'admin/product_management/software',
                                                             'admin/product_management/terminals',
                                                             'admin/product_management/upgrades',

@@ -62,15 +62,27 @@ Route::post('bundle_post', function(){
 Route::post('server_post', function () {
     $result = [
         'channel_qty' => $_POST['channel_qty'],
-        'server_form' => $_POST['server_form'],
+        'form_factor' => $_POST['form_factor'],
         'raid' => $_POST['raid']
     ];
     return $result;
 });
 
-Route::get('server_list/{channel_qty}/{server_form}/{raid}',
-    function ($channel_qty, $server_form, $raid) {
-        $server = \App\Product::where('category', 'server')->get();
+Route::get('server_list/{channel_qty}/{form_factor}/{raid}',
+    function ($channel_qty, $form_factor, $raid) {
+        if ($channel_qty > 0 && $channel_qty <= 50) {
+            $channel_qty = 50;
+        } else if ($channel_qty <= 250) {
+            $channel_qty = 250;
+        } else {
+            $channel_qty = 500;
+        }
+        $server = \App\Product::where('category', 'server')
+            ->where('form_factor', $form_factor)
+            ->where('raid', $raid)
+            ->where('max_server_users', $channel_qty)
+            ->get();
+
         return ["server" => $server];
     });
 
@@ -80,16 +92,6 @@ Route::get('cart_content', function () {
 });
 
 Route::post('hardware_post', 'FrontendController@cart_post');
-//Route::post('hardware_post', function(){
-////    $result =  [
-////        'id' => $_POST['id'],
-////        'name' => $_POST['name'],
-////        'qty' => $_POST['qty'],
-////        'price' => $_POST['price']
-////    ];
-////    return $result;
-//
-//});
 
 Route::get('hardware_flat', function () {
     return \App\Product::where('category', 'hardware')

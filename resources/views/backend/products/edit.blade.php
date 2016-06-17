@@ -98,8 +98,12 @@
                         'terminals' => 'Terminals', 'ip_terminals' => 'IP Terminals', 'analogue_terminals' => 'Analogue
                         Terminals', 'dect_terminals' => 'DECT Terminals',
                         'digital_terminals' => 'Digital Terminals', 'server' => 'Servers', 'base_app' => 'Base
-                        Application',
-                        'mivb_peripherals' => 'MiVB Peripherals'], null, ['class' => 'form-control']) !!}
+                        Application', 'teleworker' => 'Teleworker',
+                        'mivb_peripherals' => 'MiVB Peripherals', 'peripherals_moh' => 'Peripherals MoH',
+                        'peripherals_message' => 'Peripherals Message',
+                        'peripherals_de' => 'Peripherals Door Access', 'peripherals_uc' => 'Peripherals UC',
+                        'peripherals_headset' => 'Peripherals Headset', 'peripherals_vr' => 'Peripherals VR',
+                        'peripherals_av' => 'Peripherals AV'], null, ['class' => 'form-control']) !!}
                         {{--{{ Form::select('category', array('Hardware' => 'Hardware', 'Software' => 'Software', 'terminals' => 'Terminals'), $product->category) }}--}}
                     </div>
                 </div>
@@ -114,16 +118,39 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-4 control-label">OA View?:</label>
-
+                    <label for="inputEmail3" class="col-sm-4 control-label">OA + Info View?:</label>
                     <div class="col-sm-5">
                         <label class="radio-inline">
                             {!! Form::radio('oa_view', '1', null); !!} Yes
-                            {{--<input type="radio" name="oa_view" id="inlineRadio1" value="1" checked> Yes--}}
                         </label>
                         <label class="radio-inline">
                             {!! Form::radio('oa_view', '0', null); !!} No
-                            {{--<input type="radio" name="oa_view" id="inlineRadio2" value="0"> No--}}
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-4 control-label">Show Image?:</label>
+
+                    <div class="col-sm-5">
+                        <label class="radio-inline">
+                            {!! Form::radio('image_view', '1', null); !!} Yes
+                        </label>
+                        <label class="radio-inline">
+                            {!! Form::radio('image_view', '0', null); !!} No
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-4 control-label">Show Description?:</label>
+
+                    <div class="col-sm-5">
+                        <label class="radio-inline">
+                            {!! Form::radio('description_view', '1', null); !!} Yes
+                        </label>
+                        <label class="radio-inline">
+                            {!! Form::radio('description_view', '0', null); !!} No
                         </label>
                     </div>
                 </div>
@@ -187,6 +214,64 @@
 
             <div class="col-md-6">
                 <br/><br/><br/>
+
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-4 control-label">Server Type:</label>
+
+                    <div class="col-sm-5">
+                        {!! Form::select('Server_type', ['gateway' => 'Gateway'], null, ['class' => 'form-control']) !!}
+                        {{--{{ Form::select('category', array('Hardware' => 'Hardware', 'Software' => 'Software', 'terminals' => 'Terminals'), $product->category) }}--}}
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-4 control-label">Form Factor:</label>
+
+                    <div class="col-sm-5">
+                        {!! Form::select('form_factor', ['rack' => 'Rack', 'tower' => 'Tower'], null, ['class' =>
+                        'form-control']) !!}
+                        {{--{{ Form::select('category', array('Hardware' => 'Hardware', 'Software' => 'Software', 'terminals' => 'Terminals'), $product->category) }}--}}
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-4 control-label">Raid?:</label>
+
+                    <div class="col-sm-5">
+                        <label class="radio-inline">
+                            {!! Form::radio('raid', '1', null); !!} Yes
+                            {{--<input type="radio" name="oa_view" id="inlineRadio1" value="1" checked> Yes--}}
+                        </label>
+                        <label class="radio-inline">
+                            {!! Form::radio('raid', '0', null); !!} No
+                            {{--<input type="radio" name="oa_view" id="inlineRadio2" value="0"> No--}}
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-4 control-label">PSU Redundancy?:</label>
+
+                    <div class="col-sm-5">
+                        <label class="radio-inline">
+                            {!! Form::radio('psu_redundancy', '1', null); !!} Yes
+                            {{--<input type="radio" name="oa_view" id="inlineRadio1" value="1" checked> Yes--}}
+                        </label>
+                        <label class="radio-inline">
+                            {!! Form::radio('psu_redundancy', '0', null); !!} No
+                            {{--<input type="radio" name="oa_view" id="inlineRadio2" value="0"> No--}}
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-4 control-label">Max Server Users:</label>
+
+                    <div class="col-sm-5">
+                        {!! Form::input('max_server_users', 'max_server_users', null, ['class' => 'form-control']) !!}
+                    </div>
+                </div>
+
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-4 control-label">One Year Standard Care:</label>
                     <div class="col-sm-5">

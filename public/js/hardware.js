@@ -24,6 +24,11 @@ $(document).ready(function () {
         "pagingType": "full_numbers",
         "lengthMenu": [[5, 25, 50, -1], [5, 25, 50, "All"]],
         "columns": [
+            {
+                "data": function (data) {
+                    return '<a href="/admin/product_management/' + data.id + '/edit" class="btn btn-success">Edit</a>';
+                }
+            },
             {"data": "category"},
             {"data": "supplier_ref"},
             {"data": "bt_ref"},
@@ -44,12 +49,7 @@ $(document).ready(function () {
             {"data": "three_yr_total_care"},
             {"data": "five_yr_standard_care"},
             {"data": "five_yr_prompt_care"},
-            {"data": "five_yr_total_care"},
-            {
-                "data": function (data) {
-                    return '<a href="/admin/product_management/' + data.id + '/edit" class="btn btn-success">Edit</a>';
-                }
-            }
+            {"data": "five_yr_total_care"}
         ],
         dom: '<"top"Blf>rT<"bottom"p><"clear">',
         //dom: 'B<lf<t>ip>',

@@ -32,6 +32,7 @@
                 <table id="hardware" class="table table-striped table-bordered" cellspacing="0" width="100%">
                     <thead>
                     <tr>
+                        <th></th>
                         <th>Category</th>
                         <th>Supplier Ref</th>
                         <th>BCode</th>
@@ -53,7 +54,6 @@
                         <th>5 Yr Standard Care</th>
                         <th>5 Yr Prompt Care</th>
                         <th>5 Yr Total Care</th>
-                        <th></th>
                     </tr>
                     </thead>
                     <tfoot>

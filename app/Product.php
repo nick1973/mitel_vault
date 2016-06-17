@@ -33,10 +33,18 @@ class Product extends Model
         'five_yr_total_care',
         'image',
         'oa_view',
+        'image_view',
+        'description_view',
         'info_view',
         'info_description',
         'warning_view',
-        'warning_description'
+        'warning_description',
+
+        'server_type',
+        'max_server_users',
+        'form_factor',
+        'raid',
+        'psu_redundancy'
     ];
 
     public function mitelbundles()

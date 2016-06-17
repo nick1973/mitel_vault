@@ -49,17 +49,29 @@
                         <option>19</option>
                     </select>
                 </div>
-                <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
-                   data-toggle="popover" title="2100 Analogue Phone" data-placement="right" data-html="true"
-                   data-content="<img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'>"
-                   data-animation="true"></i>
-
+                @if($terminal->info_view==1)
+                    <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
+                       data-toggle="popover" title="{{ $terminal->item_name }}" data-placement="right" data-html="true"
+                       data-content="@if($terminal->image_view==1)
+                                        <img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'>
+                                    @endif
+                       @if($terminal->description_view==1)
+                        <p>{{$terminal->info_description}}</p>
+                       @endif
+                               " data-animation="true"></i>
+                @endif
                 @if(count($terminal->upgrades)>0)
                     <i class="fa fa-plus-circle fa-2x" style="padding-left: 7px; padding-top: 4px; color: #58678F"
                        onclick="showUpgrades('{{ $terminal->item_name }}', {{ $terminal->upgrades }})"></i>
                 @endif
+                @if($terminal->warning_view==1)
+                    <i class="fa fa-exclamation-circle fa-2x" style="padding-top: 4px; color: #ff0000"
+                       data-toggle="popover" title="{{ $terminal->item_name }}" data-placement="right" data-html="true"
+                       data-content="<?php if($terminal->image) {?><img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'><?php } ?>
+                   <p>{{ $terminal->warning_description }}</p>"
+                       data-animation="true"></i>
+                @endif
             </div>
-
             <?php if ($i++ == $half_terminals) break; ?>
         @endforeach
     </div>
@@ -83,16 +95,31 @@
                         <option>19</option>
                     </select>
                 </div>
-                <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
-                   data-toggle="popover" title="2100 Analogue Phone" data-placement="right" data-html="true"
-                   data-content="<img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'>"
-                   data-animation="true"></i>
+                @if($terminal->info_view==1)
+                    <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
+                       data-toggle="popover" title="{{ $terminal->item_name }}" data-placement="right" data-html="true"
+                       data-content="@if($terminal->image_view==1)
+                                        <img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'>
+                                    @endif
+                       @if($terminal->description_view==1)
+                        <p>{{$terminal->info_description}}</p>
+                       @endif
+                               " data-animation="true"></i>
+                @endif
                 @if(count($terminal->upgrades)>0)
                     <i class="fa fa-plus-circle fa-2x" style="padding-left: 7px; padding-top: 4px; color: #58678F"
                        onclick="showUpgrades('{{ $terminal->item_name }}', {{ $terminal->upgrades }})"></i>
                 @endif
+                @if($terminal->warning_view==1)
+                    <i class="fa fa-exclamation-circle fa-2x" style="padding-top: 4px; color: #ff0000"
+                       data-toggle="popover" title="{{ $terminal->item_name }}" data-placement="right" data-html="true"
+                       data-content="<?php if($terminal->image) {?><img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'><?php } ?>
+                   <p>{{ $terminal->warning_description }}</p>"
+                       data-animation="true"></i>
+                @endif
             </div>
         @endforeach
+
 
 
     </div>
@@ -126,13 +153,27 @@
                         <option>19</option>
                     </select>
             </div>
-            <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
-               data-toggle="popover" title="2100 Analogue Phone" data-placement="right" data-html="true"
-               data-content="<img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'>"
-               data-animation="true"></i>
+                @if($terminal->info_view==1)
+                    <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
+                       data-toggle="popover" title="{{ $terminal->item_name }}" data-placement="right" data-html="true"
+                       data-content="@if($terminal->image_view==1)
+                                        <img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'>
+                                    @endif
+                       @if($terminal->description_view==1)
+                        <p>{{$terminal->info_description}}</p>
+                       @endif
+                               " data-animation="true"></i>
+                @endif
                 @if(count($terminal->upgrades)>0)
                     <i class="fa fa-plus-circle fa-2x" style="padding-left: 7px; padding-top: 4px; color: #58678F"
                        onclick="showUpgrades('{{ $terminal->item_name }}', {{ $terminal->upgrades }})"></i>
+                @endif
+                @if($terminal->warning_view==1)
+                    <i class="fa fa-exclamation-circle fa-2x" style="padding-top: 4px; color: #ff0000"
+                       data-toggle="popover" title="{{ $terminal->item_name }}" data-placement="right" data-html="true"
+                       data-content="<?php if($terminal->image) {?><img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'><?php } ?>
+                   <p>{{ $terminal->warning_description }}</p>"
+                       data-animation="true"></i>
                 @endif
             </div>
             <?php if ($i++ == $half_terminals) break; ?>
@@ -141,6 +182,7 @@
 
     <div class="col-md-12 col-lg-6">
         @foreach($ip_terminals as $k => $terminal)
+            {{--{{ print_r($terminal) }}--}}
             <?php if ($k < $x) continue; ?>
             <div class="form-group">
                 <label for="inputEmail3"
@@ -161,9 +203,13 @@
                 @if($terminal->info_view==1)
                     <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
                        data-toggle="popover" title="{{ $terminal->item_name }}" data-placement="right" data-html="true"
-                       data-content="<?php if($terminal->image) {?><img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'><?php } ?>
-                   <p>{{ $line->info_description }}</p>"
-                       data-animation="true"></i>
+                       data-content="@if($terminal->image_view==1)
+                                        <img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'>
+                                    @endif
+                       @if($terminal->description_view==1)
+                        <p>{{$terminal->info_description}}</p>
+                       @endif
+                               " data-animation="true"></i>
                 @endif
                 @if(count($terminal->upgrades)>0)
                     <i class="fa fa-plus-circle fa-2x" style="padding-left: 7px; padding-top: 4px; color: #58678F"
@@ -213,9 +259,13 @@
                 @if($terminal->info_view==1)
                     <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
                        data-toggle="popover" title="{{ $terminal->item_name }}" data-placement="right" data-html="true"
-                       data-content="<?php if($terminal->image) {?><img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'><?php } ?>
-                   <p>{{ $line->info_description }}</p>"
-                       data-animation="true"></i>
+                       data-content="@if($terminal->image_view==1)
+                                        <img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'>
+                                    @endif
+                       @if($terminal->description_view==1)
+                        <p>{{$terminal->info_description}}</p>
+                       @endif
+                               " data-animation="true"></i>
                 @endif
                 @if(count($terminal->upgrades)>0)
                     <i class="fa fa-plus-circle fa-2x" style="padding-left: 7px; padding-top: 4px; color: #58678F"
@@ -255,9 +305,13 @@
                 @if($terminal->info_view==1)
                     <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
                        data-toggle="popover" title="{{ $terminal->item_name }}" data-placement="right" data-html="true"
-                       data-content="<?php if($terminal->image) {?><img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'><?php } ?>
-                   <p>{{ $line->info_description }}</p>"
-                       data-animation="true"></i>
+                       data-content="@if($terminal->image_view==1)
+                                        <img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'>
+                                    @endif
+                       @if($terminal->description_view==1)
+                        <p>{{$terminal->info_description}}</p>
+                       @endif
+                               " data-animation="true"></i>
                 @endif
                 @if(count($terminal->upgrades)>0)
                     <i class="fa fa-plus-circle fa-2x" style="padding-left: 7px; padding-top: 4px; color: #58678F"

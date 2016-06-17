@@ -21,15 +21,24 @@ Route::get('software', function () {
         ->orWhere('category', 'license')
         ->orWhere('category', 'user_license')
         ->orWhere('category', 'feature_license')
+        ->orWhere('category', 'teleworker')
+        ->orWhere('category', null)
+        ->get()];
+});
+
+Route::get('bt_peripherals', function () {
+    return ['data' => \App\Product::where('category', 'peripherals_moh')
+        ->orWhere('category', 'peripherals_message')
+        ->orWhere('category', 'peripherals_de')
+        ->orWhere('category', 'peripherals_uc')
+        ->orWhere('category', 'peripherals_headset')
+        ->orWhere('category', 'peripherals_vr')
+        ->orWhere('category', 'peripherals_av')
         ->get()];
 });
 
 Route::get('servers', function () {
     return ['data' => \App\Product::where('category', 'server')->get()];
-});
-
-Route::get('mivb_peripherals', function () {
-    return ['data' => \App\Product::where('category', 'mivb_peripherals')->get()];
 });
 
 Route::get('terminals', function () {
@@ -45,9 +54,6 @@ Route::get('upgrades', function () {
     return ['data' => \App\Upgrade::where('category', 'terminal_upgrades')->get()];
 });
 
-Route::get('bt_peripherals', function () {
-    return ['data' => \App\BT_Peripherals::get()];
-});
 
 Route::get('bundle_set/{bundle_set}', function ($id) {
 

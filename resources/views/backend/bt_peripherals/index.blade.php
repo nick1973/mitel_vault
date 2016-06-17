@@ -5,7 +5,7 @@
         {!! app_name() !!}
         <small>{{ trans('strings.backend.dashboard.title') }}</small>
     </h1>
-    <a class="btn btn-danger pull-right" href="/admin/product_management/bt_peripherals/create">Add New!</a>
+    <a class="btn btn-danger pull-right" href="/admin/product_management/create">Add New!</a>
     <br/>
 @endsection
 
@@ -31,6 +31,7 @@
                 <table id="bt_peripherals" class="table table-striped table-bordered" cellspacing="0" width="100%">
                     <thead>
                     <tr>
+                        <th></th>
                         <th>supplier_ref</th>
                         <th>B-Code</th>
                         <th>Item</th>
@@ -51,7 +52,6 @@
                         <th>5 Yr Standard Care</th>
                         <th>5 Yr Prompt Care</th>
                         <th>5 Yr Total Care</th>
-                        <th></th>
                     </tr>
                     </thead>
                     <tfoot>

@@ -21,6 +21,11 @@ class ProductManagementController extends Controller
         if ($page == 'lines') {
             $page = 'hardware';
         }
+        if ($page == 'peripherals_moh' || $page == 'peripherals_message' || $page == 'peripherals_de' || $page == 'peripherals_uc'
+            || $page == 'peripherals_headset' || $page == 'peripherals_vr' || $page == 'peripherals_av'
+        ) {
+            $page = 'bt_peripherals';
+        }
         //return view('backend.' . $page . '.index');
         return redirect('admin/product_management/' . $page);
     }
