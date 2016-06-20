@@ -50,6 +50,12 @@ Route::get('terminals', function () {
         ->get()];
 });
 
+Route::get('training', function () {
+    return ['data' => \App\Product::where('category', 'training_on_site')
+        ->orWhere('category', 'training_web')
+        ->get()];
+});
+
 Route::get('upgrades', function () {
     return ['data' => \App\Upgrade::where('category', 'terminal_upgrades')->get()];
 });

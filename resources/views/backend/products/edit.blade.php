@@ -99,11 +99,27 @@
                         Terminals', 'dect_terminals' => 'DECT Terminals',
                         'digital_terminals' => 'Digital Terminals', 'server' => 'Servers', 'base_app' => 'Base
                         Application', 'teleworker' => 'Teleworker',
-                        'mivb_peripherals' => 'MiVB Peripherals', 'peripherals_moh' => 'Peripherals MoH',
-                        'peripherals_message' => 'Peripherals Message',
-                        'peripherals_de' => 'Peripherals Door Access', 'peripherals_uc' => 'Peripherals UC',
-                        'peripherals_headset' => 'Peripherals Headset', 'peripherals_vr' => 'Peripherals VR',
-                        'peripherals_av' => 'Peripherals AV'], null, ['class' => 'form-control']) !!}
+                        'peripherals_moh_playback_unit' => 'Peripherals MoH Playback Unit',
+                        'peripherals_moh_unit_upgrades' => 'Peripherals MoH Unit Upgrades',
+                        'peripherals_moh_managed_services' => 'Peripherals MoH Managed Services',
+                        'peripherals_moh_copyright_managed_services' => 'Peripherals MoH Copyright Managed Services',
+                        'peripherals_system_message' => 'Peripherals System Message',
+                        'peripherals_on_hold_message' => 'Peripherals On Hold Message',
+                        'peripherals_de_analogue_extension_systems' => 'Peripherals Door Access Analogue Extension
+                        Systems',
+                        'peripherals_de_sip_extension_systems' => 'Peripherals Door Access SIP Extension Systems',
+                        'peripherals_uc_outlook' => 'Peripherals UC Outlook',
+                        'peripherals_uc_crm' => 'Peripherals UC CRM',
+                        'peripherals_uc_attendant_console' => 'Peripherals UC Attendant Console',
+                        'peripherals_uc_status_stick' => 'Peripherals UC BTB Status Stick',
+                        'peripherals_headset' => 'Peripherals Headset',
+                        'peripherals_vr_core_product' => 'Peripherals VR Core Product',
+                        'peripherals_vr_lite_upgrade_options' => 'Peripherals VR Lite Upgrade Options',
+                        'peripherals_vr_ent_upgrade_options' => 'Peripherals VR Enterprise Upgrade Options',
+                        'peripherals_av' => 'Peripherals AV Endpoints',
+                        'training_web' => 'Training Web',
+                        'training_on_site' => 'Training On-Site'
+                        ], null, ['class' => 'form-control']) !!}
                         {{--{{ Form::select('category', array('Hardware' => 'Hardware', 'Software' => 'Software', 'terminals' => 'Terminals'), $product->category) }}--}}
                     </div>
                 </div>
@@ -118,7 +134,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-4 control-label">OA + Info View?:</label>
+                    <label for="inputEmail3" class="col-sm-4 control-label">OA View?:</label>
                     <div class="col-sm-5">
                         <label class="radio-inline">
                             {!! Form::radio('oa_view', '1', null); !!} Yes
@@ -134,10 +150,10 @@
 
                     <div class="col-sm-5">
                         <label class="radio-inline">
-                            {!! Form::radio('image_view', '1', null); !!} Yes
+                            {!! Form::radio('image_view_oa', '1', null); !!} Yes
                         </label>
                         <label class="radio-inline">
-                            {!! Form::radio('image_view', '0', null); !!} No
+                            {!! Form::radio('image_view_oa', '0', null); !!} No
                         </label>
                     </div>
                 </div>
@@ -147,16 +163,16 @@
 
                     <div class="col-sm-5">
                         <label class="radio-inline">
-                            {!! Form::radio('description_view', '1', null); !!} Yes
+                            {!! Form::radio('description_view_oa', '1', null); !!} Yes
                         </label>
                         <label class="radio-inline">
-                            {!! Form::radio('description_view', '0', null); !!} No
+                            {!! Form::radio('description_view_oa', '0', null); !!} No
                         </label>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-4 control-label">Description:</label>
+                    <label for="inputEmail3" class="col-sm-4 control-label">Product Description:</label>
 
                     <div class="col-sm-5 col-lg-8">
                         {!! Form::textarea('description',null, ['class' => 'form-control']) !!}
@@ -164,22 +180,58 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-4 control-label">Info View?:</label>
-
+                    <label for="inputEmail3" class="col-sm-4 control-label">Info View?:
+                        <i class="fa fa-info-circle fa-2x" style="color: #58678F"
+                           data-toggle="popover" data-placement="right"
+                           data-content="" data-animation="true"></i></label>
                     <div class="col-sm-5">
                         <label class="radio-inline">
                             {!! Form::radio('info_view', '1', null); !!} Yes
-                            {{--<input type="radio" name="oa_view" id="inlineRadio1" value="1" checked> Yes--}}
                         </label>
                         <label class="radio-inline">
                             {!! Form::radio('info_view', '0', null); !!} No
-                            {{--<input type="radio" name="oa_view" id="inlineRadio2" value="0"> No--}}
+                        </label>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-4 control-label">Show Image?:
+                        <i class="fa fa-info-circle fa-2x" style="color: #58678F"
+                           data-toggle="popover" data-placement="right"
+                           data-content="" data-animation="true"></i></label>
+
+                    <div class="col-sm-5">
+                        <label class="radio-inline">
+                            {!! Form::radio('image_view_info', '1', null); !!} Yes
+                        </label>
+                        <label class="radio-inline">
+                            {!! Form::radio('image_view_info', '0', null); !!} No
                         </label>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-4 control-label">Info Description:</label>
+                    <label for="inputEmail3" class="col-sm-4 control-label">Show Description?:
+                        <i class="fa fa-info-circle fa-2x" style="color: #58678F"
+                           data-toggle="popover" data-placement="right"
+                           data-content="" data-animation="true"></i></label>
+
+                    <div class="col-sm-5">
+                        <label class="radio-inline">
+                            {!! Form::radio('description_view_info', '1', null); !!} Yes
+                        </label>
+                        <label class="radio-inline">
+                            {!! Form::radio('description_view_info', '0', null); !!} No
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-4 control-label">Info Description:
+                        <i class="fa fa-info-circle fa-2x" style="color: #58678F"
+                           data-toggle="popover" data-placement="right"
+                           data-content="" data-animation="true"></i></label>
 
                     <div class="col-sm-5 col-lg-8">
                         {!! Form::textarea('info_description',null, ['class' => 'form-control']) !!}
@@ -187,7 +239,10 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-4 control-label">Warning View?:</label>
+                    <label for="inputEmail3" class="col-sm-4 control-label">Warning View?:
+                        <i class="fa fa-exclamation-circle fa-2x" style="color: #ff0000"
+                           data-toggle="popover" data-placement="right"
+                           data-content="" data-animation="true"></i></label>
 
                     <div class="col-sm-5">
                         <label class="radio-inline">
@@ -202,7 +257,42 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-4 control-label">Warning Description:</label>
+                    <label for="inputEmail3" class="col-sm-4 control-label">Show Image?:
+                        <i class="fa fa-exclamation-circle fa-2x" style="color: #ff0000"
+                           data-toggle="popover" data-placement="right"
+                           data-content="" data-animation="true"></i></label>
+
+                    <div class="col-sm-5">
+                        <label class="radio-inline">
+                            {!! Form::radio('image_view_warning', '1', null); !!} Yes
+                        </label>
+                        <label class="radio-inline">
+                            {!! Form::radio('image_view_warning', '0', null); !!} No
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-4 control-label">Show Description?:
+                        <i class="fa fa-exclamation-circle fa-2x" style="color: #ff0000"
+                           data-toggle="popover" data-placement="right"
+                           data-content="" data-animation="true"></i></label>
+
+                    <div class="col-sm-5">
+                        <label class="radio-inline">
+                            {!! Form::radio('description_view_warning', '1', null); !!} Yes
+                        </label>
+                        <label class="radio-inline">
+                            {!! Form::radio('description_view_warning', '0', null); !!} No
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-4 control-label">Warning Description:
+                        <i class="fa fa-exclamation-circle fa-2x" style="color: #ff0000"
+                           data-toggle="popover" data-placement="right"
+                           data-content="" data-animation="true"></i></label>
 
                     <div class="col-sm-5 col-lg-8">
                         {!! Form::textarea('warning_description',null, ['class' => 'form-control']) !!}

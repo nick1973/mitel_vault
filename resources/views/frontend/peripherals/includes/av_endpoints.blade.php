@@ -1,134 +1,52 @@
 <br/>
-<div class="form-group">
-    <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-4 col-lg-6 control-label">SIP Loud Ringer / Paging
-        Speaker:</label>
+<div class=" col-lg-12">
+    @foreach($peripherals_av as $terminal)
+        <div class="form-group">
+            <label for="inputEmail3"
+                   class="col-xs-3 col-sm-4 col-md-4 col-lg-7 control-label">{{ $terminal->item_name }}:</label>
 
-    <div class="col-xs-7 col-sm-5 col-md-5 col-lg-2">
-        {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-        <select class="form-control" name="analogue_lines">
-            <option>No</option>
-            <option>Yes</option>
-        </select>
-    </div>
-    <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
-       data-toggle="popover" title="MGB" data-placement="right"
-       data-content="And here's some amazing content. It's very engaging. Right?"></i>
-
-    <label style="padding-top: 5px" for="inputEmail3" class="col-sm-1 col-lg-1 col-md-1 control-label">Users</label>
-
-    <div class="col-sm-2 col-lg-2 col-md-3">
-        <input class="form-control" type="text">
-    </div>
-</div>
-
-<div class="form-group">
-    <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-4 col-lg-6 control-label">SIP LED Strobe Visual Alerter
-        Unit:</label>
-
-    <div class="col-xs-7 col-sm-5 col-md-5 col-lg-2">
-        {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-        <select class="form-control" name="analogue_lines">
-            <option>No</option>
-            <option>Yes</option>
-        </select>
-    </div>
-    <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
-       data-toggle="popover" title="MGB" data-placement="right"
-       data-content="And here's some amazing content. It's very engaging. Right?"></i>
-
-    <label style="padding-top: 5px" for="inputEmail3" class="col-sm-1 col-lg-1 col-md-1 control-label">Users</label>
-
-    <div class="col-sm-2 col-lg-2 col-md-3">
-        <input class="form-control" type="text">
-    </div>
-</div>
-
-<div class="form-group">
-    <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-4 col-lg-6 control-label">SIP Multimedia Infocom
-        Unit:</label>
-
-    <div class="col-xs-7 col-sm-5 col-md-5 col-lg-2">
-        {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-        <select class="form-control" name="analogue_lines">
-            <option>No</option>
-            <option>Yes</option>
-        </select>
-    </div>
-    <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
-       data-toggle="popover" title="MGB" data-placement="right"
-       data-content="And here's some amazing content. It's very engaging. Right?"></i>
-
-    <label style="padding-top: 5px" for="inputEmail3" class="col-sm-1 col-lg-1 col-md-1 control-label">Users</label>
-
-    <div class="col-sm-2 col-lg-2 col-md-3">
-        <input class="form-control" type="text">
-    </div>
-</div>
-
-<div class="form-group">
-    <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-4 col-lg-6 control-label">SIP Multimedia Infocom Door
-        Access Upgrade:</label>
-
-    <div class="col-xs-7 col-sm-5 col-md-5 col-lg-2">
-        {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-        <select class="form-control" name="analogue_lines">
-            <option>No</option>
-            <option>Yes</option>
-        </select>
-    </div>
-    <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
-       data-toggle="popover" title="MGB" data-placement="right"
-       data-content="And here's some amazing content. It's very engaging. Right?"></i>
-
-    <label style="padding-top: 5px" for="inputEmail3" class="col-sm-1 col-lg-1 col-md-1 control-label">Users</label>
-
-    <div class="col-sm-2 col-lg-2 col-md-3">
-        <input class="form-control" type="text">
-    </div>
-</div>
-
-<div class="form-group">
-    <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-4 col-lg-6 control-label">Call Point Starter Pack
-        (Controller + 1 Call Point Unit):</label>
-
-    <div class="col-xs-7 col-sm-5 col-md-5 col-lg-2">
-        {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-        <select class="form-control" name="analogue_lines">
-            <option>No</option>
-            <option>Yes</option>
-        </select>
-    </div>
-    <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
-       data-toggle="popover" title="MGB" data-placement="right"
-       data-content="And here's some amazing content. It's very engaging. Right?"></i>
-
-    <label style="padding-top: 5px" for="inputEmail3" class="col-sm-1 col-lg-1 col-md-1 control-label">Users</label>
-
-    <div class="col-sm-2 col-lg-2 col-md-3">
-        <input class="form-control" type="text">
-    </div>
-</div>
-
-<div class="form-group">
-    <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-4 col-lg-6 control-label">Call Point Expansion Pack ( 1 x
-        Call Point Unit):</label>
-
-    <div class="col-xs-7 col-sm-5 col-md-5 col-lg-2">
-        {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-        <select class="form-control" name="analogue_lines">
-            <option>No</option>
-            <option>Yes</option>
-        </select>
-    </div>
-    <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
-       data-toggle="popover" title="MGB" data-placement="right"
-       data-content="And here's some amazing content. It's very engaging. Right?"></i>
-
-    <label style="padding-top: 5px" for="inputEmail3" class="col-sm-1 col-lg-1 col-md-1 control-label">Users</label>
-
-    <div class="col-sm-2 col-lg-2 col-md-3">
-        <input class="form-control" type="text">
-    </div>
+            <div class="col-xs-7 col-sm-5 col-md-5 col-lg-2">
+                <input class="hidden" name="id[]" value="{{ $terminal->id }}">
+                <input class="hidden" name="price[]" value="{{ $terminal->btbuy }}">
+                <input class="hidden" name="name[]" value="{{ $terminal->item_name }}">
+                <select class="form-control" name="qty[]">
+                    <option>0</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>19</option>
+                </select>
+            </div>
+            @if($terminal->info_view==1)
+                <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
+                   data-toggle="popover" title="{{ $terminal->item_name }}" data-placement="right" data-html="true"
+                   data-content="@if($terminal->image_view_info==1)
+                                        <img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'>
+                                    @endif
+                   @if($terminal->description_view_info==1)
+                        <p>{{$terminal->info_description}}</p>
+                       @endif
+                           " data-animation="true"></i>
+            @endif
+            @if(count($terminal->upgrades)>0)
+                <i class="fa fa-plus-circle fa-2x" style="padding-left: 7px; padding-top: 4px; color: #58678F"
+                   onclick="showUpgrades('{{ $terminal->item_name }}', {{ $terminal->upgrades }})"></i>
+            @endif
+            @if($terminal->warning_view==1)
+                <i class="fa fa-exclamation-circle fa-2x" style="padding-top: 4px; color: #ff0000"
+                   data-toggle="popover" title="{{ $terminal->item_name }}" data-placement="right" data-html="true"
+                   data-content="@if($terminal->image_view_warning==1)
+                                        <img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'>
+                                    @endif
+                   @if($terminal->description_view_warning==1)
+                        <p>{{$terminal->warning_description}}</p>
+                       @endif
+                           " data-animation="true"></i>
+            @endif
+        </div>
+    @endforeach
 </div>
 <br/>
 <hr>

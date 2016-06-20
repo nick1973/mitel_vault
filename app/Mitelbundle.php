@@ -24,7 +24,6 @@ class Mitelbundle extends Model
         'lan_ports',
         'standalone_sw',
         'enterprise_sw',
-
         'category',
         'supplier_ref',
         'bt_ref',
@@ -47,7 +46,20 @@ class Mitelbundle extends Model
         'three_yr_total_care',
         'five_yr_standard_care',
         'five_yr_prompt_care',
-        'five_yr_total_care'
+        'five_yr_total_care',
+
+        'image',
+        'oa_view',
+        'image_view_oa',
+        'description_view_oa',
+        'info_view',
+        'info_description',
+        'image_view_info',
+        'description_view_info',
+        'image_view_warning',
+        'description_view_warning',
+        'warning_view',
+        'warning_description',
     ];
 
 

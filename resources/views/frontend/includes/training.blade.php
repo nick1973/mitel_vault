@@ -52,274 +52,110 @@
 </div>
 <br/>
 
-<form id="nav-training" class="form-horizontal animated fadeIn" action="/bundle_post">
+<form id="nav-training" class="form-horizontal animated fadeIn" action="/hardware_post">
 
     <div id="onsite-training" class="col-md-12 col-lg-12 collapse">
         <h4 class="col-lg-offset-6"><strong>On-Site Training: </strong></h4>
 
-        <div class="form-group">
-            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-7 col-lg-7 control-label">1 Day On-site System
-                Training Course:</label>
+        @foreach($training_on_site as $terminal)
+            <div class="form-group">
+                <label for="inputEmail3"
+                       class="col-xs-3 col-sm-4 col-md-4 col-lg-7 control-label">{{ $terminal->item_name }}:</label>
 
-            <div class="col-xs-7 col-sm-5 col-md-2 col-lg-2">
-                {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-                <select class="form-control" name="analogue_lines">
-                    <option>0</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    <option>19</option>
-                </select>
+                <div class="col-xs-7 col-sm-5 col-md-5 col-lg-2">
+                    <input class="hidden" name="id[]" value="{{ $terminal->id }}">
+                    <input class="hidden" name="price[]" value="{{ $terminal->btbuy }}">
+                    <input class="hidden" name="name[]" value="{{ $terminal->item_name }}">
+                    <select class="form-control" name="qty[]">
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>19</option>
+                    </select>
+                </div>
+                @if($terminal->info_view==1)
+                    <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
+                       data-toggle="popover" title="{{ $terminal->item_name }}" data-placement="right" data-html="true"
+                       data-content="@if($terminal->image_view_info==1)
+                                        <img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'>
+                                    @endif
+                       @if($terminal->description_view_info==1)
+                        <p>{{$terminal->info_description}}</p>
+                       @endif
+                               " data-animation="true"></i>
+                @endif
+                @if(count($terminal->upgrades)>0)
+                    <i class="fa fa-plus-circle fa-2x" style="padding-left: 7px; padding-top: 4px; color: #58678F"
+                       onclick="showUpgrades('{{ $terminal->item_name }}', {{ $terminal->upgrades }})"></i>
+                @endif
+                @if($terminal->warning_view==1)
+                    <i class="fa fa-exclamation-circle fa-2x" style="padding-top: 4px; color: #ff0000"
+                       data-toggle="popover" title="{{ $terminal->item_name }}" data-placement="right" data-html="true"
+                       data-content="@if($terminal->image_view_warning==1)
+                                        <img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'>
+                                    @endif
+                       @if($terminal->description_view_warning==1)
+                        <p>{{$terminal->warning_description}}</p>
+                       @endif
+                               " data-animation="true"></i>
+                @endif
             </div>
-            <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
-               data-toggle="popover" title="Standard User" data-placement="right"
-               data-content="And here's some amazing content. It's very engaging. Right?"></i>
-        </div>
+        @endforeach
 
-        <div class="form-group">
-            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-7 col-lg-7 control-label">MiVB ICP System Admin
-                Training Course (CALDICOT):</label>
-
-            <div class="col-xs-7 col-sm-5 col-md-2 col-lg-2">
-                {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-                <select class="form-control" name="pri">
-                    <option>0</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
-            </div>
-            <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
-               data-toggle="popover" title="Voicemail" data-placement="right"
-               data-content="And here's some amazing content. It's very engaging. Right?"></i>
-        </div>
     </div>
 
     <div id="web-training" class="col-md-12 col-lg-12 collapse">
         <h4 class="col-lg-offset-6"><strong>Web Training: </strong></h4>
-        <div class="form-group">
-            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-7 col-lg-7 control-label">MiVB Quick Start Web
-                Cast Training:</label>
+        @foreach($training_web as $terminal)
+            <div class="form-group">
+                <label for="inputEmail3"
+                       class="col-xs-3 col-sm-4 col-md-4 col-lg-7 control-label">{{ $terminal->item_name }}:</label>
 
-            <div class="col-xs-7 col-sm-5 col-md-2 col-lg-2">
-                {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-                <select class="form-control" name="pri">
-                    <option>0</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
+                <div class="col-xs-7 col-sm-5 col-md-5 col-lg-2">
+                    <input class="hidden" name="id[]" value="{{ $terminal->id }}">
+                    <input class="hidden" name="price[]" value="{{ $terminal->btbuy }}">
+                    <input class="hidden" name="name[]" value="{{ $terminal->item_name }}">
+                    <select class="form-control" name="qty[]">
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>19</option>
+                    </select>
+                </div>
+                @if($terminal->info_view==1)
+                    <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
+                       data-toggle="popover" title="{{ $terminal->item_name }}" data-placement="right" data-html="true"
+                       data-content="@if($terminal->image_view_info==1)
+                                        <img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'>
+                                    @endif
+                       @if($terminal->description_view_info==1)
+                        <p>{{$terminal->info_description}}</p>
+                       @endif
+                               " data-animation="true"></i>
+                @endif
+                @if(count($terminal->upgrades)>0)
+                    <i class="fa fa-plus-circle fa-2x" style="padding-left: 7px; padding-top: 4px; color: #58678F"
+                       onclick="showUpgrades('{{ $terminal->item_name }}', {{ $terminal->upgrades }})"></i>
+                @endif
+                @if($terminal->warning_view==1)
+                    <i class="fa fa-exclamation-circle fa-2x" style="padding-top: 4px; color: #ff0000"
+                       data-toggle="popover" title="{{ $terminal->item_name }}" data-placement="right" data-html="true"
+                       data-content="@if($terminal->image_view_warning==1)
+                                        <img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'>
+                                    @endif
+                       @if($terminal->description_view_warning==1)
+                        <p>{{$terminal->warning_description}}</p>
+                       @endif
+                               " data-animation="true"></i>
+                @endif
             </div>
-            <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
-               data-toggle="popover" title="Full PC Client" data-placement="right"
-               data-content="And here's some amazing content. It's very engaging. Right?"></i>
-        </div>
-
-        <div class="form-group">
-            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-7 col-lg-7 control-label">MiVB System and Tel
-                Admin Web Cast Training:</label>
-
-            <div class="col-xs-7 col-sm-5 col-md-2 col-lg-2">
-                {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-                <select class="form-control" name="pri">
-                    <option>0</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
-            </div>
-            <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
-               data-toggle="popover" title="PC Softphone" data-placement="right"
-               data-content="And here's some amazing content. It's very engaging. Right?"></i>
-        </div>
-
-        <div class="form-group">
-            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-7 col-lg-7 control-label">MiVB Voicemail and Auto
-                Attendant Web Cast Training:</label>
-
-            <div class="col-xs-7 col-sm-5 col-md-2 col-lg-2">
-                {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-                <select class="form-control" name="pri">
-                    <option>0</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
-            </div>
-            <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
-               data-toggle="popover" title="PC Softphone" data-placement="right"
-               data-content="And here's some amazing content. It's very engaging. Right?"></i>
-        </div>
-
-        <div class="form-group">
-            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-7 col-lg-7 control-label">MiVB Phone Features and
-                Call Handling Web Cast Training:</label>
-
-            <div class="col-xs-7 col-sm-5 col-md-2 col-lg-2">
-                {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-                <select class="form-control" name="pri">
-                    <option>0</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
-            </div>
-            <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
-               data-toggle="popover" title="PC Softphone" data-placement="right"
-               data-content="And here's some amazing content. It's very engaging. Right?"></i>
-        </div>
-
-        <div class="form-group">
-            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-7 col-lg-7 control-label">MiVB Mobile Extn and
-                Remote Worker Web Cast Training:</label>
-
-            <div class="col-xs-7 col-sm-5 col-md-2 col-lg-2">
-                {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-                <select class="form-control" name="pri">
-                    <option>0</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
-            </div>
-            <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
-               data-toggle="popover" title="PC Softphone" data-placement="right"
-               data-content="And here's some amazing content. It's very engaging. Right?"></i>
-        </div>
-
-        <div class="form-group">
-            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-7 col-lg-7 control-label">MiVB UC Express Web
-                Cast Training:</label>
-
-            <div class="col-xs-7 col-sm-5 col-md-2 col-lg-2">
-                {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-                <select class="form-control" name="pri">
-                    <option>0</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
-            </div>
-            <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
-               data-toggle="popover" title="PC Softphone" data-placement="right"
-               data-content="And here's some amazing content. It's very engaging. Right?"></i>
-        </div>
-
-        <div class="form-group">
-            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-7 col-lg-7 control-label">MiVB Call Accountant
-                Web Cast Training:</label>
-
-            <div class="col-xs-7 col-sm-5 col-md-2 col-lg-2">
-                {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-                <select class="form-control" name="pri">
-                    <option>0</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
-            </div>
-            <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
-               data-toggle="popover" title="PC Softphone" data-placement="right"
-               data-content="And here's some amazing content. It's very engaging. Right?"></i>
-        </div>
-
-        <div class="form-group">
-            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-7 col-lg-7 control-label">MiVB WebCast Passport 3
-                x Web Cast Training:</label>
-
-            <div class="col-xs-7 col-sm-5 col-md-2 col-lg-2">
-                {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-                <select class="form-control" name="pri">
-                    <option>0</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
-            </div>
-            <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
-               data-toggle="popover" title="PC Softphone" data-placement="right"
-               data-content="And here's some amazing content. It's very engaging. Right?"></i>
-        </div>
-
-        <div class="form-group">
-            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-7 col-lg-7 control-label">MiVB WebCast MAX
-                Passport 1 year unlimited (Included In CX/CXI Bundles):</label>
-
-            <div class="col-xs-7 col-sm-5 col-md-2 col-lg-2">
-                {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-                <select class="form-control" name="pri">
-                    <option>0</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
-            </div>
-            <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
-               data-toggle="popover" title="PC Softphone" data-placement="right"
-               data-content="And here's some amazing content. It's very engaging. Right?"></i>
-        </div>
-
-        <div class="form-group">
-            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-7 col-lg-7 control-label">MiVB WebCast MAX
-                Passport 1 year unlimited 3yr LTM:</label>
-
-            <div class="col-xs-7 col-sm-5 col-md-2 col-lg-2">
-                {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-                <select class="form-control" name="pri">
-                    <option>0</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
-            </div>
-            <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
-               data-toggle="popover" title="PC Softphone" data-placement="right"
-               data-content="And here's some amazing content. It's very engaging. Right?"></i>
-        </div>
-
-        <div class="form-group">
-            <label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-7 col-lg-7 control-label">MiVB WebCast MAX
-                Passport 1 year unlimited 5yr LTM:</label>
-
-            <div class="col-xs-7 col-sm-5 col-md-2 col-lg-2">
-                {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-                <select class="form-control" name="pri">
-                    <option>0</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
-            </div>
-            <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
-               data-toggle="popover" title="PC Softphone" data-placement="right"
-               data-content="And here's some amazing content. It's very engaging. Right?"></i>
-        </div>
+        @endforeach
     </div>
 </form>
 <button onclick="peripheralsPrev()" class="btn btn-default pull-left"><span class="glyphicon glyphicon-hand-left"
@@ -335,5 +171,19 @@
     function teleworkerNext() {
         $("#tick-training").addClass('animated fadeIn').removeClass('hidden');
         $('.nav-tabs a[href="#remote"]').tab('show');
+
+        var formDataLan = $("#nav-training").serializeArray();
+        var URL = $("#nav-training").attr("action");
+        console.log(formDataLan);
+        $.post(URL,
+                formDataLan,
+                function (data, textStatus, jqXHR) {
+                    $('#reload_cart').load('/cart_reload');
+                    $http.get("#")
+                            .then(function (response) {
+                            }).fail(function (jqXHR, textStatus, errorThrown) {
+                                console.log(errorThrown);
+                            });
+                });
     }
 </script>

@@ -53,11 +53,13 @@ class Mivb_BundleController extends Controller
 
     public function update(Request $request, $id)
     {
+        $bundle = Mitelbundle::find($id);
+
         if ($request->input('product_id') == null) {
             $product_id = [];
         } else {
             $product_id = $request->input('product_id');
-            $bundle = Mitelbundle::find($id);
+
             $bundle->products()->sync($product_id);
             return redirect()->back();
         }
@@ -65,13 +67,27 @@ class Mivb_BundleController extends Controller
             $upgrade_id = [];
         } else {
             $upgrade_id = $request->input('upgrades_id');
-            $bundle = Mitelbundle::find($id);
+
             $bundle->upgrades()->sync($upgrade_id);
             return redirect()->back();
         }
-        $bundle = Mitelbundle::find($id);
-        $input = $request->all();
-        $bundle->fill($input)->save();
+
+        if ($request->hasFile('image')) {
+            $input = $request->all();
+
+            $fileName = $request->file('image')->getClientOriginalName();
+            $request->file('image')->move('uploads', $fileName);
+
+            array_pull($input, 'image');
+            $add_image = array_add($input, 'image', 'uploads/' . $fileName);
+
+            $bundle->fill($add_image)->save();
+
+        } else {
+            $input = $request->except('image');
+            $bundle->fill($input)->save();
+        }
+        //$bundle->fill($input)->save();
         return redirect()->action('Backend\Mivb_bundleController@index');
     }
 

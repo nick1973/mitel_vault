@@ -168,9 +168,13 @@
                     @if($line->info_view==1)
                         <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
                            data-toggle="popover" title="{{ $line->item_name }}" data-placement="right" data-html="true"
-                           data-content="<?php if($line->image) {?><img height='200px' alt='/{{ $line->item_name }}' src='/{{ $line->image }}'><?php } ?>
-                   <p>{{ $line->info_description }}</p>"
-                           data-animation="true"></i>
+                           data-content="@if($line->image_view_info==1)
+                                        <img height='200px' alt='/{{ $line->item_name }}' src='/{{ $line->image }}'>
+                                    @endif
+                           @if($line->description_view_info==1)
+                        <p>{{$line->info_description}}</p>
+                       @endif
+                                   " data-animation="true"></i>
                     @endif
                     @if(count($line->upgrades)>0)
                         <i class="fa fa-plus-circle fa-2x" style="padding-left: 7px; padding-top: 4px; color: #58678F"
@@ -179,9 +183,13 @@
                     @if($line->warning_view==1)
                         <i class="fa fa-exclamation-circle fa-2x" style="padding-top: 4px; color: #ff0000"
                            data-toggle="popover" title="{{ $line->item_name }}" data-placement="right" data-html="true"
-                           data-content="<?php if($line->image) {?><img height='200px' alt='/{{ $line->item_name }}' src='/{{ $line->image }}'><?php } ?>
-                   <p>{{ $line->warning_description }}</p>"
-                           data-animation="true"></i>
+                           data-content="@if($line->image_view_warning==1)
+                                        <img height='200px' alt='/{{ $line->item_name }}' src='/{{ $line->image }}'>
+                                    @endif
+                           @if($line->description_view_warning==1)
+                        <p>{{$line->warning_description}}</p>
+                       @endif
+                                   " data-animation="true"></i>
                     @endif
                 </div>
             @endforeach

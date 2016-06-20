@@ -13,6 +13,7 @@
     </div>
 </div>
 
+<form id="nav-peripherals" class="form-horizontal animated fadeIn" action="/hardware_post">
 
 <div id="collapseExample" class="col-lg-12 col-lg-offset-1 animated fadeIn" style="padding-top: 20px">
     <div class="form-group col-lg-10 col-md-10">
@@ -103,24 +104,6 @@
         </div>
     </div>
 
-    {{--<div class="form-group col-lg-10 col-md-10">--}}
-    {{--<label for="inputEmail3" class="col-sm-4 col-lg-4 col-md-4 control-label">--}}
-    {{--Call Logging?--}}
-    {{--</label>--}}
-
-    {{--<div class="col-sm-1">--}}
-    {{--<div class="onoffswitch">--}}
-    {{--<input name="peripheral" type="hidden" value="No">--}}
-    {{--<input type="checkbox" value="Yes" name="peripheral" class="toggleBtn onoffswitch-checkbox"--}}
-    {{--id="call-logging" onclick="">--}}
-    {{--<label for="call-logging" class="onoffswitch-label">--}}
-    {{--<div class="onoffswitch-inner"></div>--}}
-    {{--<div class="onoffswitch-switch"></div>--}}
-    {{--</label>--}}
-    {{--</div>--}}
-    {{--</div>--}}
-    {{--</div>--}}
-
     <div class="form-group col-lg-10 col-md-10">
         <label for="inputEmail3" class="col-sm-4 col-lg-4 col-md-4 control-label">
             Headsets?
@@ -184,6 +167,7 @@
         </div>
     </div>
 </div>
+</form>
 <br/>
 <button onclick="landataPrev()" class="btn btn-default pull-left"><span class="glyphicon glyphicon-hand-left"
                                                                         aria-hidden="true"></span> Previous
@@ -192,12 +176,27 @@
                                                                                aria-hidden="true"></span></button>
 <script>
     function landataPrev() {
-        $('.nav-tabs a[href="#lan-data"]').tab('show');
+        $('.nav-tabs a[href="#terminals"]').tab('show');
     }
 
     function trainingNext() {
         $("#tick-peripherals").addClass('animated fadeIn').removeClass('hidden');
         $('.nav-tabs a[href="#training"]').tab('show');
+
+        var formDataLan = $("#nav-peripherals").serializeArray();
+        var URL = $("#nav-peripherals").attr("action");
+        console.log(formDataLan);
+        $.post(URL,
+                formDataLan,
+                function (data, textStatus, jqXHR) {
+                    $('#reload_cart').load('/cart_reload');
+                    $http.get("#")
+                            .then(function (response) {
+                            }).fail(function (jqXHR, textStatus, errorThrown) {
+                                console.log(errorThrown);
+                            });
+                });
     }
+
 </script>
 

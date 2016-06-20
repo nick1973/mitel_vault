@@ -19,7 +19,7 @@
 <br/>
 <div id="nav-support" class="col-md-12 col-lg-12 animated fadeIn">
     <div class="form-group">
-        <h4 class="col-lg-6 col-md-6 col-lg-offset-2"><strong>Included monitoring:</strong> Foundation Package</h4>
+        <h4 class="col-lg-4 col-md-6"><strong>Included monitoring:</strong> Foundation Package</h4>
 
         <div class="col-xs-7 col-sm-5 col-md-5 col-lg-2">
         </div>

@@ -16,7 +16,7 @@
 </div>
 
 <br/>
-<form id="nav-terminals" class="form-horizontal animated fadeIn" action="/post_terminals">
+<form id="nav-terminals" class="form-horizontal animated fadeIn" action="/hardware_post">
     <h3><i class="fa fa-plus-circle fa-2x" style="color: #58678F; vertical-align: middle"></i> Indicates Upgrade Options
         <small>(click to view)</small>
     </h3>
@@ -32,14 +32,16 @@
         $x = $half_terminals;
         ?>
 
-            @foreach($analogue_terminals as $k=>$terminal)
+            @foreach($analogue_terminals as $terminal)
             <div class="form-group">
                 <label for="inputEmail3"
                        class="col-xs-3 col-sm-4 col-md-4 col-lg-7 control-label">{{ $terminal->item_name }}:</label>
 
                 <div class="col-xs-7 col-sm-5 col-md-5 col-lg-3">
-                    {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-                    <select class="form-control" name="terminals[{{ $terminal->bt_ref }}]">
+                    <input class="hidden" name="id[]" value="{{ $terminal->id }}">
+                    <input class="hidden" name="price[]" value="{{ $terminal->btbuy }}">
+                    <input class="hidden" name="name[]" value="{{ $terminal->item_name }}">
+                    <select class="form-control" name="qty[]">
                         <option>0</option>
                         <option>1</option>
                         <option>2</option>
@@ -52,10 +54,10 @@
                 @if($terminal->info_view==1)
                     <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
                        data-toggle="popover" title="{{ $terminal->item_name }}" data-placement="right" data-html="true"
-                       data-content="@if($terminal->image_view==1)
+                       data-content="@if($terminal->image_view_info==1)
                                         <img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'>
                                     @endif
-                       @if($terminal->description_view==1)
+                       @if($terminal->description_view_info==1)
                         <p>{{$terminal->info_description}}</p>
                        @endif
                                " data-animation="true"></i>
@@ -67,9 +69,13 @@
                 @if($terminal->warning_view==1)
                     <i class="fa fa-exclamation-circle fa-2x" style="padding-top: 4px; color: #ff0000"
                        data-toggle="popover" title="{{ $terminal->item_name }}" data-placement="right" data-html="true"
-                       data-content="<?php if($terminal->image) {?><img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'><?php } ?>
-                   <p>{{ $terminal->warning_description }}</p>"
-                       data-animation="true"></i>
+                       data-content="@if($terminal->image_view_warning==1)
+                                        <img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'>
+                                    @endif
+                       @if($terminal->description_view_warning==1)
+                        <p>{{$terminal->warning_description}}</p>
+                       @endif
+                               " data-animation="true"></i>
                 @endif
             </div>
             <?php if ($i++ == $half_terminals) break; ?>
@@ -84,8 +90,10 @@
                        class="col-xs-3 col-sm-4 col-md-4 col-lg-7 control-label">{{ $terminal->item_name }}:</label>
 
                 <div class="col-xs-7 col-sm-5 col-md-5 col-lg-3">
-                    {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-                    <select class="form-control" name="terminals[{{ $terminal->bt_ref }}]">
+                    <input class="hidden" name="id[]" value="{{ $terminal->id }}">
+                    <input class="hidden" name="price[]" value="{{ $terminal->btbuy }}">
+                    <input class="hidden" name="name[]" value="{{ $terminal->item_name }}">
+                    <select class="form-control" name="qty[]">
                         <option>0</option>
                         <option>1</option>
                         <option>2</option>
@@ -98,10 +106,10 @@
                 @if($terminal->info_view==1)
                     <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
                        data-toggle="popover" title="{{ $terminal->item_name }}" data-placement="right" data-html="true"
-                       data-content="@if($terminal->image_view==1)
+                       data-content="@if($terminal->image_view_info==1)
                                         <img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'>
                                     @endif
-                       @if($terminal->description_view==1)
+                       @if($terminal->description_view_info==1)
                         <p>{{$terminal->info_description}}</p>
                        @endif
                                " data-animation="true"></i>
@@ -113,9 +121,13 @@
                 @if($terminal->warning_view==1)
                     <i class="fa fa-exclamation-circle fa-2x" style="padding-top: 4px; color: #ff0000"
                        data-toggle="popover" title="{{ $terminal->item_name }}" data-placement="right" data-html="true"
-                       data-content="<?php if($terminal->image) {?><img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'><?php } ?>
-                   <p>{{ $terminal->warning_description }}</p>"
-                       data-animation="true"></i>
+                       data-content="@if($terminal->image_view_warning==1)
+                                        <img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'>
+                                    @endif
+                       @if($terminal->description_view_warning==1)
+                        <p>{{$terminal->warning_description}}</p>
+                       @endif
+                               " data-animation="true"></i>
                 @endif
             </div>
         @endforeach
@@ -136,61 +148,70 @@
         $x = $half_terminals;
         ?>
 
-        @foreach($ip_terminals as $terminal)
-            <div class="form-group">
-                <label for="inputEmail3"
-                       class="col-xs-3 col-sm-4 col-md-4 col-lg-7 control-label">{{ $terminal->item_name }}:</label>
+            @foreach($ip_terminals as $terminal)
+                <div class="form-group">
+                    <label for="inputEmail3"
+                           class="col-xs-3 col-sm-4 col-md-4 col-lg-7 control-label">{{ $terminal->item_name }}:</label>
 
-                <div class="col-xs-7 col-sm-5 col-md-5 col-lg-3">
-                {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-                    <select class="form-control" name="terminals[{{ $terminal->bt_ref }}]">
-                        <option>0</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>19</option>
-                    </select>
-            </div>
-                @if($terminal->info_view==1)
-                    <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
-                       data-toggle="popover" title="{{ $terminal->item_name }}" data-placement="right" data-html="true"
-                       data-content="@if($terminal->image_view==1)
+                    <div class="col-xs-7 col-sm-5 col-md-5 col-lg-3">
+                        <input class="hidden" name="id[]" value="{{ $terminal->id }}">
+                        <input class="hidden" name="price[]" value="{{ $terminal->btbuy }}">
+                        <input class="hidden" name="name[]" value="{{ $terminal->item_name }}">
+                        <select class="form-control" name="qty[]">
+                            <option>0</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>19</option>
+                        </select>
+                    </div>
+                    @if($terminal->info_view==1)
+                        <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
+                           data-toggle="popover" title="{{ $terminal->item_name }}" data-placement="right"
+                           data-html="true"
+                           data-content="@if($terminal->image_view_info==1)
                                         <img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'>
                                     @endif
-                       @if($terminal->description_view==1)
+                           @if($terminal->description_view_info==1)
                         <p>{{$terminal->info_description}}</p>
                        @endif
-                               " data-animation="true"></i>
-                @endif
-                @if(count($terminal->upgrades)>0)
-                    <i class="fa fa-plus-circle fa-2x" style="padding-left: 7px; padding-top: 4px; color: #58678F"
-                       onclick="showUpgrades('{{ $terminal->item_name }}', {{ $terminal->upgrades }})"></i>
-                @endif
-                @if($terminal->warning_view==1)
-                    <i class="fa fa-exclamation-circle fa-2x" style="padding-top: 4px; color: #ff0000"
-                       data-toggle="popover" title="{{ $terminal->item_name }}" data-placement="right" data-html="true"
-                       data-content="<?php if($terminal->image) {?><img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'><?php } ?>
-                   <p>{{ $terminal->warning_description }}</p>"
-                       data-animation="true"></i>
-                @endif
-            </div>
-            <?php if ($i++ == $half_terminals) break; ?>
-        @endforeach
+                                   " data-animation="true"></i>
+                    @endif
+                    @if(count($terminal->upgrades)>0)
+                        <i class="fa fa-plus-circle fa-2x" style="padding-left: 7px; padding-top: 4px; color: #58678F"
+                           onclick="showUpgrades('{{ $terminal->item_name }}', {{ $terminal->upgrades }})"></i>
+                    @endif
+                    @if($terminal->warning_view==1)
+                        <i class="fa fa-exclamation-circle fa-2x" style="padding-top: 4px; color: #ff0000"
+                           data-toggle="popover" title="{{ $terminal->item_name }}" data-placement="right"
+                           data-html="true"
+                           data-content="@if($terminal->image_view_warning==1)
+                                        <img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'>
+                                    @endif
+                           @if($terminal->description_view_warning==1)
+                        <p>{{$terminal->warning_description}}</p>
+                       @endif
+                                   " data-animation="true"></i>
+                    @endif
+                </div>
+                <?php if ($i++ == $half_terminals) break; ?>
+            @endforeach
     </div>
 
     <div class="col-md-12 col-lg-6">
         @foreach($ip_terminals as $k => $terminal)
-            {{--{{ print_r($terminal) }}--}}
             <?php if ($k < $x) continue; ?>
             <div class="form-group">
                 <label for="inputEmail3"
                        class="col-xs-3 col-sm-4 col-md-4 col-lg-7 control-label">{{ $terminal->item_name }}:</label>
 
                 <div class="col-xs-7 col-sm-5 col-md-5 col-lg-3">
-                    {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-                    <select class="form-control" name="terminals[{{ $terminal->bt_ref }}]">
+                    <input class="hidden" name="id[]" value="{{ $terminal->id }}">
+                    <input class="hidden" name="price[]" value="{{ $terminal->btbuy }}">
+                    <input class="hidden" name="name[]" value="{{ $terminal->item_name }}">
+                    <select class="form-control" name="qty[]">
                         <option>0</option>
                         <option>1</option>
                         <option>2</option>
@@ -203,10 +224,10 @@
                 @if($terminal->info_view==1)
                     <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
                        data-toggle="popover" title="{{ $terminal->item_name }}" data-placement="right" data-html="true"
-                       data-content="@if($terminal->image_view==1)
+                       data-content="@if($terminal->image_view_info==1)
                                         <img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'>
                                     @endif
-                       @if($terminal->description_view==1)
+                       @if($terminal->description_view_info==1)
                         <p>{{$terminal->info_description}}</p>
                        @endif
                                " data-animation="true"></i>
@@ -218,9 +239,13 @@
                 @if($terminal->warning_view==1)
                     <i class="fa fa-exclamation-circle fa-2x" style="padding-top: 4px; color: #ff0000"
                        data-toggle="popover" title="{{ $terminal->item_name }}" data-placement="right" data-html="true"
-                       data-content="<?php if($terminal->image) {?><img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'><?php } ?>
-                   <p>{{ $terminal->warning_description }}</p>"
-                       data-animation="true"></i>
+                       data-content="@if($terminal->image_view_warning==1)
+                                        <img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'>
+                                    @endif
+                       @if($terminal->description_view_warning==1)
+                        <p>{{$terminal->warning_description}}</p>
+                       @endif
+                               " data-animation="true"></i>
                 @endif
             </div>
         @endforeach
@@ -239,48 +264,56 @@
         $x = $half_terminals;
         ?>
 
-        @foreach($dect_terminals as $terminal)
-            <div class="form-group">
-                <label for="inputEmail3"
-                       class="col-xs-3 col-sm-4 col-md-4 col-lg-7 control-label">{{ $terminal->item_name }}:</label>
+            @foreach($dect_terminals as $terminal)
+                <div class="form-group">
+                    <label for="inputEmail3"
+                           class="col-xs-3 col-sm-4 col-md-4 col-lg-7 control-label">{{ $terminal->item_name }}:</label>
 
-                <div class="col-xs-7 col-sm-5 col-md-5 col-lg-3">
-                    {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-                    <select class="form-control" name="terminals[{{ $terminal->bt_ref }}]">
-                        <option>0</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>19</option>
-                    </select>
-                </div>
-                @if($terminal->info_view==1)
-                    <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
-                       data-toggle="popover" title="{{ $terminal->item_name }}" data-placement="right" data-html="true"
-                       data-content="@if($terminal->image_view==1)
+                    <div class="col-xs-7 col-sm-5 col-md-5 col-lg-3">
+                        <input class="hidden" name="id[]" value="{{ $terminal->id }}">
+                        <input class="hidden" name="price[]" value="{{ $terminal->btbuy }}">
+                        <input class="hidden" name="name[]" value="{{ $terminal->item_name }}">
+                        <select class="form-control" name="qty[]">
+                            <option>0</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>19</option>
+                        </select>
+                    </div>
+                    @if($terminal->info_view==1)
+                        <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
+                           data-toggle="popover" title="{{ $terminal->item_name }}" data-placement="right"
+                           data-html="true"
+                           data-content="@if($terminal->image_view_info==1)
                                         <img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'>
                                     @endif
-                       @if($terminal->description_view==1)
+                           @if($terminal->description_view_info==1)
                         <p>{{$terminal->info_description}}</p>
                        @endif
-                               " data-animation="true"></i>
-                @endif
-                @if(count($terminal->upgrades)>0)
-                    <i class="fa fa-plus-circle fa-2x" style="padding-left: 7px; padding-top: 4px; color: #58678F"
-                       onclick="showUpgrades('{{ $terminal->item_name }}', {{ $terminal->upgrades }})"></i>
-                @endif
-                @if($terminal->warning_view==1)
-                    <i class="fa fa-exclamation-circle fa-2x" style="padding-top: 4px; color: #ff0000"
-                       data-toggle="popover" title="{{ $terminal->item_name }}" data-placement="right" data-html="true"
-                       data-content="<?php if($terminal->image) {?><img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'><?php } ?>
-                   <p>{{ $terminal->warning_description }}</p>"
-                       data-animation="true"></i>
-                @endif
-            </div>
-            <?php if ($i++ == $half_terminals) break; ?>
-        @endforeach
+                                   " data-animation="true"></i>
+                    @endif
+                    @if(count($terminal->upgrades)>0)
+                        <i class="fa fa-plus-circle fa-2x" style="padding-left: 7px; padding-top: 4px; color: #58678F"
+                           onclick="showUpgrades('{{ $terminal->item_name }}', {{ $terminal->upgrades }})"></i>
+                    @endif
+                    @if($terminal->warning_view==1)
+                        <i class="fa fa-exclamation-circle fa-2x" style="padding-top: 4px; color: #ff0000"
+                           data-toggle="popover" title="{{ $terminal->item_name }}" data-placement="right"
+                           data-html="true"
+                           data-content="@if($terminal->image_view_warning==1)
+                                        <img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'>
+                                    @endif
+                           @if($terminal->description_view_warning==1)
+                        <p>{{$terminal->warning_description}}</p>
+                       @endif
+                                   " data-animation="true"></i>
+                    @endif
+                </div>
+                <?php if ($i++ == $half_terminals) break; ?>
+            @endforeach
     </div>
 
     <div class="col-md-12 col-lg-6">
@@ -291,8 +324,10 @@
                        class="col-xs-3 col-sm-4 col-md-4 col-lg-7 control-label">{{ $terminal->item_name }}:</label>
 
                 <div class="col-xs-7 col-sm-5 col-md-5 col-lg-3">
-                    {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-                    <select class="form-control" name="terminals[{{ $terminal->bt_ref }}]">
+                    <input class="hidden" name="id[]" value="{{ $terminal->id }}">
+                    <input class="hidden" name="price[]" value="{{ $terminal->btbuy }}">
+                    <input class="hidden" name="name[]" value="{{ $terminal->item_name }}">
+                    <select class="form-control" name="qty[]">
                         <option>0</option>
                         <option>1</option>
                         <option>2</option>
@@ -305,10 +340,10 @@
                 @if($terminal->info_view==1)
                     <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
                        data-toggle="popover" title="{{ $terminal->item_name }}" data-placement="right" data-html="true"
-                       data-content="@if($terminal->image_view==1)
+                       data-content="@if($terminal->image_view_info==1)
                                         <img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'>
                                     @endif
-                       @if($terminal->description_view==1)
+                       @if($terminal->description_view_info==1)
                         <p>{{$terminal->info_description}}</p>
                        @endif
                                " data-animation="true"></i>
@@ -320,9 +355,13 @@
                 @if($terminal->warning_view==1)
                     <i class="fa fa-exclamation-circle fa-2x" style="padding-top: 4px; color: #ff0000"
                        data-toggle="popover" title="{{ $terminal->item_name }}" data-placement="right" data-html="true"
-                       data-content="<?php if($terminal->image) {?><img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'><?php } ?>
-                   <p>{{ $terminal->warning_description }}</p>"
-                       data-animation="true"></i>
+                       data-content="@if($terminal->image_view_warning==1)
+                                        <img height='200px' alt='/{{ $terminal->item_name }}' src='/{{ $terminal->image }}'>
+                                    @endif
+                       @if($terminal->description_view_warning==1)
+                        <p>{{$terminal->warning_description}}</p>
+                       @endif
+                               " data-animation="true"></i>
                 @endif
             </div>
         @endforeach
@@ -331,7 +370,7 @@
 <button onclick="serversPrev()" class="btn btn-default pull-left"><span class="glyphicon glyphicon-hand-left"
                                                                         aria-hidden="true"></span> Previous
 </button>
-<button onclick="landataNext()" class="btn btn-success pull-right">Next <span class="glyphicon glyphicon-hand-right"
+<button onclick="periphNext()" class="btn btn-success pull-right">Next <span class="glyphicon glyphicon-hand-right"
                                                                               aria-hidden="true"></span></button>
 
 <div class="modal fade" id="upgrades" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -370,20 +409,24 @@
         $('.nav-tabs a[href="#servers"]').tab('show');
     }
 
-    function landataNext() {
+    function periphNext() {
         $("#tick-terminals").addClass('animated fadeIn').removeClass('hidden');
-        $('.nav-tabs a[href="#lan-data"]').tab('show');
+        $('.nav-tabs a[href="#peripherals"]').tab('show');
 
+
+        var formDataLan = $("#nav-terminals").serializeArray();
         var URL = $("#nav-terminals").attr("action");
-        var terminalData = $("#nav-terminals").serializeArray();
+        console.log(formDataLan);
         $.post(URL,
-                terminalData,
+                formDataLan,
                 function (data, textStatus, jqXHR) {
-
+                    $('#reload_cart').load('/cart_reload');
+                    $http.get("#")
+                            .then(function (response) {
+                            }).fail(function (jqXHR, textStatus, errorThrown) {
+                                console.log(errorThrown);
+                            });
                 });
-
-
-        console.log(terminalData);
     }
 
     function extraShow(id) {

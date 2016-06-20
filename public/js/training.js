@@ -23,17 +23,23 @@ $(document).ready(function () {
         "ajax": "/admin/training",
         "pagingType": "full_numbers",
         "columns": [
+            {
+                "data": function (data) {
+                    return '<a href="/admin/product_management/' + data.id + '/edit" class="btn btn-success">Edit</a>';
+                }
+            },
+            {"data": "category"},
             {"data": "supplier_ref"},
             {"data": "bt_ref"},
-            {"data": "btbuy"},
-            {"data": "max_discount"},
-            {"data": "quote_type"},
-            {"data": "name"},
+            {"data": "item_name"},
+            {"data": "qty"},
             {"data": "description"},
             {"data": "item_code"},
             {"data": "xfer"},
             {"data": "bteup"},
-            {"data": "qty"},
+            {"data": "btbuy"},
+            {"data": "quote_type"},
+            {"data": "max_discount"},
             {"data": "one_yr_standard_care"},
             {"data": "one_yr_prompt_care"},
             {"data": "one_yr_total_care"},
@@ -42,12 +48,7 @@ $(document).ready(function () {
             {"data": "three_yr_total_care"},
             {"data": "five_yr_standard_care"},
             {"data": "five_yr_prompt_care"},
-            {"data": "five_yr_total_care"},
-            {
-                "data": function (data) {
-                    return '<a href="/admin/product_management/' + data.id + '/edit" class="btn btn-success">Edit</a>';
-                }
-            }
+            {"data": "five_yr_total_care"}
         ],
         dom: '<"top"Blf>rT<"bottom"p><"clear">',
         //dom: 'B<lf<t>ip>',
