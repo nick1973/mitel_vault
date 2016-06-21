@@ -83,7 +83,7 @@
                         <a href="{!! route('admin.product_management.bt_peripherals.index') !!}">BT Peripherals</a>
                     </li>
                     <li class="{{ Active::pattern('admin/product_management/training*') }}">
-                        <a href="{!! route('admin.product_management.training.index') !!}">Training</a>
+                        <a href="{!! route('admin.product_management.training.index') !!}">Training / Support</a>
                     </li>
                 </ul>
             </li>

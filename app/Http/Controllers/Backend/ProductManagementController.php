@@ -15,16 +15,33 @@ class ProductManagementController extends Controller
 {
     function index($page = 'hardware')
     {
+        if ($page == 'lines' || $page == 'lan_data' || $page == 'lan_switch' || $page == 'sip_lines') {
+            $page = 'hardware';
+        }
+        if ($page == 'server') {
+            $page = 'servers';
+        }
+        if ($page == 'user_license' || $page == 'feature_license' || $page == 'teleworker') {
+            $page = 'software';
+        }
         if ($page == 'ip_terminals' || $page == 'analogue_terminals' || $page == 'dect_terminals' || $page == 'digital_terminals') {
             $page = 'terminals';
         }
-        if ($page == 'lines') {
-            $page = 'hardware';
+        if ($page == 'terminal_upgrades' || $page == 'terminal_upgrades') {
+            $page = 'upgrades';
         }
-        if ($page == 'peripherals_moh' || $page == 'peripherals_message' || $page == 'peripherals_de' || $page == 'peripherals_uc'
-            || $page == 'peripherals_headset' || $page == 'peripherals_vr' || $page == 'peripherals_av'
+        if ($page == 'peripherals_moh_playback_unit' || $page == 'peripherals_moh_unit_upgrades' || $page == 'peripherals_moh_managed_services'
+            || $page == 'peripherals_moh_copyright_managed_services'
+            || $page == 'peripherals_system_message' || $page == 'peripherals_on_hold_message' || $page == 'peripherals_de_analogue_extension_systems'
+            || $page == 'peripherals_de_sip_extension_systems' || $page == 'peripherals_uc_outlook' || $page == 'peripherals_uc_crm'
+            || $page == 'peripherals_uc_attendant_console' || $page == 'peripherals_uc_status_stick' || $page == 'peripherals_headset'
+            || $page == 'peripherals_vr_core_product' || $page == 'peripherals_vr_lite_upgrade_options' || $page == 'peripherals_vr_ent_upgrade_options'
+            || $page == 'peripherals_av'
         ) {
             $page = 'bt_peripherals';
+        }
+        if ($page == 'training_web' || $page == 'training_on_site' || $page == 'support_options') {
+            $page = 'training';
         }
         //return view('backend.' . $page . '.index');
         return redirect('admin/product_management/' . $page);

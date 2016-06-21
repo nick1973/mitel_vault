@@ -24,6 +24,16 @@ $(document).ready(function () {
         "pagingType": "full_numbers",
         "lengthMenu": [[5, 25, 50, -1], [5, 25, 50, "All"]],
         "columns": [
+            {
+                "data": function (data) {
+                    return '<a href="/admin/product_management/mivb_bundles/' + data.id + '/build" class="btn btn-success">Build</a>';
+                }
+            },
+            {
+                "data": function (data) {
+                    return '<a href="/admin/product_management/mivb_bundles/' + data.id + '/edit" class="btn btn-primary">Edit</a>';
+                }
+            },
             {"data": "name"},
             {"data": "line_type"},
             {"data": "analogue_lines"},
@@ -52,17 +62,7 @@ $(document).ready(function () {
             {"data": "three_yr_total_care"},
             {"data": "five_yr_standard_care"},
             {"data": "five_yr_prompt_care"},
-            {"data": "five_yr_total_care"},
-            {
-                "data": function (data) {
-                    return '<a href="/admin/product_management/mivb_bundles/' + data.id + '/build" class="btn btn-success">Build</a>';
-                }
-            },
-            {
-                "data": function (data) {
-                    return '<a href="/admin/product_management/mivb_bundles/' + data.id + '/edit" class="btn btn-primary">Edit</a>';
-                }
-            }
+            {"data": "five_yr_total_care"}
         ],
         dom: '<"top"Blf>rT<"bottom"p><"clear">',
         //dom: 'B<lf<t>ip>',

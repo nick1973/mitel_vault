@@ -32,6 +32,8 @@
                 <table id="bundles" class="table table-striped table-bordered" cellspacing="0" width="100%">
                     <thead>
                     <tr>
+                        <th></th>
+                        <th></th>
                         <th>Bundle Name</th>
                         <th>Line Type</th>
                         <th>Analogue Lines</th>
@@ -66,12 +68,18 @@
                         <th>5 Yr Standard Care</th>
                         <th>5 Yr Prompt Care</th>
                         <th>5 Yr Total Care</th>
-                        <th></th>
-                        <th></th>
                     </tr>
                     </thead>
                     <tfoot>
                     <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
                         <th></th>
                         <th></th>
                         <th></th>

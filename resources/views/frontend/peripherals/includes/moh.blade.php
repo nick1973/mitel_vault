@@ -8,9 +8,9 @@
                    class="col-xs-3 col-sm-4 col-md-4 col-lg-7 control-label">{{ $terminal->item_name }}:</label>
 
             <div class="col-xs-7 col-sm-5 col-md-5 col-lg-2">
-                <input class="" name="id[]" value="{{ $terminal->id }}">
-                <input class="" name="price[]" value="{{ $terminal->btbuy }}">
-                <input class="" name="name[]" value="{{ $terminal->item_name }}">
+                <input class="hidden" name="id[]" value="{{ $terminal->id }}">
+                <input class="hidden" name="price[]" value="{{ $terminal->btbuy }}">
+                <input class="hidden" name="name[]" value="{{ $terminal->item_name }}">
                 <select class="form-control" name="qty[]">
                     <option>0</option>
                     <option>1</option>

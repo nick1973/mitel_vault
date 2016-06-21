@@ -15,12 +15,12 @@
             <tbody>
             @foreach($cart as $row)
                 <tr>
-                    <td>{{ $row->name }}</td>
+                    <td width="200px">{{ $row->name }}</td>
                     <td>{{ $row->qty }}</td>
                     <td>£ {{ $row->price }}</td>
                     <td>£ {{ $row->subtotal }}</td>
-                    {{--<td><span onclick="remove_item('{{ $row->rowid }}')" class="glyphicon glyphicon-remove-circle"--}}
-                    {{--style="color: #ff0000" aria-hidden="true"></span></td>--}}
+                    <td><span onclick="remove_item('{{ $row->rowid }}')" class="glyphicon glyphicon-remove-circle"
+                              style="color: #ff0000" aria-hidden="true"></span></td>
                 </tr>
             @endforeach
             </tbody>

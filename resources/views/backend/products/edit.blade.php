@@ -118,7 +118,8 @@
                         'peripherals_vr_ent_upgrade_options' => 'Peripherals VR Enterprise Upgrade Options',
                         'peripherals_av' => 'Peripherals AV Endpoints',
                         'training_web' => 'Training Web',
-                        'training_on_site' => 'Training On-Site'
+                        'training_on_site' => 'Training On-Site',
+                        'support_options' => 'Support Options'
                         ], null, ['class' => 'form-control']) !!}
                         {{--{{ Form::select('category', array('Hardware' => 'Hardware', 'Software' => 'Software', 'terminals' => 'Terminals'), $product->category) }}--}}
                     </div>

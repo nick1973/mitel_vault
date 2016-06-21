@@ -121,7 +121,8 @@
                         'peripherals_av' => 'Peripherals AV Endpoints',
                         'training_web' => 'Training Web',
                         'training_on_site' => 'Training On-Site',
-                        'teleworker' => 'Teleworker'
+                        'teleworker' => 'Teleworker',
+                        'support_options' => 'Support Options'
                         ], null, ['class' => 'form-control']) !!}
                         {{--{{ Form::select('category', array('Hardware' => 'Hardware', 'Software' => 'Software', 'terminals' => 'Terminals'), $product->category) }}--}}
                     </div>

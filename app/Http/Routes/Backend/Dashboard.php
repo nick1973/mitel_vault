@@ -27,12 +27,22 @@ Route::get('software', function () {
 });
 
 Route::get('bt_peripherals', function () {
-    return ['data' => \App\Product::where('category', 'peripherals_moh')
-        ->orWhere('category', 'peripherals_message')
-        ->orWhere('category', 'peripherals_de')
-        ->orWhere('category', 'peripherals_uc')
+    return ['data' => \App\Product::where('category', 'peripherals_moh_playback_unit')
+        ->orWhere('category', 'peripherals_moh_unit_upgrades')
+        ->orWhere('category', 'peripherals_moh_managed_services')
+        ->orWhere('category', 'peripherals_moh_copyright_managed_services')
+        ->orWhere('category', 'peripherals_system_message')
+        ->orWhere('category', 'peripherals_on_hold_message')
+        ->orWhere('category', 'peripherals_de_analogue_extension_systems')
+        ->orWhere('category', 'peripherals_de_sip_extension_systems')
+        ->orWhere('category', 'peripherals_uc_outlook')
+        ->orWhere('category', 'peripherals_uc_crm')
+        ->orWhere('category', 'peripherals_uc_attendant_console')
+        ->orWhere('category', 'peripherals_uc_status_stick')
         ->orWhere('category', 'peripherals_headset')
-        ->orWhere('category', 'peripherals_vr')
+        ->orWhere('category', 'peripherals_vr_core_product')
+        ->orWhere('category', 'peripherals_vr_lite_upgrade_options')
+        ->orWhere('category', 'peripherals_vr_ent_upgrade_options')
         ->orWhere('category', 'peripherals_av')
         ->get()];
 });
@@ -53,6 +63,7 @@ Route::get('terminals', function () {
 Route::get('training', function () {
     return ['data' => \App\Product::where('category', 'training_on_site')
         ->orWhere('category', 'training_web')
+        ->orWhere('category', 'support_options')
         ->get()];
 });
 
@@ -60,6 +71,9 @@ Route::get('upgrades', function () {
     return ['data' => \App\Upgrade::where('category', 'terminal_upgrades')->get()];
 });
 
+Route::get('mivb_peripherals', function () {
+    return ['data' => \App\Product::where('category', 'mivb_peripherals')->get()];
+});
 
 Route::get('bundle_set/{bundle_set}', function ($id) {
 

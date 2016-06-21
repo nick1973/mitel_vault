@@ -17,6 +17,7 @@
 <br/>
 <h4 class="col-lg-7 col-md-7"><strong>Is Proactive Monitoring is included in your standard system Bundle?</strong></h4>
 <br/>
+<form id="support-post" class="form-horizontal animated fadeIn" action="/hardware_post">
 <div id="nav-support" class="col-md-12 col-lg-12 animated fadeIn">
     <div class="form-group">
         <h4 class="col-lg-4 col-md-6"><strong>Included monitoring:</strong> Foundation Package</h4>
@@ -37,40 +38,54 @@
         to your BT Bundle</h4>
     <br/>
 
-    <div class="form-group">
-        <h4 class="col-lg-6 col-md-6 col-lg-offset-2">Security & Advanced Monitoring Package:</h4>
-        {{--<label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-4 col-lg-5 control-label">Security & Advanced Monitoring Package:</label>--}}
+    @foreach($support_options as $line)
+        <div class="form-group">
 
-        <div class="col-xs-7 col-sm-5 col-md-5 col-lg-2">
-            {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-            <select class="form-control" name="analogue_lines">
-                <option>0</option>
-                <option>1</option>
-            </select>
+            <label class="col-xs-3 col-sm-4 col-lg-4 control-label">{{ $line->item_name }}:</label>
+            {{--<input type="text" class="form-control" name="qty[]" value="0">--}}
+            <input class="hidden" name="id[]" value="{{ $line->id }}">
+            <input class="hidden" name="price[]" value="{{ $line->btbuy }}">
+            <input class="hidden" name="name[]" value="{{ $line->item_name }}">
+
+            <div class="col-xs-7 col-sm-5 col-md-5 col-lg-2">
+                <select class="form-control" name="qty[]">
+                    <option>0</option>
+                    <option>1</option>
+                </select>
+            </div>
+            @if($line->info_view==1)
+                <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
+                   data-toggle="popover" title="{{ $line->item_name }}" data-placement="right" data-html="true"
+                   data-content="@if($line->image_view_info==1)
+                                        <img height='200px' alt='/{{ $line->item_name }}' src='/{{ $line->image }}'>
+                                    @endif
+                   @if($line->description_view_info==1)
+                        <p>{{$line->info_description}}</p>
+                       @endif
+                           " data-animation="true"></i>
+            @endif
+            @if(count($line->upgrades)>0)
+                <i class="fa fa-plus-circle fa-2x" style="padding-left: 7px; padding-top: 4px; color: #58678F"
+                   onclick="showUpgrades('{{ $line->item_name }}', {{ $line->upgrades }})"></i>
+            @endif
+            @if($line->warning_view==1)
+                <i class="fa fa-exclamation-circle fa-2x" style="padding-top: 4px; color: #ff0000"
+                   data-toggle="popover" title="{{ $line->item_name }}" data-placement="right" data-html="true"
+                   data-content="@if($line->image_view_warning==1)
+                                        <img height='200px' alt='/{{ $line->item_name }}' src='/{{ $line->image }}'>
+                                    @endif
+                   @if($line->description_view_warning==1)
+                        <p>{{$line->warning_description}}</p>
+                       @endif
+                           " data-animation="true"></i>
+            @endif
         </div>
+    @endforeach
 
-        <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
-           data-toggle="popover" title="Note:" data-placement="right"
-           data-content="A 20 Day standard Lead time" data-animation="true"></i>
-    </div>
 
-    <div class="form-group">
-        <h4 class="col-lg-6 col-md-6 col-lg-offset-2">Proactive Remote Maintenance ( Backup) Package:</h4>
-        {{--<label for="inputEmail3" class="col-xs-3 col-sm-4 col-md-4 col-lg-5 control-label">Proactive Remote Maintenance ( Backup) Package:</label>--}}
-
-        <div class="col-xs-7 col-sm-5 col-md-5 col-lg-2">
-            {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-            <select class="form-control" name="pri">
-                <option>0</option>
-                <option>1</option>
-            </select>
-        </div>
-        <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
-           data-toggle="popover" title="7410 DECT" data-placement="right" data-html="true"
-           data-content="<img src='/images/mitel_phones/mitel-5320.jpg'>" data-animation="true"></i>
-    </div>
 
 </div>
+</form>
 <button onclick="teleworkerPrev()" class="btn btn-default pull-left"><span class="glyphicon glyphicon-hand-left"
                                                                            aria-hidden="true"></span> Previous
 </button>
@@ -84,5 +99,20 @@
     function maintNext() {
         $("#tick-support").addClass('animated fadeIn').removeClass('hidden');
         $('.nav-tabs a[href="#maint"]').tab('show');
+
+        var formData = $("#support-post").serializeArray();
+        var URL = $("#support-post").attr("action");
+        console.log(formData);
+        $.post(URL,
+                formData,
+                function (data, textStatus, jqXHR) {
+                    $('#reload_cart').load('/cart_reload');
+                    $http.get("#")
+                            .then(function (response) {
+                            }).fail(function (jqXHR, textStatus, errorThrown) {
+                                console.log(errorThrown);
+                            });
+
+                });
     }
 </script>
