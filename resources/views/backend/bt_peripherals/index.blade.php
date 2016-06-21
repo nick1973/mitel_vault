@@ -32,6 +32,7 @@
                     <thead>
                     <tr>
                         <th></th>
+                        <th>Category</th>
                         <th>supplier_ref</th>
                         <th>B-Code</th>
                         <th>Item</th>
@@ -56,6 +57,7 @@
                     </thead>
                     <tfoot>
                     <tr>
+                        <th></th>
                         <th></th>
                         <th></th>
                         <th></th>

@@ -28,6 +28,7 @@ $(document).ready(function () {
                     return '<a href="/admin/product_management/' + data.id + '/edit" class="btn btn-success">Edit</a>';
                 }
             },
+            {"data": "category"},
             {"data": "supplier_ref"},
             {"data": "bt_ref"},
             {"data": "item_name"},

@@ -9,7 +9,7 @@
                 <th>Qty</th>
                 <th>Cost</th>
                 <th>Subtotal</th>
-                {{--<th>Remove</th>--}}
+                <th></th>
             </tr>
             </thead>
             <tbody>
