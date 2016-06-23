@@ -92,9 +92,10 @@
         var app = angular.module('myApp', []);
         app.controller('myCtrl', function ($scope, $http) {
 
-            $("#find_server_teleworker").click(function () {
-                var formData = $("#teleworker_post").serializeArray();
-                var URL = $("#teleworker_post").attr("action");
+
+            $("#find_server_web_proxy").click(function () {
+                var formData = $("#web_proxy_post").serializeArray();
+                var URL = $("#web_proxy_post").attr("action");
                 console.log(formData);
                 $.post(URL,
                         formData,
@@ -104,7 +105,7 @@
                                         $scope.server = response.data.server;
                                         console.log(response.data.server[0]['item_name']);
                                         if (typeof response.data.server !== 'undefined') {
-                                            $(".hide_table").removeClass('hidden');
+                                            $("#hide_web_proxy_post_table").removeClass('hidden');
                                             var server_name = response.data.server[0]['item_name'];
                                             $(".server_name").text(server_name);
                                             var max_server_users = response.data.server[0]['max_server_users'];
@@ -122,7 +123,45 @@
                                             $(".server_btbuy").val(server_btbuy);
                                             $(".server_name").val(server_name);
                                         } else {
-                                            $(".hide_table").addClass('hidden');
+                                            $("#hide_web_proxy_post_table").addClass('hidden');
+                                        }
+                                    });
+                        }).fail(function (jqXHR, textStatus, errorThrown) {
+                            console.log(errorThrown);
+                        });
+            });
+
+            $("#find_server_teleworker").click(function () {
+                var formData = $("#teleworker_post").serializeArray();
+                var URL = $("#teleworker_post").attr("action");
+                console.log(formData);
+                $.post(URL,
+                        formData,
+                        function (data, textStatus, jqXHR) {
+                            $http.get("/server_list/" + data.channel_qty + "/" + data.form_factor + "/" + data.raid)
+                                    .then(function (response) {
+                                        $scope.server = response.data.server;
+                                        console.log(response.data.server[0]['item_name']);
+                                        if (typeof response.data.server !== 'undefined') {
+                                            $("#hide_teleworker_table").removeClass('hidden');
+                                            var server_name = response.data.server[0]['item_name'];
+                                            $(".server_name").text(server_name);
+                                            var max_server_users = response.data.server[0]['max_server_users'];
+                                            $(".max_server_users").text(max_server_users);
+                                            var form_factor = response.data.server[0]['form_factor'];
+                                            $(".form_factor").text(form_factor);
+                                            var raid = response.data.server[0]['raid'];
+                                            $(".raid").text(raid);
+                                            var psu_redundancy = response.data.server[0]['psu_redundancy'];
+                                            $(".psu_redundancy").text(psu_redundancy);
+
+                                            var server_id = response.data.server[0]['id'];
+                                            $(".server_id").val(server_id);
+                                            var server_btbuy = response.data.server[0]['btbuy'];
+                                            $(".server_btbuy").val(server_btbuy);
+                                            $(".server_name").val(server_name);
+                                        } else {
+                                            $("#hide_teleworker_table").addClass('hidden');
                                         }
                                     });
                         }).fail(function (jqXHR, textStatus, errorThrown) {

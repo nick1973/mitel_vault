@@ -34,6 +34,7 @@ class FrontendController extends Controller
         $feature_license = Product::where('category', 'feature_license')->get();
         $base_app = Product::where('category', 'base_app')->get();
         $sip_proxy = Product::where('category', 'sip_proxy')->get();
+        $web_proxy = Product::where('category', 'web_proxy')->get();
         $teleworker = Product::where('category', 'teleworker')->get();
         $peripherals_moh_playback_unit = Product::where('category', 'peripherals_moh_playback_unit')->get();
         $peripherals_moh_unit_upgrades = Product::where('category', 'peripherals_moh_unit_upgrades')->get();
@@ -57,7 +58,7 @@ class FrontendController extends Controller
         $support_options = Product::where('category', 'support_options')->get();
 
         return view('frontend.index', compact('cart', 'test', 'total', 'ip_terminals', 'analogue_terminals', 'dect_terminals', 'dect_upgrades', 'lines',
-            'sip_lines', 'lan_switches', 'user_license', 'feature_license', 'base_app', 'sip_proxy', 'teleworker', 'peripherals_moh_playback_unit',
+            'sip_lines', 'lan_switches', 'user_license', 'feature_license', 'base_app', 'sip_proxy', 'web_proxy', 'teleworker', 'peripherals_moh_playback_unit',
             'peripherals_moh_unit_upgrades', 'peripherals_moh_managed_services', 'peripherals_moh_copyright_managed_services', 'peripherals_system_message',
             'peripherals_on_hold_message', 'peripherals_de_analogue_extension_systems', 'peripherals_de_sip_extension_systems', 'peripherals_uc_outlook',
             'peripherals_uc_crm', 'peripherals_uc_attendant_console', 'peripherals_uc_status_stick', 'peripherals_headset', 'peripherals_vr_core_product',

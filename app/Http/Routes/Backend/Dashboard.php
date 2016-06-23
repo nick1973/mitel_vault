@@ -22,6 +22,8 @@ Route::get('software', function () {
         ->orWhere('category', 'user_license')
         ->orWhere('category', 'feature_license')
         ->orWhere('category', 'teleworker')
+        ->orWhere('category', 'sip_proxy')
+        ->orWhere('category', 'web_proxy')
         ->orWhere('category', null)
         ->get()];
 });
