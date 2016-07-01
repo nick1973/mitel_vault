@@ -17,7 +17,7 @@
 </div>
 <br/>
 
-<form id="nav-install" class="form-horizontal animated fadeIn" action="/bundle_post">
+<form id="install_post" class="form-horizontal animated fadeIn" action="/install_post">
 
     <div class="col-md-12 col-lg-12">
         <div class="form-group">
@@ -26,9 +26,9 @@
 
             <div class="col-xs-7 col-sm-5 col-md-5 col-lg-2">
                 {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-                <select class="form-control" name="analogue_lines">
-                    <option>Yes</option>
+                <select class="form-control" name="standard_install">
                     <option>No</option>
+                    <option>Yes</option>
                 </select>
             </div>
 
@@ -43,9 +43,9 @@
 
             <div class="col-xs-7 col-sm-5 col-md-5 col-lg-2">
                 {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-                <select class="form-control" name="pri">
-                    <option>Yes</option>
+                <select class="form-control" name="express_install">
                     <option>No</option>
+                    <option>Yes</option>
                 </select>
             </div>
             <i class="fa fa-info-circle fa-2x" style="padding-top: 4px; color: #58678F"
@@ -170,7 +170,7 @@
 <button onclick="teleworkerPrev()" class="btn btn-default pull-left"><span class="glyphicon glyphicon-hand-left"
                                                                            aria-hidden="true"></span> Previous
 </button>
-<button onclick="supportNext()" class="btn btn-success pull-right">Next <span class="glyphicon glyphicon-hand-right"
+<button id="install-post" class="btn btn-success pull-right">Next <span class="glyphicon glyphicon-hand-right"
                                                                               aria-hidden="true"></span></button>
 <script>
     function teleworkerPrev() {

@@ -55,10 +55,7 @@
                 $("#collapse3").collapse('show');
             });
 
-            $('#overview-button').click(function () {
-                $('#overview-button').removeClass('btn-info');
-                $('#overview-button').addClass('btn-success');
-            });
+
         });
 
         function emptyCart() {
@@ -92,6 +89,50 @@
         var app = angular.module('myApp', []);
         app.controller('myCtrl', function ($scope, $http) {
 
+            $("#overview-button").click(function () {
+                if ($("#overview-button").hasClass('btn-info')) {
+                    $http.get("/#")
+                            .then(function (response) {
+                                $scope.cart_items = response.data.cart_items;
+                            });
+                }
+                else {
+                    $http.get("/cart_items")
+                            .then(function (response) {
+                                $scope.cart_items = response.data.cart_items;
+                            });
+                }
+
+                $('#overview-button').removeClass('btn-info');
+                $('#overview-button').addClass('btn-success');
+            });
+
+
+            $("#maint_post").click(function () {
+                var formData = $("#maint-post").serializeArray();
+                var URL = $("#maint-post").attr("action");
+                console.log(formData);
+                $.post(URL,
+                        formData,
+                        function (data, textStatus, jqXHR) {
+                            $('#reload_cart').load('/cart_reload');
+                        }).fail(function (jqXHR, textStatus, errorThrown) {
+                            console.log(errorThrown);
+                        });
+            });
+
+            $("#install-post").click(function () {
+                var formData = $("#install_post").serializeArray();
+                var URL = $("#install_post").attr("action");
+                console.log(formData);
+                $.post(URL,
+                        formData,
+                        function (data, textStatus, jqXHR) {
+                            $('#reload_cart').load('/cart_reload');
+                        }).fail(function (jqXHR, textStatus, errorThrown) {
+                            console.log(errorThrown);
+                        });
+            });
 
             $("#find_server_web_proxy").click(function () {
                 var formData = $("#web_proxy_post").serializeArray();
@@ -216,6 +257,7 @@
                 $.post(URL,
                         formData,
                         function (data, textStatus, jqXHR) {
+
                             $http.get("/bundle_list/" + data.line_type + "/" + data.users + "/" + data.lan)
                                     .then(function (response) {
                                         $scope.content = response.data.bundle;
@@ -267,7 +309,6 @@
                                         }
                                         else {
                                             $('#no_results').modal('show');
-                                            //alert("BOO");
                                         }
                                         var remaining_users = users - port_users;
                                         if (remaining_users <= 0) {
@@ -285,23 +326,16 @@
                                             $(".licence_users").val(licence_users);
                                             $(".licence_users_hidden").val(licence_users);
                                         }
-
-
-                                        //console.log("Remaining" + remaining_users);
                                         $btn.button('reset');
                                     });
-
-                            //console.log(jQuery.isEmptyObject({}));
-
-                            //Button Formatting Control.
                             $btn.button('reset');
-
                         }).fail(function (jqXHR, textStatus, errorThrown) {
                             console.log(errorThrown);
                         });
             });
 
         });
+
     </script>
     {{--<p>{{$cart}}</p>--}}
             <ol class="breadcrumb">
@@ -576,6 +610,19 @@
                                 <p><strong>Analogue Extensions:</strong> @{{ content.analogue_extensions }}</p>
 
                                 <p><strong>Description:</strong> @{{ content.product_description }}</p>
+
+                                <div ng-repeat="oa in cart_items">
+                                    <p><strong>Product:</strong> @{{ oa.item_name }}</p>
+
+                                    <p><strong>Cost:</strong> @{{ oa.bteup }}</p>
+
+                                    <p><strong>Description:</strong> @{{ oa.description }}</p>
+
+                                    <p ng-show="oa.image"><strong>image:</strong><img src="/@{{ oa.image }}"
+                                                                                      height="100px"></p>
+                                </div>
+
+
                             </div>
                         </div>
                     </div>
@@ -617,8 +664,8 @@
 
 @section('after-scripts-end')
     <script>
-        //Being injected from FrontendController
-        console.log(test);
+
+
     </script>
 @stop
 

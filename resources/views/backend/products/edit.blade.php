@@ -364,6 +364,22 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-4 control-label">Standard Install:</label>
+
+                    <div class="col-sm-5">
+                        {!! Form::input('standard_install', 'standard_install', null, ['class' => 'form-control']) !!}
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-4 control-label">Express Install:</label>
+
+                    <div class="col-sm-5">
+                        {!! Form::input('express_install', 'express_install', null, ['class' => 'form-control']) !!}
+                    </div>
+                </div>
+
+                <div class="form-group">
                     <label for="inputEmail3" class="col-sm-4 control-label">One Year Standard Care:</label>
                     <div class="col-sm-5">
                         {!! Form::input('one_yr_standard_care', 'one_yr_standard_care', null, ['class' => 'form-control']) !!}

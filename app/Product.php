@@ -22,6 +22,8 @@ class Product extends Model
         'quote_type',
         'max_discount',
         'pbx_type',
+        'standard_install',
+        'express_install',
         'one_yr_standard_care',
         'one_yr_prompt_care',
         'one_yr_total_care',

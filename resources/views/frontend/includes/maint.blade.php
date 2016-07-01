@@ -16,7 +16,7 @@
 </div>
 <br/>
 
-<form id="nav-maint" class="form-horizontal animated fadeIn" action="/bundle_post">
+<form id="maint-post" class="form-horizontal animated fadeIn" action="/maint_post">
     <h4 class="col-lg-12 col-md-12"><strong>BT Maintenance: </strong>What BT Maintenance cover is required from BT?</h4>
 
     <div class="col-md-12 col-lg-6">
@@ -25,7 +25,7 @@
 
             <div class="col-xs-7 col-sm-5 col-md-5 col-lg-5">
                 {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-                <select class="form-control" name="analogue_lines">
+                <select class="form-control" name="standard_care">
                     <option>Yes</option>
                     <option selected>No</option>
                 </select>
@@ -41,7 +41,7 @@
 
             <div class="col-xs-7 col-sm-5 col-md-5 col-lg-5">
                 {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-                <select class="form-control" name="analogue_lines">
+                <select class="form-control" name="total_care">
                     <option>Yes</option>
                     <option selected>No</option>
                 </select>
@@ -57,7 +57,7 @@
 
             <div class="col-xs-7 col-sm-5 col-md-5 col-lg-5">
                 {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-                <select class="form-control" name="analogue_lines">
+                <select class="form-control" name="no_maint">
                     <option>Yes</option>
                     <option selected>No</option>
                 </select>
@@ -75,7 +75,7 @@
 
             <div class="col-xs-7 col-sm-5 col-md-5 col-lg-5">
                 {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-                <select class="form-control" name="pri">
+                <select class="form-control" name="prompt_care">
                     <option>Yes</option>
                     <option selected>No</option>
                 </select>
@@ -90,7 +90,7 @@
 
             <div class="col-xs-7 col-sm-5 col-md-5 col-lg-5">
                 {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-                <select class="form-control" name="analogue_lines">
+                <select class="form-control" name="critical_care">
                     <option>Yes</option>
                     <option selected>No</option>
                 </select>
@@ -112,7 +112,7 @@
 
             <div class="col-xs-7 col-sm-5 col-md-5 col-lg-5">
                 {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-                <select class="form-control" name="analogue_lines">
+                <select class="form-control" name="12_month">
                     <option>Yes</option>
                     <option selected>No</option>
                 </select>
@@ -128,7 +128,7 @@
 
             <div class="col-xs-7 col-sm-5 col-md-5 col-lg-5">
                 {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-                <select class="form-control" name="analogue_lines">
+                <select class="form-control" name="24_month">
                     <option>Yes</option>
                     <option selected>No</option>
                 </select>
@@ -147,7 +147,7 @@
 
             <div class="col-xs-7 col-sm-5 col-md-5 col-lg-5">
                 {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-                <select class="form-control" name="pri">
+                <select class="form-control" name="36_month">
                     <option>Yes</option>
                     <option selected>No</option>
                 </select>
@@ -162,7 +162,7 @@
 
             <div class="col-xs-7 col-sm-5 col-md-5 col-lg-5">
                 {{--{!! Form::input('company_name', 'company_name', null, ['class' => 'form-control']) !!}--}}
-                <select class="form-control" name="analogue_lines">
+                <select class="form-control" name="60_month">
                     <option>Yes</option>
                     <option selected>No</option>
                 </select>
@@ -233,7 +233,7 @@
 <button onclick="supportPrev()" class="btn btn-default pull-left"><span class="glyphicon glyphicon-hand-left"
                                                                         aria-hidden="true"></span> Previous
 </button>
-<button onclick="save()" class="btn btn-primary pull-right">Save <span class="glyphicon glyphicon-floppy-disk"
+    <button id="maint_post" class="btn btn-primary pull-right">Save <span class="glyphicon glyphicon-floppy-disk"
                                                                        aria-hidden="true"></span></button>
 </div>
 <script>
