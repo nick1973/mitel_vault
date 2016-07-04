@@ -8,9 +8,10 @@
     </style>
     <script>
         //use the below to stop refresh
-        //        window.onbeforeunload = function () {
-        //            return "Data will be lost if you leave the page, are you sure?";
-        //        };
+        window.onbeforeunload = function () {
+            return "ALL Data will be lost if you leave the page, are you sure?";
+            //$('#confirm-delete').modal();
+        };
 
         function visible(button, id) {
             if ($("#" + button).prop('checked') == true) {

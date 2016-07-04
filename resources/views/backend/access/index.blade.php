@@ -26,11 +26,12 @@
                     <tr>
                         <th>{{ trans('labels.backend.access.users.table.id') }}</th>
                         <th>{{ trans('labels.backend.access.users.table.name') }}</th>
+                        <th>LOB</th>
                         <th>{{ trans('labels.backend.access.users.table.email') }}</th>
                         <th>{{ trans('labels.backend.access.users.table.confirmed') }}</th>
                         <th>{{ trans('labels.backend.access.users.table.roles') }}</th>
                         <th>{{ trans('labels.backend.access.users.table.other_permissions') }}</th>
-                        <th class="visible-lg">{{ trans('labels.backend.access.users.table.created') }}</th>
+                        {{--<th class="visible-lg">{{ trans('labels.backend.access.users.table.created') }}</th>--}}
                         <th class="visible-lg">{{ trans('labels.backend.access.users.table.last_updated') }}</th>
                         <th>{{ trans('labels.general.actions') }}</th>
                     </tr>
@@ -40,6 +41,7 @@
                             <tr>
                                 <td>{!! $user->id !!}</td>
                                 <td>{!! $user->name !!}</td>
+                                <td>{!! $user->lobs !!}</td>
                                 <td>{!! link_to("mailto:".$user->email, $user->email) !!}</td>
                                 <td>{!! $user->confirmed_label !!}</td>
                                 <td>

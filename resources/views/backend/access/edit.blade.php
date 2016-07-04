@@ -30,6 +30,29 @@
                 </div><!--form control-->
 
                 <div class="form-group">
+                    {!! Form::label('lobs', 'Line of Business', ['class' => 'col-lg-2 control-label']) !!}
+                    <div class="col-lg-10">
+                        {{--{!! Form::text('lobs', null, ['class' => 'form-control', 'placeholder' => 'Line of Business']) !!}--}}
+                        <select required name="lobs" id="lob" class="form-control">
+                            <option>{{$user->lobs}}</option>
+                            @foreach($lob as $results)
+                                <option>{{ $results->selection }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+                <!--form control-->
+
+                <div class="form-group">
+                    {!! Form::label('sales_manager', 'Sales Manager', ['class' => 'col-lg-2 control-label']) !!}
+                    <div class="col-lg-10">
+                        {!! Form::text('sales_manager', null, ['class' => 'form-control', 'placeholder' => 'Sales
+                        Manager']) !!}
+                    </div>
+                </div>
+                <!--form control-->
+
+                <div class="form-group">
                     {!! Form::label('email', trans('validation.attributes.backend.access.users.email'), ['class' => 'col-lg-2 control-label']) !!}
                     <div class="col-lg-10">
                         {!! Form::text('email', null, ['class' => 'form-control', 'placeholder' => trans('validation.attributes.backend.access.users.email')]) !!}

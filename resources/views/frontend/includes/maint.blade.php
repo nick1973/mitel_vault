@@ -244,6 +244,6 @@
     function save() {
         $("#tick-maint").addClass('animated fadeIn').removeClass('hidden');
         $("#tick-bundle").addClass('animated fadeIn').removeClass('hidden');
-        alert("At this point the quote would be saved!");
+        //alert("At this point the quote would be saved!");
     }
 </script>

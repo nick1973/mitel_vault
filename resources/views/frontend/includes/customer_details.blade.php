@@ -1,16 +1,13 @@
 <div class="panel panel-default">
     <div class="panel-body">
         <h2>BT Originator:</h2>
-        {{--{!! Form::model($customer,[--}}
-        {{--'method' => 'PATCH',--}}
-        {{--'route' => ['ipo-echosign.customer_detail.update',$customer->crf_id],--}}
-        {{--'class' => 'form-horizontal']) !!}--}}
-<form class="form-horizontal">
+
+        <form id="originator" class="form-horizontal">
         <div class="col-md-6">
             <div class="form-group">
                 <label for="inputEmail3" class="col-sm-4 control-label">BT Originators Name:</label>
                 <div class="col-sm-5">
-                    {!! Form::input('originator_name', 'originator_name', null, ['class' => 'form-control disabled']) !!}
+                    <input class="form-control" value="{{ $user->name }}">
                 </div>
             </div>
 
@@ -25,16 +22,14 @@
             <div class="form-group">
                 <label for="inputEmail3" class="col-sm-5 control-label">BT Sales Channel:</label>
                 <div class="col-sm-5">
-                    <select class="form-control">
-                        <option></option>
-                    </select>
-                    {{--{!! Form::select('sales_channel', $lob->lists('selection','selection'), null, ['class' => 'form-control']) !!}--}}
+                    <input class="form-control" value="{{ $user->lobs }}">
+
                 </div>
             </div>
             <div class="form-group">
                 <label for="inputEmail3" class="col-sm-5 control-label">BT Sales Manager:</label>
                 <div class="col-sm-5">
-                    {!! Form::input('manager', 'manager', null, ['class' => 'form-control']) !!}
+                    <input class="form-control" value="{{ $user->sales_manager }}">
                 </div>
             </div>
         </div>
@@ -134,9 +129,9 @@
 
         <div class="form-group">
             <div class="col-sm-10">
-                <button class="btn btn-danger" data-href="#" data-toggle="modal" data-target="#confirm-delete">
-                    Delete
-                </button>
+                {{--<button class="btn btn-danger" data-href="#" data-toggle="modal" data-target="#confirm-delete">--}}
+                {{--Delete--}}
+                {{--</button>--}}
                 <button id="save-customer-details" class="btn btn-success">Save</button>
             </div>
         </div>

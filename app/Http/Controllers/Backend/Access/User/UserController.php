@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend\Access\User;
 
 use App\Http\Controllers\Controller;
+use App\Lob;
 use App\Repositories\Backend\User\UserContract;
 use App\Repositories\Backend\Role\RoleRepositoryContract;
 use App\Http\Requests\Backend\Access\User\CreateUserRequest;
@@ -97,7 +98,8 @@ class UserController extends Controller
     public function edit($id, EditUserRequest $request)
     {
         $user = $this->users->findOrThrowException($id, true);
-        return view('backend.access.edit')
+        $lob = Lob::get();
+        return view('backend.access.edit', compact('lob'))
             ->withUser($user)
             ->withUserRoles($user->roles->lists('id')->all())
             ->withRoles($this->roles->getAllRoles('sort', 'asc', true))

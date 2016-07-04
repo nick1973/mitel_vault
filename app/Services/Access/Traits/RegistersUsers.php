@@ -2,6 +2,7 @@
 
 namespace App\Services\Access\Traits;
 
+use App\Lob;
 use Illuminate\Support\Facades\Auth;
 use App\Events\Frontend\Auth\UserRegistered;
 use App\Http\Requests\Frontend\Auth\RegisterRequest;
@@ -19,7 +20,8 @@ trait RegistersUsers
      */
     public function showRegistrationForm()
     {
-        return view('frontend.auth.register');
+        $lob = Lob::get();
+        return view('frontend.auth.register', compact('lob'));
     }
 
     /**

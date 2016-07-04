@@ -3,11 +3,14 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Lob;
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Product;
 use App\Upgrade;
 use Gloudemans\Shoppingcart\Facades\Cart;
+use Illuminate\Support\Facades\Auth;
 
 /**
  * Class FrontendController
@@ -56,13 +59,16 @@ class FrontendController extends Controller
         $training_on_site = Product::where('category', 'training_on_site')->get();
         $training_web = Product::where('category', 'training_web')->get();
         $support_options = Product::where('category', 'support_options')->get();
+        $user = Auth::user();
+        $lob = Lob::get();
 
         return view('frontend.index', compact('cart', 'test', 'total', 'ip_terminals', 'analogue_terminals', 'dect_terminals', 'dect_upgrades', 'lines',
             'sip_lines', 'lan_switches', 'user_license', 'feature_license', 'base_app', 'sip_proxy', 'web_proxy', 'teleworker', 'peripherals_moh_playback_unit',
             'peripherals_moh_unit_upgrades', 'peripherals_moh_managed_services', 'peripherals_moh_copyright_managed_services', 'peripherals_system_message',
             'peripherals_on_hold_message', 'peripherals_de_analogue_extension_systems', 'peripherals_de_sip_extension_systems', 'peripherals_uc_outlook',
             'peripherals_uc_crm', 'peripherals_uc_attendant_console', 'peripherals_uc_status_stick', 'peripherals_headset', 'peripherals_vr_core_product',
-            'peripherals_vr_lite_upgrade_options', 'peripherals_vr_ent_upgrade_options', 'peripherals_av', 'training_on_site', 'training_web', 'support_options'));
+            'peripherals_vr_lite_upgrade_options', 'peripherals_vr_ent_upgrade_options', 'peripherals_av', 'training_on_site', 'training_web', 'support_options',
+            'user', 'lob'));
     }
 
 
