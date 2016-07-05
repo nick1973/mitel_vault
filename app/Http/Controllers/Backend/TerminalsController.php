@@ -38,7 +38,6 @@ class TerminalsController extends Controller
 
         Session::flash('exists', 'Product already exists!');
         return redirect()->back();
-
     }
 
     function edit($id)

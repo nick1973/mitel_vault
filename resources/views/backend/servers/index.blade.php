@@ -29,7 +29,7 @@
                     <tr>
                         <th></th>
                         <th>Category</th>
-                        <th>Item-Name</th>
+                        <th>Product_Name</th>
                         <th>B-Code</th>
                         <th>bteup</th>
                         <th>btbuy</th>

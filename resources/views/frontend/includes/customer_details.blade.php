@@ -81,16 +81,6 @@
                 </div>
             </div>
 
-            <div class="form-group">
-                <label for="inputEmail3" class="col-sm-4 control-label">Vertical Markets:</label>
-                <div class="col-sm-5">
-                    {{--{!! Form::select('vertical_markets', ['education'=>'Education',--}}
-                    {{--'health'=>'Health',--}}
-                    {{--'public'=>'Public Sector'],--}}
-                    {{--null, ['class' => 'form-control']) !!}--}}
-                </div>
-            </div>
-
         </div>
 
         <div class="col-md-5">

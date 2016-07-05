@@ -35,7 +35,7 @@
                         <th>Category</th>
                         <th>supplier_ref</th>
                         <th>B-Code</th>
-                        <th>Item</th>
+                        <th>Product_Name</th>
                         <th>qty</th>
                         <th>description</th>
                         <th>item_code</th>
