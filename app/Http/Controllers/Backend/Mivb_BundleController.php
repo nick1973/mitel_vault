@@ -55,6 +55,22 @@ class Mivb_BundleController extends Controller
     {
         $bundle = Mitelbundle::find($id);
 
+        if ($request->hasFile('image')) {
+            $input = $request->all();
+
+            $fileName = $request->file('image')->getClientOriginalName();
+            $request->file('image')->move('uploads', $fileName);
+
+            array_pull($input, 'image');
+            $add_image = array_add($input, 'image', 'uploads/' . $fileName);
+
+            $bundle->fill($add_image)->save();
+
+        } else {
+            $input = $request->except('image');
+            $bundle->fill($input)->save();
+        }
+
         if ($request->input('product_id') == null) {
             $product_id = [];
         } else {
@@ -72,21 +88,7 @@ class Mivb_BundleController extends Controller
             return redirect()->back();
         }
 
-        if ($request->hasFile('image')) {
-            $input = $request->all();
 
-            $fileName = $request->file('image')->getClientOriginalName();
-            $request->file('image')->move('uploads', $fileName);
-
-            array_pull($input, 'image');
-            $add_image = array_add($input, 'image', 'uploads/' . $fileName);
-
-            $bundle->fill($add_image)->save();
-
-        } else {
-            $input = $request->except('image');
-            $bundle->fill($input)->save();
-        }
         //$bundle->fill($input)->save();
         return redirect()->action('Backend\Mivb_bundleController@index');
     }

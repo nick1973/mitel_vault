@@ -580,7 +580,7 @@
                         {{--<div class="panel-heading">--}}
                         {{--<h3 class="panel-title">Order Overview.</h3>--}}
                         {{--</div>--}}
-                        <div id="results" class="panel-body bg-info">
+                        <div id="results" class="panel-body">
                             <div ng-app="myApp" ng-controller="myCtrl">
                                 <p><strong>Bundle Name:</strong> @{{ content.name }}</p>
 
@@ -611,6 +611,8 @@
                                 <p><strong>Analogue Extensions:</strong> @{{ content.analogue_extensions }}</p>
 
                                 <p><strong>Description:</strong> @{{ content.product_description }}</p>
+
+                                <p><img src="/@{{ content.image }}"></p>
 
                                 <div ng-repeat="oa in cart_items">
                                     <p><strong>Product:</strong> @{{ oa.item_name }}</p>

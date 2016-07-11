@@ -31,6 +31,25 @@ class MiVB_Bundle extends Model
         'five_yr_prompt_care',
         'five_yr_total_care',
         'pbx_type',
-        'hardware_category'
+        'hardware_category',
+
+        'image',
+        'oa_view',
+        'image_view_oa',
+        'description_view_oa',
+        'info_view',
+        'info_description',
+        'image_view_info',
+        'description_view_info',
+        'image_view_warning',
+        'description_view_warning',
+        'warning_view',
+        'warning_description',
+
+        'server_type',
+        'max_server_users',
+        'form_factor',
+        'raid',
+        'psu_redundancy'
     ];
 }
