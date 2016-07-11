@@ -37,7 +37,7 @@
 
         <div class="col-md-7">
 
-            <h2>Customer Details:</h2>
+            <h2>Customer Details</h2>
 
             <div class="form-group">
                 <label for="inputEmail3" class="col-sm-4 control-label">Company Name:</label>
